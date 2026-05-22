@@ -36,6 +36,16 @@ pnpm run test
 pnpm run typecheck
 ```
 
+Smoke coverage compares generated metadata back to `docs/mekari.swagger.json`,
+checks representative read, mutation, destructive, custom-action, paged, and
+path-parameter tools through mocked Mekari clients, verifies one API request per
+MCP tool call, confirms stdio startup keeps stdout protocol-clean, and checks
+generated outputs can be reproduced from the generator.
+
+Default tests never call live Mekari Jurnal APIs and do not require real Mekari
+Credentials. Live API checks are intentionally out of scope for the default
+suite.
+
 The generated docs list every Swagger-backed MCP Module, source tag, generated MCP Tool Name, method, path, summary, safety level, input overview, and available Swagger examples. Runtime tool descriptions stay concise and keep large examples/schemas out of MCP registry metadata.
 
 ## Server
