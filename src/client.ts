@@ -1,3 +1,6 @@
+import { readFile } from "node:fs/promises";
+import { basename } from "node:path";
+
 import { buildRequestTarget, createMekariHeaders, type QueryValue } from "./auth.js";
 
 export type HttpMethod = "DELETE" | "GET" | "PATCH" | "POST" | "PUT";
@@ -15,6 +18,12 @@ export interface MekariRequest {
   path: string;
   query?: Record<string, QueryValue | null | undefined>;
   data?: unknown;
+  upload?: MekariUploadRequest;
+}
+
+export interface MekariUploadRequest {
+  fieldName: string;
+  filePath: string;
 }
 
 export type MekariToolResult =
@@ -39,14 +48,10 @@ export function createMekariClient(
         const requestTarget = buildRequestTarget(request.path, request.query);
         const url = new URL(requestTarget, normalizeBaseUrl(config.baseUrl));
         const headers = createMekariHeaders(config, request);
-
-        if (request.data !== undefined) {
-          headers["Content-Type"] = "application/json";
-        }
+        const body = await buildRequestBody(request, headers);
 
         const response = await fetchImpl(url, {
-          body:
-            request.data === undefined ? undefined : JSON.stringify(request.data),
+          body,
           headers,
           method: request.method,
         });
@@ -69,6 +74,56 @@ export function createMekariClient(
       }
     },
   };
+}
+
+async function buildRequestBody(
+  request: MekariRequest,
+  headers: Record<string, string>,
+): Promise<RequestInit["body"] | undefined> {
+  if (request.upload) {
+    return buildUploadBody(request.upload);
+  }
+
+  if (request.data === undefined) {
+    return undefined;
+  }
+
+  headers["Content-Type"] = "application/json";
+  return JSON.stringify(request.data);
+}
+
+async function buildUploadBody(
+  upload: MekariUploadRequest,
+): Promise<FormData> {
+  const bytes = await readFile(upload.filePath);
+  const blob = new Blob([toArrayBuffer(bytes)], {
+    type: detectContentType(upload.filePath),
+  });
+  const formData = new FormData();
+
+  formData.append(upload.fieldName, blob, basename(upload.filePath));
+  return formData;
+}
+
+function toArrayBuffer(bytes: Uint8Array): ArrayBuffer {
+  return bytes.buffer.slice(
+    bytes.byteOffset,
+    bytes.byteOffset + bytes.byteLength,
+  ) as ArrayBuffer;
+}
+
+function detectContentType(filePath: string): string {
+  const lower = filePath.toLowerCase();
+
+  if (lower.endsWith(".jpg") || lower.endsWith(".jpeg")) {
+    return "image/jpeg";
+  }
+
+  if (lower.endsWith(".png")) {
+    return "image/png";
+  }
+
+  return "application/octet-stream";
 }
 
 function logRequest(

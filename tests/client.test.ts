@@ -1,4 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
+import { mkdtemp, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 
 import { createMekariClient } from "../src/client.js";
 
@@ -187,6 +190,86 @@ describe("Mekari client result wrappers", () => {
 
     expect(defaultLogs[0]).not.toContain("debug body");
     expect(debugLogs[0]).toContain('"memo":"debug body"');
+  });
+
+  it("sends upload requests as multipart form-data without JSON content type", async () => {
+    let requestInit: RequestInit | undefined;
+    const uploadDir = await mkdtemp(join(tmpdir(), "mekari-upload-"));
+    const filePath = join(uploadDir, "product.png");
+    const fetchImpl = vi.fn(async (_url: URL, init?: RequestInit) => {
+      requestInit = init;
+      return new Response(JSON.stringify({ product: { image: "ok" } }), {
+        status: 200,
+      });
+    }) as unknown as typeof fetch;
+    const client = createMekariClient(
+      {
+        baseUrl: "https://api.mekari.test",
+        clientId: "client-id",
+        clientSecret: "secret",
+        logger: () => undefined,
+      },
+      fetchImpl,
+    );
+
+    try {
+      await writeFile(filePath, "png-bytes");
+
+      await expect(
+        client.request({
+          method: "POST",
+          path: "/public/jurnal/api/v1/products/p-1/upload_product_image",
+          upload: {
+            fieldName: "product[image]",
+            filePath,
+          },
+        }),
+      ).resolves.toEqual({
+        ok: true,
+        data: { product: { image: "ok" } },
+      });
+
+      expect(requestInit?.body).toBeInstanceOf(FormData);
+      expect(requestInit?.headers).not.toHaveProperty("Content-Type");
+
+      const file = (requestInit?.body as FormData).get("product[image]");
+      expect(file).toBeInstanceOf(File);
+      expect((file as File).name).toBe("product.png");
+      await expect((file as File).text()).resolves.toBe("png-bytes");
+    } finally {
+      await rm(uploadDir, { force: true, recursive: true });
+    }
+  });
+
+  it("returns structured errors when upload files cannot be read", async () => {
+    const fetchImpl = vi.fn(async () => {
+      return new Response(JSON.stringify({ unreachable: true }), { status: 200 });
+    }) as unknown as typeof fetch;
+    const client = createMekariClient(
+      {
+        baseUrl: "https://api.mekari.test",
+        clientId: "client-id",
+        clientSecret: "secret",
+        logger: () => undefined,
+      },
+      fetchImpl,
+    );
+
+    const result = await client.request({
+      method: "POST",
+      path: "/public/jurnal/api/v1/products/p-1/upload_product_image",
+      upload: {
+        fieldName: "product[image]",
+        filePath: "/tmp/mekari-missing-product-image.png",
+      },
+    });
+
+    expect(fetchImpl).not.toHaveBeenCalled();
+    expect(result).toMatchObject({
+      ok: false,
+      status: 0,
+      error: { message: expect.stringContaining("ENOENT") },
+    });
   });
 
   it("uses stderr instead of stdout for default runtime request logs", async () => {

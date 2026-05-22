@@ -33,3 +33,5 @@ node dist/src/index.js
 The server uses stdio transport and writes no startup logs to stdout. Read operations register by default. Mutations require `MEKARI_ENABLE_MUTATIONS=true`; destructive operations require `MEKARI_ENABLE_DESTRUCTIVE=true` too. Use `MEKARI_MODULES=accounts,customers` to narrow registered modules.
 
 Runtime request logs go to stderr and include method, path, status, and duration. Authorization headers, client secrets, and request bodies are omitted by default. Set `MEKARI_DEBUG_LOG_BODIES=true` only for local diagnostics when request body logging is acceptable.
+
+Upload tools such as product image and company logo accept local `file_path`. The server reads the file and sends `multipart/form-data` to Mekari Jurnal; base64 upload payloads are not supported. Upload tools are mutations, so set `MEKARI_ENABLE_MUTATIONS=true` before registering them.

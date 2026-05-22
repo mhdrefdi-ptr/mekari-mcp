@@ -3,6 +3,7 @@ import type {
   GeneratedOperation,
   GeneratedParameter,
   GeneratedSchema,
+  GeneratedUpload,
   ParameterLocation,
   ParameterType,
 } from "../tools.js";
@@ -15,6 +16,7 @@ interface SwaggerParameter {
   description?: string;
   in?: string;
   name?: string;
+  properties?: Record<string, SwaggerSchema>;
   required?: boolean;
   schema?: SwaggerSchema;
   type?: string | string[];
@@ -121,9 +123,12 @@ export function buildOperationsFromSwagger(
       });
       const baseName = `${moduleName}_${operationName}`;
       const name = uniqueToolName(baseName, splitPath.path, seenNames);
-      const bodyParameter = (operation.parameters ?? []).find(
-        (parameter) => parameter?.in === "body",
-      );
+      const upload = detectUpload(operation, splitPath.path);
+      const bodyParameter = upload
+        ? undefined
+        : (operation.parameters ?? []).find(
+            (parameter) => parameter?.in === "body",
+          );
 
       operations.push({
         bodyRequired: Boolean(bodyParameter?.required),
@@ -146,6 +151,7 @@ export function buildOperationsFromSwagger(
         safetyLevel: classifySafetyLevel(method, splitPath.path, operationName),
         sourceTag,
         title: operation.summary,
+        upload,
       });
     }
   }
@@ -345,6 +351,60 @@ function normalizeParameter(
     required: parameter.in === "path" || Boolean(parameter.required),
     type: normalizeParameterType(parameter.schema?.type ?? parameter.type),
   };
+}
+
+function detectUpload(
+  operation: SwaggerOperation,
+  path: string,
+): GeneratedUpload | undefined {
+  for (const parameter of operation.parameters ?? []) {
+    if (parameter?.in !== "formData" || !parameter.name) {
+      continue;
+    }
+
+    if (hasFileType(parameter.type)) {
+      return { fieldName: parameter.name };
+    }
+
+    for (const [propertyName, propertySchema] of Object.entries(
+      parameter.properties ?? {},
+    )) {
+      if (hasFileType(propertySchema.type)) {
+        return { fieldName: `${parameter.name}[${propertyName}]` };
+      }
+    }
+  }
+
+  if (!/upload/i.test(path)) {
+    return undefined;
+  }
+
+  const bodyParameter = (operation.parameters ?? []).find(
+    (parameter) => parameter?.in === "body",
+  );
+
+  for (const [rootName, rootSchema] of Object.entries(
+    bodyParameter?.schema?.properties ?? {},
+  )) {
+    for (const [propertyName, propertySchema] of Object.entries(
+      rootSchema.properties ?? {},
+    )) {
+      if (
+        propertySchema.type === "string" &&
+        /(image|logo)(?:_url)?$/i.test(propertyName)
+      ) {
+        return {
+          fieldName: `${rootName}[${propertyName.replace(/_url$/i, "")}]`,
+        };
+      }
+    }
+  }
+
+  return undefined;
+}
+
+function hasFileType(type: string | string[] | undefined): boolean {
+  return Array.isArray(type) ? type.includes("file") : type === "file";
 }
 
 function normalizeParameterType(type: string | string[] | undefined): ParameterType {

@@ -10244,7 +10244,10 @@ export const generatedOperations = [
     "path": "/public/jurnal/api/v1/products/{id}/upload_product_image",
     "safetyLevel": "mutation",
     "sourceTag": "PRODUCTS",
-    "title": "Upload Product Image"
+    "title": "Upload Product Image",
+    "upload": {
+      "fieldName": "product[image]"
+    }
   },
   {
     "bodyRequired": false,
@@ -11496,20 +11499,7 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
-    "bodySchema": {
-      "properties": {
-        "company": {
-          "properties": {
-            "logo_url": {
-              "type": "string"
-            }
-          },
-          "type": "object"
-        }
-      },
-      "type": "object"
-    },
-    "hasBody": true,
+    "hasBody": false,
     "method": "POST",
     "moduleName": "companies",
     "name": "companies_post_authorization_path_api_v1_companies_upload_logo",
@@ -11518,7 +11508,10 @@ export const generatedOperations = [
     "path": "/public/jurnal/api/v1/companies/upload_logo",
     "safetyLevel": "mutation",
     "sourceTag": "COMPANIES",
-    "title": "Add Company Logo"
+    "title": "Add Company Logo",
+    "upload": {
+      "fieldName": "company[logo]"
+    }
   },
   {
     "bodyRequired": false,

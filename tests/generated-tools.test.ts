@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 
 import {
   generatedModules,
+  generatedOperations,
   registerGeneratedTools,
 } from "../src/generated/tools.js";
 import type { ToolRegistry } from "../src/tools.js";
@@ -97,6 +98,45 @@ describe("generated MCP tools", () => {
       data,
       method: "POST",
       path: "/public/jurnal/api/v1/accounts",
+    });
+  });
+
+  it("registers upload tools with file_path and renders upload requests", async () => {
+    const { registered, registry } = createRegistry();
+    const client = {
+      request: vi.fn(async () => ({ ok: true as const, data: { image: {} } })),
+    };
+
+    registerGeneratedTools(registry, client, {
+      enableMutations: true,
+    });
+
+    const operation = generatedOperations.find(
+      (item) => item.name === "products_upload_product_image",
+    ) as any;
+    const tool = registered.get("products_upload_product_image");
+
+    expect(operation?.upload).toEqual({ fieldName: "product[image]" });
+    expect(Object.keys(tool?.config.inputSchema.shape ?? {})).toEqual([
+      "id",
+      "file_path",
+    ]);
+    expect(tool?.config.inputSchema.shape).not.toHaveProperty("data");
+    expect(tool?.config.inputSchema.shape).not.toHaveProperty("base64");
+
+    await tool?.handler({
+      base64: "not-supported",
+      file_path: "/tmp/product.png",
+      id: "p-1",
+    });
+
+    expect(client.request).toHaveBeenCalledWith({
+      method: "POST",
+      path: "/public/jurnal/api/v1/products/p-1/upload_product_image",
+      upload: {
+        fieldName: "product[image]",
+        filePath: "/tmp/product.png",
+      },
     });
   });
 

@@ -60,6 +60,11 @@ export interface GeneratedOperation {
   safetyLevel: ToolSafetyLevel;
   sourceTag: string;
   title?: string;
+  upload?: GeneratedUpload;
+}
+
+export interface GeneratedUpload {
+  fieldName: string;
 }
 
 export interface GeneratedModule {
@@ -146,6 +151,10 @@ export function buildInputSchema(
       ? schemaToZod(operation.bodySchema)
       : z.unknown();
     shape.data = operation.bodyRequired ? dataSchema : dataSchema.optional();
+  }
+
+  if (operation.upload) {
+    shape.file_path = z.string().min(1);
   }
 
   return z.object(shape);
@@ -256,6 +265,12 @@ function toMekariRequest(
     method: operation.method,
     path: renderPath(operation.path, input),
     query: Object.keys(query).length ? query : undefined,
+    upload: operation.upload
+      ? {
+          fieldName: operation.upload.fieldName,
+          filePath: String(input.file_path),
+        }
+      : undefined,
   };
 }
 
