@@ -23,6 +23,21 @@ pnpm run build
 
 Generated tools live in `src/generated/`. Manual config, auth, client, and server code stays outside that directory.
 
+Generated module/tool docs live in [`docs/generated/mekari-tools.md`](docs/generated/mekari-tools.md). Regenerate code and docs with:
+
+```bash
+pnpm run generate
+```
+
+Local smoke checks:
+
+```bash
+pnpm run test
+pnpm run typecheck
+```
+
+The generated docs list every Swagger-backed MCP Module, source tag, generated MCP Tool Name, method, path, summary, safety level, input overview, and available Swagger examples. Runtime tool descriptions stay concise and keep large examples/schemas out of MCP registry metadata.
+
 ## Server
 
 ```bash

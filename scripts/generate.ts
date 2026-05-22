@@ -3,14 +3,19 @@ import { dirname, resolve } from "node:path";
 
 import {
   buildOperationsFromSwagger,
+  emitGeneratedToolDocs,
   emitGeneratedTools,
 } from "../src/generator/swagger.js";
 
 const swaggerPath = resolve("docs/mekari.swagger.json");
-const outputPath = resolve("src/generated/tools.ts");
+const toolsOutputPath = resolve("src/generated/tools.ts");
+const docsOutputPath = resolve("docs/generated/mekari-tools.md");
 
 const swagger = JSON.parse(await readFile(swaggerPath, "utf8"));
 const operations = buildOperationsFromSwagger(swagger);
 
-await mkdir(dirname(outputPath), { recursive: true });
-await writeFile(outputPath, emitGeneratedTools(operations));
+await mkdir(dirname(toolsOutputPath), { recursive: true });
+await writeFile(toolsOutputPath, emitGeneratedTools(operations));
+
+await mkdir(dirname(docsOutputPath), { recursive: true });
+await writeFile(docsOutputPath, emitGeneratedToolDocs(operations));

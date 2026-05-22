@@ -50,6 +50,7 @@ export interface GeneratedOperation {
   bodyRequired: boolean;
   bodySchema?: GeneratedSchema;
   description?: string;
+  docsExamples?: readonly GeneratedDocExample[];
   hasBody: boolean;
   method: HttpMethod;
   moduleName: string;
@@ -65,6 +66,11 @@ export interface GeneratedOperation {
 
 export interface GeneratedUpload {
   fieldName: string;
+}
+
+export interface GeneratedDocExample {
+  title: string;
+  value: unknown;
 }
 
 export interface GeneratedModule {
@@ -121,7 +127,7 @@ export function registerOperations(
     registry.registerTool(
       operation.name,
       {
-        description: operation.description,
+        description: buildToolDescription(operation),
         inputSchema,
         title: operation.title,
       },
@@ -135,6 +141,25 @@ export function registerOperations(
   }
 
   return registered;
+}
+
+function buildToolDescription(operation: GeneratedOperation): string {
+  const summary = compactText(
+    operation.title ?? operation.description ?? operation.name,
+    90,
+  );
+
+  return `${summary}. ${operation.method} ${operation.path}. Safety: ${operation.safetyLevel}.`;
+}
+
+function compactText(value: string, maxLength: number): string {
+  const compact = value.replace(/\s+/g, " ").trim();
+
+  if (compact.length <= maxLength) {
+    return compact;
+  }
+
+  return `${compact.slice(0, maxLength - 3).trimEnd()}...`;
 }
 
 export function buildInputSchema(

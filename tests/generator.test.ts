@@ -2,11 +2,16 @@ import { describe, expect, it } from "vitest";
 
 import {
   buildOperationsFromSwagger,
+  emitGeneratedToolDocs,
   normalizeModuleName,
   normalizeToolName,
   splitSwaggerPath,
 } from "../src/generator/swagger.js";
-import { buildInputSchema } from "../src/tools.js";
+import {
+  buildInputSchema,
+  registerOperations,
+  type ToolRegistry,
+} from "../src/tools.js";
 
 describe("Swagger naming", () => {
   it("normalizes Swagger tags into MCP Module names", () => {
@@ -169,5 +174,113 @@ describe("Swagger naming", () => {
       { name: "widgets_deactivate", safetyLevel: "destructive" },
       { name: "widgets_remove_logo", safetyLevel: "destructive" },
     ]);
+  });
+});
+
+describe("Generated tool docs", () => {
+  it("documents modules, tools, inputs, gates, and Swagger examples without bloating runtime descriptions", () => {
+    const operations = buildOperationsFromSwagger({
+      paths: {
+        "/public/jurnal/api/v1/widgets/{id}?dry_run=false": {
+          patch: {
+            description: "Updates a widget in the current company.",
+            operationId: "update",
+            parameters: [
+              { in: "path", name: "id", required: true, type: "integer" },
+              { in: "query", name: "notify", required: false, type: "boolean" },
+              {
+                in: "body",
+                name: "body",
+                required: true,
+                schema: {
+                  example: {
+                    widget: {
+                      name: "Docs-only example",
+                    },
+                  },
+                  properties: {
+                    widget: {
+                      properties: {
+                        name: { type: "string" },
+                      },
+                      required: ["name"],
+                      type: "object",
+                    },
+                  },
+                  required: ["widget"],
+                  type: "object",
+                },
+              },
+            ],
+            responses: {
+              "200": {
+                examples: {
+                  "application/json": {
+                    widget: { id: 7, name: "Docs-only example" },
+                  },
+                },
+              },
+            },
+            summary: "Update Widget",
+            tags: ["WIDGETS"],
+          },
+        },
+        "/public/jurnal/api/v1/widgets/{id}/remove_logo": {
+          post: {
+            operationId: "remove_logo",
+            summary: "Remove Widget Logo",
+            tags: ["WIDGETS"],
+          },
+        },
+      },
+    } as any);
+
+    const docs = emitGeneratedToolDocs(operations);
+
+    expect(docs).toContain("# Mekari Jurnal MCP Modules and Tools");
+    expect(docs).toContain("## Runtime gates");
+    expect(docs).toContain("MEKARI_ENABLE_MUTATIONS=true");
+    expect(docs).toContain("MEKARI_ENABLE_DESTRUCTIVE=true");
+    expect(docs).toContain("MEKARI_MODULES=accounts,customers");
+    expect(docs).toContain("## Module `widgets`");
+    expect(docs).toContain("Source Swagger tag: `WIDGETS`");
+    expect(docs).toContain("### `widgets_update`");
+    expect(docs).toContain("- Method: `PATCH`");
+    expect(docs).toContain("- Path: `/public/jurnal/api/v1/widgets/{id}`");
+    expect(docs).toContain("- Summary: Update Widget");
+    expect(docs).toContain("- Safety: `mutation`");
+    expect(docs).toContain("- Path `id`: integer, required");
+    expect(docs).toContain("- Query `dry_run`: string, optional, default `false`");
+    expect(docs).toContain("- Query `notify`: boolean, optional");
+    expect(docs).toContain("- Body `data`: object, required");
+    expect(docs).toContain("Required fields: `widget`, `widget.name`");
+    expect(docs).toContain("#### Swagger Examples");
+    expect(docs).toContain("Request body example");
+    expect(docs).toContain("Response `200` `application/json`");
+    expect(docs).toContain('"Docs-only example"');
+    expect(docs).toContain("### `widgets_remove_logo`");
+    expect(docs).toContain("- Safety: `destructive`");
+
+    const registered = new Map<string, { config: { description?: string } }>();
+    const registry: ToolRegistry = {
+      registerTool: (name, config) => {
+        registered.set(name, { config });
+      },
+    };
+
+    registerOperations(
+      registry,
+      operations,
+      {
+        request: async () => ({ ok: true, data: {} }),
+      },
+      { enableMutations: true },
+    );
+
+    const description = registered.get("widgets_update")?.config.description ?? "";
+    expect(description).toContain("Update Widget");
+    expect(description).toContain("PATCH /public/jurnal/api/v1/widgets/{id}");
+    expect(description).not.toContain("Docs-only example");
+    expect(description.length).toBeLessThan(180);
   });
 });

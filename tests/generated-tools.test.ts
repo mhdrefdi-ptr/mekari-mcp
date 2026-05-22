@@ -76,6 +76,29 @@ describe("generated MCP tools", () => {
     expect(registered.has("accounts_delete")).toBe(false);
   });
 
+  it("keeps runtime descriptions concise while exposing method, path, and safety", () => {
+    const { client, registered, registry } = createRegistry();
+
+    registerGeneratedTools(registry, client, {
+      enableMutations: true,
+    });
+
+    const description =
+      registered.get("accounts_create")?.config.description ?? "";
+    const operation = generatedOperations.find(
+      (item) => item.name === "accounts_create",
+    );
+
+    expect(description).toContain("Add an Account");
+    expect(description).toContain("POST /public/jurnal/api/v1/accounts");
+    expect(description).toContain("Safety: mutation");
+    expect(description.length).toBeLessThan(180);
+    expect(description).not.toContain('"account"');
+    expect(description).not.toContain("properties");
+    expect(description).not.toContain("examples");
+    expect(operation).not.toHaveProperty("docsExamples");
+  });
+
   it("keeps request bodies under data for generated mutation tools", async () => {
     const { registered, registry } = createRegistry();
     const client = {
