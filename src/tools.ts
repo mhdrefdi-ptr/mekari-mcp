@@ -26,6 +26,8 @@ export type GeneratedSchemaType =
   | "string"
   | "unknown";
 
+export type ToolSafetyLevel = "destructive" | "mutation" | "read";
+
 export interface GeneratedSchema {
   description?: string;
   items?: GeneratedSchema;
@@ -55,6 +57,7 @@ export interface GeneratedOperation {
   operationName: string;
   parameters: readonly GeneratedParameter[];
   path: string;
+  safetyLevel: ToolSafetyLevel;
   sourceTag: string;
   title?: string;
 }
@@ -67,6 +70,7 @@ export interface GeneratedModule {
     name: string;
     operationName: string;
     path: string;
+    safetyLevel: ToolSafetyLevel;
     title?: string;
   }>;
 }
@@ -224,11 +228,11 @@ function isEnabled(
     return false;
   }
 
-  if (operation.method === "GET") {
+  if (operation.safetyLevel === "read") {
     return true;
   }
 
-  if (operation.method === "DELETE") {
+  if (operation.safetyLevel === "destructive") {
     return Boolean(options.enableMutations && options.enableDestructive);
   }
 

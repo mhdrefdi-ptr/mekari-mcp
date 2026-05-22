@@ -12,6 +12,7 @@ export const generatedModules = [
         "name": "vendor_credit_memo_refund_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/vendor_credit_memo_refund",
+        "safetyLevel": "mutation",
         "title": "Create Vendor Credit Memo Refund"
       },
       {
@@ -19,6 +20,7 @@ export const generatedModules = [
         "name": "vendor_credit_memo_refund_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/vendor_credit_memo_refund/{id}",
+        "safetyLevel": "read",
         "title": "Get Vendor Credit Memo Refund by Id"
       },
       {
@@ -26,6 +28,7 @@ export const generatedModules = [
         "name": "vendor_credit_memo_refund_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/vendor_credit_memo_refund/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Vendor Credit Memo Refund"
       },
       {
@@ -33,6 +36,7 @@ export const generatedModules = [
         "name": "vendor_credit_memo_refund_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/vendor_credit_memo_refund/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Vendor Credit Memo Refund"
       }
     ]
@@ -46,6 +50,7 @@ export const generatedModules = [
         "name": "customer_apply_credit_memo_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/customer_apply_credit_memo",
+        "safetyLevel": "mutation",
         "title": "Create Customer Apply Credit Memo"
       },
       {
@@ -53,6 +58,7 @@ export const generatedModules = [
         "name": "customer_apply_credit_memo_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/customer_apply_credit_memo/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Customer Apply Credit Memo"
       },
       {
@@ -60,6 +66,7 @@ export const generatedModules = [
         "name": "customer_apply_credit_memo_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/customer_apply_credit_memo/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Customer Apply Credit Memo"
       },
       {
@@ -67,6 +74,7 @@ export const generatedModules = [
         "name": "customer_apply_credit_memo_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/customer_apply_credit_memo/{id}",
+        "safetyLevel": "read",
         "title": "Get Customer Apply Credit Memo by Id"
       }
     ]
@@ -80,6 +88,7 @@ export const generatedModules = [
         "name": "purchase_returns_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/purchase_returns",
+        "safetyLevel": "read",
         "title": "Get List of Purchase Returns"
       },
       {
@@ -87,6 +96,7 @@ export const generatedModules = [
         "name": "purchase_returns_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/purchase_returns",
+        "safetyLevel": "mutation",
         "title": "Create a Purchase Return"
       },
       {
@@ -94,6 +104,7 @@ export const generatedModules = [
         "name": "purchase_returns_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/purchase_returns/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Purchase Return"
       },
       {
@@ -101,6 +112,7 @@ export const generatedModules = [
         "name": "purchase_returns_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/purchase_returns/{id}",
+        "safetyLevel": "read",
         "title": "Get a Purchase Return"
       },
       {
@@ -108,6 +120,7 @@ export const generatedModules = [
         "name": "purchase_returns_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/purchase_returns/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Purchase Return"
       }
     ]
@@ -121,6 +134,7 @@ export const generatedModules = [
         "name": "sales_returns_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/sales_returns",
+        "safetyLevel": "read",
         "title": "Get List of Sales Returns"
       },
       {
@@ -128,6 +142,7 @@ export const generatedModules = [
         "name": "sales_returns_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/sales_returns",
+        "safetyLevel": "mutation",
         "title": "Add a Sales Return"
       },
       {
@@ -135,6 +150,7 @@ export const generatedModules = [
         "name": "sales_returns_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/sales_returns/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Sales Return"
       },
       {
@@ -142,6 +158,7 @@ export const generatedModules = [
         "name": "sales_returns_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/sales_returns/{id}",
+        "safetyLevel": "read",
         "title": "Get a Sales Return"
       },
       {
@@ -149,6 +166,7 @@ export const generatedModules = [
         "name": "sales_returns_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/sales_returns/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Sales Return"
       }
     ]
@@ -162,6 +180,7 @@ export const generatedModules = [
         "name": "vendor_apply_credit_memo_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/vendor_apply_credit_memo",
+        "safetyLevel": "mutation",
         "title": "Create Vendor Apply Credit Memo"
       },
       {
@@ -169,6 +188,7 @@ export const generatedModules = [
         "name": "vendor_apply_credit_memo_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/vendor_apply_credit_memo/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Vendor Apply Credit Memo"
       },
       {
@@ -176,6 +196,7 @@ export const generatedModules = [
         "name": "vendor_apply_credit_memo_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/vendor_apply_credit_memo/{id}",
+        "safetyLevel": "read",
         "title": "Get Vendor Apply Credit Memo by Id"
       },
       {
@@ -183,6 +204,7 @@ export const generatedModules = [
         "name": "vendor_apply_credit_memo_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/vendor_apply_credit_memo/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Vendor Apply Credit Memo"
       }
     ]
@@ -196,6 +218,7 @@ export const generatedModules = [
         "name": "sales_invoices_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/sales_invoices",
+        "safetyLevel": "read",
         "title": "Get List of Sales Invoices"
       },
       {
@@ -203,6 +226,7 @@ export const generatedModules = [
         "name": "sales_invoices_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/sales_invoices",
+        "safetyLevel": "mutation",
         "title": "Add a Sales Invoice"
       },
       {
@@ -210,6 +234,7 @@ export const generatedModules = [
         "name": "sales_invoices_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/sales_invoices/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Sales Invoice"
       },
       {
@@ -217,6 +242,7 @@ export const generatedModules = [
         "name": "sales_invoices_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/sales_invoices/{id}",
+        "safetyLevel": "read",
         "title": "Get a Sales Invoice"
       },
       {
@@ -224,6 +250,7 @@ export const generatedModules = [
         "name": "sales_invoices_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/sales_invoices/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Sales Invoice"
       },
       {
@@ -231,6 +258,7 @@ export const generatedModules = [
         "name": "sales_invoices_batch_create",
         "operationName": "batch_create",
         "path": "/public/jurnal/api/v1/sales_invoices/batch_create",
+        "safetyLevel": "mutation",
         "title": "Add Many Sales Invoices"
       },
       {
@@ -238,6 +266,7 @@ export const generatedModules = [
         "name": "sales_invoices_get_register_tiny_url",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/sales_invoices/{id}/register_tiny_url",
+        "safetyLevel": "read",
         "title": "Get an Invoice Link"
       },
       {
@@ -245,6 +274,7 @@ export const generatedModules = [
         "name": "sales_invoices_get_receive_payments",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/sales_invoices/{id}/receive_payments",
+        "safetyLevel": "read",
         "title": "Get List of Payments from Sales Invoice"
       }
     ]
@@ -258,6 +288,7 @@ export const generatedModules = [
         "name": "unit_convertions_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/unit_conversions",
+        "safetyLevel": "read",
         "title": "Get List of Unit Conversions"
       },
       {
@@ -265,6 +296,7 @@ export const generatedModules = [
         "name": "unit_convertions_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/unit_conversions",
+        "safetyLevel": "mutation",
         "title": "Add a Unit Conversion"
       },
       {
@@ -272,6 +304,7 @@ export const generatedModules = [
         "name": "unit_convertions_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/unit_conversions/{id}",
+        "safetyLevel": "read",
         "title": "Get a Unit Conversion"
       },
       {
@@ -279,6 +312,7 @@ export const generatedModules = [
         "name": "unit_convertions_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/unit_conversions/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Unit Conversion"
       },
       {
@@ -286,6 +320,7 @@ export const generatedModules = [
         "name": "unit_convertions_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/unit_conversions/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Unit Conversion"
       }
     ]
@@ -299,6 +334,7 @@ export const generatedModules = [
         "name": "customer_credit_memo_refund_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/customer_credit_memo_refund",
+        "safetyLevel": "mutation",
         "title": "Create Customer Credit Memo Refund"
       },
       {
@@ -306,6 +342,7 @@ export const generatedModules = [
         "name": "customer_credit_memo_refund_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/customer_credit_memo_refund/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Customer Credit Memo Refund"
       },
       {
@@ -313,6 +350,7 @@ export const generatedModules = [
         "name": "customer_credit_memo_refund_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/customer_credit_memo_refund/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Customer Credit Memo Refund"
       },
       {
@@ -320,6 +358,7 @@ export const generatedModules = [
         "name": "customer_credit_memo_refund_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/customer_credit_memo_refund/{id}",
+        "safetyLevel": "read",
         "title": "Get Customer Credit Memo Refund by Id"
       }
     ]
@@ -333,6 +372,7 @@ export const generatedModules = [
         "name": "stock_adjustment_type_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/select2_resources/get_stock_adjustment_type",
+        "safetyLevel": "read",
         "title": "Stock Adjustments Type"
       }
     ]
@@ -346,6 +386,7 @@ export const generatedModules = [
         "name": "transaction_tag_get_taggings",
         "operationName": "get_taggings",
         "path": "/public/jurnal/api/v1/select2_resources/get_taggings",
+        "safetyLevel": "read",
         "title": "Tag Resources"
       },
       {
@@ -353,6 +394,7 @@ export const generatedModules = [
         "name": "transaction_tag_tags",
         "operationName": "tags",
         "path": "/public/jurnal/api/v1/tags",
+        "safetyLevel": "read",
         "title": "Get List of Transaction Tags"
       },
       {
@@ -360,6 +402,7 @@ export const generatedModules = [
         "name": "transaction_tag_post_authorization_path_api_v1_tags",
         "operationName": "post_authorization_path_api_v1_tags",
         "path": "/public/jurnal/api/v1/tags",
+        "safetyLevel": "mutation",
         "title": "Add a Transaction Tag"
       },
       {
@@ -367,6 +410,7 @@ export const generatedModules = [
         "name": "transaction_tag_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/tags/{id}",
+        "safetyLevel": "read",
         "title": "Get a Transaction Tag"
       },
       {
@@ -374,6 +418,7 @@ export const generatedModules = [
         "name": "transaction_tag_patch_authorization_path_api_v1_tags_id",
         "operationName": "patch_authorization_path_api_v1_tags_id",
         "path": "/public/jurnal/api/v1/tags/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Transaction Tag"
       },
       {
@@ -381,6 +426,7 @@ export const generatedModules = [
         "name": "transaction_tag_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/tags/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Transaction  Tag"
       }
     ]
@@ -394,6 +440,7 @@ export const generatedModules = [
         "name": "credit_memo_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/credit_memos",
+        "safetyLevel": "read",
         "title": "Get Credit Memo"
       },
       {
@@ -401,6 +448,7 @@ export const generatedModules = [
         "name": "credit_memo_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/credit_memos",
+        "safetyLevel": "mutation",
         "title": "Create Credit Memo"
       },
       {
@@ -408,6 +456,7 @@ export const generatedModules = [
         "name": "credit_memo_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/{person_type}/{id}/credit_memos",
+        "safetyLevel": "read",
         "title": "Get Credit Memo by Person Type"
       },
       {
@@ -415,6 +464,7 @@ export const generatedModules = [
         "name": "credit_memo_get_2",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/credit_memos/{id}",
+        "safetyLevel": "read",
         "title": "Get Selected Credit Memo"
       },
       {
@@ -422,6 +472,7 @@ export const generatedModules = [
         "name": "credit_memo_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/credit_memos/{id}",
+        "safetyLevel": "mutation",
         "title": "Update Credit Memo"
       },
       {
@@ -429,6 +480,7 @@ export const generatedModules = [
         "name": "credit_memo_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/credit_memos/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete Credit Memo"
       }
     ]
@@ -442,6 +494,7 @@ export const generatedModules = [
         "name": "get_other_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/select2_resources/get_other",
+        "safetyLevel": "read",
         "title": "Unit, Warehouse, Tax & Payment Method"
       }
     ]
@@ -455,6 +508,7 @@ export const generatedModules = [
         "name": "purchase_invoices_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/purchase_invoices",
+        "safetyLevel": "read",
         "title": "Get List of Purchase Invoices"
       },
       {
@@ -462,6 +516,7 @@ export const generatedModules = [
         "name": "purchase_invoices_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/purchase_invoices",
+        "safetyLevel": "mutation",
         "title": "Add a Purchase Invoice"
       },
       {
@@ -469,6 +524,7 @@ export const generatedModules = [
         "name": "purchase_invoices_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/purchase_invoices/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Purchase invoice"
       },
       {
@@ -476,6 +532,7 @@ export const generatedModules = [
         "name": "purchase_invoices_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/purchase_invoices/{id}",
+        "safetyLevel": "read",
         "title": "Get a Purchase Invoice"
       },
       {
@@ -483,6 +540,7 @@ export const generatedModules = [
         "name": "purchase_invoices_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/purchase_invoices/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Purchase Invoice"
       },
       {
@@ -490,6 +548,7 @@ export const generatedModules = [
         "name": "purchase_invoices_get_purchase_payments",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/purchase_invoices/{id}/purchase_payments",
+        "safetyLevel": "read",
         "title": "Get List of Payments from Purchase Invoice"
       },
       {
@@ -497,6 +556,7 @@ export const generatedModules = [
         "name": "purchase_invoices_post_authorization_path_api_v1_purchase_invoices_batch_create",
         "operationName": "post_authorization_path_api_v1_purchase_invoices_batch_create",
         "path": "/public/jurnal/api/v1/purchase_invoices/batch_create",
+        "safetyLevel": "mutation",
         "title": "Add Many Purchase Invoices"
       },
       {
@@ -504,6 +564,7 @@ export const generatedModules = [
         "name": "purchase_invoices_get_register_tiny_url",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/purchase_invoices/{id}/register_tiny_url",
+        "safetyLevel": "read",
         "title": "Get an Purchase Invoice Link"
       }
     ]
@@ -517,6 +578,7 @@ export const generatedModules = [
         "name": "term_get_term",
         "operationName": "get_term",
         "path": "/public/jurnal/api/v1/select2_resources/get_term",
+        "safetyLevel": "read",
         "title": "Term Resources"
       },
       {
@@ -524,6 +586,7 @@ export const generatedModules = [
         "name": "term_terms",
         "operationName": "terms",
         "path": "/public/jurnal/api/v1/terms",
+        "safetyLevel": "read",
         "title": "Get List of Terms"
       },
       {
@@ -531,6 +594,7 @@ export const generatedModules = [
         "name": "term_post_authorization_path_api_v1_terms",
         "operationName": "post_authorization_path_api_v1_terms",
         "path": "/public/jurnal/api/v1/terms",
+        "safetyLevel": "mutation",
         "title": "Add a Term"
       },
       {
@@ -538,6 +602,7 @@ export const generatedModules = [
         "name": "term_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/terms/{id}",
+        "safetyLevel": "read",
         "title": "Get a Term"
       },
       {
@@ -545,6 +610,7 @@ export const generatedModules = [
         "name": "term_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/terms/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Term"
       }
     ]
@@ -558,6 +624,7 @@ export const generatedModules = [
         "name": "bank_transfers_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/bank_transfers",
+        "safetyLevel": "read",
         "title": "Get List of Bank Transfers"
       },
       {
@@ -565,6 +632,7 @@ export const generatedModules = [
         "name": "bank_transfers_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/bank_transfers",
+        "safetyLevel": "mutation",
         "title": "Add a Bank Transfer"
       },
       {
@@ -572,6 +640,7 @@ export const generatedModules = [
         "name": "bank_transfers_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/bank_transfers/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Bank Transfer"
       },
       {
@@ -579,6 +648,7 @@ export const generatedModules = [
         "name": "bank_transfers_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/bank_transfers/{id}",
+        "safetyLevel": "read",
         "title": "Get a Bank Transfer"
       },
       {
@@ -586,6 +656,7 @@ export const generatedModules = [
         "name": "bank_transfers_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/bank_transfers/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Bank Transfer"
       },
       {
@@ -593,6 +664,7 @@ export const generatedModules = [
         "name": "bank_transfers_post_authorization_path_api_v1_bank_transfers_batch_create",
         "operationName": "post_authorization_path_api_v1_bank_transfers_batch_create",
         "path": "/public/jurnal/api/v1/bank_transfers/batch_create",
+        "safetyLevel": "mutation",
         "title": "Add Many Bank Transfers"
       }
     ]
@@ -606,6 +678,7 @@ export const generatedModules = [
         "name": "taxes_get_tax",
         "operationName": "get_tax",
         "path": "/public/jurnal/api/v1/select2_resources/get_tax",
+        "safetyLevel": "read",
         "title": "Tax Resource"
       },
       {
@@ -613,6 +686,7 @@ export const generatedModules = [
         "name": "taxes_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/taxes",
+        "safetyLevel": "read",
         "title": "Get List of Taxes"
       },
       {
@@ -620,6 +694,7 @@ export const generatedModules = [
         "name": "taxes_post_authorization_path_api_v1_taxes",
         "operationName": "post_authorization_path_api_v1_taxes",
         "path": "/public/jurnal/api/v1/taxes",
+        "safetyLevel": "mutation",
         "title": "Add Tax with Witholding"
       },
       {
@@ -627,6 +702,7 @@ export const generatedModules = [
         "name": "taxes_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/taxes/{id}",
+        "safetyLevel": "read",
         "title": "Get a Single Tax"
       },
       {
@@ -634,6 +710,7 @@ export const generatedModules = [
         "name": "taxes_patch_authorization_path_api_v1_taxes_id",
         "operationName": "patch_authorization_path_api_v1_taxes_id",
         "path": "/public/jurnal/api/v1/taxes/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Single Tax"
       },
       {
@@ -641,6 +718,7 @@ export const generatedModules = [
         "name": "taxes_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/taxes/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Tax"
       }
     ]
@@ -654,6 +732,7 @@ export const generatedModules = [
         "name": "persons_get_person",
         "operationName": "get_person",
         "path": "/public/jurnal/api/v1/select2_resources/get_person",
+        "safetyLevel": "read",
         "title": "Person Resource"
       }
     ]
@@ -667,6 +746,7 @@ export const generatedModules = [
         "name": "expenses_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/expenses/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete an Expense"
       },
       {
@@ -674,6 +754,7 @@ export const generatedModules = [
         "name": "expenses_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/expenses/{id}",
+        "safetyLevel": "read",
         "title": "Get an Expense"
       },
       {
@@ -681,6 +762,7 @@ export const generatedModules = [
         "name": "expenses_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/expenses/{id}",
+        "safetyLevel": "mutation",
         "title": "Update an Expense"
       },
       {
@@ -688,6 +770,7 @@ export const generatedModules = [
         "name": "expenses_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/expenses",
+        "safetyLevel": "read",
         "title": "Get List of Expenses"
       },
       {
@@ -695,6 +778,7 @@ export const generatedModules = [
         "name": "expenses_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/expenses",
+        "safetyLevel": "mutation",
         "title": "Add an Expense"
       },
       {
@@ -702,6 +786,7 @@ export const generatedModules = [
         "name": "expenses_get_unpaid_expense",
         "operationName": "get_unpaid_expense",
         "path": "/public/jurnal/api/v1/select2_resources/get_unpaid_expense",
+        "safetyLevel": "read",
         "title": "Unpaid Expense"
       },
       {
@@ -709,6 +794,7 @@ export const generatedModules = [
         "name": "expenses_get_bank_withdrawals",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/expenses/{id}/bank_withdrawals",
+        "safetyLevel": "read",
         "title": "Get List of Payments from Expense"
       },
       {
@@ -716,6 +802,7 @@ export const generatedModules = [
         "name": "expenses_post_authorization_path_api_v1_expenses_batch_create",
         "operationName": "post_authorization_path_api_v1_expenses_batch_create",
         "path": "/public/jurnal/api/v1/expenses/batch_create",
+        "safetyLevel": "mutation",
         "title": "Add Many Expenses"
       },
       {
@@ -723,6 +810,7 @@ export const generatedModules = [
         "name": "expenses_expense_details",
         "operationName": "expense_details",
         "path": "/public/jurnal/api/v1/expense_details",
+        "safetyLevel": "read",
         "title": "Get Expense Details Report"
       },
       {
@@ -730,6 +818,7 @@ export const generatedModules = [
         "name": "expenses_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/expense_details/export",
+        "safetyLevel": "read",
         "title": "Export Expense Details Report"
       }
     ]
@@ -743,6 +832,7 @@ export const generatedModules = [
         "name": "products_get_product",
         "operationName": "get_product",
         "path": "/public/jurnal/api/v1/select2_resources/get_product",
+        "safetyLevel": "read",
         "title": "Product Resource"
       },
       {
@@ -750,6 +840,7 @@ export const generatedModules = [
         "name": "products_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/products",
+        "safetyLevel": "read",
         "title": "Get List of Products"
       },
       {
@@ -757,6 +848,7 @@ export const generatedModules = [
         "name": "products_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/products",
+        "safetyLevel": "mutation",
         "title": "Add a Product"
       },
       {
@@ -764,6 +856,7 @@ export const generatedModules = [
         "name": "products_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/products/{id}/unit_conversions",
+        "safetyLevel": "read",
         "title": "Get Unit Conversion by Product Id"
       },
       {
@@ -771,6 +864,7 @@ export const generatedModules = [
         "name": "products_get_2",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/products/{id}",
+        "safetyLevel": "read",
         "title": "Get a Product"
       },
       {
@@ -778,6 +872,7 @@ export const generatedModules = [
         "name": "products_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/products/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Product"
       },
       {
@@ -785,6 +880,7 @@ export const generatedModules = [
         "name": "products_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/products/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Product"
       },
       {
@@ -792,6 +888,7 @@ export const generatedModules = [
         "name": "products_upload_product_image",
         "operationName": "upload_product_image",
         "path": "/public/jurnal/api/v1/products/{id}/upload_product_image",
+        "safetyLevel": "mutation",
         "title": "Upload Product Image"
       },
       {
@@ -799,6 +896,7 @@ export const generatedModules = [
         "name": "products_batch_create",
         "operationName": "batch_create",
         "path": "/public/jurnal/api/v1/products/batch_create",
+        "safetyLevel": "mutation",
         "title": "Add Many Products"
       },
       {
@@ -806,6 +904,7 @@ export const generatedModules = [
         "name": "products_delete_remove_product_image",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/products/{id}/remove_product_image",
+        "safetyLevel": "destructive",
         "title": "Remove Product Image"
       },
       {
@@ -813,6 +912,7 @@ export const generatedModules = [
         "name": "products_post_api_v1_contacts_contact_id_activate",
         "operationName": "post_api_v1_contacts_contact_id_activate",
         "path": "/public/jurnal/api/v1/products/{product_id}/activate",
+        "safetyLevel": "mutation",
         "title": "Unarchive Product"
       },
       {
@@ -820,6 +920,7 @@ export const generatedModules = [
         "name": "products_post_api_v1_contacts_contact_id_deactivate",
         "operationName": "post_api_v1_contacts_contact_id_deactivate",
         "path": "/public/jurnal/api/v1/products/{product_id}/deactivate",
+        "safetyLevel": "destructive",
         "title": "Archive Product"
       },
       {
@@ -827,6 +928,7 @@ export const generatedModules = [
         "name": "products_new",
         "operationName": "new",
         "path": "/public/jurnal/api/v1/products/new",
+        "safetyLevel": "read",
         "title": "Get Default Input for Product"
       },
       {
@@ -834,6 +936,7 @@ export const generatedModules = [
         "name": "products_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/products/export",
+        "safetyLevel": "read",
         "title": "Export Products"
       }
     ]
@@ -847,6 +950,7 @@ export const generatedModules = [
         "name": "bank_withdrawals_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/bank_withdrawals",
+        "safetyLevel": "read",
         "title": "Get List of Bank Withdrawals"
       },
       {
@@ -854,6 +958,7 @@ export const generatedModules = [
         "name": "bank_withdrawals_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/bank_withdrawals",
+        "safetyLevel": "mutation",
         "title": "Add a Bank Withdrawal"
       },
       {
@@ -861,6 +966,7 @@ export const generatedModules = [
         "name": "bank_withdrawals_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/bank_withdrawals/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Bank Withdrawal"
       },
       {
@@ -868,6 +974,7 @@ export const generatedModules = [
         "name": "bank_withdrawals_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/bank_withdrawals/{id}",
+        "safetyLevel": "read",
         "title": "Get a Bank Withdrawal"
       },
       {
@@ -875,6 +982,7 @@ export const generatedModules = [
         "name": "bank_withdrawals_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/bank_withdrawals/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Bank Withdrawal"
       },
       {
@@ -882,6 +990,7 @@ export const generatedModules = [
         "name": "bank_withdrawals_post_authorization_path_api_v1_bank_withdrawals_batch_create",
         "operationName": "post_authorization_path_api_v1_bank_withdrawals_batch_create",
         "path": "/public/jurnal/api/v1/bank_withdrawals/batch_create",
+        "safetyLevel": "mutation",
         "title": "Add Many Bank Withdrawals"
       }
     ]
@@ -895,6 +1004,7 @@ export const generatedModules = [
         "name": "profit_loss_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/profit_and_loss",
+        "safetyLevel": "read",
         "title": "Get Profit Lost Information"
       }
     ]
@@ -908,6 +1018,7 @@ export const generatedModules = [
         "name": "customers_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/customers",
+        "safetyLevel": "read",
         "title": "Get List of Customers"
       },
       {
@@ -915,6 +1026,7 @@ export const generatedModules = [
         "name": "customers_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/customers",
+        "safetyLevel": "mutation",
         "title": "Add a Customer"
       },
       {
@@ -922,6 +1034,7 @@ export const generatedModules = [
         "name": "customers_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/customers/{id}",
+        "safetyLevel": "read",
         "title": "Get a Customer"
       },
       {
@@ -929,6 +1042,7 @@ export const generatedModules = [
         "name": "customers_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/customers/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Customer"
       },
       {
@@ -936,6 +1050,7 @@ export const generatedModules = [
         "name": "customers_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/customers/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Customer"
       },
       {
@@ -943,6 +1058,7 @@ export const generatedModules = [
         "name": "customers_batch_create",
         "operationName": "batch_create",
         "path": "/public/jurnal/api/v1/customers/batch_create",
+        "safetyLevel": "mutation",
         "title": "Add Many Customers"
       },
       {
@@ -950,6 +1066,7 @@ export const generatedModules = [
         "name": "customers_new",
         "operationName": "new",
         "path": "/public/jurnal/api/v1/customers/new",
+        "safetyLevel": "read",
         "title": "Get Default Input for Customer"
       },
       {
@@ -957,6 +1074,7 @@ export const generatedModules = [
         "name": "customers_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/customers/export",
+        "safetyLevel": "read",
         "title": "Export customers"
       }
     ]
@@ -970,6 +1088,7 @@ export const generatedModules = [
         "name": "stock_adjustment_account_get_stock_adjustment_account",
         "operationName": "get_stock_adjustment_account",
         "path": "/public/jurnal/api/v1/select2_resources/get_stock_adjustment_account",
+        "safetyLevel": "read",
         "title": "Stock Adjustment Accounts"
       }
     ]
@@ -983,6 +1102,7 @@ export const generatedModules = [
         "name": "companies_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/companies",
+        "safetyLevel": "read",
         "title": "Get List of Companies"
       },
       {
@@ -990,6 +1110,7 @@ export const generatedModules = [
         "name": "companies_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/companies",
+        "safetyLevel": "mutation",
         "title": "Add a Company"
       },
       {
@@ -997,6 +1118,7 @@ export const generatedModules = [
         "name": "companies_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/companies/{id}",
+        "safetyLevel": "read",
         "title": "Get a Company"
       },
       {
@@ -1004,6 +1126,7 @@ export const generatedModules = [
         "name": "companies_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/companies/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Company"
       },
       {
@@ -1011,6 +1134,7 @@ export const generatedModules = [
         "name": "companies_get_api_v1_companies_related_companies",
         "operationName": "get_api_v1_companies_related_companies",
         "path": "/public/jurnal/api/v1/companies/related_companies",
+        "safetyLevel": "read",
         "title": "Get All Company Relation Based on Owner"
       },
       {
@@ -1018,6 +1142,7 @@ export const generatedModules = [
         "name": "companies_active",
         "operationName": "active",
         "path": "/public/jurnal/api/v1/companies/active",
+        "safetyLevel": "read",
         "title": "Get Current Active Company"
       },
       {
@@ -1025,6 +1150,7 @@ export const generatedModules = [
         "name": "companies_post_authorization_path_api_v1_companies_upload_logo",
         "operationName": "post_authorization_path_api_v1_companies_upload_logo",
         "path": "/public/jurnal/api/v1/companies/upload_logo",
+        "safetyLevel": "mutation",
         "title": "Add Company Logo"
       },
       {
@@ -1032,6 +1158,7 @@ export const generatedModules = [
         "name": "companies_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/companies/remove_logo",
+        "safetyLevel": "destructive",
         "title": "Remove Logo"
       },
       {
@@ -1039,6 +1166,7 @@ export const generatedModules = [
         "name": "companies_get_api_v1_companies_get_currency",
         "operationName": "get_api_v1_companies_get_currency",
         "path": "/public/jurnal/api/v1/companies/get_currency",
+        "safetyLevel": "read",
         "title": "Get Company Currency"
       }
     ]
@@ -1052,6 +1180,7 @@ export const generatedModules = [
         "name": "transactions_get_transaction",
         "operationName": "get_transaction",
         "path": "/public/jurnal/api/v1/select2_resources/get_transaction",
+        "safetyLevel": "read",
         "title": "Transaction Resource"
       },
       {
@@ -1059,6 +1188,7 @@ export const generatedModules = [
         "name": "transactions_get_api_v1_recurring_schedules_new",
         "operationName": "get_api_v1_recurring_schedules_new",
         "path": "/public/jurnal/api/v1/recurring_schedules/new",
+        "safetyLevel": "read",
         "title": "Get Recurring Schedule"
       },
       {
@@ -1066,6 +1196,7 @@ export const generatedModules = [
         "name": "transactions_post_api_v1_recurring_schedules",
         "operationName": "post_api_v1_recurring_schedules",
         "path": "/public/jurnal/api/v1/recurring_schedules",
+        "safetyLevel": "mutation",
         "title": "Set Recurring Schecule for Transaction"
       }
     ]
@@ -1079,6 +1210,7 @@ export const generatedModules = [
         "name": "receive_payments_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/receive_payments",
+        "safetyLevel": "read",
         "title": "Get List of Receive Payments"
       },
       {
@@ -1086,6 +1218,7 @@ export const generatedModules = [
         "name": "receive_payments_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/receive_payments",
+        "safetyLevel": "mutation",
         "title": "Add a Receive Payment"
       },
       {
@@ -1093,6 +1226,7 @@ export const generatedModules = [
         "name": "receive_payments_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/receive_payments/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Receive Payment"
       },
       {
@@ -1100,6 +1234,7 @@ export const generatedModules = [
         "name": "receive_payments_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/receive_payments/{id}",
+        "safetyLevel": "read",
         "title": "Get a Receive Payment"
       },
       {
@@ -1107,6 +1242,7 @@ export const generatedModules = [
         "name": "receive_payments_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/receive_payments/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Receive Payment"
       },
       {
@@ -1114,6 +1250,7 @@ export const generatedModules = [
         "name": "receive_payments_post_authorization_path_api_v1_receive_payments_batch_create",
         "operationName": "post_authorization_path_api_v1_receive_payments_batch_create",
         "path": "/public/jurnal/api/v1/receive_payments/batch_create",
+        "safetyLevel": "mutation",
         "title": "Add Many Receive Payments"
       }
     ]
@@ -1127,6 +1264,7 @@ export const generatedModules = [
         "name": "sales_orders_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/sales_orders",
+        "safetyLevel": "read",
         "title": "Get List of Sales Orders"
       },
       {
@@ -1134,6 +1272,7 @@ export const generatedModules = [
         "name": "sales_orders_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/sales_orders",
+        "safetyLevel": "mutation",
         "title": "Add a Sales Order"
       },
       {
@@ -1141,6 +1280,7 @@ export const generatedModules = [
         "name": "sales_orders_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/sales_orders/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Sales Order"
       },
       {
@@ -1148,6 +1288,7 @@ export const generatedModules = [
         "name": "sales_orders_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/sales_orders/{id}",
+        "safetyLevel": "read",
         "title": "Get a Sales Order"
       },
       {
@@ -1155,6 +1296,7 @@ export const generatedModules = [
         "name": "sales_orders_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/sales_orders/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Sales Order"
       },
       {
@@ -1162,6 +1304,7 @@ export const generatedModules = [
         "name": "sales_orders_get_invoices_history",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/sales_orders/{id}/invoices_history",
+        "safetyLevel": "read",
         "title": "Get Invoices History List"
       },
       {
@@ -1169,6 +1312,7 @@ export const generatedModules = [
         "name": "sales_orders_get_sales_order_payments",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/sales_orders/{id}/sales_order_payments",
+        "safetyLevel": "read",
         "title": "Get Sales Order Payments"
       },
       {
@@ -1176,6 +1320,7 @@ export const generatedModules = [
         "name": "sales_orders_get_history",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/sales_orders/{id}/history",
+        "safetyLevel": "read",
         "title": "Get History Transaction"
       },
       {
@@ -1183,6 +1328,7 @@ export const generatedModules = [
         "name": "sales_orders_post_authorization_path_api_v1_sales_orders_batch_create",
         "operationName": "post_authorization_path_api_v1_sales_orders_batch_create",
         "path": "/public/jurnal/api/v1/sales_orders/batch_create",
+        "safetyLevel": "mutation",
         "title": "Add Many Sales Orders"
       },
       {
@@ -1190,6 +1336,7 @@ export const generatedModules = [
         "name": "sales_orders_post_authorization_path_api_v1_sales_orders_id_convert_to_invoice",
         "operationName": "post_authorization_path_api_v1_sales_orders_id_convert_to_invoice",
         "path": "/public/jurnal/api/v1/sales_orders/{id}/convert_to_invoice",
+        "safetyLevel": "mutation",
         "title": "Convert to Sales Invoice"
       },
       {
@@ -1197,6 +1344,7 @@ export const generatedModules = [
         "name": "sales_orders_post_authorization_path_api_v1_sales_orders_id_convert_to_delivery",
         "operationName": "post_authorization_path_api_v1_sales_orders_id_convert_to_delivery",
         "path": "/public/jurnal/api/v1/sales_orders/{id}/convert_to_delivery",
+        "safetyLevel": "mutation",
         "title": "Convert to Sales Delivery"
       }
     ]
@@ -1210,6 +1358,7 @@ export const generatedModules = [
         "name": "bank_deposits_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/bank_deposits",
+        "safetyLevel": "read",
         "title": "Get List of Bank Deposits"
       },
       {
@@ -1217,6 +1366,7 @@ export const generatedModules = [
         "name": "bank_deposits_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/bank_deposits",
+        "safetyLevel": "mutation",
         "title": "Add a Bank Deposit"
       },
       {
@@ -1224,6 +1374,7 @@ export const generatedModules = [
         "name": "bank_deposits_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/bank_deposits/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Bank Deposit"
       },
       {
@@ -1231,6 +1382,7 @@ export const generatedModules = [
         "name": "bank_deposits_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/bank_deposits/{id}",
+        "safetyLevel": "read",
         "title": "Get a Bank Deposit"
       },
       {
@@ -1238,6 +1390,7 @@ export const generatedModules = [
         "name": "bank_deposits_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/bank_deposits/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Bank Deposit"
       },
       {
@@ -1245,6 +1398,7 @@ export const generatedModules = [
         "name": "bank_deposits_post_authorization_path_api_v1_bank_deposits_batch_create",
         "operationName": "post_authorization_path_api_v1_bank_deposits_batch_create",
         "path": "/public/jurnal/api/v1/bank_deposits/batch_create",
+        "safetyLevel": "mutation",
         "title": "Add Many Bank Deposits"
       }
     ]
@@ -1258,6 +1412,7 @@ export const generatedModules = [
         "name": "purchase_payments_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/purchase_payments",
+        "safetyLevel": "read",
         "title": "Get List of Purchase Payment"
       },
       {
@@ -1265,6 +1420,7 @@ export const generatedModules = [
         "name": "purchase_payments_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/purchase_payments",
+        "safetyLevel": "mutation",
         "title": "Create a Purchase Payment"
       },
       {
@@ -1272,6 +1428,7 @@ export const generatedModules = [
         "name": "purchase_payments_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/purchase_payments/{id}",
+        "safetyLevel": "read",
         "title": "Get a Purchase Payment"
       },
       {
@@ -1279,6 +1436,7 @@ export const generatedModules = [
         "name": "purchase_payments_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/purchase_payments/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Purchase Payment"
       },
       {
@@ -1286,6 +1444,7 @@ export const generatedModules = [
         "name": "purchase_payments_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/purchase_payments/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Purchase Payment"
       },
       {
@@ -1293,6 +1452,7 @@ export const generatedModules = [
         "name": "purchase_payments_post_authorization_path_api_v1_purchase_payments_batch_create",
         "operationName": "post_authorization_path_api_v1_purchase_payments_batch_create",
         "path": "/public/jurnal/api/v1/purchase_payments/batch_create",
+        "safetyLevel": "mutation",
         "title": "Add Many Purchase Payments"
       }
     ]
@@ -1306,6 +1466,7 @@ export const generatedModules = [
         "name": "journal_entries_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/journal_entries",
+        "safetyLevel": "read",
         "title": "Get List of Journal Entries"
       },
       {
@@ -1313,6 +1474,7 @@ export const generatedModules = [
         "name": "journal_entries_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/journal_entries",
+        "safetyLevel": "mutation",
         "title": "Add a Journal Entry"
       },
       {
@@ -1320,6 +1482,7 @@ export const generatedModules = [
         "name": "journal_entries_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/journal_entries/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Journal Entry"
       },
       {
@@ -1327,6 +1490,7 @@ export const generatedModules = [
         "name": "journal_entries_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/journal_entries/{id}",
+        "safetyLevel": "read",
         "title": "Get a Journal Entry"
       },
       {
@@ -1334,6 +1498,7 @@ export const generatedModules = [
         "name": "journal_entries_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/journal_entries/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Journal Entry"
       },
       {
@@ -1341,6 +1506,7 @@ export const generatedModules = [
         "name": "journal_entries_post_authorization_path_api_v1_journal_entries_batch_create",
         "operationName": "post_authorization_path_api_v1_journal_entries_batch_create",
         "path": "/public/jurnal/api/v1/journal_entries/batch_create",
+        "safetyLevel": "mutation",
         "title": "Add Many Journal Entries"
       }
     ]
@@ -1354,6 +1520,7 @@ export const generatedModules = [
         "name": "accounts_get_account",
         "operationName": "get_account",
         "path": "/public/jurnal/api/v1/select2_resources/get_account",
+        "safetyLevel": "read",
         "title": "Account Resource"
       },
       {
@@ -1361,6 +1528,7 @@ export const generatedModules = [
         "name": "accounts_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/accounts/{id}",
+        "safetyLevel": "read",
         "title": "Get an Account"
       },
       {
@@ -1368,6 +1536,7 @@ export const generatedModules = [
         "name": "accounts_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/accounts/{id}",
+        "safetyLevel": "mutation",
         "title": "Update an Account"
       },
       {
@@ -1375,6 +1544,7 @@ export const generatedModules = [
         "name": "accounts_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/accounts/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete an Account"
       },
       {
@@ -1382,6 +1552,7 @@ export const generatedModules = [
         "name": "accounts_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/accounts/export",
+        "safetyLevel": "read",
         "title": "Export Accounts"
       },
       {
@@ -1389,6 +1560,7 @@ export const generatedModules = [
         "name": "accounts_get_bank_statements",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/accounts/{account_id}/bank_statements",
+        "safetyLevel": "read",
         "title": "Get History of Bank Statements"
       },
       {
@@ -1396,6 +1568,7 @@ export const generatedModules = [
         "name": "accounts_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/accounts",
+        "safetyLevel": "read",
         "title": "Get List of Accounts"
       },
       {
@@ -1403,6 +1576,7 @@ export const generatedModules = [
         "name": "accounts_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/accounts",
+        "safetyLevel": "mutation",
         "title": "Add an Account"
       }
     ]
@@ -1416,6 +1590,7 @@ export const generatedModules = [
         "name": "purchase_orders_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/purchase_orders",
+        "safetyLevel": "read",
         "title": "Get List of Purchase Orders"
       },
       {
@@ -1423,6 +1598,7 @@ export const generatedModules = [
         "name": "purchase_orders_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/purchase_orders",
+        "safetyLevel": "mutation",
         "title": "Add a Purchase Order"
       },
       {
@@ -1430,6 +1606,7 @@ export const generatedModules = [
         "name": "purchase_orders_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/purchase_orders/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Purchase Order"
       },
       {
@@ -1437,6 +1614,7 @@ export const generatedModules = [
         "name": "purchase_orders_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/purchase_orders/{id}",
+        "safetyLevel": "read",
         "title": "Get a Purchase Order"
       },
       {
@@ -1444,6 +1622,7 @@ export const generatedModules = [
         "name": "purchase_orders_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/purchase_orders/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Purchase Orders"
       },
       {
@@ -1451,6 +1630,7 @@ export const generatedModules = [
         "name": "purchase_orders_get_invoices_history",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/purchase_orders/{id}/invoices_history",
+        "safetyLevel": "read",
         "title": "Get Invoices History List"
       },
       {
@@ -1458,6 +1638,7 @@ export const generatedModules = [
         "name": "purchase_orders_get_purchase_order_payments",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/purchase_orders/{id}/purchase_order_payments",
+        "safetyLevel": "read",
         "title": "Get Purchase Order Payments"
       },
       {
@@ -1465,6 +1646,7 @@ export const generatedModules = [
         "name": "purchase_orders_get_history",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/purchase_orders/{id}/history",
+        "safetyLevel": "read",
         "title": "Get History Transation"
       },
       {
@@ -1472,6 +1654,7 @@ export const generatedModules = [
         "name": "purchase_orders_post_authorization_path_api_v1_purchase_orders_batch_create",
         "operationName": "post_authorization_path_api_v1_purchase_orders_batch_create",
         "path": "/public/jurnal/api/v1/purchase_orders/batch_create",
+        "safetyLevel": "mutation",
         "title": "Add Many Purchase Orders"
       },
       {
@@ -1479,6 +1662,7 @@ export const generatedModules = [
         "name": "purchase_orders_post_authorization_path_api_v1_purchase_orders_id_convert_to_invoice",
         "operationName": "post_authorization_path_api_v1_purchase_orders_id_convert_to_invoice",
         "path": "/public/jurnal/api/v1/purchase_orders/{id}/convert_to_invoice",
+        "safetyLevel": "mutation",
         "title": "Convert to Purchase Invoice"
       },
       {
@@ -1486,6 +1670,7 @@ export const generatedModules = [
         "name": "purchase_orders_post_authorization_path_api_v1_purchase_orders_id_convert_to_delivery",
         "operationName": "post_authorization_path_api_v1_purchase_orders_id_convert_to_delivery",
         "path": "/public/jurnal/api/v1/purchase_orders/{id}/convert_to_delivery",
+        "safetyLevel": "mutation",
         "title": "Convert to Purchase Delivery"
       }
     ]
@@ -1499,6 +1684,7 @@ export const generatedModules = [
         "name": "convert_products_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/convert_products/{id}",
+        "safetyLevel": "read",
         "title": "Get a Convert Product"
       },
       {
@@ -1506,6 +1692,7 @@ export const generatedModules = [
         "name": "convert_products_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/convert_products/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Convert Product"
       },
       {
@@ -1513,6 +1700,7 @@ export const generatedModules = [
         "name": "convert_products_convert_products",
         "operationName": "convert_products",
         "path": "/public/jurnal/api/v1/convert_products",
+        "safetyLevel": "mutation",
         "title": "Add a Convert Product"
       },
       {
@@ -1520,6 +1708,7 @@ export const generatedModules = [
         "name": "convert_products_put_authorization_path_api_v1_convert_products_approve",
         "operationName": "put_authorization_path_api_v1_convert_products_approve",
         "path": "/public/jurnal/api/v1/convert_product_approval/{id}/approve_rule_based",
+        "safetyLevel": "mutation",
         "title": "Approve Convert Product"
       },
       {
@@ -1527,6 +1716,7 @@ export const generatedModules = [
         "name": "convert_products_get_comments",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/convert_products/{transaction_id}/comments",
+        "safetyLevel": "read",
         "title": "Comment Convert Product"
       },
       {
@@ -1534,6 +1724,7 @@ export const generatedModules = [
         "name": "convert_products_post_authorization_path_api_v1_convert_product_comment",
         "operationName": "post_authorization_path_api_v1_convert_product_comment",
         "path": "/public/jurnal/api/v1/convert_products/{transaction_id}/comments",
+        "safetyLevel": "mutation",
         "title": "Create Comment Stock Adjustment"
       }
     ]
@@ -1547,6 +1738,7 @@ export const generatedModules = [
         "name": "vendors_create",
         "operationName": "create",
         "path": "/public/jurnal/api/v1/vendors",
+        "safetyLevel": "mutation",
         "title": "Add a Vendor"
       },
       {
@@ -1554,6 +1746,7 @@ export const generatedModules = [
         "name": "vendors_vendors",
         "operationName": "vendors",
         "path": "/public/jurnal/api/v1/vendors",
+        "safetyLevel": "read",
         "title": "Get List of Vendors"
       },
       {
@@ -1561,6 +1754,7 @@ export const generatedModules = [
         "name": "vendors_update",
         "operationName": "update",
         "path": "/public/jurnal/api/v1/vendors/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Vendor"
       },
       {
@@ -1568,6 +1762,7 @@ export const generatedModules = [
         "name": "vendors_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/vendors/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Vendor"
       },
       {
@@ -1575,6 +1770,7 @@ export const generatedModules = [
         "name": "vendors_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/vendors/{id}",
+        "safetyLevel": "read",
         "title": "Get a Vendor"
       },
       {
@@ -1582,6 +1778,7 @@ export const generatedModules = [
         "name": "vendors_new",
         "operationName": "new",
         "path": "/public/jurnal/api/v1/vendors/new",
+        "safetyLevel": "read",
         "title": "Get Default Input for Vendor"
       },
       {
@@ -1589,6 +1786,7 @@ export const generatedModules = [
         "name": "vendors_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/vendors/export",
+        "safetyLevel": "read",
         "title": "Export vendors"
       },
       {
@@ -1596,6 +1794,7 @@ export const generatedModules = [
         "name": "vendors_post_authorization_path_api_v1_vendors_batch_create",
         "operationName": "post_authorization_path_api_v1_vendors_batch_create",
         "path": "/public/jurnal/api/v1/vendors/batch_create",
+        "safetyLevel": "mutation",
         "title": "Add Many Vendors"
       }
     ]
@@ -1609,6 +1808,7 @@ export const generatedModules = [
         "name": "asset_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/asset_managements/{id}",
+        "safetyLevel": "read",
         "title": "Get an Asset Detail"
       },
       {
@@ -1616,6 +1816,7 @@ export const generatedModules = [
         "name": "asset_patch_authorization_path_api_v1_asset_managements_id",
         "operationName": "patch_authorization_path_api_v1_asset_managements_id",
         "path": "/public/jurnal/api/v1/asset_managements/{id}",
+        "safetyLevel": "mutation",
         "title": "Update an Asset"
       },
       {
@@ -1623,6 +1824,7 @@ export const generatedModules = [
         "name": "asset_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/asset_managements/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete an Asset"
       },
       {
@@ -1630,6 +1832,7 @@ export const generatedModules = [
         "name": "asset_post_authorization_path_api_v1_asset_managements",
         "operationName": "post_authorization_path_api_v1_asset_managements",
         "path": "/public/jurnal/api/v1/asset_managements",
+        "safetyLevel": "mutation",
         "title": "Create an Asset"
       },
       {
@@ -1637,6 +1840,7 @@ export const generatedModules = [
         "name": "asset_asset_managements",
         "operationName": "asset_managements",
         "path": "/public/jurnal/api/v1/asset_managements",
+        "safetyLevel": "read",
         "title": "Get Active Assets"
       },
       {
@@ -1644,6 +1848,7 @@ export const generatedModules = [
         "name": "asset_depreciation_schedules",
         "operationName": "depreciation_schedules",
         "path": "/public/jurnal/api/v1/asset_managements/depreciation_schedules",
+        "safetyLevel": "read",
         "title": "Get Depreciation Asset Schedules"
       },
       {
@@ -1651,6 +1856,7 @@ export const generatedModules = [
         "name": "asset_post_authorization_path_api_v1_asset_managements_create_dispose_id",
         "operationName": "post_authorization_path_api_v1_asset_managements_create_dispose_id",
         "path": "/public/jurnal/api/v1/asset_managements/create_dispose/{id}",
+        "safetyLevel": "mutation",
         "title": "Dispose an Asset"
       },
       {
@@ -1658,6 +1864,7 @@ export const generatedModules = [
         "name": "asset_post_authorization_path_api_v1_asset_managements_depreciate_id",
         "operationName": "post_authorization_path_api_v1_asset_managements_depreciate_id",
         "path": "/public/jurnal/api/v1/asset_managements/depreciate/{id}",
+        "safetyLevel": "mutation",
         "title": "Depreciate an Asset"
       },
       {
@@ -1665,6 +1872,7 @@ export const generatedModules = [
         "name": "asset_post_authorization_path_api_v1_asset_managements_revert_id",
         "operationName": "post_authorization_path_api_v1_asset_managements_revert_id",
         "path": "/public/jurnal/api/v1/asset_managements/revert/{id}",
+        "safetyLevel": "mutation",
         "title": "Revert a Disposed Asset"
       },
       {
@@ -1672,6 +1880,7 @@ export const generatedModules = [
         "name": "asset_post_authorization_path_api_v1_asset_managements_revert_depreciation_id",
         "operationName": "post_authorization_path_api_v1_asset_managements_revert_depreciation_id",
         "path": "/public/jurnal/api/v1/asset_managements/revert_depreciation/{id}",
+        "safetyLevel": "mutation",
         "title": "Revert a Depreciation"
       }
     ]
@@ -1685,6 +1894,7 @@ export const generatedModules = [
         "name": "contacts_get_api_v1_contact_groups",
         "operationName": "get_api_v1_contact_groups",
         "path": "/public/jurnal/api/v1/contact_groups",
+        "safetyLevel": "read",
         "title": "Get Contact Groups"
       },
       {
@@ -1692,6 +1902,7 @@ export const generatedModules = [
         "name": "contacts_post_api_v1_contact_groups",
         "operationName": "post_api_v1_contact_groups",
         "path": "/public/jurnal/api/v1/contact_groups",
+        "safetyLevel": "mutation",
         "title": "Create Contact Group"
       },
       {
@@ -1699,6 +1910,7 @@ export const generatedModules = [
         "name": "contacts_get_api_v1_table_column_settings",
         "operationName": "get_api_v1_table_column_settings",
         "path": "/public/jurnal/api/v1/table_column_settings",
+        "safetyLevel": "read",
         "title": "Get Contact's Table Colum Setting"
       },
       {
@@ -1706,6 +1918,7 @@ export const generatedModules = [
         "name": "contacts_post_api_v1_table_column_settings",
         "operationName": "post_api_v1_table_column_settings",
         "path": "/public/jurnal/api/v1/table_column_settings",
+        "safetyLevel": "mutation",
         "title": "Update Column Setting of Contact's Table"
       },
       {
@@ -1713,6 +1926,7 @@ export const generatedModules = [
         "name": "contacts_get_api_v1_contact_groups_new",
         "operationName": "get_api_v1_contact_groups_new",
         "path": "/public/jurnal/api/v1/contact_groups/new",
+        "safetyLevel": "read",
         "title": "Get Create Contact Group Contact"
       },
       {
@@ -1720,6 +1934,7 @@ export const generatedModules = [
         "name": "contacts_get_api_v1_contacts_new",
         "operationName": "get_api_v1_contacts_new",
         "path": "/public/jurnal/api/v1/contacts/new",
+        "safetyLevel": "read",
         "title": "Get Create Contact Contract"
       },
       {
@@ -1727,6 +1942,7 @@ export const generatedModules = [
         "name": "contacts_post_api_v1_contacts_contact_id_activate",
         "operationName": "post_api_v1_contacts_contact_id_activate",
         "path": "/public/jurnal/api/v1/contacts/{contact_id}/activate",
+        "safetyLevel": "mutation",
         "title": "Unarchive Contact"
       },
       {
@@ -1734,6 +1950,7 @@ export const generatedModules = [
         "name": "contacts_post_api_v1_contacts_contact_id_deactivate",
         "operationName": "post_api_v1_contacts_contact_id_deactivate",
         "path": "/public/jurnal/api/v1/contacts/{contact_id}/deactivate",
+        "safetyLevel": "destructive",
         "title": "Archive Contact"
       },
       {
@@ -1741,6 +1958,7 @@ export const generatedModules = [
         "name": "contacts_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/contact_groups/{group_id}",
+        "safetyLevel": "destructive",
         "title": "Delete Contact Group"
       },
       {
@@ -1748,6 +1966,7 @@ export const generatedModules = [
         "name": "contacts_patch_api_v1_contact_groups_group_id",
         "operationName": "patch_api_v1_contact_groups_group_id",
         "path": "/public/jurnal/api/v1/contact_groups/{group_id}",
+        "safetyLevel": "mutation",
         "title": "Update Contact Group"
       },
       {
@@ -1755,6 +1974,7 @@ export const generatedModules = [
         "name": "contacts_post_api_v1_contacts",
         "operationName": "post_api_v1_contacts",
         "path": "/public/jurnal/api/v1/contacts",
+        "safetyLevel": "mutation",
         "title": "Create Contact"
       },
       {
@@ -1762,6 +1982,7 @@ export const generatedModules = [
         "name": "contacts_get_api_v1_contacts",
         "operationName": "get_api_v1_contacts",
         "path": "/public/jurnal/api/v1/contacts",
+        "safetyLevel": "read",
         "title": "Get Contacts"
       },
       {
@@ -1769,6 +1990,7 @@ export const generatedModules = [
         "name": "contacts_get_api_v1_contacts_summary",
         "operationName": "get_api_v1_contacts_summary",
         "path": "/public/jurnal/api/v1/contacts/summary",
+        "safetyLevel": "read",
         "title": "Get Contact Index Summary"
       },
       {
@@ -1776,6 +1998,7 @@ export const generatedModules = [
         "name": "contacts_post_api_v1_contacts_merge_contacts",
         "operationName": "post_api_v1_contacts_merge_contacts",
         "path": "/public/jurnal/api/v1/contacts/merge_contacts",
+        "safetyLevel": "mutation",
         "title": "Merge Two Contacts"
       },
       {
@@ -1783,6 +2006,7 @@ export const generatedModules = [
         "name": "contacts_post_api_v1_contacts_add_to_groups",
         "operationName": "post_api_v1_contacts_add_to_groups",
         "path": "/public/jurnal/api/v1/contacts/add_to_groups",
+        "safetyLevel": "mutation",
         "title": "Add Contacts to Group"
       },
       {
@@ -1790,6 +2014,7 @@ export const generatedModules = [
         "name": "contacts_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/contacts/{id}",
+        "safetyLevel": "read",
         "title": "Get Contact Profile"
       },
       {
@@ -1797,6 +2022,7 @@ export const generatedModules = [
         "name": "contacts_delete_2",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/contacts/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete Contact"
       },
       {
@@ -1804,6 +2030,7 @@ export const generatedModules = [
         "name": "contacts_patch_api_v1_contacts_contact_id",
         "operationName": "patch_api_v1_contacts_contact_id",
         "path": "/public/jurnal/api/v1/contacts/{id}",
+        "safetyLevel": "mutation",
         "title": "Update Contact"
       }
     ]
@@ -1817,6 +2044,7 @@ export const generatedModules = [
         "name": "bank_partners_get_api_v1_bank_partner",
         "operationName": "get_api_v1_bank_partner",
         "path": "/public/jurnal/api/v1/bank_partner",
+        "safetyLevel": "read",
         "title": "Get Bank Partners"
       }
     ]
@@ -1830,6 +2058,7 @@ export const generatedModules = [
         "name": "conversion_balance_post_api_v1_conversion_balances",
         "operationName": "post_api_v1_conversion_balances",
         "path": "/public/jurnal/api/v1/conversion_balances",
+        "safetyLevel": "mutation",
         "title": "Create Conversion Balance"
       }
     ]
@@ -1843,6 +2072,7 @@ export const generatedModules = [
         "name": "currency_lists_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/currency_lists/{id}",
+        "safetyLevel": "read",
         "title": "Get Currency lists"
       },
       {
@@ -1850,6 +2080,7 @@ export const generatedModules = [
         "name": "currency_lists_patch_currency_lists",
         "operationName": "patch_currency_lists",
         "path": "/public/jurnal/api/v1/currency_lists/{id}",
+        "safetyLevel": "mutation",
         "title": "Update Currency lists"
       },
       {
@@ -1857,6 +2088,7 @@ export const generatedModules = [
         "name": "currency_lists_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/currency_lists/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete Currency lists"
       },
       {
@@ -1864,6 +2096,7 @@ export const generatedModules = [
         "name": "currency_lists_list_currency_lists",
         "operationName": "list_currency_lists",
         "path": "/public/jurnal/api/v1/currency_lists",
+        "safetyLevel": "read",
         "title": "List Currency lists"
       },
       {
@@ -1871,6 +2104,7 @@ export const generatedModules = [
         "name": "currency_lists_post_currency_lists",
         "operationName": "post_currency_lists",
         "path": "/public/jurnal/api/v1/currency_lists",
+        "safetyLevel": "mutation",
         "title": "Create Currency lists"
       }
     ]
@@ -1884,6 +2118,7 @@ export const generatedModules = [
         "name": "currency_rate_get_api_v1_currency_rates",
         "operationName": "get_api_v1_currency_rates",
         "path": "/public/jurnal/api/v1/currency_rates",
+        "safetyLevel": "read",
         "title": "GET Currency Rate Index"
       }
     ]
@@ -1897,6 +2132,7 @@ export const generatedModules = [
         "name": "features_list_en",
         "operationName": "en",
         "path": "/public/jurnal/api/v1/features/en",
+        "safetyLevel": "read",
         "title": "Get Features List (English)"
       },
       {
@@ -1904,6 +2140,7 @@ export const generatedModules = [
         "name": "features_list_id",
         "operationName": "id",
         "path": "/public/jurnal/api/v1/features/id",
+        "safetyLevel": "read",
         "title": "Get Features List (Bahasa)"
       }
     ]
@@ -1917,6 +2154,7 @@ export const generatedModules = [
         "name": "payment_method_payment_methods",
         "operationName": "payment_methods",
         "path": "/public/jurnal/api/v1/payment_methods",
+        "safetyLevel": "read",
         "title": "Get List of Payment Methods"
       },
       {
@@ -1924,6 +2162,7 @@ export const generatedModules = [
         "name": "payment_method_post_authorization_path_api_v1_payment_methods",
         "operationName": "post_authorization_path_api_v1_payment_methods",
         "path": "/public/jurnal/api/v1/payment_methods",
+        "safetyLevel": "mutation",
         "title": "Add a Payment Method"
       },
       {
@@ -1931,6 +2170,7 @@ export const generatedModules = [
         "name": "payment_method_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/payment_methods/{id}",
+        "safetyLevel": "read",
         "title": "Get a Payment Method"
       },
       {
@@ -1938,6 +2178,7 @@ export const generatedModules = [
         "name": "payment_method_patch_authorization_path_api_v1_payment_methods_id",
         "operationName": "patch_authorization_path_api_v1_payment_methods_id",
         "path": "/public/jurnal/api/v1/payment_methods/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Payment Method"
       },
       {
@@ -1945,6 +2186,7 @@ export const generatedModules = [
         "name": "payment_method_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/payment_methods/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Payment Method"
       }
     ]
@@ -1958,6 +2200,7 @@ export const generatedModules = [
         "name": "product_categories_post_authorization_path_api_v1_product_categories",
         "operationName": "post_authorization_path_api_v1_product_categories",
         "path": "/public/jurnal/api/v1/product_categories",
+        "safetyLevel": "mutation",
         "title": "Add a Product Category"
       },
       {
@@ -1965,6 +2208,7 @@ export const generatedModules = [
         "name": "product_categories_product_categories",
         "operationName": "product_categories",
         "path": "/public/jurnal/api/v1/product_categories",
+        "safetyLevel": "read",
         "title": "Get List of Product Categories"
       },
       {
@@ -1972,6 +2216,7 @@ export const generatedModules = [
         "name": "product_categories_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/product_categories/{id}",
+        "safetyLevel": "read",
         "title": "Get a Product Category"
       },
       {
@@ -1979,6 +2224,7 @@ export const generatedModules = [
         "name": "product_categories_patch_authorization_path_api_v1_product_categories_id",
         "operationName": "patch_authorization_path_api_v1_product_categories_id",
         "path": "/public/jurnal/api/v1/product_categories/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Product Category"
       },
       {
@@ -1986,6 +2232,7 @@ export const generatedModules = [
         "name": "product_categories_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/product_categories/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Product Category"
       }
     ]
@@ -1999,6 +2246,7 @@ export const generatedModules = [
         "name": "product_unit_product_units",
         "operationName": "product_units",
         "path": "/public/jurnal/api/v1/product_units",
+        "safetyLevel": "read",
         "title": "Get List of Product Unit"
       },
       {
@@ -2006,6 +2254,7 @@ export const generatedModules = [
         "name": "product_unit_post_authorization_path_api_v1_product_units",
         "operationName": "post_authorization_path_api_v1_product_units",
         "path": "/public/jurnal/api/v1/product_units",
+        "safetyLevel": "mutation",
         "title": "Create a Product Unit"
       },
       {
@@ -2013,6 +2262,7 @@ export const generatedModules = [
         "name": "product_unit_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/product_units/{id}",
+        "safetyLevel": "read",
         "title": "Get Selected Product Unit"
       },
       {
@@ -2020,6 +2270,7 @@ export const generatedModules = [
         "name": "product_unit_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/product_units/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Product Unit"
       }
     ]
@@ -2033,6 +2284,7 @@ export const generatedModules = [
         "name": "user_users",
         "operationName": "users",
         "path": "/public/jurnal/api/v1/users",
+        "safetyLevel": "read",
         "title": "Get List of Users"
       },
       {
@@ -2040,6 +2292,7 @@ export const generatedModules = [
         "name": "user_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/users/{id}",
+        "safetyLevel": "read",
         "title": "Get a User"
       },
       {
@@ -2047,6 +2300,7 @@ export const generatedModules = [
         "name": "user_patch_authorization_path_api_v1_users_id",
         "operationName": "patch_authorization_path_api_v1_users_id",
         "path": "/public/jurnal/api/v1/users/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a User"
       },
       {
@@ -2054,6 +2308,7 @@ export const generatedModules = [
         "name": "user_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/users/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a user"
       },
       {
@@ -2061,6 +2316,7 @@ export const generatedModules = [
         "name": "user_me",
         "operationName": "me",
         "path": "/public/jurnal/api/v1/users/me",
+        "safetyLevel": "read",
         "title": "Get Current User"
       }
     ]
@@ -2074,6 +2330,7 @@ export const generatedModules = [
         "name": "user_account_profile",
         "operationName": "profile",
         "path": "/public/jurnal/api/v1/user_account/profile",
+        "safetyLevel": "read",
         "title": "Get User Account Profile"
       }
     ]
@@ -2087,6 +2344,7 @@ export const generatedModules = [
         "name": "warehouse_warehouses",
         "operationName": "warehouses",
         "path": "/public/jurnal/api/v1/warehouses",
+        "safetyLevel": "read",
         "title": "Get List of Warehouses"
       },
       {
@@ -2094,6 +2352,7 @@ export const generatedModules = [
         "name": "warehouse_post_authorization_path_api_v1_warehouses",
         "operationName": "post_authorization_path_api_v1_warehouses",
         "path": "/public/jurnal/api/v1/warehouses",
+        "safetyLevel": "mutation",
         "title": "Add a Warehouse"
       },
       {
@@ -2101,6 +2360,7 @@ export const generatedModules = [
         "name": "warehouse_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/warehouses/{id}",
+        "safetyLevel": "read",
         "title": "Get a Warehouse"
       },
       {
@@ -2108,6 +2368,7 @@ export const generatedModules = [
         "name": "warehouse_patch_authorization_path_api_v1_warehouses_id",
         "operationName": "patch_authorization_path_api_v1_warehouses_id",
         "path": "/public/jurnal/api/v1/warehouses/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Warehouse"
       },
       {
@@ -2115,6 +2376,7 @@ export const generatedModules = [
         "name": "warehouse_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/warehouses/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Warehouse"
       }
     ]
@@ -2128,6 +2390,7 @@ export const generatedModules = [
         "name": "purchase_delivery_purchase_deliveries",
         "operationName": "purchase_deliveries",
         "path": "/public/jurnal/api/v1/purchase_deliveries",
+        "safetyLevel": "read",
         "title": "Get List of Purchase Deliveries"
       },
       {
@@ -2135,6 +2398,7 @@ export const generatedModules = [
         "name": "purchase_delivery_post_authorization_path_api_v1_purchase_deliveries",
         "operationName": "post_authorization_path_api_v1_purchase_deliveries",
         "path": "/public/jurnal/api/v1/purchase_deliveries",
+        "safetyLevel": "mutation",
         "title": "Add a Purchase Delivery"
       },
       {
@@ -2142,6 +2406,7 @@ export const generatedModules = [
         "name": "purchase_delivery_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/purchase_deliveries/{id}",
+        "safetyLevel": "read",
         "title": "Get a Purchase Delivery"
       },
       {
@@ -2149,6 +2414,7 @@ export const generatedModules = [
         "name": "purchase_delivery_patch_authorization_path_api_v1_purchase_deliveries_id_transaction_no_custom_id",
         "operationName": "patch_authorization_path_api_v1_purchase_deliveries_id_transaction_no_custom_id",
         "path": "/public/jurnal/api/v1/purchase_deliveries/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Purchase Delivery"
       },
       {
@@ -2156,6 +2422,7 @@ export const generatedModules = [
         "name": "purchase_delivery_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/purchase_deliveries/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Purchase Delivery"
       },
       {
@@ -2163,6 +2430,7 @@ export const generatedModules = [
         "name": "purchase_delivery_post_authorization_path_api_v1_purchase_deliveries_id_convert_to_invoice",
         "operationName": "post_authorization_path_api_v1_purchase_deliveries_id_convert_to_invoice",
         "path": "/public/jurnal/api/v1/purchase_deliveries/{id}/convert_to_invoice",
+        "safetyLevel": "mutation",
         "title": "Convert to Purchase Invoice"
       },
       {
@@ -2170,6 +2438,7 @@ export const generatedModules = [
         "name": "purchase_delivery_purchase_delivery_reports",
         "operationName": "purchase_delivery_reports",
         "path": "/public/jurnal/api/v1/purchase_delivery_reports",
+        "safetyLevel": "read",
         "title": "Get Purchases By Product Report"
       },
       {
@@ -2177,6 +2446,7 @@ export const generatedModules = [
         "name": "purchase_delivery_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/purchase_delivery_reports/export",
+        "safetyLevel": "read",
         "title": "Export Purchases By Product Report"
       }
     ]
@@ -2190,6 +2460,7 @@ export const generatedModules = [
         "name": "purchase_order_payment_purchase_order_payments",
         "operationName": "purchase_order_payments",
         "path": "/public/jurnal/api/v1/purchase_order_payments",
+        "safetyLevel": "read",
         "title": "Get List of Purchase Order Payment"
       },
       {
@@ -2197,6 +2468,7 @@ export const generatedModules = [
         "name": "purchase_order_payment_post_authorization_path_api_v1_purchase_order_payments",
         "operationName": "post_authorization_path_api_v1_purchase_order_payments",
         "path": "/public/jurnal/api/v1/purchase_order_payments",
+        "safetyLevel": "mutation",
         "title": "Create a Purchase Order Payment"
       },
       {
@@ -2204,6 +2476,7 @@ export const generatedModules = [
         "name": "purchase_order_payment_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/purchase_order_payments/{id}",
+        "safetyLevel": "read",
         "title": "Get a Purchase Order Payment"
       },
       {
@@ -2211,6 +2484,7 @@ export const generatedModules = [
         "name": "purchase_order_payment_patch_authorization_path_api_v1_purchase_order_payments_id_transaction_no_custom_id",
         "operationName": "patch_authorization_path_api_v1_purchase_order_payments_id_transaction_no_custom_id",
         "path": "/public/jurnal/api/v1/purchase_order_payments/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Purchase Order Payment"
       },
       {
@@ -2218,6 +2492,7 @@ export const generatedModules = [
         "name": "purchase_order_payment_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/purchase_order_payments/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Purchase Order Payment"
       },
       {
@@ -2225,6 +2500,7 @@ export const generatedModules = [
         "name": "purchase_order_payment_post_authorization_path_api_v1_purchase_order_payments_batch_create",
         "operationName": "post_authorization_path_api_v1_purchase_order_payments_batch_create",
         "path": "/public/jurnal/api/v1/purchase_order_payments/batch_create",
+        "safetyLevel": "mutation",
         "title": "Add Many Purchase Order Payment"
       }
     ]
@@ -2238,6 +2514,7 @@ export const generatedModules = [
         "name": "purchase_quote_purchase_quotes",
         "operationName": "purchase_quotes",
         "path": "/public/jurnal/api/v1/purchase_quotes",
+        "safetyLevel": "read",
         "title": "Get List of Purchase Quotes"
       },
       {
@@ -2245,6 +2522,7 @@ export const generatedModules = [
         "name": "purchase_quote_post_authorization_path_api_v1_purchase_quotes",
         "operationName": "post_authorization_path_api_v1_purchase_quotes",
         "path": "/public/jurnal/api/v1/purchase_quotes",
+        "safetyLevel": "mutation",
         "title": "Create a Purchase Quote"
       },
       {
@@ -2252,6 +2530,7 @@ export const generatedModules = [
         "name": "purchase_quote_patch_authorization_path_api_v1_purchase_quote_id",
         "operationName": "patch_authorization_path_api_v1_purchase_quote_id",
         "path": "/public/jurnal/api/v1/purchase_quotes/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Purchase Quote"
       },
       {
@@ -2259,6 +2538,7 @@ export const generatedModules = [
         "name": "purchase_quote_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/purchase_quotes/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Purchase Quote"
       },
       {
@@ -2266,6 +2546,7 @@ export const generatedModules = [
         "name": "purchase_quote_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/purchase_quotes/{id}",
+        "safetyLevel": "read",
         "title": "Get a Purchase Quote"
       },
       {
@@ -2273,6 +2554,7 @@ export const generatedModules = [
         "name": "purchase_quote_post_authorization_path_api_v1_purchase_quotes_batch_create",
         "operationName": "post_authorization_path_api_v1_purchase_quotes_batch_create",
         "path": "/public/jurnal/api/v1/purchase_quotes/batch_create",
+        "safetyLevel": "mutation",
         "title": "Add Many Purchase Quotes"
       },
       {
@@ -2280,6 +2562,7 @@ export const generatedModules = [
         "name": "purchase_quote_post_authorization_path_api_v1_purchase_quotes_id_convert_to_order",
         "operationName": "post_authorization_path_api_v1_purchase_quotes_id_convert_to_order",
         "path": "/public/jurnal/api/v1/purchase_quotes/{id}/convert_to_order",
+        "safetyLevel": "mutation",
         "title": "Convert to Purchase Order"
       },
       {
@@ -2287,6 +2570,7 @@ export const generatedModules = [
         "name": "purchase_quote_post_authorization_path_api_v1_purchase_quotes_id_convert_to_invoice",
         "operationName": "post_authorization_path_api_v1_purchase_quotes_id_convert_to_invoice",
         "path": "/public/jurnal/api/v1/purchase_quotes/{id}/convert_to_invoice",
+        "safetyLevel": "mutation",
         "title": "Convert to Purchase Invoice"
       }
     ]
@@ -2300,6 +2584,7 @@ export const generatedModules = [
         "name": "sales_quote_sales_quotes",
         "operationName": "sales_quotes",
         "path": "/public/jurnal/api/v1/sales_quotes",
+        "safetyLevel": "read",
         "title": "Get List of Sales Quotes"
       },
       {
@@ -2307,6 +2592,7 @@ export const generatedModules = [
         "name": "sales_quote_post_authorization_path_api_v1_sales_quotes",
         "operationName": "post_authorization_path_api_v1_sales_quotes",
         "path": "/public/jurnal/api/v1/sales_quotes",
+        "safetyLevel": "mutation",
         "title": "Add a Sales Quote"
       },
       {
@@ -2314,6 +2600,7 @@ export const generatedModules = [
         "name": "sales_quote_post_authorization_path_api_v1_sales_quotes_batch_create",
         "operationName": "post_authorization_path_api_v1_sales_quotes_batch_create",
         "path": "/public/jurnal/api/v1/sales_quotes/batch_create",
+        "safetyLevel": "mutation",
         "title": "Add Many Sales Quotes"
       },
       {
@@ -2321,6 +2608,7 @@ export const generatedModules = [
         "name": "sales_quote_post_authorization_path_api_v1_sales_quotes_id_convert_to_invoice",
         "operationName": "post_authorization_path_api_v1_sales_quotes_id_convert_to_invoice",
         "path": "/public/jurnal/api/v1/sales_quotes/{id}/convert_to_invoice",
+        "safetyLevel": "mutation",
         "title": "Convert to Sales Invoice"
       },
       {
@@ -2328,6 +2616,7 @@ export const generatedModules = [
         "name": "sales_quote_post_authorization_path_api_v1_sales_quotes_id_convert_to_order",
         "operationName": "post_authorization_path_api_v1_sales_quotes_id_convert_to_order",
         "path": "/public/jurnal/api/v1/sales_quotes/{id}/convert_to_order",
+        "safetyLevel": "mutation",
         "title": "Convert to Sales Order"
       },
       {
@@ -2335,6 +2624,7 @@ export const generatedModules = [
         "name": "sales_quote_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/sales_quotes/{id}",
+        "safetyLevel": "read",
         "title": "Get Sales Quote"
       },
       {
@@ -2342,6 +2632,7 @@ export const generatedModules = [
         "name": "sales_quote_patch_authorization_path_api_v1_sales_quotes_id_transaction_no_custom_id",
         "operationName": "patch_authorization_path_api_v1_sales_quotes_id_transaction_no_custom_id",
         "path": "/public/jurnal/api/v1/sales_quotes/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Sales Quote"
       },
       {
@@ -2349,6 +2640,7 @@ export const generatedModules = [
         "name": "sales_quote_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/sales_quotes/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Sales Quote"
       }
     ]
@@ -2362,6 +2654,7 @@ export const generatedModules = [
         "name": "sales_delivery_post_authorization_path_api_v1_sales_deliveries",
         "operationName": "post_authorization_path_api_v1_sales_deliveries",
         "path": "/public/jurnal/api/v1/sales_deliveries",
+        "safetyLevel": "mutation",
         "title": "Add a Sales Delivery"
       },
       {
@@ -2369,6 +2662,7 @@ export const generatedModules = [
         "name": "sales_delivery_sales_deliveries",
         "operationName": "sales_deliveries",
         "path": "/public/jurnal/api/v1/sales_deliveries",
+        "safetyLevel": "read",
         "title": "Get List of Sales Deliveries"
       },
       {
@@ -2376,6 +2670,7 @@ export const generatedModules = [
         "name": "sales_delivery_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/sales_deliveries/{id}",
+        "safetyLevel": "read",
         "title": "Get a Sales Delivery"
       },
       {
@@ -2383,6 +2678,7 @@ export const generatedModules = [
         "name": "sales_delivery_patch_authorization_path_api_v1_sales_deliveries_id_transaction_no_custom_id",
         "operationName": "patch_authorization_path_api_v1_sales_deliveries_id_transaction_no_custom_id",
         "path": "/public/jurnal/api/v1/sales_deliveries/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a  Sales Delivery"
       },
       {
@@ -2390,6 +2686,7 @@ export const generatedModules = [
         "name": "sales_delivery_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/sales_deliveries/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Sales Delivery"
       },
       {
@@ -2397,6 +2694,7 @@ export const generatedModules = [
         "name": "sales_delivery_post_authorization_path_api_v1_sales_deliveries_id_convert_to_invoice",
         "operationName": "post_authorization_path_api_v1_sales_deliveries_id_convert_to_invoice",
         "path": "/public/jurnal/api/v1/sales_deliveries/{id}/convert_to_invoice",
+        "safetyLevel": "mutation",
         "title": "Convert to Sales Invoice"
       },
       {
@@ -2404,6 +2702,7 @@ export const generatedModules = [
         "name": "sales_delivery_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/sales_delivery_reports/export",
+        "safetyLevel": "read",
         "title": "Export Sales Delivery Reports"
       }
     ]
@@ -2417,6 +2716,7 @@ export const generatedModules = [
         "name": "sales_order_payment_sales_order_payments",
         "operationName": "sales_order_payments",
         "path": "/public/jurnal/api/v1/sales_order_payments",
+        "safetyLevel": "read",
         "title": "Get List of Sales Order Payments"
       },
       {
@@ -2424,6 +2724,7 @@ export const generatedModules = [
         "name": "sales_order_payment_post_authorization_path_api_v1_sales_order_payments",
         "operationName": "post_authorization_path_api_v1_sales_order_payments",
         "path": "/public/jurnal/api/v1/sales_order_payments",
+        "safetyLevel": "mutation",
         "title": "Create a Sales Order Payment"
       },
       {
@@ -2431,6 +2732,7 @@ export const generatedModules = [
         "name": "sales_order_payment_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/sales_order_payments/{id}",
+        "safetyLevel": "read",
         "title": "Get a Sales Order Payment"
       },
       {
@@ -2438,6 +2740,7 @@ export const generatedModules = [
         "name": "sales_order_payment_patch_authorization_path_api_v1_sales_order_payments_id_transaction_no_custom_id",
         "operationName": "patch_authorization_path_api_v1_sales_order_payments_id_transaction_no_custom_id",
         "path": "/public/jurnal/api/v1/sales_order_payments/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Sales Order Payment"
       },
       {
@@ -2445,6 +2748,7 @@ export const generatedModules = [
         "name": "sales_order_payment_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/sales_order_payments/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Sales Order Payment"
       },
       {
@@ -2452,6 +2756,7 @@ export const generatedModules = [
         "name": "sales_order_payment_post_authorization_path_api_v1_sales_order_payments_batch_create",
         "operationName": "post_authorization_path_api_v1_sales_order_payments_batch_create",
         "path": "/public/jurnal/api/v1/sales_order_payments/batch_create",
+        "safetyLevel": "mutation",
         "title": "Add Many Sales Order Payments"
       }
     ]
@@ -2465,6 +2770,7 @@ export const generatedModules = [
         "name": "stock_adjustment_stock_adjustments",
         "operationName": "stock_adjustments",
         "path": "/public/jurnal/api/v1/stock_adjustments",
+        "safetyLevel": "read",
         "title": "Get List of Stock Adjustments"
       },
       {
@@ -2472,6 +2778,7 @@ export const generatedModules = [
         "name": "stock_adjustment_post_authorization_path_api_v1_stock_adjustments",
         "operationName": "post_authorization_path_api_v1_stock_adjustments",
         "path": "/public/jurnal/api/v1/stock_adjustments",
+        "safetyLevel": "mutation",
         "title": "Add a Stock Adjustment"
       },
       {
@@ -2479,6 +2786,7 @@ export const generatedModules = [
         "name": "stock_adjustment_approval_list",
         "operationName": "approval_list",
         "path": "/public/jurnal/api/v1/stock_adjustment_approval/approval_list",
+        "safetyLevel": "read",
         "title": "Get List of Stock Adjustment Need Approval"
       },
       {
@@ -2486,6 +2794,7 @@ export const generatedModules = [
         "name": "stock_adjustment_approval_total",
         "operationName": "approval_total",
         "path": "/public/jurnal/api/v1/stock_adjustment_approval/approval_total",
+        "safetyLevel": "read",
         "title": "Get List of Stock Adjustment Total data Need approval"
       },
       {
@@ -2493,6 +2802,7 @@ export const generatedModules = [
         "name": "stock_adjustment_put_authorization_path_api_v1_stock_adjustments_approve",
         "operationName": "put_authorization_path_api_v1_stock_adjustments_approve",
         "path": "/public/jurnal/api/v1/stock_adjustment_approval/{id}/approve_rule_based",
+        "safetyLevel": "mutation",
         "title": "Approve Stock Adjustment"
       },
       {
@@ -2500,6 +2810,7 @@ export const generatedModules = [
         "name": "stock_adjustment_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/stock_adjustments/{transaction_id}/comments",
+        "safetyLevel": "read",
         "title": "Comment Stock Adjustment"
       },
       {
@@ -2507,6 +2818,7 @@ export const generatedModules = [
         "name": "stock_adjustment_post_authorization_path_api_v1_stock_adjustment_comment",
         "operationName": "post_authorization_path_api_v1_stock_adjustment_comment",
         "path": "/public/jurnal/api/v1/stock_adjustments/{transaction_id}/comments",
+        "safetyLevel": "mutation",
         "title": "Create Comment Stock Adjustment"
       },
       {
@@ -2514,6 +2826,7 @@ export const generatedModules = [
         "name": "stock_adjustment_new",
         "operationName": "new",
         "path": "/public/jurnal/api/v1/stock_adjustments/new",
+        "safetyLevel": "read",
         "title": "Get List of New Stock Adjustment Line Products"
       },
       {
@@ -2521,6 +2834,7 @@ export const generatedModules = [
         "name": "stock_adjustment_check_existing_stock_adjustments",
         "operationName": "check_existing_stock_adjustments",
         "path": "/public/jurnal/api/v1/stock_adjustments/check_existing_stock_adjustments",
+        "safetyLevel": "read",
         "title": "Get existing stock adjustment by date"
       },
       {
@@ -2528,6 +2842,7 @@ export const generatedModules = [
         "name": "stock_adjustment_get_2",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/stock_adjustments/{id}",
+        "safetyLevel": "read",
         "title": "Get a Stock Adjustment"
       },
       {
@@ -2535,6 +2850,7 @@ export const generatedModules = [
         "name": "stock_adjustment_patch_authorization_path_api_v1_stock_adjustments_id",
         "operationName": "patch_authorization_path_api_v1_stock_adjustments_id",
         "path": "/public/jurnal/api/v1/stock_adjustments/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a Stock Adjustment"
       },
       {
@@ -2542,6 +2858,7 @@ export const generatedModules = [
         "name": "stock_adjustment_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/stock_adjustments/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Stock Adjustment"
       }
     ]
@@ -2555,6 +2872,7 @@ export const generatedModules = [
         "name": "transaction_pdf_post_authorization_path_api_v1_transaction_pdfs_send_email",
         "operationName": "post_authorization_path_api_v1_transaction_pdfs_send_email",
         "path": "/public/jurnal/api/v1/transaction_pdfs/send_email",
+        "safetyLevel": "mutation",
         "title": "Email Transaction PDF"
       },
       {
@@ -2562,6 +2880,7 @@ export const generatedModules = [
         "name": "transaction_pdf_post_authorization_path_api_v1_transaction_pdfs_export",
         "operationName": "post_authorization_path_api_v1_transaction_pdfs_export",
         "path": "/public/jurnal/api/v1/transaction_pdfs/export",
+        "safetyLevel": "mutation",
         "title": "Export to PDF"
       }
     ]
@@ -2575,6 +2894,7 @@ export const generatedModules = [
         "name": "warehouse_transfer_post_authorization_path_api_v1_warehouse_transfers",
         "operationName": "post_authorization_path_api_v1_warehouse_transfers",
         "path": "/public/jurnal/api/v1/warehouse_transfers",
+        "safetyLevel": "mutation",
         "title": "Add a Warehouse Transfer"
       },
       {
@@ -2582,6 +2902,7 @@ export const generatedModules = [
         "name": "warehouse_transfer_warehouse_transfers",
         "operationName": "warehouse_transfers",
         "path": "/public/jurnal/api/v1/warehouse_transfers",
+        "safetyLevel": "read",
         "title": "Get List of Warehouse Transfers"
       },
       {
@@ -2589,6 +2910,7 @@ export const generatedModules = [
         "name": "warehouse_transfer_approval_list",
         "operationName": "approval_list",
         "path": "/public/jurnal/api/v1/warehouse_transfer_approval/approval_list",
+        "safetyLevel": "read",
         "title": "Get List of Warehouse Transfers Need Approval"
       },
       {
@@ -2596,6 +2918,7 @@ export const generatedModules = [
         "name": "warehouse_transfer_approval_total",
         "operationName": "approval_total",
         "path": "/public/jurnal/api/v1/warehouse_transfer_approval/approval_total",
+        "safetyLevel": "read",
         "title": "Get List of Warehouse Transfers Total data Need approval"
       },
       {
@@ -2603,6 +2926,7 @@ export const generatedModules = [
         "name": "warehouse_transfer_put_authorization_path_api_v1_warehouse_transfers_approve",
         "operationName": "put_authorization_path_api_v1_warehouse_transfers_approve",
         "path": "/public/jurnal/api/v1/warehouse_transfer_approval/{id}/approve_rule_based",
+        "safetyLevel": "mutation",
         "title": "Approve Warehouse Transfers"
       },
       {
@@ -2610,6 +2934,7 @@ export const generatedModules = [
         "name": "warehouse_transfer_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/warehouse_transfers/{transaction_id}/comments",
+        "safetyLevel": "read",
         "title": "Comment Warehouse Transfers"
       },
       {
@@ -2617,6 +2942,7 @@ export const generatedModules = [
         "name": "warehouse_transfer_post_authorization_path_api_v1_warehouse_transfers_comment",
         "operationName": "post_authorization_path_api_v1_warehouse_transfers_comment",
         "path": "/public/jurnal/api/v1/warehouse_transfers/{transaction_id}/comments",
+        "safetyLevel": "mutation",
         "title": "Create Comment Warehouse Transfers"
       },
       {
@@ -2624,6 +2950,7 @@ export const generatedModules = [
         "name": "warehouse_transfer_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/warehouse_transfers/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a Warehouse Transfer"
       },
       {
@@ -2631,6 +2958,7 @@ export const generatedModules = [
         "name": "warehouse_transfer_get_2",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/warehouse_transfers/{id}",
+        "safetyLevel": "read",
         "title": "Get a Warehouse Transfer"
       }
     ]
@@ -2644,6 +2972,7 @@ export const generatedModules = [
         "name": "aged_payables_aged_payables",
         "operationName": "aged_payables",
         "path": "/public/jurnal/api/v1/aged_payables",
+        "safetyLevel": "read",
         "title": "Get Aged Payables"
       }
     ]
@@ -2657,6 +2986,7 @@ export const generatedModules = [
         "name": "aged_receivables_aged_receivables",
         "operationName": "aged_receivables",
         "path": "/public/jurnal/api/v1/aged_receivables",
+        "safetyLevel": "read",
         "title": "Get Aged Receivables"
       }
     ]
@@ -2670,6 +3000,7 @@ export const generatedModules = [
         "name": "bank_reconciliation_summary_bank_reconciliation_summary",
         "operationName": "bank_reconciliation_summary",
         "path": "/public/jurnal/api/v1/bank_reconciliation_summary",
+        "safetyLevel": "read",
         "title": "Get Bank Reconciliation Summary"
       },
       {
@@ -2677,6 +3008,7 @@ export const generatedModules = [
         "name": "bank_reconciliation_summary_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/bank_reconciliation_summary/export",
+        "safetyLevel": "read",
         "title": "Export Bank Reconciliation Summary"
       }
     ]
@@ -2690,6 +3022,7 @@ export const generatedModules = [
         "name": "bank_statement_report_bank_statement_report",
         "operationName": "bank_statement_report",
         "path": "/public/jurnal/api/v1/bank_statement_report",
+        "safetyLevel": "read",
         "title": "Get Bank Statement Report"
       },
       {
@@ -2697,6 +3030,7 @@ export const generatedModules = [
         "name": "bank_statement_report_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/bank_statement_report/export",
+        "safetyLevel": "read",
         "title": "Export Bank Statement Report"
       }
     ]
@@ -2710,6 +3044,7 @@ export const generatedModules = [
         "name": "bank_summary_bank_summary",
         "operationName": "bank_summary",
         "path": "/public/jurnal/api/v1/bank_summary",
+        "safetyLevel": "read",
         "title": "Get Bank Summary"
       },
       {
@@ -2717,6 +3052,7 @@ export const generatedModules = [
         "name": "bank_summary_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/bank_summary/export",
+        "safetyLevel": "read",
         "title": "Export Bank Summary"
       }
     ]
@@ -2730,6 +3066,7 @@ export const generatedModules = [
         "name": "balance_sheet_list",
         "operationName": "list",
         "path": "/public/jurnal/api/v1/balance_sheet",
+        "safetyLevel": "read",
         "title": "Get Balance Sheet Information"
       },
       {
@@ -2737,6 +3074,7 @@ export const generatedModules = [
         "name": "balance_sheet_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/balance_sheet/export",
+        "safetyLevel": "read",
         "title": "Export Balance Sheet Report"
       }
     ]
@@ -2750,6 +3088,7 @@ export const generatedModules = [
         "name": "cash_flow_cash_flow",
         "operationName": "cash_flow",
         "path": "/public/jurnal/api/v1/cash_flow",
+        "safetyLevel": "read",
         "title": "Get Cash Flow Report"
       },
       {
@@ -2757,6 +3096,7 @@ export const generatedModules = [
         "name": "cash_flow_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/cash_flow/export",
+        "safetyLevel": "read",
         "title": "Export Cash Flow Report"
       }
     ]
@@ -2770,6 +3110,7 @@ export const generatedModules = [
         "name": "budget_management_budget_management",
         "operationName": "budget_management",
         "path": "/public/jurnal/api/v2/budget_management",
+        "safetyLevel": "read",
         "title": "Get Budget Management"
       },
       {
@@ -2777,6 +3118,7 @@ export const generatedModules = [
         "name": "budget_management_post_budget_management",
         "operationName": "post_budget_management",
         "path": "/public/jurnal/api/v2/budget_management",
+        "safetyLevel": "mutation",
         "title": "Create new budget management template"
       },
       {
@@ -2784,6 +3126,7 @@ export const generatedModules = [
         "name": "budget_management_patch_budget_management_id",
         "operationName": "patch_budget_management_id",
         "path": "/public/jurnal/api/v2/budget_management/{id}",
+        "safetyLevel": "mutation",
         "title": "Update budget management template"
       },
       {
@@ -2791,6 +3134,7 @@ export const generatedModules = [
         "name": "budget_management_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v2/budget_management/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete Budget"
       }
     ]
@@ -2804,6 +3148,7 @@ export const generatedModules = [
         "name": "profit_loss_budgeting_profit_loss_budgeting_index",
         "operationName": "profit_loss_budgeting_index",
         "path": "/public/jurnal/api/v2/profit_loss_budgeting",
+        "safetyLevel": "read",
         "title": "Get Profit Loss Budgeting Information"
       }
     ]
@@ -2817,6 +3162,7 @@ export const generatedModules = [
         "name": "cash_flow_new_report_post_authorization_path_api_v2_cash_flow",
         "operationName": "post_authorization_path_api_v2_cash_flow",
         "path": "/public/jurnal/api/v2/cash_flow",
+        "safetyLevel": "mutation",
         "title": "Create cashflow custom layout"
       },
       {
@@ -2824,6 +3170,7 @@ export const generatedModules = [
         "name": "cash_flow_new_report_cash_flow",
         "operationName": "cash_flow",
         "path": "/public/jurnal/api/v2/cash_flow",
+        "safetyLevel": "read",
         "title": "Get cashflow report data"
       },
       {
@@ -2831,6 +3178,7 @@ export const generatedModules = [
         "name": "cash_flow_new_report_list_layout",
         "operationName": "list_layout",
         "path": "/public/jurnal/api/v2/cash_flow/list_layout",
+        "safetyLevel": "read",
         "title": "Get List of Layouts"
       },
       {
@@ -2838,6 +3186,7 @@ export const generatedModules = [
         "name": "cash_flow_new_report_post_authorization_path_api_v2_cash_flow_update_chosen_layout",
         "operationName": "post_authorization_path_api_v2_cash_flow_update_chosen_layout",
         "path": "/public/jurnal/api/v2/cash_flow/update_chosen_layout",
+        "safetyLevel": "mutation",
         "title": "Update chosen layout"
       },
       {
@@ -2845,6 +3194,7 @@ export const generatedModules = [
         "name": "cash_flow_new_report_new",
         "operationName": "new",
         "path": "/public/jurnal/api/v2/cash_flow/new",
+        "safetyLevel": "read",
         "title": "Get default layout value"
       },
       {
@@ -2852,6 +3202,7 @@ export const generatedModules = [
         "name": "cash_flow_new_report_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v2/cash_flow/{id}",
+        "safetyLevel": "read",
         "title": "Get chosen cashflow layout value"
       },
       {
@@ -2859,6 +3210,7 @@ export const generatedModules = [
         "name": "cash_flow_new_report_patch_authorization_path_api_v2_cash_flow_1",
         "operationName": "patch_authorization_path_api_v2_cash_flow_1",
         "path": "/public/jurnal/api/v2/cash_flow/{id}",
+        "safetyLevel": "mutation",
         "title": "Update cashflow custom layout"
       },
       {
@@ -2866,6 +3218,7 @@ export const generatedModules = [
         "name": "cash_flow_new_report_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v2/cash_flow/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete custom layout"
       }
     ]
@@ -2879,6 +3232,7 @@ export const generatedModules = [
         "name": "customer_balance_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/customer_balances/export",
+        "safetyLevel": "read",
         "title": "Export Customer Balance"
       }
     ]
@@ -2892,6 +3246,7 @@ export const generatedModules = [
         "name": "executive_summary_executive_summary",
         "operationName": "executive_summary",
         "path": "/public/jurnal/api/v1/executive_summary",
+        "safetyLevel": "read",
         "title": "Get Executive Summary"
       },
       {
@@ -2899,6 +3254,7 @@ export const generatedModules = [
         "name": "executive_summary_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/executive_summary/export",
+        "safetyLevel": "read",
         "title": "Export Executive Summary"
       }
     ]
@@ -2912,6 +3268,7 @@ export const generatedModules = [
         "name": "fixed_asset_get_api_v1_fixed_asset_summary",
         "operationName": "get_api_v1_fixed_asset_summary",
         "path": "/public/jurnal/api/v1/fixed_asset_summary",
+        "safetyLevel": "read",
         "title": "Get Fixed Asset Summary Report"
       }
     ]
@@ -2925,6 +3282,7 @@ export const generatedModules = [
         "name": "foreign_exchange_gain_loss_foreign_exchange_gain_loss",
         "operationName": "foreign_exchange_gain_loss",
         "path": "/public/jurnal/api/v1/foreign_exchange_gain_loss",
+        "safetyLevel": "read",
         "title": "Get Foreign Exchange Gain Loss"
       },
       {
@@ -2932,6 +3290,7 @@ export const generatedModules = [
         "name": "foreign_exchange_gain_loss_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/foreign_exchange_gain_loss/export",
+        "safetyLevel": "read",
         "title": "Export Foreign Exchange Gain Loss"
       }
     ]
@@ -2945,6 +3304,7 @@ export const generatedModules = [
         "name": "general_ledger_get_api_v1_general_ledger",
         "operationName": "get_api_v1_general_ledger",
         "path": "/public/jurnal/api/v1/general_ledger",
+        "safetyLevel": "read",
         "title": "Get General Ledger Report"
       },
       {
@@ -2952,6 +3312,7 @@ export const generatedModules = [
         "name": "general_ledger_get_api_v1_general_ledger_export",
         "operationName": "get_api_v1_general_ledger_export",
         "path": "/public/jurnal/api/v1/general_ledger/export",
+        "safetyLevel": "read",
         "title": "Export General Ledger"
       }
     ]
@@ -2965,6 +3326,7 @@ export const generatedModules = [
         "name": "inventory_detail_inventory_detail",
         "operationName": "inventory_detail",
         "path": "/public/jurnal/api/v1/inventory_detail",
+        "safetyLevel": "read",
         "title": "Get Inventory Detail"
       },
       {
@@ -2972,6 +3334,7 @@ export const generatedModules = [
         "name": "inventory_detail_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/inventory_detail/export",
+        "safetyLevel": "read",
         "title": "Export Inventory Detail"
       }
     ]
@@ -2985,6 +3348,7 @@ export const generatedModules = [
         "name": "inventory_summary_inventory_summary",
         "operationName": "inventory_summary",
         "path": "/public/jurnal/api/v1/inventory_summary",
+        "safetyLevel": "read",
         "title": "Get Inventory Summary"
       },
       {
@@ -2992,6 +3356,7 @@ export const generatedModules = [
         "name": "inventory_summary_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/inventory_summary/export",
+        "safetyLevel": "read",
         "title": "Export Inventory Summary"
       }
     ]
@@ -3005,6 +3370,7 @@ export const generatedModules = [
         "name": "inventory_valuation_inventory_valuation",
         "operationName": "inventory_valuation",
         "path": "/public/jurnal/api/v1/inventory_valuation",
+        "safetyLevel": "read",
         "title": "Get Inventory Valuation"
       },
       {
@@ -3012,6 +3378,7 @@ export const generatedModules = [
         "name": "inventory_valuation_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/inventory_valuation/export",
+        "safetyLevel": "read",
         "title": "Export Inventory Valuation"
       }
     ]
@@ -3025,6 +3392,7 @@ export const generatedModules = [
         "name": "profit_and_loss_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/profit_and_loss/export",
+        "safetyLevel": "read",
         "title": "Export Profit Loss Report"
       }
     ]
@@ -3038,6 +3406,7 @@ export const generatedModules = [
         "name": "realised_currency_gain_loss_realised_currency_gain_loss",
         "operationName": "realised_currency_gain_loss",
         "path": "/public/jurnal/api/v1/realised_currency_gain_loss",
+        "safetyLevel": "read",
         "title": "Get Realised Currency Gain Loss"
       },
       {
@@ -3045,6 +3414,7 @@ export const generatedModules = [
         "name": "realised_currency_gain_loss_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/realised_currency_gain_loss/export",
+        "safetyLevel": "read",
         "title": "Export Realised Currency Gain Loss"
       }
     ]
@@ -3058,6 +3428,7 @@ export const generatedModules = [
         "name": "report_layout_report_layouts",
         "operationName": "report_layouts",
         "path": "/public/jurnal/api/v1/report_layouts",
+        "safetyLevel": "read",
         "title": "Get Report Layout"
       },
       {
@@ -3065,6 +3436,7 @@ export const generatedModules = [
         "name": "report_layout_post_authorization_path_api_v1_report_layouts",
         "operationName": "post_authorization_path_api_v1_report_layouts",
         "path": "/public/jurnal/api/v1/report_layouts",
+        "safetyLevel": "mutation",
         "title": "Create Report Layout"
       },
       {
@@ -3072,6 +3444,7 @@ export const generatedModules = [
         "name": "report_layout_put_authorization_path_api_v1_report_layouts",
         "operationName": "put_authorization_path_api_v1_report_layouts",
         "path": "/public/jurnal/api/v1/report_layouts",
+        "safetyLevel": "mutation",
         "title": "Update Report Layout"
       },
       {
@@ -3079,6 +3452,7 @@ export const generatedModules = [
         "name": "report_layout_patch_authorization_path_api_v1_report_layouts",
         "operationName": "patch_authorization_path_api_v1_report_layouts",
         "path": "/public/jurnal/api/v1/report_layouts",
+        "safetyLevel": "mutation",
         "title": "Patch Report Layout"
       },
       {
@@ -3086,6 +3460,7 @@ export const generatedModules = [
         "name": "report_layout_delete",
         "operationName": "delete",
         "path": "/public/jurnal/api/v1/report_layouts/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete Report Layout"
       },
       {
@@ -3093,6 +3468,7 @@ export const generatedModules = [
         "name": "report_layout_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/report_layouts/{id}",
+        "safetyLevel": "read",
         "title": "Get Column By Transaction Type Id"
       },
       {
@@ -3100,6 +3476,7 @@ export const generatedModules = [
         "name": "report_layout_get_report_layouts",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/{report_type_id}/report_layouts",
+        "safetyLevel": "read",
         "title": "Get All Report Type in Specified Report Type Id"
       }
     ]
@@ -3113,6 +3490,7 @@ export const generatedModules = [
         "name": "sales_lists_get_api_v1_sales_lists",
         "operationName": "get_api_v1_sales_lists",
         "path": "/public/jurnal/api/v1/sales_lists",
+        "safetyLevel": "read",
         "title": "Get Sales List Report"
       },
       {
@@ -3120,6 +3498,7 @@ export const generatedModules = [
         "name": "sales_lists_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/sales_lists/export",
+        "safetyLevel": "read",
         "title": "Export Sales List"
       }
     ]
@@ -3133,6 +3512,7 @@ export const generatedModules = [
         "name": "sales_by_customers_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/sales_by_customers/export",
+        "safetyLevel": "read",
         "title": "Export Sales By Customers"
       },
       {
@@ -3140,6 +3520,7 @@ export const generatedModules = [
         "name": "sales_by_customers_get_api_v1_sales_by_customers",
         "operationName": "get_api_v1_sales_by_customers",
         "path": "/public/jurnal/api/v1/sales_by_customers",
+        "safetyLevel": "read",
         "title": "Get Sales Report By Customers"
       }
     ]
@@ -3153,6 +3534,7 @@ export const generatedModules = [
         "name": "sales_by_product_get_api_v1_sales_by_products",
         "operationName": "get_api_v1_sales_by_products",
         "path": "/public/jurnal/api/v1/sales_by_products",
+        "safetyLevel": "read",
         "title": "Get Sales Report by Product (General)"
       },
       {
@@ -3160,6 +3542,7 @@ export const generatedModules = [
         "name": "sales_by_product_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/sales_by_products/export",
+        "safetyLevel": "read",
         "title": "Export Sales By Product"
       }
     ]
@@ -3173,6 +3556,7 @@ export const generatedModules = [
         "name": "statement_of_change_in_equity_statement_of_change_in_equity",
         "operationName": "statement_of_change_in_equity",
         "path": "/public/jurnal/api/v1/statement_of_change_in_equity",
+        "safetyLevel": "read",
         "title": "Get Statement of Change in Equity Report"
       },
       {
@@ -3180,6 +3564,7 @@ export const generatedModules = [
         "name": "statement_of_change_in_equity_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/statement_of_change_in_equity/export",
+        "safetyLevel": "read",
         "title": "Export Statement of Change in Equity"
       }
     ]
@@ -3193,6 +3578,7 @@ export const generatedModules = [
         "name": "trial_balance_trial_balance",
         "operationName": "trial_balance",
         "path": "/public/jurnal/api/v1/trial_balance",
+        "safetyLevel": "read",
         "title": "Get Trial Balance Report"
       },
       {
@@ -3200,6 +3586,7 @@ export const generatedModules = [
         "name": "trial_balance_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/trial_balance/export",
+        "safetyLevel": "read",
         "title": "Export Trial Balance"
       }
     ]
@@ -3213,6 +3600,7 @@ export const generatedModules = [
         "name": "unrealised_currency_gain_loss_unrealised_currency_gain_loss",
         "operationName": "unrealised_currency_gain_loss",
         "path": "/public/jurnal/api/v1/unrealised_currency_gain_loss",
+        "safetyLevel": "read",
         "title": "Get Unrealised Currency Gain Loss"
       },
       {
@@ -3220,6 +3608,7 @@ export const generatedModules = [
         "name": "unrealised_currency_gain_loss_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/unrealised_currency_gain_loss/export",
+        "safetyLevel": "read",
         "title": "Export Unrealised Currency Gain Loss"
       },
       {
@@ -3227,6 +3616,7 @@ export const generatedModules = [
         "name": "unrealised_currency_gain_loss_get_amount",
         "operationName": "get_amount",
         "path": "/public/jurnal/api/v1/unrealised_gain_lost/get_amount",
+        "safetyLevel": "read",
         "title": "Get Amount From Unrealised Currency Gain Lost"
       }
     ]
@@ -3240,6 +3630,7 @@ export const generatedModules = [
         "name": "warehouse_item_valuation_warehouse_item_valuation",
         "operationName": "warehouse_item_valuation",
         "path": "/public/jurnal/api/v1/warehouse_item_valuation",
+        "safetyLevel": "read",
         "title": "Get Warehouse Item Valuation"
       },
       {
@@ -3247,6 +3638,7 @@ export const generatedModules = [
         "name": "warehouse_item_valuation_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/warehouse_item_valuation/export",
+        "safetyLevel": "read",
         "title": "Export Warehouse Item Valuation"
       }
     ]
@@ -3260,6 +3652,7 @@ export const generatedModules = [
         "name": "warehouse_items_stock_movement_warehouse_items_stock_movement_summary",
         "operationName": "warehouse_items_stock_movement_summary",
         "path": "/public/jurnal/api/v1/warehouse_items_stock_movement_summary",
+        "safetyLevel": "read",
         "title": "Get Warehouse Items Stock Movement Summary"
       },
       {
@@ -3267,6 +3660,7 @@ export const generatedModules = [
         "name": "warehouse_items_stock_movement_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/warehouse_items_stock_movement_summary/export",
+        "safetyLevel": "read",
         "title": "Export Warehouse Item Stock Movement Summary"
       }
     ]
@@ -3280,6 +3674,7 @@ export const generatedModules = [
         "name": "warehouse_stock_quantity_warehouse_stock_quantity",
         "operationName": "warehouse_stock_quantity",
         "path": "/public/jurnal/api/v1/warehouse_stock_quantity",
+        "safetyLevel": "read",
         "title": "Get Warehouse Stock Quantity"
       },
       {
@@ -3287,6 +3682,7 @@ export const generatedModules = [
         "name": "warehouse_stock_quantity_export",
         "operationName": "export",
         "path": "/public/jurnal/api/v1/warehouse_stock_quantity/export",
+        "safetyLevel": "read",
         "title": "Export Warehouse Stock Quantity"
       }
     ]
@@ -3300,6 +3696,7 @@ export const generatedModules = [
         "name": "bank_revaluation_bank_revaluation",
         "operationName": "bank_revaluation",
         "path": "/public/jurnal/api/v1/bank_revaluation",
+        "safetyLevel": "read",
         "title": "Get Bank Revaluation"
       }
     ]
@@ -3313,6 +3710,7 @@ export const generatedModules = [
         "name": "multicurrency_get_api_v1_multicurrency",
         "operationName": "get_api_v1_multicurrency",
         "path": "/public/jurnal/api/v2/multi_currencies/find",
+        "safetyLevel": "read",
         "title": "Find Multi-Currency Rate"
       },
       {
@@ -3320,6 +3718,7 @@ export const generatedModules = [
         "name": "multicurrency_post_api_v1_multicurrency",
         "operationName": "post_api_v1_multicurrency",
         "path": "/public/jurnal/api/v2/multi_currencies",
+        "safetyLevel": "mutation",
         "title": "Create Multi-Currency Rate"
       }
     ]
@@ -3333,6 +3732,7 @@ export const generatedModules = [
         "name": "closing_the_book_get",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/closing_the_books/{closing_the_book_id}/trial_balance",
+        "safetyLevel": "read",
         "title": "Get CTB Trial Balance"
       },
       {
@@ -3340,6 +3740,7 @@ export const generatedModules = [
         "name": "closing_the_book_get_cash_flow",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/closing_the_books/{closing_the_book_id}/cash_flow",
+        "safetyLevel": "read",
         "title": "Get CTB Cash Flow"
       },
       {
@@ -3347,6 +3748,7 @@ export const generatedModules = [
         "name": "closing_the_book_get_balance_sheet",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/closing_the_books/{closing_the_book_id}/balance_sheet",
+        "safetyLevel": "read",
         "title": "Get CTB Balance Sheet"
       },
       {
@@ -3354,6 +3756,7 @@ export const generatedModules = [
         "name": "closing_the_book_get_profit_loss",
         "operationName": "get",
         "path": "/public/jurnal/api/v1/closing_the_books/{closing_the_book_id}/profit_loss",
+        "safetyLevel": "read",
         "title": "Get CTB Profit Loss"
       },
       {
@@ -3361,6 +3764,7 @@ export const generatedModules = [
         "name": "closing_the_book_patch_authorization_path_api_v1_closing_the_books_closing_the_book_id",
         "operationName": "patch_authorization_path_api_v1_closing_the_books_closing_the_book_id",
         "path": "/public/jurnal/api/v1/closing_the_books/{closing_the_book_id}",
+        "safetyLevel": "mutation",
         "title": "Update CTB (Publish CTB only)"
       }
     ]
@@ -3374,6 +3778,7 @@ export const generatedModules = [
         "name": "transaction_quota_post_companies_request_quota",
         "operationName": "post_companies_request_quota",
         "path": "/public/jurnal/companies/request_quota",
+        "safetyLevel": "mutation",
         "title": "companies request_quota"
       },
       {
@@ -3381,6 +3786,7 @@ export const generatedModules = [
         "name": "transaction_quota_get_quota",
         "operationName": "get_quota",
         "path": "/public/jurnal/sales_invoices/quota",
+        "safetyLevel": "read",
         "title": "sales_invoices quota"
       },
       {
@@ -3388,6 +3794,7 @@ export const generatedModules = [
         "name": "transaction_quota_get_sales_invoices_quota_histories",
         "operationName": "get_sales_invoices_quota_histories",
         "path": "/public/jurnal/sales_invoices/quota_histories",
+        "safetyLevel": "read",
         "title": "sales_invoices quota_histories"
       },
       {
@@ -3395,6 +3802,7 @@ export const generatedModules = [
         "name": "transaction_quota_get_sales_invoices_quota_summary",
         "operationName": "get_sales_invoices_quota_summary",
         "path": "/public/jurnal/sales_invoices/quota_summary",
+        "safetyLevel": "read",
         "title": "sales_invoices quota_summary"
       }
     ]
@@ -3408,6 +3816,7 @@ export const generatedModules = [
         "name": "scm_product_unit_getproductunits",
         "operationName": "getproductunits",
         "path": "/public/jurnal/scm/public/lo/v1/product_units",
+        "safetyLevel": "read",
         "title": "Retrieve a list of Product Units"
       },
       {
@@ -3415,6 +3824,7 @@ export const generatedModules = [
         "name": "scm_product_unit_delete",
         "operationName": "delete",
         "path": "/public/jurnal/scm/public/lo/v1/product_units/{id}",
+        "safetyLevel": "destructive",
         "title": "Delete a product unit by ID in the current company"
       },
       {
@@ -3422,6 +3832,7 @@ export const generatedModules = [
         "name": "scm_product_unit_get",
         "operationName": "get",
         "path": "/public/jurnal/scm/public/lo/v1/product_units/{id}",
+        "safetyLevel": "read",
         "title": "Retrieve Product Unit specified id in the current company"
       },
       {
@@ -3429,6 +3840,7 @@ export const generatedModules = [
         "name": "scm_product_unit_updateproductunit",
         "operationName": "updateproductunit",
         "path": "/public/jurnal/scm/public/lo/v1/product_units/{id}",
+        "safetyLevel": "mutation",
         "title": "Update a product unit by ID"
       }
     ]
@@ -3442,6 +3854,7 @@ export const generatedModules = [
         "name": "scm_product_getproductquantityperwarehouse",
         "operationName": "getproductquantityperwarehouse",
         "path": "/public/jurnal/scm/public/lo/v1/products/get_product_quantity_per_warehouse",
+        "safetyLevel": "read",
         "title": "Retrieve product quantities by warehouse"
       },
       {
@@ -3449,6 +3862,7 @@ export const generatedModules = [
         "name": "scm_product_getproductsminified",
         "operationName": "getproductsminified",
         "path": "/public/jurnal/scm/public/lo/v1/products/minified",
+        "safetyLevel": "read",
         "title": "Retrieve a minified list of products"
       }
     ]
@@ -3462,6 +3876,7 @@ export const generatedModules = [
         "name": "scm_storage_getstorages",
         "operationName": "getstorages",
         "path": "/public/jurnal/scm/public/lo/v1/storages",
+        "safetyLevel": "read",
         "title": "Retrieve a list of storages"
       }
     ]
@@ -3512,6 +3927,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/vendor_credit_memo_refund",
+    "safetyLevel": "mutation",
     "sourceTag": "VENDOR CREDIT MEMO REFUND",
     "title": "Create Vendor Credit Memo Refund"
   },
@@ -3533,6 +3949,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/vendor_credit_memo_refund/{id}",
+    "safetyLevel": "read",
     "sourceTag": "VENDOR CREDIT MEMO REFUND",
     "title": "Get Vendor Credit Memo Refund by Id"
   },
@@ -3554,6 +3971,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/vendor_credit_memo_refund/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "VENDOR CREDIT MEMO REFUND",
     "title": "Delete a Vendor Credit Memo Refund"
   },
@@ -3614,6 +4032,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/vendor_credit_memo_refund/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "VENDOR CREDIT MEMO REFUND",
     "title": "Update a Vendor Credit Memo Refund"
   },
@@ -3657,6 +4076,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/customer_apply_credit_memo",
+    "safetyLevel": "mutation",
     "sourceTag": "CUSTOMER APPLY CREDIT MEMO",
     "title": "Create Customer Apply Credit Memo"
   },
@@ -3678,6 +4098,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/customer_apply_credit_memo/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "CUSTOMER APPLY CREDIT MEMO",
     "title": "Delete a Customer Apply Credit Memo"
   },
@@ -3735,6 +4156,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/customer_apply_credit_memo/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "CUSTOMER APPLY CREDIT MEMO",
     "title": "Update a Customer Apply Credit Memo"
   },
@@ -3756,6 +4178,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/customer_apply_credit_memo/{id}",
+    "safetyLevel": "read",
     "sourceTag": "CUSTOMER APPLY CREDIT MEMO",
     "title": "Get Customer Apply Credit Memo by Id"
   },
@@ -3768,6 +4191,7 @@ export const generatedOperations = [
     "operationName": "list",
     "parameters": [],
     "path": "/public/jurnal/api/v1/purchase_returns",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE RETURNS",
     "title": "Get List of Purchase Returns"
   },
@@ -3844,6 +4268,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/purchase_returns",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE RETURNS",
     "title": "Create a Purchase Return"
   },
@@ -3856,6 +4281,7 @@ export const generatedOperations = [
     "operationName": "list",
     "parameters": [],
     "path": "/public/jurnal/api/v1/sales_returns",
+    "safetyLevel": "read",
     "sourceTag": "SALES RETURNS",
     "title": "Get List of Sales Returns"
   },
@@ -3951,6 +4377,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/sales_returns",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES RETURNS",
     "title": "Add a Sales Return"
   },
@@ -3997,6 +4424,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/vendor_apply_credit_memo",
+    "safetyLevel": "mutation",
     "sourceTag": "VENDOR APPLY CREDIT MEMO",
     "title": "Create Vendor Apply Credit Memo"
   },
@@ -4018,6 +4446,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/vendor_apply_credit_memo/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "VENDOR APPLY CREDIT MEMO",
     "title": "Delete a Vendor Apply Credit Memo"
   },
@@ -4039,6 +4468,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/vendor_apply_credit_memo/{id}",
+    "safetyLevel": "read",
     "sourceTag": "VENDOR APPLY CREDIT MEMO",
     "title": "Get Vendor Apply Credit Memo by Id"
   },
@@ -4096,6 +4526,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/vendor_apply_credit_memo/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "VENDOR APPLY CREDIT MEMO",
     "title": "Update a Vendor Apply Credit Memo"
   },
@@ -4134,6 +4565,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_invoices",
+    "safetyLevel": "read",
     "sourceTag": "SALES INVOICES",
     "title": "Get List of Sales Invoices"
   },
@@ -4317,6 +4749,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/sales_invoices",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES INVOICES",
     "title": "Add a Sales Invoice"
   },
@@ -4330,6 +4763,7 @@ export const generatedOperations = [
     "operationName": "list",
     "parameters": [],
     "path": "/public/jurnal/api/v1/unit_conversions",
+    "safetyLevel": "read",
     "sourceTag": "UNIT CONVERTIONS",
     "title": "Get List of Unit Conversions"
   },
@@ -4386,6 +4820,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/unit_conversions",
+    "safetyLevel": "mutation",
     "sourceTag": "UNIT CONVERTIONS",
     "title": "Add a Unit Conversion"
   },
@@ -4435,6 +4870,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/customer_credit_memo_refund",
+    "safetyLevel": "mutation",
     "sourceTag": "CUSTOMER CREDIT MEMO REFUND",
     "title": "Create Customer Credit Memo Refund"
   },
@@ -4456,6 +4892,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/customer_credit_memo_refund/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "CUSTOMER CREDIT MEMO REFUND",
     "title": "Delete a Customer Credit Memo Refund"
   },
@@ -4519,6 +4956,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/customer_credit_memo_refund/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "CUSTOMER CREDIT MEMO REFUND",
     "title": "Update a Customer Credit Memo Refund"
   },
@@ -4540,6 +4978,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/customer_credit_memo_refund/{id}",
+    "safetyLevel": "read",
     "sourceTag": "CUSTOMER CREDIT MEMO REFUND",
     "title": "Get Customer Credit Memo Refund by Id"
   },
@@ -4553,6 +4992,7 @@ export const generatedOperations = [
     "operationName": "list",
     "parameters": [],
     "path": "/public/jurnal/api/v1/select2_resources/get_stock_adjustment_type",
+    "safetyLevel": "read",
     "sourceTag": "STOCK ADJUSTMENT TYPE",
     "title": "Stock Adjustments Type"
   },
@@ -4566,6 +5006,7 @@ export const generatedOperations = [
     "operationName": "get_taggings",
     "parameters": [],
     "path": "/public/jurnal/api/v1/select2_resources/get_taggings",
+    "safetyLevel": "read",
     "sourceTag": "TRANSACTION TAG",
     "title": "Tag Resources"
   },
@@ -4579,6 +5020,7 @@ export const generatedOperations = [
     "operationName": "list",
     "parameters": [],
     "path": "/public/jurnal/api/v1/credit_memos",
+    "safetyLevel": "read",
     "sourceTag": "CREDIT MEMO",
     "title": "Get Credit Memo"
   },
@@ -4640,6 +5082,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/credit_memos",
+    "safetyLevel": "mutation",
     "sourceTag": "CREDIT MEMO",
     "title": "Create Credit Memo"
   },
@@ -4653,6 +5096,7 @@ export const generatedOperations = [
     "operationName": "list",
     "parameters": [],
     "path": "/public/jurnal/api/v1/select2_resources/get_other",
+    "safetyLevel": "read",
     "sourceTag": "GET OTHER",
     "title": "Unit, Warehouse, Tax & Payment Method"
   },
@@ -4666,6 +5110,7 @@ export const generatedOperations = [
     "operationName": "list",
     "parameters": [],
     "path": "/public/jurnal/api/v1/purchase_invoices",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE INVOICES",
     "title": "Get List of Purchase Invoices"
   },
@@ -4849,6 +5294,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/purchase_invoices",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE INVOICES",
     "title": "Add a Purchase Invoice"
   },
@@ -4862,6 +5308,7 @@ export const generatedOperations = [
     "operationName": "get_term",
     "parameters": [],
     "path": "/public/jurnal/api/v1/select2_resources/get_term",
+    "safetyLevel": "read",
     "sourceTag": "TERM",
     "title": "Term Resources"
   },
@@ -4874,6 +5321,7 @@ export const generatedOperations = [
     "operationName": "list",
     "parameters": [],
     "path": "/public/jurnal/api/v1/bank_transfers",
+    "safetyLevel": "read",
     "sourceTag": "BANK TRANSFERS",
     "title": "Get List of Bank Transfers"
   },
@@ -4926,6 +5374,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/bank_transfers",
+    "safetyLevel": "mutation",
     "sourceTag": "BANK TRANSFERS",
     "title": "Add a Bank Transfer"
   },
@@ -4939,6 +5388,7 @@ export const generatedOperations = [
     "operationName": "get_tax",
     "parameters": [],
     "path": "/public/jurnal/api/v1/select2_resources/get_tax",
+    "safetyLevel": "read",
     "sourceTag": "TAXES",
     "title": "Tax Resource"
   },
@@ -4952,6 +5402,7 @@ export const generatedOperations = [
     "operationName": "get_person",
     "parameters": [],
     "path": "/public/jurnal/api/v1/select2_resources/get_person",
+    "safetyLevel": "read",
     "sourceTag": "PERSONS",
     "title": "Person Resource"
   },
@@ -4972,6 +5423,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/expenses/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "EXPENSES",
     "title": "Delete an Expense"
   },
@@ -4993,6 +5445,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/expenses/{id}",
+    "safetyLevel": "read",
     "sourceTag": "EXPENSES",
     "title": "Get an Expense"
   },
@@ -5080,6 +5533,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/expenses/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "EXPENSES",
     "title": "Update an Expense"
   },
@@ -5113,6 +5567,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/select2_resources/get_product",
+    "safetyLevel": "read",
     "sourceTag": "PRODUCTS",
     "title": "Product Resource"
   },
@@ -5125,6 +5580,7 @@ export const generatedOperations = [
     "operationName": "list",
     "parameters": [],
     "path": "/public/jurnal/api/v1/bank_withdrawals",
+    "safetyLevel": "read",
     "sourceTag": "BANK WITHDRAWALS",
     "title": "Get List of Bank Withdrawals"
   },
@@ -5190,6 +5646,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/bank_withdrawals",
+    "safetyLevel": "mutation",
     "sourceTag": "BANK WITHDRAWALS",
     "title": "Add a Bank Withdrawal"
   },
@@ -5231,6 +5688,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/profit_and_loss",
+    "safetyLevel": "read",
     "sourceTag": "PROFIT & LOSS",
     "title": "Get Profit Lost Information"
   },
@@ -5253,6 +5711,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/customers",
+    "safetyLevel": "read",
     "sourceTag": "CUSTOMERS",
     "title": "Get List of Customers"
   },
@@ -5341,6 +5800,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/customers",
+    "safetyLevel": "mutation",
     "sourceTag": "CUSTOMERS",
     "title": "Add a Customer"
   },
@@ -5363,6 +5823,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/products",
+    "safetyLevel": "read",
     "sourceTag": "PRODUCTS",
     "title": "Get List of Products"
   },
@@ -5500,6 +5961,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/products",
+    "safetyLevel": "mutation",
     "sourceTag": "PRODUCTS",
     "title": "Add a Product"
   },
@@ -5513,6 +5975,7 @@ export const generatedOperations = [
     "operationName": "get_stock_adjustment_account",
     "parameters": [],
     "path": "/public/jurnal/api/v1/select2_resources/get_stock_adjustment_account",
+    "safetyLevel": "read",
     "sourceTag": "STOCK ADJUSTMENT ACCOUNT",
     "title": "Stock Adjustment Accounts"
   },
@@ -5526,6 +5989,7 @@ export const generatedOperations = [
     "operationName": "list",
     "parameters": [],
     "path": "/public/jurnal/api/v1/expenses",
+    "safetyLevel": "read",
     "sourceTag": "EXPENSES",
     "title": "Get List of Expenses"
   },
@@ -5611,6 +6075,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/expenses",
+    "safetyLevel": "mutation",
     "sourceTag": "EXPENSES",
     "title": "Add an Expense"
   },
@@ -5624,6 +6089,7 @@ export const generatedOperations = [
     "operationName": "get_unpaid_expense",
     "parameters": [],
     "path": "/public/jurnal/api/v1/select2_resources/get_unpaid_expense",
+    "safetyLevel": "read",
     "sourceTag": "EXPENSES",
     "title": "Unpaid Expense"
   },
@@ -5636,6 +6102,7 @@ export const generatedOperations = [
     "operationName": "list",
     "parameters": [],
     "path": "/public/jurnal/api/v1/companies",
+    "safetyLevel": "read",
     "sourceTag": "COMPANIES",
     "title": "Get List of Companies"
   },
@@ -5727,6 +6194,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/companies",
+    "safetyLevel": "mutation",
     "sourceTag": "COMPANIES",
     "title": "Add a Company"
   },
@@ -5740,6 +6208,7 @@ export const generatedOperations = [
     "operationName": "get_transaction",
     "parameters": [],
     "path": "/public/jurnal/api/v1/select2_resources/get_transaction",
+    "safetyLevel": "read",
     "sourceTag": "TRANSACTIONS",
     "title": "Transaction Resource"
   },
@@ -5841,6 +6310,7 @@ export const generatedOperations = [
     "operationName": "list",
     "parameters": [],
     "path": "/public/jurnal/api/v1/receive_payments",
+    "safetyLevel": "read",
     "sourceTag": "RECEIVE PAYMENTS",
     "title": "Get List of Receive Payments"
   },
@@ -5908,6 +6378,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/receive_payments",
+    "safetyLevel": "mutation",
     "sourceTag": "RECEIVE PAYMENTS",
     "title": "Add a Receive Payment"
   },
@@ -5920,6 +6391,7 @@ export const generatedOperations = [
     "operationName": "list",
     "parameters": [],
     "path": "/public/jurnal/api/v1/taxes",
+    "safetyLevel": "read",
     "sourceTag": "TAXES",
     "title": "Get List of Taxes"
   },
@@ -5961,6 +6433,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_taxes",
     "parameters": [],
     "path": "/public/jurnal/api/v1/taxes",
+    "safetyLevel": "mutation",
     "sourceTag": "TAXES",
     "title": "Add Tax with Witholding"
   },
@@ -5974,6 +6447,7 @@ export const generatedOperations = [
     "operationName": "list",
     "parameters": [],
     "path": "/public/jurnal/api/v1/sales_orders",
+    "safetyLevel": "read",
     "sourceTag": "SALES ORDERS",
     "title": "Get List of Sales Orders"
   },
@@ -6157,6 +6631,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/sales_orders",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES ORDERS",
     "title": "Add a Sales Order"
   },
@@ -6268,6 +6743,7 @@ export const generatedOperations = [
     "operationName": "list",
     "parameters": [],
     "path": "/public/jurnal/api/v1/bank_deposits",
+    "safetyLevel": "read",
     "sourceTag": "BANK DEPOSITS",
     "title": "Get List of Bank Deposits"
   },
@@ -6333,6 +6809,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/bank_deposits",
+    "safetyLevel": "mutation",
     "sourceTag": "BANK DEPOSITS",
     "title": "Add a Bank Deposit"
   },
@@ -6345,6 +6822,7 @@ export const generatedOperations = [
     "operationName": "list",
     "parameters": [],
     "path": "/public/jurnal/api/v1/purchase_payments",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE PAYMENTS",
     "title": "Get List of Purchase Payment"
   },
@@ -6418,6 +6896,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/purchase_payments",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE PAYMENTS",
     "title": "Create a Purchase Payment"
   },
@@ -6430,6 +6909,7 @@ export const generatedOperations = [
     "operationName": "list",
     "parameters": [],
     "path": "/public/jurnal/api/v1/journal_entries",
+    "safetyLevel": "read",
     "sourceTag": "JOURNAL ENTRIES",
     "title": "Get List of Journal Entries"
   },
@@ -6488,6 +6968,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/journal_entries",
+    "safetyLevel": "mutation",
     "sourceTag": "JOURNAL ENTRIES",
     "title": "Add a Journal Entry"
   },
@@ -6509,6 +6990,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/products/{id}/unit_conversions",
+    "safetyLevel": "read",
     "sourceTag": "PRODUCTS",
     "title": "Get Unit Conversion by Product Id"
   },
@@ -6535,6 +7017,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/{person_type}/{id}/credit_memos",
+    "safetyLevel": "read",
     "sourceTag": "CREDIT MEMO",
     "title": "Get Credit Memo by Person Type"
   },
@@ -6585,6 +7068,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/select2_resources/get_account",
+    "safetyLevel": "read",
     "sourceTag": "ACCOUNTS",
     "title": "Account Resource"
   },
@@ -6598,6 +7082,7 @@ export const generatedOperations = [
     "operationName": "list",
     "parameters": [],
     "path": "/public/jurnal/api/v1/purchase_orders",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE ORDERS",
     "title": "Get List of Purchase Orders"
   },
@@ -6782,6 +7267,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/purchase_orders",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE ORDERS",
     "title": "Add a Purchase Order"
   },
@@ -6802,6 +7288,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_orders/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "PURCHASE ORDERS",
     "title": "Delete a Purchase Order"
   },
@@ -6822,6 +7309,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_orders/{id}",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE ORDERS",
     "title": "Get a Purchase Order"
   },
@@ -7006,6 +7494,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_orders/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE ORDERS",
     "title": "Update a Purchase Orders"
   },
@@ -7026,6 +7515,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/customers/{id}",
+    "safetyLevel": "read",
     "sourceTag": "CUSTOMERS",
     "title": "Get a Customer"
   },
@@ -7129,6 +7619,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/customers/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "CUSTOMERS",
     "title": "Update a Customer"
   },
@@ -7149,6 +7640,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/customers/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "CUSTOMERS",
     "title": "Delete a Customer"
   },
@@ -7170,6 +7662,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/convert_products/{id}",
+    "safetyLevel": "read",
     "sourceTag": "CONVERT PRODUCTS",
     "title": "Get a Convert Product"
   },
@@ -7191,6 +7684,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/convert_products/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "CONVERT PRODUCTS",
     "title": "Delete a Convert Product"
   },
@@ -7211,6 +7705,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/bank_deposits/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "BANK DEPOSITS",
     "title": "Delete a Bank Deposit"
   },
@@ -7327,6 +7822,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/bank_deposits/{id}",
+    "safetyLevel": "read",
     "sourceTag": "BANK DEPOSITS",
     "title": "Get a Bank Deposit"
   },
@@ -7400,6 +7896,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/bank_deposits/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "BANK DEPOSITS",
     "title": "Update a Bank Deposit"
   },
@@ -7420,6 +7917,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_orders/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "SALES ORDERS",
     "title": "Delete a Sales Order"
   },
@@ -7440,6 +7938,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_orders/{id}",
+    "safetyLevel": "read",
     "sourceTag": "SALES ORDERS",
     "title": "Get a Sales Order"
   },
@@ -7628,6 +8127,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_orders/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES ORDERS",
     "title": "Update a Sales Order"
   },
@@ -7648,6 +8148,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/taxes/{id}",
+    "safetyLevel": "read",
     "sourceTag": "TAXES",
     "title": "Get a Single Tax"
   },
@@ -7704,6 +8205,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/taxes/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "TAXES",
     "title": "Update a Single Tax"
   },
@@ -7724,6 +8226,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/taxes/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "TAXES",
     "title": "Delete a Tax"
   },
@@ -7744,6 +8247,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/unit_conversions/{id}",
+    "safetyLevel": "read",
     "sourceTag": "UNIT CONVERTIONS",
     "title": "Get a Unit Conversion"
   },
@@ -7800,6 +8304,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/unit_conversions/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "UNIT CONVERTIONS",
     "title": "Update a Unit Conversion"
   },
@@ -7820,6 +8325,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/unit_conversions/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "UNIT CONVERTIONS",
     "title": "Delete a Unit Conversion"
   },
@@ -7840,6 +8346,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/bank_transfers/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "BANK TRANSFERS",
     "title": "Delete a Bank Transfer"
   },
@@ -7860,6 +8367,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/bank_transfers/{id}",
+    "safetyLevel": "read",
     "sourceTag": "BANK TRANSFERS",
     "title": "Get a Bank Transfer"
   },
@@ -7919,6 +8427,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/bank_transfers/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "BANK TRANSFERS",
     "title": "Update a Bank Transfer"
   },
@@ -7938,6 +8447,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_invoices/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "PURCHASE INVOICES",
     "title": "Delete a Purchase invoice"
   },
@@ -7957,6 +8467,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_invoices/{id}",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE INVOICES",
     "title": "Get a Purchase Invoice"
   },
@@ -8127,6 +8638,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_invoices/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE INVOICES",
     "title": "Update a Purchase Invoice"
   },
@@ -8146,6 +8658,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/companies/{id}",
+    "safetyLevel": "read",
     "sourceTag": "COMPANIES",
     "title": "Get a Company"
   },
@@ -8274,6 +8787,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/companies/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "COMPANIES",
     "title": "Update a Company"
   },
@@ -8294,6 +8808,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/credit_memos/{id}",
+    "safetyLevel": "read",
     "sourceTag": "CREDIT MEMO",
     "title": "Get Selected Credit Memo"
   },
@@ -8365,6 +8880,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/credit_memos/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "CREDIT MEMO",
     "title": "Update Credit Memo"
   },
@@ -8385,6 +8901,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/credit_memos/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "CREDIT MEMO",
     "title": "Delete Credit Memo"
   },
@@ -8405,6 +8922,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_returns/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "SALES RETURNS",
     "title": "Delete a Sales Return"
   },
@@ -8425,6 +8943,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_returns/{id}",
+    "safetyLevel": "read",
     "sourceTag": "SALES RETURNS",
     "title": "Get a Sales Return"
   },
@@ -8525,6 +9044,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_returns/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES RETURNS",
     "title": "Update a Sales Return"
   },
@@ -8545,6 +9065,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/bank_withdrawals/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "BANK WITHDRAWALS",
     "title": "Delete a Bank Withdrawal"
   },
@@ -8566,6 +9087,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/bank_withdrawals/{id}",
+    "safetyLevel": "read",
     "sourceTag": "BANK WITHDRAWALS",
     "title": "Get a Bank Withdrawal"
   },
@@ -8639,6 +9161,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/bank_withdrawals/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "BANK WITHDRAWALS",
     "title": "Update a Bank Withdrawal"
   },
@@ -8659,6 +9182,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/journal_entries/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "JOURNAL ENTRIES",
     "title": "Delete a Journal Entry"
   },
@@ -8679,6 +9203,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/journal_entries/{id}",
+    "safetyLevel": "read",
     "sourceTag": "JOURNAL ENTRIES",
     "title": "Get a Journal Entry"
   },
@@ -8760,6 +9285,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/journal_entries/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "JOURNAL ENTRIES",
     "title": "Update a Journal Entry"
   },
@@ -8780,6 +9306,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_returns/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "PURCHASE RETURNS",
     "title": "Delete a Purchase Return"
   },
@@ -8800,6 +9327,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_returns/{id}",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE RETURNS",
     "title": "Get a Purchase Return"
   },
@@ -8900,6 +9428,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_returns/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE RETURNS",
     "title": "Update a Purchase Return"
   },
@@ -8920,6 +9449,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/products/{id}",
+    "safetyLevel": "read",
     "sourceTag": "PRODUCTS",
     "title": "Get a Product"
   },
@@ -9057,6 +9587,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/products/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "PRODUCTS",
     "title": "Update a Product"
   },
@@ -9077,6 +9608,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/products/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "PRODUCTS",
     "title": "Delete a Product"
   },
@@ -9097,6 +9629,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/receive_payments/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "RECEIVE PAYMENTS",
     "title": "Delete a Receive Payment"
   },
@@ -9118,6 +9651,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/receive_payments/{id}",
+    "safetyLevel": "read",
     "sourceTag": "RECEIVE PAYMENTS",
     "title": "Get a Receive Payment"
   },
@@ -9216,6 +9750,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/receive_payments/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "RECEIVE PAYMENTS",
     "title": "Update a Receive Payment"
   },
@@ -9236,6 +9771,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_invoices/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "SALES INVOICES",
     "title": "Delete a Sales Invoice"
   },
@@ -9263,6 +9799,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_invoices/{id}",
+    "safetyLevel": "read",
     "sourceTag": "SALES INVOICES",
     "title": "Get a Sales Invoice"
   },
@@ -9451,6 +9988,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_invoices/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES INVOICES",
     "title": "Update a Sales Invoice"
   },
@@ -9471,6 +10009,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/accounts/{id}",
+    "safetyLevel": "read",
     "sourceTag": "ACCOUNTS",
     "title": "Get an Account"
   },
@@ -9528,6 +10067,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/accounts/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "ACCOUNTS",
     "title": "Update an Account"
   },
@@ -9548,6 +10088,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/accounts/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "ACCOUNTS",
     "title": "Delete an Account"
   },
@@ -9567,6 +10108,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/accounts/export",
+    "safetyLevel": "read",
     "sourceTag": "ACCOUNTS",
     "title": "Export Accounts"
   },
@@ -9599,6 +10141,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/accounts/{account_id}/bank_statements",
+    "safetyLevel": "read",
     "sourceTag": "ACCOUNTS",
     "title": "Get History of Bank Statements"
   },
@@ -9620,6 +10163,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/accounts",
+    "safetyLevel": "read",
     "sourceTag": "ACCOUNTS",
     "title": "Get List of Accounts"
   },
@@ -9676,6 +10220,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/accounts",
+    "safetyLevel": "mutation",
     "sourceTag": "ACCOUNTS",
     "title": "Add an Account"
   },
@@ -9697,6 +10242,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/products/{id}/upload_product_image",
+    "safetyLevel": "mutation",
     "sourceTag": "PRODUCTS",
     "title": "Upload Product Image"
   },
@@ -9807,6 +10353,7 @@ export const generatedOperations = [
     "operationName": "batch_create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/customers/batch_create",
+    "safetyLevel": "mutation",
     "sourceTag": "CUSTOMERS",
     "title": "Add Many Customers"
   },
@@ -9900,6 +10447,7 @@ export const generatedOperations = [
     "operationName": "batch_create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/products/batch_create",
+    "safetyLevel": "mutation",
     "sourceTag": "PRODUCTS",
     "title": "Add Many Products"
   },
@@ -10038,6 +10586,7 @@ export const generatedOperations = [
     "operationName": "batch_create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/sales_invoices/batch_create",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES INVOICES",
     "title": "Add Many Sales Invoices"
   },
@@ -10109,6 +10658,7 @@ export const generatedOperations = [
     "operationName": "convert_products",
     "parameters": [],
     "path": "/public/jurnal/api/v1/convert_products",
+    "safetyLevel": "mutation",
     "sourceTag": "CONVERT PRODUCTS",
     "title": "Add a Convert Product"
   },
@@ -10197,6 +10747,7 @@ export const generatedOperations = [
     "operationName": "create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/vendors",
+    "safetyLevel": "mutation",
     "sourceTag": "VENDORS",
     "title": "Add a Vendor"
   },
@@ -10219,6 +10770,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/vendors",
+    "safetyLevel": "read",
     "sourceTag": "VENDORS",
     "title": "Get List of Vendors"
   },
@@ -10240,6 +10792,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_payments/{id}",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE PAYMENTS",
     "title": "Get a Purchase Payment"
   },
@@ -10340,6 +10893,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_payments/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE PAYMENTS",
     "title": "Update a Purchase Payment"
   },
@@ -10360,6 +10914,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_payments/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "PURCHASE PAYMENTS",
     "title": "Delete a Purchase Payment"
   },
@@ -10463,6 +11018,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/vendors/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "VENDORS",
     "title": "Update a Vendor"
   },
@@ -10483,6 +11039,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/vendors/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "VENDORS",
     "title": "Delete a Vendor"
   },
@@ -10503,6 +11060,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/vendors/{id}",
+    "safetyLevel": "read",
     "sourceTag": "VENDORS",
     "title": "Get a Vendor"
   },
@@ -10524,6 +11082,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/products/{id}/remove_product_image",
+    "safetyLevel": "destructive",
     "sourceTag": "PRODUCTS",
     "title": "Remove Product Image"
   },
@@ -10543,6 +11102,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/asset_managements/{id}",
+    "safetyLevel": "read",
     "sourceTag": "ASSET",
     "title": "Get an Asset Detail"
   },
@@ -10647,6 +11207,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/asset_managements/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "ASSET",
     "title": "Update an Asset"
   },
@@ -10666,6 +11227,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/asset_managements/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "ASSET",
     "title": "Delete an Asset"
   },
@@ -10763,6 +11325,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_asset_managements",
     "parameters": [],
     "path": "/public/jurnal/api/v1/asset_managements",
+    "safetyLevel": "mutation",
     "sourceTag": "ASSET",
     "title": "Create an Asset"
   },
@@ -10776,6 +11339,7 @@ export const generatedOperations = [
     "operationName": "asset_managements",
     "parameters": [],
     "path": "/public/jurnal/api/v1/asset_managements",
+    "safetyLevel": "read",
     "sourceTag": "ASSET",
     "title": "Get Active Assets"
   },
@@ -10788,6 +11352,7 @@ export const generatedOperations = [
     "operationName": "depreciation_schedules",
     "parameters": [],
     "path": "/public/jurnal/api/v1/asset_managements/depreciation_schedules",
+    "safetyLevel": "read",
     "sourceTag": "ASSET",
     "title": "Get Depreciation Asset Schedules"
   },
@@ -10838,6 +11403,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/asset_managements/create_dispose/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "ASSET",
     "title": "Dispose an Asset"
   },
@@ -10857,6 +11423,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/asset_managements/depreciate/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "ASSET",
     "title": "Depreciate an Asset"
   },
@@ -10876,6 +11443,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/asset_managements/revert/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "ASSET",
     "title": "Revert a Disposed Asset"
   },
@@ -10895,6 +11463,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/asset_managements/revert_depreciation/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "ASSET",
     "title": "Revert a Depreciation"
   },
@@ -10907,6 +11476,7 @@ export const generatedOperations = [
     "operationName": "get_api_v1_companies_related_companies",
     "parameters": [],
     "path": "/public/jurnal/api/v1/companies/related_companies",
+    "safetyLevel": "read",
     "sourceTag": "COMPANIES",
     "title": "Get All Company Relation Based on Owner"
   },
@@ -10920,6 +11490,7 @@ export const generatedOperations = [
     "operationName": "active",
     "parameters": [],
     "path": "/public/jurnal/api/v1/companies/active",
+    "safetyLevel": "read",
     "sourceTag": "COMPANIES",
     "title": "Get Current Active Company"
   },
@@ -10945,6 +11516,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_companies_upload_logo",
     "parameters": [],
     "path": "/public/jurnal/api/v1/companies/upload_logo",
+    "safetyLevel": "mutation",
     "sourceTag": "COMPANIES",
     "title": "Add Company Logo"
   },
@@ -10957,6 +11529,7 @@ export const generatedOperations = [
     "operationName": "delete",
     "parameters": [],
     "path": "/public/jurnal/api/v1/companies/remove_logo",
+    "safetyLevel": "destructive",
     "sourceTag": "COMPANIES",
     "title": "Remove Logo"
   },
@@ -10969,6 +11542,7 @@ export const generatedOperations = [
     "operationName": "get_api_v1_companies_get_currency",
     "parameters": [],
     "path": "/public/jurnal/api/v1/companies/get_currency",
+    "safetyLevel": "read",
     "sourceTag": "COMPANIES",
     "title": "Get Company Currency"
   },
@@ -10989,6 +11563,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/contact_groups",
+    "safetyLevel": "read",
     "sourceTag": "CONTACTS",
     "title": "Get Contact Groups"
   },
@@ -11028,6 +11603,7 @@ export const generatedOperations = [
     "operationName": "post_api_v1_contact_groups",
     "parameters": [],
     "path": "/public/jurnal/api/v1/contact_groups",
+    "safetyLevel": "mutation",
     "sourceTag": "CONTACTS",
     "title": "Create Contact Group"
   },
@@ -11040,6 +11616,7 @@ export const generatedOperations = [
     "operationName": "get_api_v1_table_column_settings",
     "parameters": [],
     "path": "/public/jurnal/api/v1/table_column_settings",
+    "safetyLevel": "read",
     "sourceTag": "CONTACTS",
     "title": "Get Contact's Table Colum Setting"
   },
@@ -11097,6 +11674,7 @@ export const generatedOperations = [
     "operationName": "post_api_v1_table_column_settings",
     "parameters": [],
     "path": "/public/jurnal/api/v1/table_column_settings",
+    "safetyLevel": "mutation",
     "sourceTag": "CONTACTS",
     "title": "Update Column Setting of Contact's Table"
   },
@@ -11109,6 +11687,7 @@ export const generatedOperations = [
     "operationName": "get_api_v1_bank_partner",
     "parameters": [],
     "path": "/public/jurnal/api/v1/bank_partner",
+    "safetyLevel": "read",
     "sourceTag": "BANK PARTNERS",
     "title": "Get Bank Partners"
   },
@@ -11121,6 +11700,7 @@ export const generatedOperations = [
     "operationName": "get_api_v1_contact_groups_new",
     "parameters": [],
     "path": "/public/jurnal/api/v1/contact_groups/new",
+    "safetyLevel": "read",
     "sourceTag": "CONTACTS",
     "title": "Get Create Contact Group Contact"
   },
@@ -11133,6 +11713,7 @@ export const generatedOperations = [
     "operationName": "get_api_v1_contacts_new",
     "parameters": [],
     "path": "/public/jurnal/api/v1/contacts/new",
+    "safetyLevel": "read",
     "sourceTag": "CONTACTS",
     "title": "Get Create Contact Contract"
   },
@@ -11152,6 +11733,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/contacts/{contact_id}/activate",
+    "safetyLevel": "mutation",
     "sourceTag": "CONTACTS",
     "title": "Unarchive Contact"
   },
@@ -11171,6 +11753,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/contacts/{contact_id}/deactivate",
+    "safetyLevel": "destructive",
     "sourceTag": "CONTACTS",
     "title": "Archive Contact"
   },
@@ -11190,6 +11773,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/products/{product_id}/activate",
+    "safetyLevel": "mutation",
     "sourceTag": "PRODUCTS",
     "title": "Unarchive Product"
   },
@@ -11209,6 +11793,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/products/{product_id}/deactivate",
+    "safetyLevel": "destructive",
     "sourceTag": "PRODUCTS",
     "title": "Archive Product"
   },
@@ -11228,6 +11813,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/contact_groups/{group_id}",
+    "safetyLevel": "destructive",
     "sourceTag": "CONTACTS",
     "title": "Delete Contact Group"
   },
@@ -11269,6 +11855,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/contact_groups/{group_id}",
+    "safetyLevel": "mutation",
     "sourceTag": "CONTACTS",
     "title": "Update Contact Group"
   },
@@ -11437,6 +12024,7 @@ export const generatedOperations = [
     "operationName": "post_api_v1_contacts",
     "parameters": [],
     "path": "/public/jurnal/api/v1/contacts",
+    "safetyLevel": "mutation",
     "sourceTag": "CONTACTS",
     "title": "Create Contact"
   },
@@ -11457,6 +12045,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/contacts",
+    "safetyLevel": "read",
     "sourceTag": "CONTACTS",
     "title": "Get Contacts"
   },
@@ -11476,6 +12065,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/recurring_schedules/new",
+    "safetyLevel": "read",
     "sourceTag": "TRANSACTIONS",
     "title": "Get Recurring Schedule"
   },
@@ -11501,6 +12091,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/contacts/summary",
+    "safetyLevel": "read",
     "sourceTag": "CONTACTS",
     "title": "Get Contact Index Summary"
   },
@@ -11524,6 +12115,7 @@ export const generatedOperations = [
     "operationName": "post_api_v1_contacts_merge_contacts",
     "parameters": [],
     "path": "/public/jurnal/api/v1/contacts/merge_contacts",
+    "safetyLevel": "mutation",
     "sourceTag": "CONTACTS",
     "title": "Merge Two Contacts"
   },
@@ -11593,6 +12185,7 @@ export const generatedOperations = [
     "operationName": "post_api_v1_recurring_schedules",
     "parameters": [],
     "path": "/public/jurnal/api/v1/recurring_schedules",
+    "safetyLevel": "mutation",
     "sourceTag": "TRANSACTIONS",
     "title": "Set Recurring Schecule for Transaction"
   },
@@ -11622,6 +12215,7 @@ export const generatedOperations = [
     "operationName": "post_api_v1_contacts_add_to_groups",
     "parameters": [],
     "path": "/public/jurnal/api/v1/contacts/add_to_groups",
+    "safetyLevel": "mutation",
     "sourceTag": "CONTACTS",
     "title": "Add Contacts to Group"
   },
@@ -11641,6 +12235,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/contacts/{id}",
+    "safetyLevel": "read",
     "sourceTag": "CONTACTS",
     "title": "Get Contact Profile"
   },
@@ -11660,6 +12255,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/contacts/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "CONTACTS",
     "title": "Delete Contact"
   },
@@ -11838,6 +12434,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/contacts/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "CONTACTS",
     "title": "Update Contact"
   },
@@ -11888,6 +12485,7 @@ export const generatedOperations = [
     "operationName": "post_api_v1_conversion_balances",
     "parameters": [],
     "path": "/public/jurnal/api/v1/conversion_balances",
+    "safetyLevel": "mutation",
     "sourceTag": "CONVERSION BALANCE",
     "title": "Create Conversion Balance"
   },
@@ -11908,6 +12506,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/currency_lists/{id}",
+    "safetyLevel": "read",
     "sourceTag": "CURRENCY LISTS",
     "title": "Get Currency lists"
   },
@@ -11944,6 +12543,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/currency_lists/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "CURRENCY LISTS",
     "title": "Update Currency lists"
   },
@@ -11964,6 +12564,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/currency_lists/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "CURRENCY LISTS",
     "title": "Delete Currency lists"
   },
@@ -11977,6 +12578,7 @@ export const generatedOperations = [
     "operationName": "list_currency_lists",
     "parameters": [],
     "path": "/public/jurnal/api/v1/currency_lists",
+    "safetyLevel": "read",
     "sourceTag": "CURRENCY LISTS",
     "title": "List Currency lists"
   },
@@ -12006,6 +12608,7 @@ export const generatedOperations = [
     "operationName": "post_currency_lists",
     "parameters": [],
     "path": "/public/jurnal/api/v1/currency_lists",
+    "safetyLevel": "mutation",
     "sourceTag": "CURRENCY LISTS",
     "title": "Create Currency lists"
   },
@@ -12047,6 +12650,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/currency_rates",
+    "safetyLevel": "read",
     "sourceTag": "CURRENCY RATE",
     "title": "GET Currency Rate Index"
   },
@@ -12059,6 +12663,7 @@ export const generatedOperations = [
     "operationName": "new",
     "parameters": [],
     "path": "/public/jurnal/api/v1/customers/new",
+    "safetyLevel": "read",
     "sourceTag": "CUSTOMERS",
     "title": "Get Default Input for Customer"
   },
@@ -12085,6 +12690,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/customers/export",
+    "safetyLevel": "read",
     "sourceTag": "CUSTOMERS",
     "title": "Export customers"
   },
@@ -12097,6 +12703,7 @@ export const generatedOperations = [
     "operationName": "en",
     "parameters": [],
     "path": "/public/jurnal/api/v1/features/en",
+    "safetyLevel": "read",
     "sourceTag": "FEATURES LIST",
     "title": "Get Features List (English)"
   },
@@ -12109,6 +12716,7 @@ export const generatedOperations = [
     "operationName": "id",
     "parameters": [],
     "path": "/public/jurnal/api/v1/features/id",
+    "safetyLevel": "read",
     "sourceTag": "FEATURES LIST",
     "title": "Get Features List (Bahasa)"
   },
@@ -12129,6 +12737,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/payment_methods",
+    "safetyLevel": "read",
     "sourceTag": "PAYMENT METHOD",
     "title": "Get List of Payment Methods"
   },
@@ -12160,6 +12769,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_payment_methods",
     "parameters": [],
     "path": "/public/jurnal/api/v1/payment_methods",
+    "safetyLevel": "mutation",
     "sourceTag": "PAYMENT METHOD",
     "title": "Add a Payment Method"
   },
@@ -12180,6 +12790,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/payment_methods/{id}",
+    "safetyLevel": "read",
     "sourceTag": "PAYMENT METHOD",
     "title": "Get a Payment Method"
   },
@@ -12219,6 +12830,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/payment_methods/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "PAYMENT METHOD",
     "title": "Update a Payment Method"
   },
@@ -12239,6 +12851,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/payment_methods/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "PAYMENT METHOD",
     "title": "Delete a Payment Method"
   },
@@ -12251,6 +12864,7 @@ export const generatedOperations = [
     "operationName": "new",
     "parameters": [],
     "path": "/public/jurnal/api/v1/products/new",
+    "safetyLevel": "read",
     "sourceTag": "PRODUCTS",
     "title": "Get Default Input for Product"
   },
@@ -12297,6 +12911,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/products/export",
+    "safetyLevel": "read",
     "sourceTag": "PRODUCTS",
     "title": "Export Products"
   },
@@ -12309,6 +12924,7 @@ export const generatedOperations = [
     "operationName": "tags",
     "parameters": [],
     "path": "/public/jurnal/api/v1/tags",
+    "safetyLevel": "read",
     "sourceTag": "TRANSACTION TAG",
     "title": "Get List of Transaction Tags"
   },
@@ -12340,6 +12956,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_tags",
     "parameters": [],
     "path": "/public/jurnal/api/v1/tags",
+    "safetyLevel": "mutation",
     "sourceTag": "TRANSACTION TAG",
     "title": "Add a Transaction Tag"
   },
@@ -12359,6 +12976,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/tags/{id}",
+    "safetyLevel": "read",
     "sourceTag": "TRANSACTION TAG",
     "title": "Get a Transaction Tag"
   },
@@ -12397,6 +13015,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/tags/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "TRANSACTION TAG",
     "title": "Update a Transaction Tag"
   },
@@ -12416,6 +13035,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/tags/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "TRANSACTION TAG",
     "title": "Delete a Transaction  Tag"
   },
@@ -12444,6 +13064,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_product_categories",
     "parameters": [],
     "path": "/public/jurnal/api/v1/product_categories",
+    "safetyLevel": "mutation",
     "sourceTag": "PRODUCT CATEGORIES",
     "title": "Add a Product Category"
   },
@@ -12456,6 +13077,7 @@ export const generatedOperations = [
     "operationName": "product_categories",
     "parameters": [],
     "path": "/public/jurnal/api/v1/product_categories",
+    "safetyLevel": "read",
     "sourceTag": "PRODUCT CATEGORIES",
     "title": "Get List of Product Categories"
   },
@@ -12475,6 +13097,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/product_categories/{id}",
+    "safetyLevel": "read",
     "sourceTag": "PRODUCT CATEGORIES",
     "title": "Get a Product Category"
   },
@@ -12510,6 +13133,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/product_categories/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "PRODUCT CATEGORIES",
     "title": "Update a Product Category"
   },
@@ -12529,6 +13153,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/product_categories/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "PRODUCT CATEGORIES",
     "title": "Delete a Product Category"
   },
@@ -12541,6 +13166,7 @@ export const generatedOperations = [
     "operationName": "product_units",
     "parameters": [],
     "path": "/public/jurnal/api/v1/product_units",
+    "safetyLevel": "read",
     "sourceTag": "PRODUCT UNIT",
     "title": "Get List of Product Unit"
   },
@@ -12556,6 +13182,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_product_units",
     "parameters": [],
     "path": "/public/jurnal/api/v1/product_units",
+    "safetyLevel": "mutation",
     "sourceTag": "PRODUCT UNIT",
     "title": "Create a Product Unit"
   },
@@ -12575,6 +13202,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/product_units/{id}",
+    "safetyLevel": "read",
     "sourceTag": "PRODUCT UNIT",
     "title": "Get Selected Product Unit"
   },
@@ -12594,6 +13222,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/product_units/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "PRODUCT UNIT",
     "title": "Delete a Product Unit"
   },
@@ -12606,6 +13235,7 @@ export const generatedOperations = [
     "operationName": "terms",
     "parameters": [],
     "path": "/public/jurnal/api/v1/terms",
+    "safetyLevel": "read",
     "sourceTag": "TERM",
     "title": "Get List of Terms"
   },
@@ -12638,6 +13268,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_terms",
     "parameters": [],
     "path": "/public/jurnal/api/v1/terms",
+    "safetyLevel": "mutation",
     "sourceTag": "TERM",
     "title": "Add a Term"
   },
@@ -12657,6 +13288,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/terms/{id}",
+    "safetyLevel": "read",
     "sourceTag": "TERM",
     "title": "Get a Term"
   },
@@ -12676,6 +13308,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/terms/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "TERM",
     "title": "Delete a Term"
   },
@@ -12688,6 +13321,7 @@ export const generatedOperations = [
     "operationName": "users",
     "parameters": [],
     "path": "/public/jurnal/api/v1/users",
+    "safetyLevel": "read",
     "sourceTag": "USER",
     "title": "Get List of Users"
   },
@@ -12707,6 +13341,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/users/{id}",
+    "safetyLevel": "read",
     "sourceTag": "USER",
     "title": "Get a User"
   },
@@ -12752,6 +13387,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/users/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "USER",
     "title": "Update a User"
   },
@@ -12771,6 +13407,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/users/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "USER",
     "title": "Delete a user"
   },
@@ -12783,6 +13420,7 @@ export const generatedOperations = [
     "operationName": "me",
     "parameters": [],
     "path": "/public/jurnal/api/v1/users/me",
+    "safetyLevel": "read",
     "sourceTag": "USER",
     "title": "Get Current User"
   },
@@ -12795,6 +13433,7 @@ export const generatedOperations = [
     "operationName": "profile",
     "parameters": [],
     "path": "/public/jurnal/api/v1/user_account/profile",
+    "safetyLevel": "read",
     "sourceTag": "USER ACCOUNT",
     "title": "Get User Account Profile"
   },
@@ -12807,6 +13446,7 @@ export const generatedOperations = [
     "operationName": "new",
     "parameters": [],
     "path": "/public/jurnal/api/v1/vendors/new",
+    "safetyLevel": "read",
     "sourceTag": "VENDORS",
     "title": "Get Default Input for Vendor"
   },
@@ -12833,6 +13473,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/vendors/export",
+    "safetyLevel": "read",
     "sourceTag": "VENDORS",
     "title": "Export vendors"
   },
@@ -12929,6 +13570,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_vendors_batch_create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/vendors/batch_create",
+    "safetyLevel": "mutation",
     "sourceTag": "VENDORS",
     "title": "Add Many Vendors"
   },
@@ -12942,6 +13584,7 @@ export const generatedOperations = [
     "operationName": "warehouses",
     "parameters": [],
     "path": "/public/jurnal/api/v1/warehouses",
+    "safetyLevel": "read",
     "sourceTag": "WAREHOUSE",
     "title": "Get List of Warehouses"
   },
@@ -12982,6 +13625,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_warehouses",
     "parameters": [],
     "path": "/public/jurnal/api/v1/warehouses",
+    "safetyLevel": "mutation",
     "sourceTag": "WAREHOUSE",
     "title": "Add a Warehouse"
   },
@@ -13002,6 +13646,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/warehouses/{id}",
+    "safetyLevel": "read",
     "sourceTag": "WAREHOUSE",
     "title": "Get a Warehouse"
   },
@@ -13050,6 +13695,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/warehouses/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "WAREHOUSE",
     "title": "Update a Warehouse"
   },
@@ -13070,6 +13716,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/warehouses/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "WAREHOUSE",
     "title": "Delete a Warehouse"
   },
@@ -13136,6 +13783,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_bank_withdrawals_batch_create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/bank_withdrawals/batch_create",
+    "safetyLevel": "mutation",
     "sourceTag": "BANK WITHDRAWALS",
     "title": "Add Many Bank Withdrawals"
   },
@@ -13188,6 +13836,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_bank_transfers_batch_create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/bank_transfers/batch_create",
+    "safetyLevel": "mutation",
     "sourceTag": "BANK TRANSFERS",
     "title": "Add Many Bank Transfers"
   },
@@ -13254,6 +13903,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_bank_deposits_batch_create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/bank_deposits/batch_create",
+    "safetyLevel": "mutation",
     "sourceTag": "BANK DEPOSITS",
     "title": "Add Many Bank Deposits"
   },
@@ -13273,6 +13923,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/expenses/{id}/bank_withdrawals",
+    "safetyLevel": "read",
     "sourceTag": "EXPENSES",
     "title": "Get List of Payments from Expense"
   },
@@ -13354,6 +14005,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_expenses_batch_create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/expenses/batch_create",
+    "safetyLevel": "mutation",
     "sourceTag": "EXPENSES",
     "title": "Add Many Expenses"
   },
@@ -13417,6 +14069,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_journal_entries_batch_create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/journal_entries/batch_create",
+    "safetyLevel": "mutation",
     "sourceTag": "JOURNAL ENTRIES",
     "title": "Add Many Journal Entries"
   },
@@ -13442,6 +14095,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_invoices/{id}/purchase_payments",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE INVOICES",
     "title": "Get List of Payments from Purchase Invoice"
   },
@@ -13580,6 +14234,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_purchase_invoices_batch_create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/purchase_invoices/batch_create",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE INVOICES",
     "title": "Add Many Purchase Invoices"
   },
@@ -13611,6 +14266,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_orders/{id}/invoices_history",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE ORDERS",
     "title": "Get Invoices History List"
   },
@@ -13630,6 +14286,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_orders/{id}/purchase_order_payments",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE ORDERS",
     "title": "Get Purchase Order Payments"
   },
@@ -13650,6 +14307,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_orders/{id}/history",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE ORDERS",
     "title": "Get History Transation"
   },
@@ -13788,6 +14446,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_purchase_orders_batch_create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/purchase_orders/batch_create",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE ORDERS",
     "title": "Add Many Purchase Orders"
   },
@@ -13838,6 +14497,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_orders/{id}/convert_to_invoice",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE ORDERS",
     "title": "Convert to Purchase Invoice"
   },
@@ -13885,6 +14545,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_orders/{id}/convert_to_delivery",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE ORDERS",
     "title": "Convert to Purchase Delivery"
   },
@@ -13897,6 +14558,7 @@ export const generatedOperations = [
     "operationName": "purchase_deliveries",
     "parameters": [],
     "path": "/public/jurnal/api/v1/purchase_deliveries",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE DELIVERY",
     "title": "Get List of Purchase Deliveries"
   },
@@ -14025,6 +14687,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_purchase_deliveries",
     "parameters": [],
     "path": "/public/jurnal/api/v1/purchase_deliveries",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE DELIVERY",
     "title": "Add a Purchase Delivery"
   },
@@ -14044,6 +14707,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_deliveries/{id}",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE DELIVERY",
     "title": "Get a Purchase Delivery"
   },
@@ -14179,6 +14843,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_deliveries/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE DELIVERY",
     "title": "Update a Purchase Delivery"
   },
@@ -14198,6 +14863,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_deliveries/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "PURCHASE DELIVERY",
     "title": "Delete a Purchase Delivery"
   },
@@ -14245,6 +14911,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_deliveries/{id}/convert_to_invoice",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE DELIVERY",
     "title": "Convert to Purchase Invoice"
   },
@@ -14325,6 +14992,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_purchase_payments_batch_create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/purchase_payments/batch_create",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE PAYMENTS",
     "title": "Add Many Purchase Payments"
   },
@@ -14337,6 +15005,7 @@ export const generatedOperations = [
     "operationName": "purchase_order_payments",
     "parameters": [],
     "path": "/public/jurnal/api/v1/purchase_order_payments",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE ORDER PAYMENT",
     "title": "Get List of Purchase Order Payment"
   },
@@ -14416,6 +15085,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_purchase_order_payments",
     "parameters": [],
     "path": "/public/jurnal/api/v1/purchase_order_payments",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE ORDER PAYMENT",
     "title": "Create a Purchase Order Payment"
   },
@@ -14435,6 +15105,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_order_payments/{id}",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE ORDER PAYMENT",
     "title": "Get a Purchase Order Payment"
   },
@@ -14518,6 +15189,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_order_payments/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE ORDER PAYMENT",
     "title": "Update a Purchase Order Payment"
   },
@@ -14537,6 +15209,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_order_payments/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "PURCHASE ORDER PAYMENT",
     "title": "Delete a Purchase Order Payment"
   },
@@ -14624,6 +15297,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_purchase_order_payments_batch_create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/purchase_order_payments/batch_create",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE ORDER PAYMENT",
     "title": "Add Many Purchase Order Payment"
   },
@@ -14637,6 +15311,7 @@ export const generatedOperations = [
     "operationName": "purchase_quotes",
     "parameters": [],
     "path": "/public/jurnal/api/v1/purchase_quotes",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE QUOTE",
     "title": "Get List of Purchase Quotes"
   },
@@ -14761,6 +15436,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_purchase_quotes",
     "parameters": [],
     "path": "/public/jurnal/api/v1/purchase_quotes",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE QUOTE",
     "title": "Create a Purchase Quote"
   },
@@ -14889,6 +15565,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_quotes/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE QUOTE",
     "title": "Update a Purchase Quote"
   },
@@ -14908,6 +15585,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_quotes/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "PURCHASE QUOTE",
     "title": "Delete a Purchase Quote"
   },
@@ -14927,6 +15605,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_quotes/{id}",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE QUOTE",
     "title": "Get a Purchase Quote"
   },
@@ -15011,6 +15690,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_purchase_quotes_batch_create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/purchase_quotes/batch_create",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE QUOTE",
     "title": "Add Many Purchase Quotes"
   },
@@ -15058,6 +15738,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_quotes/{id}/convert_to_order",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE QUOTE",
     "title": "Convert to Purchase Order"
   },
@@ -15105,6 +15786,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_quotes/{id}/convert_to_invoice",
+    "safetyLevel": "mutation",
     "sourceTag": "PURCHASE QUOTE",
     "title": "Convert to Purchase Invoice"
   },
@@ -15180,6 +15862,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_receive_payments_batch_create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/receive_payments/batch_create",
+    "safetyLevel": "mutation",
     "sourceTag": "RECEIVE PAYMENTS",
     "title": "Add Many Receive Payments"
   },
@@ -15193,6 +15876,7 @@ export const generatedOperations = [
     "operationName": "sales_quotes",
     "parameters": [],
     "path": "/public/jurnal/api/v1/sales_quotes",
+    "safetyLevel": "read",
     "sourceTag": "SALES QUOTE",
     "title": "Get List of Sales Quotes"
   },
@@ -15332,6 +16016,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_sales_quotes",
     "parameters": [],
     "path": "/public/jurnal/api/v1/sales_quotes",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES QUOTE",
     "title": "Add a Sales Quote"
   },
@@ -15428,6 +16113,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_sales_quotes_batch_create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/sales_quotes/batch_create",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES QUOTE",
     "title": "Add Many Sales Quotes"
   },
@@ -15475,6 +16161,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_quotes/{id}/convert_to_invoice",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES QUOTE",
     "title": "Convert to Sales Invoice"
   },
@@ -15522,6 +16209,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_quotes/{id}/convert_to_order",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES QUOTE",
     "title": "Convert to Sales Order"
   },
@@ -15542,6 +16230,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_quotes/{id}",
+    "safetyLevel": "read",
     "sourceTag": "SALES QUOTE",
     "title": "Get Sales Quote"
   },
@@ -15682,6 +16371,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_quotes/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES QUOTE",
     "title": "Update a Sales Quote"
   },
@@ -15701,6 +16391,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_quotes/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "SALES QUOTE",
     "title": "Delete a Sales Quote"
   },
@@ -15726,6 +16417,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_invoices/{id}/register_tiny_url",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE INVOICES",
     "title": "Get an Purchase Invoice Link"
   },
@@ -15745,6 +16437,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_invoices/{id}/register_tiny_url",
+    "safetyLevel": "read",
     "sourceTag": "SALES INVOICES",
     "title": "Get an Invoice Link"
   },
@@ -15764,6 +16457,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_invoices/{id}/receive_payments",
+    "safetyLevel": "read",
     "sourceTag": "SALES INVOICES",
     "title": "Get List of Payments from Sales Invoice"
   },
@@ -15795,6 +16489,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_orders/{id}/invoices_history",
+    "safetyLevel": "read",
     "sourceTag": "SALES ORDERS",
     "title": "Get Invoices History List"
   },
@@ -15814,6 +16509,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_orders/{id}/sales_order_payments",
+    "safetyLevel": "read",
     "sourceTag": "SALES ORDERS",
     "title": "Get Sales Order Payments"
   },
@@ -15834,6 +16530,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_orders/{id}/history",
+    "safetyLevel": "read",
     "sourceTag": "SALES ORDERS",
     "title": "Get History Transaction"
   },
@@ -15972,6 +16669,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_sales_orders_batch_create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/sales_orders/batch_create",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES ORDERS",
     "title": "Add Many Sales Orders"
   },
@@ -16019,6 +16717,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_orders/{id}/convert_to_invoice",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES ORDERS",
     "title": "Convert to Sales Invoice"
   },
@@ -16066,6 +16765,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_orders/{id}/convert_to_delivery",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES ORDERS",
     "title": "Convert to Sales Delivery"
   },
@@ -16194,6 +16894,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_sales_deliveries",
     "parameters": [],
     "path": "/public/jurnal/api/v1/sales_deliveries",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES DELIVERY",
     "title": "Add a Sales Delivery"
   },
@@ -16206,6 +16907,7 @@ export const generatedOperations = [
     "operationName": "sales_deliveries",
     "parameters": [],
     "path": "/public/jurnal/api/v1/sales_deliveries",
+    "safetyLevel": "read",
     "sourceTag": "SALES DELIVERY",
     "title": "Get List of Sales Deliveries"
   },
@@ -16225,6 +16927,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_deliveries/{id}",
+    "safetyLevel": "read",
     "sourceTag": "SALES DELIVERY",
     "title": "Get a Sales Delivery"
   },
@@ -16360,6 +17063,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_deliveries/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES DELIVERY",
     "title": "Update a  Sales Delivery"
   },
@@ -16379,6 +17083,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_deliveries/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "SALES DELIVERY",
     "title": "Delete a Sales Delivery"
   },
@@ -16426,6 +17131,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_deliveries/{id}/convert_to_invoice",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES DELIVERY",
     "title": "Convert to Sales Invoice"
   },
@@ -16438,6 +17144,7 @@ export const generatedOperations = [
     "operationName": "sales_order_payments",
     "parameters": [],
     "path": "/public/jurnal/api/v1/sales_order_payments",
+    "safetyLevel": "read",
     "sourceTag": "SALES ORDER PAYMENT",
     "title": "Get List of Sales Order Payments"
   },
@@ -16517,6 +17224,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_sales_order_payments",
     "parameters": [],
     "path": "/public/jurnal/api/v1/sales_order_payments",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES ORDER PAYMENT",
     "title": "Create a Sales Order Payment"
   },
@@ -16536,6 +17244,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_order_payments/{id}",
+    "safetyLevel": "read",
     "sourceTag": "SALES ORDER PAYMENT",
     "title": "Get a Sales Order Payment"
   },
@@ -16619,6 +17328,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_order_payments/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES ORDER PAYMENT",
     "title": "Update a Sales Order Payment"
   },
@@ -16638,6 +17348,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_order_payments/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "SALES ORDER PAYMENT",
     "title": "Delete a Sales Order Payment"
   },
@@ -16716,6 +17427,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_sales_order_payments_batch_create",
     "parameters": [],
     "path": "/public/jurnal/api/v1/sales_order_payments/batch_create",
+    "safetyLevel": "mutation",
     "sourceTag": "SALES ORDER PAYMENT",
     "title": "Add Many Sales Order Payments"
   },
@@ -16729,6 +17441,7 @@ export const generatedOperations = [
     "operationName": "stock_adjustments",
     "parameters": [],
     "path": "/public/jurnal/api/v1/stock_adjustments",
+    "safetyLevel": "read",
     "sourceTag": "STOCK ADJUSTMENT",
     "title": "Get List of Stock Adjustments"
   },
@@ -16809,6 +17522,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_stock_adjustments",
     "parameters": [],
     "path": "/public/jurnal/api/v1/stock_adjustments",
+    "safetyLevel": "mutation",
     "sourceTag": "STOCK ADJUSTMENT",
     "title": "Add a Stock Adjustment"
   },
@@ -16843,6 +17557,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/stock_adjustment_approval/approval_list",
+    "safetyLevel": "read",
     "sourceTag": "STOCK ADJUSTMENT",
     "title": "Get List of Stock Adjustment Need Approval"
   },
@@ -16855,6 +17570,7 @@ export const generatedOperations = [
     "operationName": "approval_total",
     "parameters": [],
     "path": "/public/jurnal/api/v1/stock_adjustment_approval/approval_total",
+    "safetyLevel": "read",
     "sourceTag": "STOCK ADJUSTMENT",
     "title": "Get List of Stock Adjustment Total data Need approval"
   },
@@ -16875,6 +17591,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/stock_adjustment_approval/{id}/approve_rule_based",
+    "safetyLevel": "mutation",
     "sourceTag": "STOCK ADJUSTMENT",
     "title": "Approve Stock Adjustment"
   },
@@ -16895,6 +17612,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/stock_adjustments/{transaction_id}/comments",
+    "safetyLevel": "read",
     "sourceTag": "STOCK ADJUSTMENT",
     "title": "Comment Stock Adjustment"
   },
@@ -16928,6 +17646,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/stock_adjustments/{transaction_id}/comments",
+    "safetyLevel": "mutation",
     "sourceTag": "STOCK ADJUSTMENT",
     "title": "Create Comment Stock Adjustment"
   },
@@ -16966,6 +17685,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/stock_adjustments/new",
+    "safetyLevel": "read",
     "sourceTag": "STOCK ADJUSTMENT",
     "title": "Get List of New Stock Adjustment Line Products"
   },
@@ -16985,6 +17705,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/stock_adjustments/check_existing_stock_adjustments",
+    "safetyLevel": "read",
     "sourceTag": "STOCK ADJUSTMENT",
     "title": "Get existing stock adjustment by date"
   },
@@ -17019,6 +17740,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/stock_adjustments/{id}",
+    "safetyLevel": "read",
     "sourceTag": "STOCK ADJUSTMENT",
     "title": "Get a Stock Adjustment"
   },
@@ -17111,6 +17833,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/stock_adjustments/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "STOCK ADJUSTMENT",
     "title": "Update a Stock Adjustment"
   },
@@ -17130,6 +17853,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/stock_adjustments/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "STOCK ADJUSTMENT",
     "title": "Delete a Stock Adjustment"
   },
@@ -17179,6 +17903,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_transaction_pdfs_send_email",
     "parameters": [],
     "path": "/public/jurnal/api/v1/transaction_pdfs/send_email",
+    "safetyLevel": "mutation",
     "sourceTag": "TRANSACTION PDF",
     "title": "Email Transaction PDF"
   },
@@ -17216,6 +17941,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_transaction_pdfs_export",
     "parameters": [],
     "path": "/public/jurnal/api/v1/transaction_pdfs/export",
+    "safetyLevel": "mutation",
     "sourceTag": "TRANSACTION PDF",
     "title": "Export to PDF"
   },
@@ -17282,6 +18008,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_warehouse_transfers",
     "parameters": [],
     "path": "/public/jurnal/api/v1/warehouse_transfers",
+    "safetyLevel": "mutation",
     "sourceTag": "WAREHOUSE TRANSFER",
     "title": "Add a Warehouse Transfer"
   },
@@ -17294,6 +18021,7 @@ export const generatedOperations = [
     "operationName": "warehouse_transfers",
     "parameters": [],
     "path": "/public/jurnal/api/v1/warehouse_transfers",
+    "safetyLevel": "read",
     "sourceTag": "WAREHOUSE TRANSFER",
     "title": "Get List of Warehouse Transfers"
   },
@@ -17328,6 +18056,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/warehouse_transfer_approval/approval_list",
+    "safetyLevel": "read",
     "sourceTag": "WAREHOUSE TRANSFER",
     "title": "Get List of Warehouse Transfers Need Approval"
   },
@@ -17340,6 +18069,7 @@ export const generatedOperations = [
     "operationName": "approval_total",
     "parameters": [],
     "path": "/public/jurnal/api/v1/warehouse_transfer_approval/approval_total",
+    "safetyLevel": "read",
     "sourceTag": "WAREHOUSE TRANSFER",
     "title": "Get List of Warehouse Transfers Total data Need approval"
   },
@@ -17360,6 +18090,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/warehouse_transfer_approval/{id}/approve_rule_based",
+    "safetyLevel": "mutation",
     "sourceTag": "WAREHOUSE TRANSFER",
     "title": "Approve Warehouse Transfers"
   },
@@ -17380,6 +18111,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/warehouse_transfers/{transaction_id}/comments",
+    "safetyLevel": "read",
     "sourceTag": "WAREHOUSE TRANSFER",
     "title": "Comment Warehouse Transfers"
   },
@@ -17413,6 +18145,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/warehouse_transfers/{transaction_id}/comments",
+    "safetyLevel": "mutation",
     "sourceTag": "WAREHOUSE TRANSFER",
     "title": "Create Comment Warehouse Transfers"
   },
@@ -17433,6 +18166,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/warehouse_transfers/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "WAREHOUSE TRANSFER",
     "title": "Delete a Warehouse Transfer"
   },
@@ -17453,6 +18187,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/warehouse_transfers/{id}",
+    "safetyLevel": "read",
     "sourceTag": "WAREHOUSE TRANSFER",
     "title": "Get a Warehouse Transfer"
   },
@@ -17473,6 +18208,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/convert_product_approval/{id}/approve_rule_based",
+    "safetyLevel": "mutation",
     "sourceTag": "CONVERT PRODUCTS",
     "title": "Approve Convert Product"
   },
@@ -17493,6 +18229,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/convert_products/{transaction_id}/comments",
+    "safetyLevel": "read",
     "sourceTag": "CONVERT PRODUCTS",
     "title": "Comment Convert Product"
   },
@@ -17526,6 +18263,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/convert_products/{transaction_id}/comments",
+    "safetyLevel": "mutation",
     "sourceTag": "CONVERT PRODUCTS",
     "title": "Create Comment Stock Adjustment"
   },
@@ -17538,6 +18276,7 @@ export const generatedOperations = [
     "operationName": "aged_payables",
     "parameters": [],
     "path": "/public/jurnal/api/v1/aged_payables",
+    "safetyLevel": "read",
     "sourceTag": "AGED PAYABLES",
     "title": "Get Aged Payables"
   },
@@ -17550,6 +18289,7 @@ export const generatedOperations = [
     "operationName": "aged_receivables",
     "parameters": [],
     "path": "/public/jurnal/api/v1/aged_receivables",
+    "safetyLevel": "read",
     "sourceTag": "AGED RECEIVABLES",
     "title": "Get Aged Receivables"
   },
@@ -17563,6 +18303,7 @@ export const generatedOperations = [
     "operationName": "bank_reconciliation_summary",
     "parameters": [],
     "path": "/public/jurnal/api/v1/bank_reconciliation_summary",
+    "safetyLevel": "read",
     "sourceTag": "BANK RECONCILIATION SUMMARY",
     "title": "Get Bank Reconciliation Summary"
   },
@@ -17583,6 +18324,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/bank_reconciliation_summary/export",
+    "safetyLevel": "read",
     "sourceTag": "BANK RECONCILIATION SUMMARY",
     "title": "Export Bank Reconciliation Summary"
   },
@@ -17596,6 +18338,7 @@ export const generatedOperations = [
     "operationName": "bank_statement_report",
     "parameters": [],
     "path": "/public/jurnal/api/v1/bank_statement_report",
+    "safetyLevel": "read",
     "sourceTag": "BANK STATEMENT REPORT",
     "title": "Get Bank Statement Report"
   },
@@ -17616,6 +18359,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/bank_statement_report/export",
+    "safetyLevel": "read",
     "sourceTag": "BANK STATEMENT REPORT",
     "title": "Export Bank Statement Report"
   },
@@ -17629,6 +18373,7 @@ export const generatedOperations = [
     "operationName": "bank_summary",
     "parameters": [],
     "path": "/public/jurnal/api/v1/bank_summary",
+    "safetyLevel": "read",
     "sourceTag": "BANK SUMMARY",
     "title": "Get Bank Summary"
   },
@@ -17649,6 +18394,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/bank_summary/export",
+    "safetyLevel": "read",
     "sourceTag": "BANK SUMMARY",
     "title": "Export Bank Summary"
   },
@@ -17690,6 +18436,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/balance_sheet",
+    "safetyLevel": "read",
     "sourceTag": "BALANCE SHEET",
     "title": "Get Balance Sheet Information"
   },
@@ -17737,6 +18484,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/balance_sheet/export",
+    "safetyLevel": "read",
     "sourceTag": "BALANCE SHEET",
     "title": "Export Balance Sheet Report"
   },
@@ -17778,6 +18526,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/cash_flow",
+    "safetyLevel": "read",
     "sourceTag": "CASH FLOW",
     "title": "Get Cash Flow Report"
   },
@@ -17825,6 +18574,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/cash_flow/export",
+    "safetyLevel": "read",
     "sourceTag": "CASH FLOW",
     "title": "Export Cash Flow Report"
   },
@@ -17867,6 +18617,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v2/budget_management",
+    "safetyLevel": "read",
     "sourceTag": "BUDGET MANAGEMENT",
     "title": "Get Budget Management"
   },
@@ -17967,6 +18718,7 @@ export const generatedOperations = [
     "operationName": "post_budget_management",
     "parameters": [],
     "path": "/public/jurnal/api/v2/budget_management",
+    "safetyLevel": "mutation",
     "sourceTag": "BUDGET MANAGEMENT",
     "title": "Create new budget management template"
   },
@@ -18078,6 +18830,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v2/budget_management/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "BUDGET MANAGEMENT",
     "title": "Update budget management template"
   },
@@ -18099,6 +18852,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v2/budget_management/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "BUDGET MANAGEMENT",
     "title": "Delete Budget"
   },
@@ -18178,6 +18932,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v2/profit_loss_budgeting",
+    "safetyLevel": "read",
     "sourceTag": "PROFIT & LOSS BUDGETING",
     "title": "Get Profit Loss Budgeting Information"
   },
@@ -18257,6 +19012,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v2_cash_flow",
     "parameters": [],
     "path": "/public/jurnal/api/v2/cash_flow",
+    "safetyLevel": "mutation",
     "sourceTag": "CASH FLOW NEW REPORT",
     "title": "Create cashflow custom layout"
   },
@@ -18302,6 +19058,7 @@ export const generatedOperations = [
     "operationName": "cash_flow",
     "parameters": [],
     "path": "/public/jurnal/api/v2/cash_flow",
+    "safetyLevel": "read",
     "sourceTag": "CASH FLOW NEW REPORT",
     "title": "Get cashflow report data"
   },
@@ -18315,6 +19072,7 @@ export const generatedOperations = [
     "operationName": "list_layout",
     "parameters": [],
     "path": "/public/jurnal/api/v2/cash_flow/list_layout",
+    "safetyLevel": "read",
     "sourceTag": "CASH FLOW NEW REPORT",
     "title": "Get List of Layouts"
   },
@@ -18336,6 +19094,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v2_cash_flow_update_chosen_layout",
     "parameters": [],
     "path": "/public/jurnal/api/v2/cash_flow/update_chosen_layout",
+    "safetyLevel": "mutation",
     "sourceTag": "CASH FLOW NEW REPORT",
     "title": "Update chosen layout"
   },
@@ -18357,6 +19116,7 @@ export const generatedOperations = [
     "operationName": "new",
     "parameters": [],
     "path": "/public/jurnal/api/v2/cash_flow/new",
+    "safetyLevel": "read",
     "sourceTag": "CASH FLOW NEW REPORT",
     "title": "Get default layout value"
   },
@@ -18377,6 +19137,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v2/cash_flow/{id}",
+    "safetyLevel": "read",
     "sourceTag": "CASH FLOW NEW REPORT",
     "title": "Get chosen cashflow layout value"
   },
@@ -18468,6 +19229,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v2/cash_flow/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "CASH FLOW NEW REPORT",
     "title": "Update cashflow custom layout"
   },
@@ -18496,6 +19258,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v2/cash_flow/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "CASH FLOW NEW REPORT",
     "title": "Delete custom layout"
   },
@@ -18516,6 +19279,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/customer_balances/export",
+    "safetyLevel": "read",
     "sourceTag": "CUSTOMER BALANCE",
     "title": "Export Customer Balance"
   },
@@ -18529,6 +19293,7 @@ export const generatedOperations = [
     "operationName": "executive_summary",
     "parameters": [],
     "path": "/public/jurnal/api/v1/executive_summary",
+    "safetyLevel": "read",
     "sourceTag": "EXECUTIVE SUMMARY",
     "title": "Get Executive Summary"
   },
@@ -18549,6 +19314,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/executive_summary/export",
+    "safetyLevel": "read",
     "sourceTag": "EXECUTIVE SUMMARY",
     "title": "Export Executive Summary"
   },
@@ -18579,6 +19345,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/expense_details",
+    "safetyLevel": "read",
     "sourceTag": "EXPENSES",
     "title": "Get Expense Details Report"
   },
@@ -18615,6 +19382,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/expense_details/export",
+    "safetyLevel": "read",
     "sourceTag": "EXPENSES",
     "title": "Export Expense Details Report"
   },
@@ -18673,6 +19441,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/fixed_asset_summary",
+    "safetyLevel": "read",
     "sourceTag": "FIXED ASSET",
     "title": "Get Fixed Asset Summary Report"
   },
@@ -18686,6 +19455,7 @@ export const generatedOperations = [
     "operationName": "foreign_exchange_gain_loss",
     "parameters": [],
     "path": "/public/jurnal/api/v1/foreign_exchange_gain_loss",
+    "safetyLevel": "read",
     "sourceTag": "FOREIGN EXCHANGE GAIN LOSS",
     "title": "Get Foreign Exchange Gain Loss"
   },
@@ -18706,6 +19476,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/foreign_exchange_gain_loss/export",
+    "safetyLevel": "read",
     "sourceTag": "FOREIGN EXCHANGE GAIN LOSS",
     "title": "Export Foreign Exchange Gain Loss"
   },
@@ -18765,6 +19536,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/general_ledger",
+    "safetyLevel": "read",
     "sourceTag": "GENERAL LEDGER",
     "title": "Get General Ledger Report"
   },
@@ -18821,6 +19593,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/general_ledger/export",
+    "safetyLevel": "read",
     "sourceTag": "GENERAL LEDGER",
     "title": "Export General Ledger"
   },
@@ -18851,6 +19624,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/inventory_detail",
+    "safetyLevel": "read",
     "sourceTag": "INVENTORY DETAIL",
     "title": "Get Inventory Detail"
   },
@@ -18887,6 +19661,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/inventory_detail/export",
+    "safetyLevel": "read",
     "sourceTag": "INVENTORY DETAIL",
     "title": "Export Inventory Detail"
   },
@@ -18913,6 +19688,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/inventory_summary",
+    "safetyLevel": "read",
     "sourceTag": "INVENTORY SUMMARY",
     "title": "Get Inventory Summary"
   },
@@ -18945,6 +19721,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/inventory_summary/export",
+    "safetyLevel": "read",
     "sourceTag": "INVENTORY SUMMARY",
     "title": "Export Inventory Summary"
   },
@@ -18958,6 +19735,7 @@ export const generatedOperations = [
     "operationName": "inventory_valuation",
     "parameters": [],
     "path": "/public/jurnal/api/v1/inventory_valuation",
+    "safetyLevel": "read",
     "sourceTag": "INVENTORY VALUATION",
     "title": "Get Inventory Valuation"
   },
@@ -18978,6 +19756,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/inventory_valuation/export",
+    "safetyLevel": "read",
     "sourceTag": "INVENTORY VALUATION",
     "title": "Export Inventory Valuation"
   },
@@ -19025,6 +19804,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/profit_and_loss/export",
+    "safetyLevel": "read",
     "sourceTag": "PROFIT AND LOSS",
     "title": "Export Profit Loss Report"
   },
@@ -19051,6 +19831,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_delivery_reports",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE DELIVERY",
     "title": "Get Purchases By Product Report"
   },
@@ -19083,6 +19864,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/purchase_delivery_reports/export",
+    "safetyLevel": "read",
     "sourceTag": "PURCHASE DELIVERY",
     "title": "Export Purchases By Product Report"
   },
@@ -19096,6 +19878,7 @@ export const generatedOperations = [
     "operationName": "realised_currency_gain_loss",
     "parameters": [],
     "path": "/public/jurnal/api/v1/realised_currency_gain_loss",
+    "safetyLevel": "read",
     "sourceTag": "REALISED CURRENCY GAIN LOSS",
     "title": "Get Realised Currency Gain Loss"
   },
@@ -19116,6 +19899,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/realised_currency_gain_loss/export",
+    "safetyLevel": "read",
     "sourceTag": "REALISED CURRENCY GAIN LOSS",
     "title": "Export Realised Currency Gain Loss"
   },
@@ -19128,6 +19912,7 @@ export const generatedOperations = [
     "operationName": "report_layouts",
     "parameters": [],
     "path": "/public/jurnal/api/v1/report_layouts",
+    "safetyLevel": "read",
     "sourceTag": "REPORT LAYOUT",
     "title": "Get Report Layout"
   },
@@ -19179,6 +19964,7 @@ export const generatedOperations = [
     "operationName": "post_authorization_path_api_v1_report_layouts",
     "parameters": [],
     "path": "/public/jurnal/api/v1/report_layouts",
+    "safetyLevel": "mutation",
     "sourceTag": "REPORT LAYOUT",
     "title": "Create Report Layout"
   },
@@ -19237,6 +20023,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/report_layouts",
+    "safetyLevel": "mutation",
     "sourceTag": "REPORT LAYOUT",
     "title": "Update Report Layout"
   },
@@ -19287,6 +20074,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/report_layouts",
+    "safetyLevel": "mutation",
     "sourceTag": "REPORT LAYOUT",
     "title": "Patch Report Layout"
   },
@@ -19306,6 +20094,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/report_layouts/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "REPORT LAYOUT",
     "title": "Delete Report Layout"
   },
@@ -19325,6 +20114,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/report_layouts/{id}",
+    "safetyLevel": "read",
     "sourceTag": "REPORT LAYOUT",
     "title": "Get Column By Transaction Type Id"
   },
@@ -19344,6 +20134,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/{report_type_id}/report_layouts",
+    "safetyLevel": "read",
     "sourceTag": "REPORT LAYOUT",
     "title": "Get All Report Type in Specified Report Type Id"
   },
@@ -19364,6 +20155,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_delivery_reports/export",
+    "safetyLevel": "read",
     "sourceTag": "SALES DELIVERY",
     "title": "Export Sales Delivery Reports"
   },
@@ -19464,6 +20256,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_lists",
+    "safetyLevel": "read",
     "sourceTag": "SALES LISTS",
     "title": "Get Sales List Report"
   },
@@ -19500,6 +20293,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_lists/export",
+    "safetyLevel": "read",
     "sourceTag": "SALES LISTS",
     "title": "Export Sales List"
   },
@@ -19520,6 +20314,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_by_customers/export",
+    "safetyLevel": "read",
     "sourceTag": "SALES BY CUSTOMERS",
     "title": "Export Sales By Customers"
   },
@@ -19545,6 +20340,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_by_customers",
+    "safetyLevel": "read",
     "sourceTag": "SALES BY CUSTOMERS",
     "title": "Get Sales Report By Customers"
   },
@@ -19574,6 +20370,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_by_products",
+    "safetyLevel": "read",
     "sourceTag": "SALES BY PRODUCT",
     "title": "Get Sales Report by Product (General)"
   },
@@ -19610,6 +20407,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/sales_by_products/export",
+    "safetyLevel": "read",
     "sourceTag": "SALES BY PRODUCT",
     "title": "Export Sales By Product"
   },
@@ -19651,6 +20449,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/statement_of_change_in_equity",
+    "safetyLevel": "read",
     "sourceTag": "STATEMENT OF CHANGE IN EQUITY",
     "title": "Get Statement of Change in Equity Report"
   },
@@ -19671,6 +20470,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/statement_of_change_in_equity/export",
+    "safetyLevel": "read",
     "sourceTag": "STATEMENT OF CHANGE IN EQUITY",
     "title": "Export Statement of Change in Equity"
   },
@@ -19712,6 +20512,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/trial_balance",
+    "safetyLevel": "read",
     "sourceTag": "TRIAL BALANCE",
     "title": "Get Trial Balance Report"
   },
@@ -19732,6 +20533,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/trial_balance/export",
+    "safetyLevel": "read",
     "sourceTag": "TRIAL BALANCE",
     "title": "Export Trial Balance"
   },
@@ -19762,6 +20564,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/unrealised_currency_gain_loss",
+    "safetyLevel": "read",
     "sourceTag": "UNREALISED CURRENCY GAIN LOSS",
     "title": "Get Unrealised Currency Gain Loss"
   },
@@ -19782,6 +20585,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/unrealised_currency_gain_loss/export",
+    "safetyLevel": "read",
     "sourceTag": "UNREALISED CURRENCY GAIN LOSS",
     "title": "Export Unrealised Currency Gain Loss"
   },
@@ -19795,6 +20599,7 @@ export const generatedOperations = [
     "operationName": "warehouse_item_valuation",
     "parameters": [],
     "path": "/public/jurnal/api/v1/warehouse_item_valuation",
+    "safetyLevel": "read",
     "sourceTag": "WAREHOUSE ITEM VALUATION",
     "title": "Get Warehouse Item Valuation"
   },
@@ -19815,6 +20620,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/warehouse_item_valuation/export",
+    "safetyLevel": "read",
     "sourceTag": "WAREHOUSE ITEM VALUATION",
     "title": "Export Warehouse Item Valuation"
   },
@@ -19857,6 +20663,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/warehouse_items_stock_movement_summary",
+    "safetyLevel": "read",
     "sourceTag": "WAREHOUSE ITEMS STOCK MOVEMENT",
     "title": "Get Warehouse Items Stock Movement Summary"
   },
@@ -19893,6 +20700,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/warehouse_items_stock_movement_summary/export",
+    "safetyLevel": "read",
     "sourceTag": "WAREHOUSE ITEMS STOCK MOVEMENT",
     "title": "Export Warehouse Item Stock Movement Summary"
   },
@@ -19923,6 +20731,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/warehouse_stock_quantity",
+    "safetyLevel": "read",
     "sourceTag": "WAREHOUSE STOCK QUANTITY",
     "title": "Get Warehouse Stock Quantity"
   },
@@ -19959,6 +20768,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/warehouse_stock_quantity/export",
+    "safetyLevel": "read",
     "sourceTag": "WAREHOUSE STOCK QUANTITY",
     "title": "Export Warehouse Stock Quantity"
   },
@@ -19994,6 +20804,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/unrealised_gain_lost/get_amount",
+    "safetyLevel": "read",
     "sourceTag": "UNREALISED CURRENCY GAIN LOSS",
     "title": "Get Amount From Unrealised Currency Gain Lost"
   },
@@ -20036,6 +20847,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/bank_revaluation",
+    "safetyLevel": "read",
     "sourceTag": "BANK REVALUATION",
     "title": "Get Bank Revaluation"
   },
@@ -20107,6 +20919,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v2/multi_currencies/find",
+    "safetyLevel": "read",
     "sourceTag": "MULTICURRENCY",
     "title": "Find Multi-Currency Rate"
   },
@@ -20157,6 +20970,7 @@ export const generatedOperations = [
     "operationName": "post_api_v1_multicurrency",
     "parameters": [],
     "path": "/public/jurnal/api/v2/multi_currencies",
+    "safetyLevel": "mutation",
     "sourceTag": "MULTICURRENCY",
     "title": "Create Multi-Currency Rate"
   },
@@ -20198,6 +21012,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/closing_the_books/{closing_the_book_id}/trial_balance",
+    "safetyLevel": "read",
     "sourceTag": "CLOSING THE BOOK",
     "title": "Get CTB Trial Balance"
   },
@@ -20217,6 +21032,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/closing_the_books/{closing_the_book_id}/cash_flow",
+    "safetyLevel": "read",
     "sourceTag": "CLOSING THE BOOK",
     "title": "Get CTB Cash Flow"
   },
@@ -20237,6 +21053,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/closing_the_books/{closing_the_book_id}/balance_sheet",
+    "safetyLevel": "read",
     "sourceTag": "CLOSING THE BOOK",
     "title": "Get CTB Balance Sheet"
   },
@@ -20257,6 +21074,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/closing_the_books/{closing_the_book_id}/profit_loss",
+    "safetyLevel": "read",
     "sourceTag": "CLOSING THE BOOK",
     "title": "Get CTB Profit Loss"
   },
@@ -20290,6 +21108,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/api/v1/closing_the_books/{closing_the_book_id}",
+    "safetyLevel": "mutation",
     "sourceTag": "CLOSING THE BOOK",
     "title": "Update CTB (Publish CTB only)"
   },
@@ -20330,6 +21149,7 @@ export const generatedOperations = [
     "operationName": "post_companies_request_quota",
     "parameters": [],
     "path": "/public/jurnal/companies/request_quota",
+    "safetyLevel": "mutation",
     "sourceTag": "TRANSACTION QUOTA",
     "title": "companies request_quota"
   },
@@ -20343,6 +21163,7 @@ export const generatedOperations = [
     "operationName": "get_quota",
     "parameters": [],
     "path": "/public/jurnal/sales_invoices/quota",
+    "safetyLevel": "read",
     "sourceTag": "TRANSACTION QUOTA",
     "title": "sales_invoices quota"
   },
@@ -20406,6 +21227,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/sales_invoices/quota_histories",
+    "safetyLevel": "read",
     "sourceTag": "TRANSACTION QUOTA",
     "title": "sales_invoices quota_histories"
   },
@@ -20419,6 +21241,7 @@ export const generatedOperations = [
     "operationName": "get_sales_invoices_quota_summary",
     "parameters": [],
     "path": "/public/jurnal/sales_invoices/quota_summary",
+    "safetyLevel": "read",
     "sourceTag": "TRANSACTION QUOTA",
     "title": "sales_invoices quota_summary"
   },
@@ -20432,6 +21255,7 @@ export const generatedOperations = [
     "operationName": "getproductunits",
     "parameters": [],
     "path": "/public/jurnal/scm/public/lo/v1/product_units",
+    "safetyLevel": "read",
     "sourceTag": "[SCM] PRODUCT UNIT",
     "title": "Retrieve a list of Product Units"
   },
@@ -20453,6 +21277,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/scm/public/lo/v1/product_units/{id}",
+    "safetyLevel": "destructive",
     "sourceTag": "[SCM] PRODUCT UNIT",
     "title": "Delete a product unit by ID in the current company"
   },
@@ -20474,6 +21299,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/scm/public/lo/v1/product_units/{id}",
+    "safetyLevel": "read",
     "sourceTag": "[SCM] PRODUCT UNIT",
     "title": "Retrieve Product Unit specified id in the current company"
   },
@@ -20514,6 +21340,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/scm/public/lo/v1/product_units/{id}",
+    "safetyLevel": "mutation",
     "sourceTag": "[SCM] PRODUCT UNIT",
     "title": "Update a product unit by ID"
   },
@@ -20542,6 +21369,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/scm/public/lo/v1/products/get_product_quantity_per_warehouse",
+    "safetyLevel": "read",
     "sourceTag": "[SCM] PRODUCT",
     "title": "Retrieve product quantities by warehouse"
   },
@@ -20678,6 +21506,7 @@ export const generatedOperations = [
       }
     ],
     "path": "/public/jurnal/scm/public/lo/v1/products/minified",
+    "safetyLevel": "read",
     "sourceTag": "[SCM] PRODUCT",
     "title": "Retrieve a minified list of products"
   },
@@ -20691,6 +21520,7 @@ export const generatedOperations = [
     "operationName": "getstorages",
     "parameters": [],
     "path": "/public/jurnal/scm/public/lo/v1/storages",
+    "safetyLevel": "read",
     "sourceTag": "[SCM] STORAGE",
     "title": "Retrieve a list of storages"
   }

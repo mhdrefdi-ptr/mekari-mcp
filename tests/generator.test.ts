@@ -129,4 +129,45 @@ describe("Swagger naming", () => {
       }),
     ).toThrow();
   });
+
+  it("classifies read, mutation, and custom destructive operations", () => {
+    const operations = buildOperationsFromSwagger({
+      paths: {
+        "/public/jurnal/api/v1/widgets": {
+          get: {
+            operationId: "index",
+            tags: ["WIDGETS"],
+          },
+          post: {
+            operationId: "create",
+            tags: ["WIDGETS"],
+          },
+        },
+        "/public/jurnal/api/v1/widgets/{id}/deactivate": {
+          post: {
+            operationId: "deactivate",
+            tags: ["WIDGETS"],
+          },
+        },
+        "/public/jurnal/api/v1/widgets/{id}/remove_logo": {
+          post: {
+            operationId: "remove_logo",
+            tags: ["WIDGETS"],
+          },
+        },
+      },
+    });
+
+    expect(
+      operations.map((operation) => ({
+        name: operation.name,
+        safetyLevel: operation.safetyLevel,
+      })),
+    ).toEqual([
+      { name: "widgets_list", safetyLevel: "read" },
+      { name: "widgets_create", safetyLevel: "mutation" },
+      { name: "widgets_deactivate", safetyLevel: "destructive" },
+      { name: "widgets_remove_logo", safetyLevel: "destructive" },
+    ]);
+  });
 });

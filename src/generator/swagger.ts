@@ -143,6 +143,7 @@ export function buildOperationsFromSwagger(
           operation.parameters ?? [],
         ),
         path: splitPath.path,
+        safetyLevel: classifySafetyLevel(method, splitPath.path, operationName),
         sourceTag,
         title: operation.summary,
       });
@@ -176,6 +177,7 @@ export function buildGeneratedModules(
         name: operation.name,
         operationName: operation.operationName,
         path: operation.path,
+        safetyLevel: operation.safetyLevel,
         title: operation.title,
       },
     ];
@@ -246,6 +248,32 @@ function normalizeOperationName(input: ToolNameInput): string {
   }
 
   return operationId || pathAction(input.path) || method.toLowerCase();
+}
+
+function classifySafetyLevel(
+  method: string,
+  path: string,
+  operationName: string,
+): GeneratedOperation["safetyLevel"] {
+  const normalizedMethod = method.toUpperCase();
+  if (normalizedMethod === "GET") {
+    return "read";
+  }
+
+  if (normalizedMethod === "DELETE") {
+    return "destructive";
+  }
+
+  const action = `${operationName} ${pathAction(path) ?? ""}`.toLowerCase();
+  if (
+    /\b(deactivate|delete|destroy|remove|remove_logo|remove_product_image|archive)\b/.test(
+      action,
+    )
+  ) {
+    return "destructive";
+  }
+
+  return "mutation";
 }
 
 function collectParameters(

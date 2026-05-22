@@ -7,13 +7,22 @@ import {
 import type { ToolRegistry } from "../src/tools.js";
 
 describe("generated MCP tools", () => {
-  it("registers accounts_list and calls Mekari client with wrapped result", async () => {
+  function createRegistry() {
     const registered = new Map<string, { config: any; handler: any }>();
     const registry: ToolRegistry = {
       registerTool: vi.fn((name, config, handler) => {
         registered.set(name, { config, handler });
       }),
     };
+    const client = {
+      request: vi.fn(async () => ({ ok: true as const, data: {} })),
+    };
+
+    return { client, registered, registry };
+  }
+
+  it("registers accounts_list and calls Mekari client with wrapped result", async () => {
+    const { registered, registry } = createRegistry();
     const client = {
       request: vi.fn(async () => ({
         ok: true as const,
@@ -56,13 +65,18 @@ describe("generated MCP tools", () => {
     });
   });
 
+  it("hides mutation and destructive tools by default", () => {
+    const { client, registered, registry } = createRegistry();
+
+    registerGeneratedTools(registry, client);
+
+    expect(registered.has("accounts_list")).toBe(true);
+    expect(registered.has("accounts_create")).toBe(false);
+    expect(registered.has("accounts_delete")).toBe(false);
+  });
+
   it("keeps request bodies under data for generated mutation tools", async () => {
-    const registered = new Map<string, { config: any; handler: any }>();
-    const registry: ToolRegistry = {
-      registerTool: vi.fn((name, config, handler) => {
-        registered.set(name, { config, handler });
-      }),
-    };
+    const { registered, registry } = createRegistry();
     const client = {
       request: vi.fn(async () => ({ ok: true as const, data: { id: 1 } })),
     };
@@ -87,12 +101,7 @@ describe("generated MCP tools", () => {
   });
 
   it("validates generated nested body schemas without stripping unknown fields", async () => {
-    const registered = new Map<string, { config: any; handler: any }>();
-    const registry: ToolRegistry = {
-      registerTool: vi.fn((name, config, handler) => {
-        registered.set(name, { config, handler });
-      }),
-    };
+    const { registered, registry } = createRegistry();
     const client = {
       request: vi.fn(async () => ({ ok: true as const, data: { id: 1 } })),
     };
@@ -127,5 +136,53 @@ describe("generated MCP tools", () => {
       method: "POST",
       path: "/public/jurnal/api/v1/contact_groups",
     });
+  });
+
+  it("hides custom destructive actions unless destructive tools are enabled", () => {
+    const { client, registered, registry } = createRegistry();
+
+    registerGeneratedTools(registry, client, {
+      enableDestructive: false,
+      enableMutations: true,
+    });
+
+    expect(registered.has("accounts_update")).toBe(true);
+    expect(
+      registered.has("contacts_post_api_v1_contacts_contact_id_deactivate"),
+    ).toBe(false);
+  });
+
+  it("registers destructive tools under both safety gates", async () => {
+    const { client, registered, registry } = createRegistry();
+
+    registerGeneratedTools(registry, client, {
+      enableDestructive: true,
+      enableMutations: true,
+    });
+
+    const deactivate = registered.get(
+      "contacts_post_api_v1_contacts_contact_id_deactivate",
+    );
+    expect(registered.has("accounts_delete")).toBe(true);
+    expect(deactivate).toBeDefined();
+
+    await deactivate?.handler({ contact_id: "c-1" });
+
+    expect(client.request).toHaveBeenCalledWith({
+      method: "POST",
+      path: "/public/jurnal/api/v1/contacts/c-1/deactivate",
+    });
+  });
+
+  it("filters registered tools by normalized module name", () => {
+    const { client, registered, registry } = createRegistry();
+
+    registerGeneratedTools(registry, client, { modules: ["accounts"] });
+
+    expect(registered.has("accounts_list")).toBe(true);
+    expect(registered.has("customers_list")).toBe(false);
+    expect(
+      Array.from(registered.keys()).every((name) => name.startsWith("accounts_")),
+    ).toBe(true);
   });
 });
