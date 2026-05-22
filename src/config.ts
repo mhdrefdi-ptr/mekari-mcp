@@ -23,6 +23,7 @@ export function loadMekariConfig(
     baseUrl: env.MEKARI_BASE_URL ?? "https://api.mekari.com",
     clientId,
     clientSecret,
+    debugLogBodies: env.MEKARI_DEBUG_LOG_BODIES === "true",
     enableDestructive: env.MEKARI_ENABLE_DESTRUCTIVE === "true",
     enableMutations: env.MEKARI_ENABLE_MUTATIONS === "true",
     modules: parseModules(env.MEKARI_MODULES),

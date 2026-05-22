@@ -31,3 +31,5 @@ node dist/src/index.js
 ```
 
 The server uses stdio transport and writes no startup logs to stdout. Read operations register by default. Mutations require `MEKARI_ENABLE_MUTATIONS=true`; deletes also require `MEKARI_ENABLE_DESTRUCTIVE=true`. Use `MEKARI_MODULES=accounts,customers` to narrow registered modules.
+
+Runtime request logs go to stderr and include method, path, status, and duration. Authorization headers, client secrets, and request bodies are omitted by default. Set `MEKARI_DEBUG_LOG_BODIES=true` only for local diagnostics when request body logging is acceptable.
