@@ -16,6 +16,25 @@ export type ParameterType =
   | "object"
   | "string";
 
+export type GeneratedSchemaType =
+  | "array"
+  | "boolean"
+  | "integer"
+  | "null"
+  | "number"
+  | "object"
+  | "string"
+  | "unknown";
+
+export interface GeneratedSchema {
+  description?: string;
+  items?: GeneratedSchema;
+  nullable?: boolean;
+  properties?: Readonly<Record<string, GeneratedSchema>>;
+  required?: readonly string[];
+  type: GeneratedSchemaType;
+}
+
 export interface GeneratedParameter {
   defaultValue?: unknown;
   description?: string;
@@ -27,6 +46,7 @@ export interface GeneratedParameter {
 
 export interface GeneratedOperation {
   bodyRequired: boolean;
+  bodySchema?: GeneratedSchema;
   description?: string;
   hasBody: boolean;
   method: HttpMethod;
@@ -118,10 +138,51 @@ export function buildInputSchema(
   }
 
   if (operation.hasBody) {
-    shape.data = operation.bodyRequired ? z.unknown() : z.unknown().optional();
+    const dataSchema = operation.bodySchema
+      ? schemaToZod(operation.bodySchema)
+      : z.unknown();
+    shape.data = operation.bodyRequired ? dataSchema : dataSchema.optional();
   }
 
   return z.object(shape);
+}
+
+function schemaToZod(schema: GeneratedSchema): z.ZodType {
+  const baseSchema = schemaTypeToZod(schema);
+  return schema.nullable ? baseSchema.nullable() : baseSchema;
+}
+
+function schemaTypeToZod(schema: GeneratedSchema): z.ZodType {
+  switch (schema.type) {
+    case "array":
+      return z.array(schema.items ? schemaToZod(schema.items) : z.unknown());
+    case "boolean":
+      return z.boolean();
+    case "integer":
+      return z.number().int();
+    case "null":
+      return z.null();
+    case "number":
+      return z.number();
+    case "object":
+      return objectSchemaToZod(schema);
+    case "string":
+      return z.string();
+    case "unknown":
+      return z.unknown();
+  }
+}
+
+function objectSchemaToZod(schema: GeneratedSchema): z.ZodType {
+  const shape: Record<string, z.ZodType> = {};
+  const required = new Set(schema.required ?? []);
+
+  for (const [name, propertySchema] of Object.entries(schema.properties ?? {})) {
+    const zodSchema = schemaToZod(propertySchema);
+    shape[name] = required.has(name) ? zodSchema : zodSchema.optional();
+  }
+
+  return z.object(shape).passthrough();
 }
 
 function parameterSchema(parameter: GeneratedParameter): z.ZodType {

@@ -1,10 +1,12 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  buildOperationsFromSwagger,
   normalizeModuleName,
   normalizeToolName,
   splitSwaggerPath,
 } from "../src/generator/swagger.js";
+import { buildInputSchema } from "../src/tools.js";
 
 describe("Swagger naming", () => {
   it("normalizes Swagger tags into MCP Module names", () => {
@@ -46,5 +48,85 @@ describe("Swagger naming", () => {
       { name: "page_size", defaultValue: "25" },
       { name: "keyword", defaultValue: "" },
     ]);
+  });
+
+  it("builds best-effort body schemas under data while keeping params top-level", () => {
+    const [operation] = buildOperationsFromSwagger({
+      paths: {
+        "/public/jurnal/api/v1/widgets/{id}?dry_run=false": {
+          patch: {
+            operationId: "update",
+            parameters: [
+              { in: "path", name: "id", required: true, type: "integer" },
+              {
+                in: "body",
+                name: "body",
+                required: true,
+                schema: {
+                  type: "object",
+                  required: ["widget"],
+                  properties: {
+                    widget: {
+                      type: "object",
+                      required: ["name", "price"],
+                      properties: {
+                        active: { nullable: true, type: "boolean" },
+                        name: { type: "string" },
+                        price: { format: "double", type: "number" },
+                        released_on: { format: "date", type: "string" },
+                        tags: { items: { type: "string" }, type: "array" },
+                      },
+                    },
+                  },
+                },
+              },
+            ],
+            tags: ["WIDGETS"],
+          },
+        },
+      },
+    });
+
+    const schema = buildInputSchema(operation!);
+    const parsed = schema.parse({
+      data: {
+        request_id: "kept",
+        widget: {
+          active: null,
+          name: "Inventory",
+          price: 12.5,
+          released_on: "not-a-strict-date",
+          tags: ["scm"],
+          unknown_field: true,
+        },
+      },
+      id: 42,
+    });
+
+    expect(Object.keys(schema.shape)).toEqual(["dry_run", "id", "data"]);
+    expect(parsed).toEqual({
+      data: {
+        request_id: "kept",
+        widget: {
+          active: null,
+          name: "Inventory",
+          price: 12.5,
+          released_on: "not-a-strict-date",
+          tags: ["scm"],
+          unknown_field: true,
+        },
+      },
+      dry_run: "false",
+      id: 42,
+    });
+    expect(() =>
+      schema.parse({ data: { widget: { price: 12.5 } }, id: 42 }),
+    ).toThrow();
+    expect(() =>
+      schema.parse({
+        data: { widget: { name: "Inventory", price: "12.5" } },
+        id: 42,
+      }),
+    ).toThrow();
   });
 });

@@ -85,4 +85,47 @@ describe("generated MCP tools", () => {
       path: "/public/jurnal/api/v1/accounts",
     });
   });
+
+  it("validates generated nested body schemas without stripping unknown fields", async () => {
+    const registered = new Map<string, { config: any; handler: any }>();
+    const registry: ToolRegistry = {
+      registerTool: vi.fn((name, config, handler) => {
+        registered.set(name, { config, handler });
+      }),
+    };
+    const client = {
+      request: vi.fn(async () => ({ ok: true as const, data: { id: 1 } })),
+    };
+
+    registerGeneratedTools(registry, client, {
+      enableMutations: true,
+    });
+
+    const tool = registered.get("contacts_post_api_v1_contact_groups");
+    const data = {
+      contact_group: {
+        company_id: null,
+        contact_group_role: 1,
+        name: "VIP",
+        unknown_field: true,
+      },
+      request_id: "kept",
+    };
+
+    expect(tool).toBeDefined();
+    expect(tool?.config.inputSchema.parse({ data })).toEqual({ data });
+    expect(() =>
+      tool?.config.inputSchema.parse({
+        data: { contact_group: { name: "VIP" } },
+      }),
+    ).toThrow();
+
+    await tool?.handler({ data });
+
+    expect(client.request).toHaveBeenCalledWith({
+      data,
+      method: "POST",
+      path: "/public/jurnal/api/v1/contact_groups",
+    });
+  });
 });

@@ -3471,6 +3471,39 @@ export const generatedModules = [
 export const generatedOperations = [
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "vendor_credit_memo_refund": {
+          "properties": {
+            "person_id": {
+              "type": "integer"
+            },
+            "deposit_to_id": {
+              "type": "integer"
+            },
+            "credit_memo_refund_lines_attributes": {
+              "items": {
+                "properties": {
+                  "credit_memo_id": {
+                    "type": "integer"
+                  },
+                  "refund_amount": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "Create vendor credit memo refund in the current company",
     "hasBody": true,
     "method": "POST",
@@ -3526,6 +3559,45 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "vendor_credit_memo_refund": {
+          "properties": {
+            "person_id": {
+              "type": "integer"
+            },
+            "deposit_to_id": {
+              "type": "integer"
+            },
+            "credit_memo_refund_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "credit_memo_id": {
+                    "type": "integer"
+                  },
+                  "refund_amount": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "Update existing vendor credit memo refund in the current company",
     "hasBody": true,
     "method": "PATCH",
@@ -3547,6 +3619,36 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "customer_apply_credit_memo": {
+          "properties": {
+            "person_id": {
+              "type": "integer"
+            },
+            "selected_credit_memo_id": {
+              "type": "integer"
+            },
+            "records_attributes": {
+              "items": {
+                "properties": {
+                  "transaction_id": {
+                    "type": "integer"
+                  },
+                  "amount": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "Create customer apply credit memo in the current company",
     "hasBody": true,
     "method": "POST",
@@ -3581,6 +3683,42 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "customer_apply_credit_memo": {
+          "properties": {
+            "person_id": {
+              "type": "integer"
+            },
+            "selected_credit_memo_id": {
+              "type": "integer"
+            },
+            "records_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "transaction_id": {
+                    "type": "integer"
+                  },
+                  "amount": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "id"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "Update existing customer apply credit memo in the current company",
     "hasBody": true,
     "method": "PATCH",
@@ -3635,6 +3773,69 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_return": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "invoice_id": {
+              "type": "integer"
+            },
+            "invoice_no": {
+              "type": "string"
+            },
+            "transaction_return_lines_attributes": {
+              "items": {
+                "properties": {
+                  "transaction_line_id": {
+                    "type": "integer"
+                  },
+                  "product_id": {
+                    "type": "integer"
+                  },
+                  "product_name": {
+                    "type": "string"
+                  },
+                  "return_quantity": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "transaction_line_id",
+                  "return_quantity"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "warehouse_id": {
+              "type": "integer"
+            },
+            "warehouse_name": {
+              "type": "string"
+            },
+            "warehouse_code": {
+              "type": "integer"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "transaction_date",
+            "invoice_id",
+            "invoice_no"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "For all transaction related modules, add <code>\"included_attachment_ids\": [attachment_id]</code> that will be included into the transaction, apart from those will be deleted.\n\n`transaction_return_lines_attributes` contains the products that are returned.\n`product_name` or `product_id` listed in `transaction_return_lines` must match with `product_name` and `product_id` that are included in the `invoice transaction line`\n\n\n`transaction_return_lines_attributes` also can be chosen using `transaction_line_id` of the `invoice transaction line`\n\nwhen both `product_name` and `transaction_line_id` is sent, it has to match.\n\n`return_quantity` must be sent, and must be a non negative number.\n\n`warehouse` could be selected using `warehouse_id`, `warehouse_name` or `warehouse_code`, when `warehouse` is not sent, it will select the same warehouse as the selected `invoice`",
     "hasBody": true,
     "method": "POST",
@@ -3660,6 +3861,88 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_return": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "invoice_id": {
+              "type": "integer"
+            },
+            "invoice_no": {
+              "type": "string"
+            },
+            "transaction_return_lines_attributes": {
+              "items": {
+                "properties": {
+                  "transaction_line_id": {
+                    "type": "integer"
+                  },
+                  "product_name": {
+                    "type": "string"
+                  },
+                  "return_quantity": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "warehouse_id": {
+              "type": "integer"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "custom_fields_attributes": {
+              "description": "(Optional) Custom field values. Uses replace-all strategy on update: omit to keep existing, send [] to clear all, send values to replace all. Requires custom_fields_ipm feature enabled.",
+              "items": {
+                "properties": {
+                  "field_id": {
+                    "description": "Field definition ID from Fields Service",
+                    "type": "integer"
+                  },
+                  "value": {
+                    "description": "Field value. String for text/number/date/dropdown, array of strings for multi_select.",
+                    "type": "unknown"
+                  },
+                  "field_key": {
+                    "description": "(Optional) Option ID(s) for dropdown/multi_select. Auto-resolved from value if omitted.",
+                    "type": "unknown"
+                  },
+                  "field_name": {
+                    "description": "(Optional) Field name for reference",
+                    "type": "string"
+                  },
+                  "field_type": {
+                    "description": "(Optional) Field type hint",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "validate_mandatory_customfields": {
+              "description": "(Optional) When true, validates that all required custom fields are present",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "For all transaction related modules, add <code>\"included_attachment_ids\": [attachment_id]</code> that will be included into the transaction, apart from those will be deleted.\n\n`transaction_return_lines_attributes` contains the products that are returned.\n`product_name` or `product_id` listed in `transaction_return_lines` must match with `product_name` and `product_id` that are included in the `invoice transaction line`\n\n`transaction_return_lines_attributes` also can be chosen using `transaction_line_id` of the `invoice transaction line`\n\nwhen `product_id`, `product_name` and `transaction_line_id` is sent, it has to match.\n\n`return_quantity` must be sent, and must be a non negative number.\n\n`invoice` could be selected using `invoice_id` or `invoice_no` . If both are sent, `invoice_id` must match with `invoice_no`\n\n`warehouse` could be selected using `warehouse_id`, `warehouse_name` or `warehouse_code`, when `warehouse` is not sent, it will select the same warehouse as the selected `invoice`",
     "hasBody": true,
     "method": "POST",
@@ -3673,6 +3956,39 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "vendor_apply_credit_memo": {
+          "properties": {
+            "person_id": {
+              "type": "integer"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "selected_credit_memo_id": {
+              "type": "integer"
+            },
+            "records_attributes": {
+              "items": {
+                "properties": {
+                  "transaction_id": {
+                    "type": "integer"
+                  },
+                  "amount": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "Create vendor apply credit memo in the current company",
     "hasBody": true,
     "method": "POST",
@@ -3728,6 +4044,42 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "vendor_apply_credit_memo": {
+          "properties": {
+            "person_id": {
+              "type": "integer"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "selected_credit_memo_id": {
+              "type": "integer"
+            },
+            "records_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "transaction_id": {
+                    "type": "integer"
+                  },
+                  "amount": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "Update existing vendor apply credit memo in the current company",
     "hasBody": true,
     "method": "PATCH",
@@ -3787,6 +4139,176 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_invoice": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "quantity": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "integer"
+                  },
+                  "discount": {
+                    "type": "integer"
+                  },
+                  "product_name": {
+                    "type": "string"
+                  },
+                  "line_tax_id": {
+                    "description": "(Optional) - Can be replaced with key line_tax_name",
+                    "type": "integer"
+                  },
+                  "line_tax_name": {
+                    "description": "(Optional) - Can be replaced with key line_tax_id",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "shipping_date": {
+              "type": "string"
+            },
+            "shipping_price": {
+              "type": "integer"
+            },
+            "shipping_address": {
+              "type": "string"
+            },
+            "is_shipped": {
+              "type": "boolean"
+            },
+            "ship_via": {
+              "type": "string"
+            },
+            "reference_no": {
+              "type": "string"
+            },
+            "tracking_no": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "term_name": {
+              "type": "string"
+            },
+            "due_date": {
+              "type": "string"
+            },
+            "deposit_to_name": {
+              "type": "string"
+            },
+            "deposit": {
+              "type": "integer"
+            },
+            "discount_unit": {
+              "type": "integer"
+            },
+            "witholding_account_name": {
+              "type": "string"
+            },
+            "witholding_value": {
+              "type": "integer"
+            },
+            "witholding_type": {
+              "type": "string"
+            },
+            "discount_type_name": {
+              "type": "string"
+            },
+            "person_name": {
+              "description": "Must be customer (not vendor)",
+              "type": "string"
+            },
+            "warehouse_name": {
+              "description": "(Optional - Enterprise Only) - Can be replaced with key warehouse_code",
+              "type": "string"
+            },
+            "warehouse_code": {
+              "description": "(Optional - Enterprise Only) - Can be replaced with key warehouse_name",
+              "type": "string"
+            },
+            "tags": {
+              "description": "(Optional -> Pro & Enterprise Only) - Array of string",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "email": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_id": {
+              "description": "Optional - Another option if you would like to search, patch, and also delete a transaction without  use transaction id itself.",
+              "type": "string"
+            },
+            "use_tax_inclusive": {
+              "type": "boolean"
+            },
+            "tax_after_discount": {
+              "type": "boolean"
+            },
+            "custom_fields_attributes": {
+              "description": "(Optional) Custom field values. Requires custom_fields_ipm feature enabled.",
+              "items": {
+                "properties": {
+                  "field_id": {
+                    "description": "Field definition ID from Fields Service",
+                    "type": "integer"
+                  },
+                  "value": {
+                    "description": "Field value. String for text/number/date/dropdown, array of strings for multi_select.",
+                    "type": "unknown"
+                  },
+                  "field_key": {
+                    "description": "(Optional) Option ID(s) for dropdown/multi_select. Auto-resolved from value if omitted.",
+                    "type": "unknown"
+                  },
+                  "field_name": {
+                    "description": "(Optional) Field name for reference",
+                    "type": "string"
+                  },
+                  "field_type": {
+                    "description": "(Optional) Field type hint",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "validate_mandatory_customfields": {
+              "description": "(Optional) When true, validates that all required custom fields are present",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Discount Type and Witholding Type</h3>\n<hr>\n\n`discount_type_name` and `witholding_type` are divided into two types :\n1. Percent \n\n    `discount_type_name` and `discount_value` example :\n\n    * `discount_type_name`: `Percent`\n    \n    * `discount_value`: 10\n    \n    * The discount will be 10%\n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n\n   `discount_type_name` and `discount_value` example :\n\n   * `discount_type_name` : `Value`\n    \n   * `discount_type_value` : 10\n    \n   * The discount will be 10\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`discount_type_name` and `witholding_type` can only be filled with `Percent` or `Value`. If its not match it will return error message.\n\n<hr>\n\nTo create a Sales Invoice from Sales Order, you have to add  \n<code>\"selected_po_id\": sales_order_id,</code>\nto your parameter. \n\nTo create a Sales Invoice from Sales Quote, you have to add  \n<code>\"selected_pq_id\": sales_quote_id,</code>\nto your parameter. \n\nHere are the list of values that cannot be changed (will be defaulted to the sales order's value)\n<code>person_id</code>, <code>tax_amount</code>, <code>tax_after_discount</code>, <code>discount_type_name</code>, <code>discount_unit</code>, <code>tax_id</code>\n\nTransaction lines attributes values can be changed (optional), however note that the value (quantity) cannot be less than the value in the sales order.\n\nFor all transaction related modules, add <code>\"included_attachment_ids\": [attachment_id]</code> that will be included into the transaction, apart from those will be deleted.\n\n`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When creating new transaction, `id` must not be sent\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "POST",
@@ -3813,6 +4335,49 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "unit_conversion": {
+          "properties": {
+            "product_id": {
+              "description": "optional if product_name is sent",
+              "type": "integer"
+            },
+            "product_name": {
+              "description": "optional if product id is sent",
+              "type": "string"
+            },
+            "unit_id": {
+              "description": "optional if unit_name is sent",
+              "type": "integer"
+            },
+            "unit_name": {
+              "description": "optional if unit_id is sent",
+              "type": "string"
+            },
+            "rate": {
+              "description": "has to be more than zero",
+              "type": "integer"
+            },
+            "buy_price_per_unit": {
+              "type": "integer"
+            },
+            "sell_price_per_unit": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "product_id",
+            "product_name",
+            "unit_id",
+            "unit_name",
+            "rate"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<hr>\n<h3>Validation</h3>\n<hr>\n\n<h4>Product</h4>\n\n- `product_id` or `product_name` sent must be existing product in current company\n- `product_id` or `product_name` has to be sent\n- product can be selected using `product_id` or `product_name`, if both are sent, it must match\n \n<h4>Unit</h4>\n\n- `unit_id` or `unit_name` sent must be existing product unit in current company\n- `unit` can be selected using `unit_id` or `unit_name`, if both are sent, it must match\n- Selected unit must be different from selected product base unit\n- Each unit used in each product must be different\n  - <b>Existing unit conversion : </b>\n    - `product_id` = 1\n    - `unit_id` = 1\n    - `rate` = 2\n  - <b>DO</b>\n    - `product_id` = 1\n    - `unit_id` = 2\n    - `rate` = 2\n  - <b>DONT</b>\n    - `product_id` = 1\n    - `unit_id` = 1\n    - `rate` = 2\n\n<h4>Rate</h4>\n\n- `rate` must be sent and has to be a non zero positive number\n\n<h4>Buy Price Per Unit & Sell Price Per Unit</h4>\n\n- `buy_price_per_unit` and `sell_price_per_unit` must be decimal. If not sent, the default value will be zero\n\n<hr>\n<h3>Request Body Example</h3>\n<hr>\n\n- <code>product_id</code> : 1\n- <code>product_name</code> : Apple\n- <code>unit_id</code> : 1\n- <code>unit_name</code> : Box\n- <code>rate</code> : 20\n- <code>buy_price_per_unit</code> : 10000\n- <code>sell_price_per_unit</code> : 20000\n\n\n1 Box Of Apple = 20 Pcs Apple (Pcs is taken from current product base unit)\n\nBuy price for 1 Box of Apple = 10000\n\nSell price for 1 Box of Apple = 20000\n\n<hr>\n<h3>Value Description</h3>\n<hr>\n\n- <code>product_id</code>                         : product id in current unit conversion\n- <code>product_name</code> : product name in current unit conversion\n- <code>unit_id</code>                          : converted unit id\n- <code>unit_name</code>               : converted unit name\n- <code>rate</code> : rate value of current unit conversion\n- <code>buy_price_per_unit</code>                          : buy price per unit for current unit conversion\n- <code>sell_price_per_unit</code>                          : sell price per unit for current unit conversion",
     "hasBody": true,
     "method": "POST",
@@ -3826,6 +4391,42 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "customer_credit_memo_refund": {
+          "properties": {
+            "person_id": {
+              "type": "integer"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "refund_from_id": {
+              "type": "integer"
+            },
+            "credit_memo_refund_lines_attributes": {
+              "items": {
+                "properties": {
+                  "credit_memo_id": {
+                    "type": "integer"
+                  },
+                  "refund_amount": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "Create customer credit memo refund in the current company",
     "hasBody": true,
     "method": "POST",
@@ -3860,6 +4461,48 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "customer_credit_memo_refund": {
+          "properties": {
+            "person_id": {
+              "type": "integer"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "refund_from_id": {
+              "type": "integer"
+            },
+            "credit_memo_refund_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "credit_memo_id": {
+                    "type": "integer"
+                  },
+                  "refund_amount": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "Update existing customer credit memo refund in the current company",
     "hasBody": true,
     "method": "PATCH",
@@ -3941,6 +4584,54 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "credit_memo": {
+          "properties": {
+            "person_id": {
+              "type": "string"
+            },
+            "person_name": {
+              "type": "string"
+            },
+            "person_type": {
+              "type": "string"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "transaction_account_lines_attributes": {
+              "items": {
+                "properties": {
+                  "account_name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "credit": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "Create credit memo in the current company",
     "hasBody": true,
     "method": "POST",
@@ -3980,6 +4671,176 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_invoice": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "quantity": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "integer"
+                  },
+                  "discount": {
+                    "type": "integer"
+                  },
+                  "product_name": {
+                    "type": "string"
+                  },
+                  "line_tax_id": {
+                    "description": "(Optional) - Can be replaced with key line_tax_name",
+                    "type": "integer"
+                  },
+                  "line_tax_name": {
+                    "description": "(Optional) - Can be replaced with key line_tax_id",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "shipping_date": {
+              "type": "string"
+            },
+            "shipping_price": {
+              "type": "integer"
+            },
+            "shipping_address": {
+              "type": "string"
+            },
+            "is_shipped": {
+              "type": "boolean"
+            },
+            "ship_via": {
+              "type": "string"
+            },
+            "reference_no": {
+              "type": "string"
+            },
+            "tracking_no": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "term_name": {
+              "type": "string"
+            },
+            "due_date": {
+              "type": "string"
+            },
+            "refund_from_name": {
+              "type": "string"
+            },
+            "deposit": {
+              "type": "integer"
+            },
+            "discount_unit": {
+              "type": "integer"
+            },
+            "witholding_account_name": {
+              "type": "string"
+            },
+            "witholding_value": {
+              "type": "integer"
+            },
+            "witholding_type": {
+              "type": "string"
+            },
+            "discount_type_name": {
+              "type": "string"
+            },
+            "person_name": {
+              "description": "Must be vendor, not customer.",
+              "type": "string"
+            },
+            "warehouse_name": {
+              "description": "(Optional - Enterprise Only) - Can be replaced with key warehouse_code",
+              "type": "string"
+            },
+            "warehouse_code": {
+              "description": "(Optional - Enterprise Only) - Can be replaced with key warehouse_name",
+              "type": "string"
+            },
+            "tags": {
+              "description": "(Optional -> Pro & Enterprise Only) - Array of string",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "email": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_id": {
+              "description": "Optional - Another option if you would like to search, patch, and also delete a transaction without use transaction id itself.",
+              "type": "string"
+            },
+            "use_tax_inclusive": {
+              "type": "boolean"
+            },
+            "tax_after_discount": {
+              "type": "boolean"
+            },
+            "custom_fields_attributes": {
+              "description": "(Optional) Custom field values. Uses replace-all strategy on update: omit to keep existing, send [] to clear all, send values to replace all. Requires custom_fields_ipm feature enabled.",
+              "items": {
+                "properties": {
+                  "field_id": {
+                    "description": "Field definition ID from Fields Service",
+                    "type": "integer"
+                  },
+                  "value": {
+                    "description": "Field value. String for text/number/date/dropdown, array of strings for multi_select.",
+                    "type": "unknown"
+                  },
+                  "field_key": {
+                    "description": "(Optional) Option ID(s) for dropdown/multi_select. Auto-resolved from value if omitted.",
+                    "type": "unknown"
+                  },
+                  "field_name": {
+                    "description": "(Optional) Field name for reference",
+                    "type": "string"
+                  },
+                  "field_type": {
+                    "description": "(Optional) Field type hint",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "validate_mandatory_customfields": {
+              "description": "(Optional) When true, validates that all required custom fields are present",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Discount Type and Witholding Type</h3>\n<hr>\n\n`discount_type_name` and `witholding_type` are divided into two types :\n1. Percent \n\n    `discount_type_name` and `discount_value` example :\n\n    * `discount_type_name`: `Percent`\n    \n    * `discount_value`: 10\n    \n    * The discount will be 10%\n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n\n   `discount_type_name` and `discount_value` example :\n\n   * `discount_type_name` : `Value`\n    \n   * `discount_type_value` : 10\n    \n   * The discount will be 10\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`discount_type_name` and `witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\n\nTo create a Purchase Invoice from Purchase Order, you have to add  \n<code>\"selected_po_id\": purchase_order_id,</code>\nto your parameter. \n\nTo create a Purchase Invoice from Purchase Quote, you have to add  \n<code>\"selected_pq_id\": purchase_quote_id,</code>\nto your parameter. \n\nNOTE : <b>The transaction lines param attributes</b> must also be the same with Purchase Order's / Purchase Quote's transaction lines. Quantity for each transaction line, can be smaller but cannot be greater than Purchase Order's / Purchase Quote's transaction line.\n\nTransaction line attributes example:\n<code>\n\"amount\": 18000000,\n\"quantity\": 1,\n\"rate\": 18000000,\n\"discount\": 0,\n\"product_name\": \"Macbook Pro\",\n\"tax\": false\n</code>\n\nFor all transaction related modules, add <code>\"included_attachment_ids\": [attachment_id]</code> that will be included into the transaction, apart from those will be deleted.\n\n`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When creating new transaction, `id` must not be sent\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "POST",
@@ -4018,6 +4879,46 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "bank_transfer": {
+          "properties": {
+            "refund_from_name": {
+              "description": "use refund_from_id instead of refund_from_name if you have the account id",
+              "type": "string"
+            },
+            "deposit_to_name": {
+              "description": "use deposit_to_id instead of deposit_to_name if you have the account id",
+              "type": "string"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "transfer_amount": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "refund_from_name",
+            "deposit_to_name",
+            "transaction_date",
+            "transaction_no",
+            "transfer_amount"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "bank_transfers",
@@ -4097,6 +4998,72 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "expense": {
+          "properties": {
+            "refund_from_name": {
+              "type": "string"
+            },
+            "person_name": {
+              "type": "string"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "payment_method_name": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "expense_payable": {
+              "type": "boolean"
+            },
+            "term_name": {
+              "type": "string"
+            },
+            "transaction_account_lines_attributes": {
+              "items": {
+                "properties": {
+                  "account_name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "debit": {
+                    "type": "integer"
+                  },
+                  "line_tax_name": {
+                    "type": "string"
+                  },
+                  "line_tax_id": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "witholding_account_name": {
+              "type": "string"
+            },
+            "witholding_value": {
+              "type": "integer"
+            },
+            "witholding_type": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Witholding Type</h3>\n<hr>\n\n`witholding_type` are divided into two types :\n1. Percent \n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\n<h3>payment_method_id and payment_method_name validation</h3>\n<hr>\n1. If `payment_method_id` and `payment_method_name` is sent, it has to match\n2. If `payment_method_id` is sent  `payment_method_name` is not sent, the `payment_method_id` must be available\n3. If `payment_method_name` is sent  `payment_method_id` is not sent, if the `payment_method_name` is not available it will be created\n4. If `payment_method_id` and `payment_method_name` is not sent return error\n\n<hr>\n\n<h3>expense_payable validation </h3>\n<hr>\n1. `expense_payable` = true means that the user wants to pay later. If `expense_payable` is true then `term_id` or `term_name` has to be sent.\n\n2. `expense_payable` = true means that the user wants to pay now. If `expense_payable` is false then `term_id` or `term_name` didn't need to be sent (if sent will be ignored)\n\n<hr>",
     "hasBody": true,
     "method": "PATCH",
@@ -4163,6 +5130,59 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "bank_withdrawal": {
+          "properties": {
+            "refund_from_name": {
+              "type": "string"
+            },
+            "person_name": {
+              "type": "string"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "transaction_account_lines_attributes": {
+              "items": {
+                "properties": {
+                  "account_name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "debit": {
+                    "type": "integer"
+                  },
+                  "line_tax_id": {
+                    "description": "(Optional) - Can be replaced with key line_tax_name",
+                    "type": "integer"
+                  },
+                  "line_tax_name": {
+                    "description": "(Optional) - Can be replaced with key line_tax_id",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "bank_withdrawals",
@@ -4238,6 +5258,82 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "customer": {
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "middle_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "display_name": {
+              "type": "string"
+            },
+            "associate_company": {
+              "type": "string"
+            },
+            "billing_address": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "fax": {
+              "type": "string"
+            },
+            "mobile": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "disable_max_credit_limit": {
+              "type": "boolean"
+            },
+            "max_credit_limit": {
+              "type": "integer"
+            },
+            "start_balance": {
+              "type": "string"
+            },
+            "opening_balance": {
+              "type": "integer"
+            },
+            "default_ar_account_name": {
+              "type": "string"
+            },
+            "default_ap_account_name": {
+              "type": "string"
+            },
+            "source": {
+              "type": "string"
+            },
+            "tax_no": {
+              "type": "string"
+            },
+            "other_detail": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "customers",
@@ -4272,6 +5368,130 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "product": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "taxable_buy": {
+              "type": "boolean"
+            },
+            "unit_name": {
+              "type": "string"
+            },
+            "sell_tax_id": {
+              "type": "integer"
+            },
+            "buy_tax_id": {
+              "type": "integer"
+            },
+            "sell_price_per_unit": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "track_inventory": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "buy_price_per_unit": {
+              "type": "string"
+            },
+            "product_code": {
+              "type": "string"
+            },
+            "is_bought": {
+              "type": "boolean"
+            },
+            "buy_account_number": {
+              "type": "string"
+            },
+            "buy_account_name": {
+              "type": "string"
+            },
+            "is_sold": {
+              "type": "boolean"
+            },
+            "sell_account_number": {
+              "type": "string"
+            },
+            "sell_account_name": {
+              "type": "string"
+            },
+            "taxable_sell": {
+              "type": "boolean"
+            },
+            "inventory_asset_account_id": {
+              "type": "integer"
+            },
+            "inventory_asset_account_name": {
+              "type": "string"
+            },
+            "inventory_asset_account_number": {
+              "type": "string"
+            },
+            "product_category_ids": {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            "product_bundles_attributes": {
+              "items": {
+                "properties": {
+                  "product_id": {
+                    "type": "integer"
+                  },
+                  "quantity": {
+                    "type": "integer"
+                  },
+                  "product_name": {
+                    "type": "string"
+                  },
+                  "product_code": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "bundle_costs_attributes": {
+              "items": {
+                "properties": {
+                  "account_id": {
+                    "type": "integer"
+                  },
+                  "amount": {
+                    "type": "integer"
+                  },
+                  "account_name": {
+                    "type": "string"
+                  },
+                  "account_number": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "name",
+            "unit_name",
+            "product_code"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3>Track Inventory</h3>\n<hr>\n\nTrack inventory is enabled or disabled using `track_inventory` attribute.\n1. `track_inventory` : `true`, to enable track inventory\n2. `track_inventory` : `false`, to disable track inventory\n\nWhen track inventory is sent, `inventory_asset_account` must be sent.\n\n<h4>Inventory Asset Account</h4>\n<hr>\n\nInventory asset account can be selected using `inventory_asset_account_id` or `inventory_asset_account_name` or `inventory_asset_account_number`. When more than one attribute is sent, is must match. \n\nAccount that can be used as inventory asset account is an `active non archived` account with account category `inventory`.\n\n<h3>Product Bundle</h3>\n<hr>\n\nProduct bundle is a product that consist of another product. To change a single product to a bundle product when creating a new product, add `product_bundle_attributes` in the request body.\n\n<h4>Product Bundle Attributes</h4>\n<hr>\n\n* Product bundle attributes is an array consist of objects. Each object represents each product that will be included in the bundle product.\n\n* Each product bundle attributes consist of two elements:\n\n    <h5>1. Product</h5>\n\n     * Product can be selected using `product_id`, `product_name` or `product_code`.\n     * One of these attributes must be sent to specify which product will be included in each bundle attributes. \n     * When more than one attributes is sent, it must match each other.\n     * Product that can be selected as one of `product_bundle_attributes` must be a `tracked product`.\n\n   <h5>2. Quantity</h5>\n\n    * <b>Quantity must be sent</b> for each product.\n    * Each product bundle attributes's quantity minimum value is <b>1</b>.\n\n\n\n<h3>Bundle Cost</h3>\n<hr>\n\nWhen a bundle product's track_inventory is `true` bundle cost can be added using `bundle_costs_attributes`.\n\n<h4>Bundle Costs Attributes</h4>\n<hr>\n\n  * Bundle costs attributes is an array consist of object. Each object represents each account that will be included in the product's bundle cost\n * Each bundle cost attributes consist of two elements:\n \n   <h5>1. Account</h5>\n\n    * Account can be selected using `account_id`, `account_name` or `account_code`.\n    * One of these attributes must be sent to specify which account will be used in the current bundle cost.\n    * When more than one attributes is sent, it must match each other.\n    * Account that can be selected as bundle cost account is an `active non archived` account with account category `Cost of Goods Sold`, `Expenses` or `Other Expenses`\n    \n    \n   <h5>2. Amount</h5>\n   \n   * <b>Amount must be sent</b> for each bundle cost.\n   * Each bundle cost attribute's amount minimum value is <b>1</b>",
     "hasBody": true,
     "method": "POST",
@@ -4311,6 +5531,78 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "expense": {
+          "properties": {
+            "refund_from_name": {
+              "type": "string"
+            },
+            "person_name": {
+              "type": "string"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "payment_method_name": {
+              "type": "string"
+            },
+            "payment_method_id": {
+              "type": "integer"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "expense_payable": {
+              "type": "boolean"
+            },
+            "term_name": {
+              "type": "string"
+            },
+            "transaction_account_lines_attributes": {
+              "items": {
+                "properties": {
+                  "account_name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "debit": {
+                    "type": "integer"
+                  },
+                  "line_tax_id": {
+                    "type": "integer"
+                  },
+                  "line_tax_name": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "witholding_account_name": {
+              "type": "string"
+            },
+            "witholding_value": {
+              "type": "integer"
+            },
+            "witholding_type": {
+              "type": "string"
+            },
+            "use_tax_inclusive": {
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Witholding Type</h3>\n<hr>\n\n`witholding_type` are divided into two types :\n1. Percent \n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\n<h3>payment_method_id and payment_method_name validation</h3>\n<hr>\n1. If `payment_method_id` and `payment_method_name` is sent, it has to match\n2. If `payment_method_id` is sent  `payment_method_name` is not sent, the `payment_method_id` must be available\n3. If `payment_method_name` is sent  `payment_method_id` is not sent, if the `payment_method_name` is not available it will be created\n4. If `payment_method_id` and `payment_method_name` is not sent return error\n\n<hr>\n\n<h3>expense_payable validation </h3>\n<hr>\n1. `expense_payable` = true means that the user wants to pay later. If `expense_payable` is true then `term_id` or `term_name` has to be sent.\n\n2. `expense_payable` = true means that the user wants to pay now. If `expense_payable` is false then `term_id` or `term_name` didn't need to be sent (if sent will be ignored)\n\n<hr>",
     "hasBody": true,
     "method": "POST",
@@ -4349,6 +5641,85 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "company": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "language_name": {
+              "description": "use language_id instead of language_name if you have the languange id",
+              "type": "string"
+            },
+            "industry": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "shipping_address": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "fax": {
+              "type": "string"
+            },
+            "company_tax_number": {
+              "type": "string"
+            },
+            "show_logo_report": {
+              "type": "boolean"
+            },
+            "company_website": {
+              "type": "string"
+            },
+            "enable_monthly_performance_email": {
+              "type": "boolean"
+            },
+            "currency_format_view": {
+              "type": "string"
+            },
+            "company_currency_country": {
+              "type": "string"
+            },
+            "company_bank_detail_attributes": {
+              "properties": {
+                "bank_name": {
+                  "type": "string"
+                },
+                "bank_branch": {
+                  "type": "string"
+                },
+                "bank_address": {
+                  "type": "string"
+                },
+                "account_number": {
+                  "type": "string"
+                },
+                "account_name": {
+                  "type": "string"
+                },
+                "swift_code": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "name",
+            "language_name",
+            "currency_format_view",
+            "company_currency_country"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "companies",
@@ -4374,6 +5745,95 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "receive_payments": {
+          "items": {
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "transaction_date": {
+                "type": "string"
+              },
+              "transaction_no": {
+                "type": "string"
+              },
+              "memo": {
+                "type": "string"
+              },
+              "person": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "transaction_type": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "payment_method": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "deposit_to": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "records": {
+                "items": {
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "transaction_id": {
+                      "type": "integer"
+                    },
+                    "amount": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "type": "array"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "total_count": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "GET",
     "moduleName": "receive_payments",
@@ -4386,6 +5846,60 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "receive_payment": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "records_attributes": {
+              "items": {
+                "properties": {
+                  "transaction_no": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "payment_method_name": {
+              "type": "string"
+            },
+            "payment_method_id": {
+              "type": "integer"
+            },
+            "is_draft": {
+              "type": "boolean"
+            },
+            "deposit_to_name": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "witholding_account_name": {
+              "type": "string"
+            },
+            "witholding_value": {
+              "type": "integer"
+            },
+            "witholding_type": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Witholding Type</h3>\n<hr>\n\n`witholding_type` are divided into two types :\n1. Percent \n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\n\n<h3>Payment Method Id and Payment Method Name   Validation </h3>\n<hr>\n\n1. If `payment_method_id` and `payment_method_name` is sent, it has to match\n\n\n2. If `payment_method_id` is sent  `payment_method_name` is not sent, the `payment_method_id` must be available\n\n3. If `payment_method_name` is sent  `payment_method_id` is not sent, if the `payment_method_name` is not available it will be created\n\n4. If `payment_method_id` and `payment_method_name` is not sent return error",
     "hasBody": true,
     "method": "POST",
@@ -4411,6 +5925,34 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "tax": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "rate": {
+              "type": "integer"
+            },
+            "is_witholding": {
+              "description": "Optional (true / false)",
+              "type": "boolean"
+            },
+            "sell_tax_account_name": {
+              "description": "Optional - Can use id",
+              "type": "string"
+            },
+            "buy_tax_account_name": {
+              "description": "Optional - Can use id",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "Add key is_witholding (set to True)",
     "hasBody": true,
     "method": "POST",
@@ -4437,6 +5979,176 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_order": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "quantity": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "integer"
+                  },
+                  "discount": {
+                    "type": "integer"
+                  },
+                  "product_name": {
+                    "type": "string"
+                  },
+                  "line_tax_id": {
+                    "description": "(Optional) - Can be replaced with key line_tax_name",
+                    "type": "integer"
+                  },
+                  "line_tax_name": {
+                    "description": "(Optional) - Can be replaced with key line_tax_id",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "shipping_date": {
+              "type": "string"
+            },
+            "shipping_price": {
+              "type": "integer"
+            },
+            "shipping_address": {
+              "type": "string"
+            },
+            "is_shipped": {
+              "type": "boolean"
+            },
+            "ship_via": {
+              "type": "string"
+            },
+            "reference_no": {
+              "type": "string"
+            },
+            "tracking_no": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "term_name": {
+              "type": "string"
+            },
+            "due_date": {
+              "type": "string"
+            },
+            "deposit_to_name": {
+              "type": "string"
+            },
+            "deposit": {
+              "type": "integer"
+            },
+            "discount_unit": {
+              "type": "integer"
+            },
+            "discount_type_name": {
+              "type": "string"
+            },
+            "person_name": {
+              "description": "Must be customer (not vendor)",
+              "type": "string"
+            },
+            "warehouse_name": {
+              "description": "(Optional - Enterprise Only) - Can be replaced with key warehouse_code",
+              "type": "string"
+            },
+            "warehouse_code": {
+              "description": "(Optional - Enterprise Only) - Can be replaced with key warehouse_name",
+              "type": "string"
+            },
+            "tags": {
+              "description": "(Optional -> Pro & Enterprise Only) - Array of string",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "witholding_account_id": {
+              "type": "number"
+            },
+            "witholding_value": {
+              "type": "integer"
+            },
+            "witholding_type": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_id": {
+              "description": "Optional - Another option if you would like to search, patch, and also delete a transaction without use transaction id itself.",
+              "type": "string"
+            },
+            "use_tax_inclusive": {
+              "type": "boolean"
+            },
+            "tax_after_discount": {
+              "type": "boolean"
+            },
+            "custom_fields_attributes": {
+              "description": "(Optional) Custom field values. Uses replace-all strategy on update: omit to keep existing, send [] to clear all, send values to replace all. Requires custom_fields_ipm feature enabled.",
+              "items": {
+                "properties": {
+                  "field_id": {
+                    "description": "Field definition ID from Fields Service",
+                    "type": "integer"
+                  },
+                  "value": {
+                    "description": "Field value. String for text/number/date/dropdown, array of strings for multi_select.",
+                    "type": "unknown"
+                  },
+                  "field_key": {
+                    "description": "(Optional) Option ID(s) for dropdown/multi_select. Auto-resolved from value if omitted.",
+                    "type": "unknown"
+                  },
+                  "field_name": {
+                    "description": "(Optional) Field name for reference",
+                    "type": "string"
+                  },
+                  "field_type": {
+                    "description": "(Optional) Field type hint",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "validate_mandatory_customfields": {
+              "description": "(Optional) When true, validates that all required custom fields are present",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Discount Type and Witholding Type</h3>\n<hr>\n\n`discount_type_name` and `witholding_type` are divided into two types :\n1. Percent \n\n    `discount_type_name` and `discount_value` example :\n\n    * `discount_type_name`: `Percent`\n    \n    * `discount_value`: 10\n    \n    * The discount will be 10%\n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n\n   `discount_type_name` and `discount_value` example :\n\n   * `discount_type_name` : `Value`\n    \n   * `discount_type_value` : 10\n    \n   * The discount will be 10\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`discount_type_name` and `witholding_type` can only be filled with `Percent` or `Value`. If its not match it will return error message.\n\n<hr>\n\nFor all transaction related modules, add <code>\"included_attachment_ids\": [attachment_id]</code> that will be included into the transaction, apart from those will be deleted.\n\n`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When creating new transaction, `id` must not be sent\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n\n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "POST",
@@ -4450,6 +6162,105 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "bank_deposits": {
+          "items": {
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "transaction_date": {
+                "type": "string"
+              },
+              "transaction_no": {
+                "type": "string"
+              },
+              "memo": {
+                "type": "string"
+              },
+              "transaction_status": {
+                "type": "string"
+              },
+              "person": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "deposit_to": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "transaction_account_lines": {
+                "items": {
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "debit": {
+                      "type": "string"
+                    },
+                    "credit": {
+                      "type": "string"
+                    },
+                    "account": {
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              "attachments": {
+                "items": {
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              "tags": {
+                "items": {
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              "locked": {
+                "type": "boolean"
+              },
+              "reconciled": {
+                "type": "boolean"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "GET",
     "moduleName": "bank_deposits",
@@ -4462,6 +6273,59 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "bank_deposit": {
+          "properties": {
+            "deposit_to_name": {
+              "type": "string"
+            },
+            "person_name": {
+              "type": "string"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "transaction_account_lines_attributes": {
+              "items": {
+                "properties": {
+                  "account_name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "credit": {
+                    "type": "integer"
+                  },
+                  "line_tax_id": {
+                    "description": "(Optional) - Can be replaced with key line_tax_name",
+                    "type": "integer"
+                  },
+                  "line_tax_name": {
+                    "description": "(Optional) - Can be replaced with key line_tax_id",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "bank_deposits",
@@ -4486,6 +6350,66 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_payment": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "records_attributes": {
+              "items": {
+                "properties": {
+                  "transaction_no": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "person_name": {
+              "type": "string"
+            },
+            "payment_method_name": {
+              "type": "string"
+            },
+            "payment_method_id": {
+              "type": "integer"
+            },
+            "refund_from_name": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "witholding_account_name": {
+              "type": "string"
+            },
+            "witholding_value": {
+              "type": "integer"
+            },
+            "witholding_type": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "is_draft": {
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Witholding Type</h3>\n<hr>\n\n`witholding_type` are divided into two types :\n1. Percent \n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>",
     "hasBody": true,
     "method": "POST",
@@ -4511,6 +6435,51 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "journal_entry": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "transaction_account_lines_attributes": {
+              "items": {
+                "properties": {
+                  "account_name": {
+                    "type": "string"
+                  },
+                  "debit": {
+                    "type": "integer"
+                  },
+                  "credit": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "tags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "Each journal entry must be a balance transaction, debit value must be equal to credit value.",
     "hasBody": true,
     "method": "POST",
@@ -4634,6 +6603,177 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_order": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "quantity": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "integer"
+                  },
+                  "discount": {
+                    "type": "integer"
+                  },
+                  "product_name": {
+                    "type": "string"
+                  },
+                  "line_tax_id": {
+                    "description": "(Optional) - Can be replaced with key line_tax_name",
+                    "type": "integer"
+                  },
+                  "line_tax_name": {
+                    "description": "(Optional) - Can be replaced with key line_tax_id",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "shipping_date": {
+              "type": "string"
+            },
+            "shipping_price": {
+              "type": "integer"
+            },
+            "shipping_address": {
+              "type": "string"
+            },
+            "is_shipped": {
+              "type": "boolean"
+            },
+            "ship_via": {
+              "type": "string"
+            },
+            "reference_no": {
+              "type": "string"
+            },
+            "tracking_no": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "term_name": {
+              "type": "string"
+            },
+            "due_date": {
+              "type": "string"
+            },
+            "refund_from_name": {
+              "type": "string"
+            },
+            "deposit": {
+              "type": "integer"
+            },
+            "discount_unit": {
+              "type": "integer"
+            },
+            "discount_type_name": {
+              "type": "string"
+            },
+            "person_name": {
+              "description": "Must be vendor, not customer.",
+              "type": "string"
+            },
+            "warehouse_name": {
+              "description": "(Optional - Enterprise Only) - Can be replaced with key warehouse_code",
+              "type": "string"
+            },
+            "warehouse_code": {
+              "description": "(Optional - Enterprise Only) - Can be replaced with key warehouse_name",
+              "type": "string"
+            },
+            "tags": {
+              "description": "(Optional -> Pro & Enterprise Only) - Array of string",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "witholding_account_name": {
+              "type": "string"
+            },
+            "witholding_value": {
+              "description": "",
+              "type": "integer"
+            },
+            "witholding_type": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_id": {
+              "description": "Optional - Another option if you would like to search, patch, and also delete a transaction without use transaction id itself.",
+              "type": "string"
+            },
+            "use_tax_inclusive": {
+              "type": "boolean"
+            },
+            "tax_after_discount": {
+              "type": "boolean"
+            },
+            "custom_fields_attributes": {
+              "description": "(Optional) Custom field values. Uses replace-all strategy on update: omit to keep existing, send [] to clear all, send values to replace all. Requires custom_fields_ipm feature enabled.",
+              "items": {
+                "properties": {
+                  "field_id": {
+                    "description": "Field definition ID from Fields Service",
+                    "type": "integer"
+                  },
+                  "value": {
+                    "description": "Field value. String for text/number/date/dropdown, array of strings for multi_select.",
+                    "type": "unknown"
+                  },
+                  "field_key": {
+                    "description": "(Optional) Option ID(s) for dropdown/multi_select. Auto-resolved from value if omitted.",
+                    "type": "unknown"
+                  },
+                  "field_name": {
+                    "description": "(Optional) Field name for reference",
+                    "type": "string"
+                  },
+                  "field_type": {
+                    "description": "(Optional) Field type hint",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "validate_mandatory_customfields": {
+              "description": "(Optional) When true, validates that all required custom fields are present",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Discount Type and Witholding Type</h3>\n<hr>\n\n`discount_type_name` and `witholding_type` are divided into two types :\n1. Percent \n\n    `discount_type_name` and `discount_value` example :\n\n    * `discount_type_name`: `Percent`\n    \n    * `discount_value`: 10\n    \n    * The discount will be 10%\n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n\n   `discount_type_name` and `discount_value` example :\n\n   * `discount_type_name` : `Value`\n    \n   * `discount_type_value` : 10\n    \n   * The discount will be 10\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`discount_type_name` and `witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\n\nFor all transaction related modules, add <code>\"included_attachment_ids\": [attachment_id]</code> that will be included into the transaction, apart from those will be deleted.\n\n`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When creating new transaction, `id` must not be sent\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "POST",
@@ -4687,6 +6827,169 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_order": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "quantity": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "integer"
+                  },
+                  "discount": {
+                    "type": "integer"
+                  },
+                  "product_name": {
+                    "type": "string"
+                  },
+                  "line_tax_id": {
+                    "description": "(Optional) - Can be replaced with key line_tax_name",
+                    "type": "integer"
+                  },
+                  "line_tax_name": {
+                    "description": "(Optional) - Can be replaced with key line_tax_id",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "shipping_date": {
+              "type": "string"
+            },
+            "shipping_price": {
+              "type": "integer"
+            },
+            "shipping_address": {
+              "type": "string"
+            },
+            "is_shipped": {
+              "type": "boolean"
+            },
+            "ship_via": {
+              "type": "string"
+            },
+            "reference_no": {
+              "type": "string"
+            },
+            "tracking_no": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "term_name": {
+              "type": "string"
+            },
+            "due_date": {
+              "type": "string"
+            },
+            "refund_from_name": {
+              "type": "string"
+            },
+            "deposit": {
+              "type": "integer"
+            },
+            "discount_unit": {
+              "type": "integer"
+            },
+            "witholding_account_name": {
+              "type": "string"
+            },
+            "witholding_value": {
+              "type": "integer"
+            },
+            "witholding_type": {
+              "type": "string"
+            },
+            "person_name": {
+              "type": "string"
+            },
+            "warehouse_name": {
+              "description": "(Optional - Enterprise Only) - Can be replaced with key warehouse_code",
+              "type": "string"
+            },
+            "warehouse_code": {
+              "description": "(Optional - Enterprise Only) - Can be replaced with key warehouse_name",
+              "type": "string"
+            },
+            "tags": {
+              "description": "(Optional -> Pro & Enterprise Only) - Array of string",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "email": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_id": {
+              "description": "Optional - Another option if you would like to search, patch, and also delete a transaction without use transaction id itself.",
+              "type": "string"
+            },
+            "use_tax_inclusive": {
+              "type": "boolean"
+            },
+            "custom_fields_attributes": {
+              "description": "(Optional) Custom field values. Uses replace-all strategy on update: omit to keep existing, send [] to clear all, send values to replace all. Requires custom_fields_ipm feature enabled.",
+              "items": {
+                "properties": {
+                  "field_id": {
+                    "description": "Field definition ID from Fields Service",
+                    "type": "integer"
+                  },
+                  "value": {
+                    "description": "Field value. String for text/number/date/dropdown, array of strings for multi_select.",
+                    "type": "unknown"
+                  },
+                  "field_key": {
+                    "description": "(Optional) Option ID(s) for dropdown/multi_select. Auto-resolved from value if omitted.",
+                    "type": "unknown"
+                  },
+                  "field_name": {
+                    "description": "(Optional) Field name for reference",
+                    "type": "string"
+                  },
+                  "field_type": {
+                    "description": "(Optional) Field type hint",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "validate_mandatory_customfields": {
+              "description": "(Optional) When true, validates that all required custom fields are present",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Discount Type and Witholding Type</h3>\n<hr>\n\n`discount_type_name` and `witholding_type` are divided into two types :\n1. Percent \n\n    `discount_type_name` and `discount_value` example :\n\n    * `discount_type_name`: `Percent`\n    \n    * `discount_value`: 10\n    \n    * The discount will be 10%\n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n\n   `discount_type_name` and `discount_value` example :\n\n   * `discount_type_name` : `Value`\n    \n   * `discount_type_value` : 10\n    \n   * The discount will be 10\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`discount_type_name` and `witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\n\n`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When updating existing transaction, `id` is optional. If `id` is not sent, it will update the existing `transaction_line_attribute`, when `id` is sent, it has to match with the existing `transaction_line_attribute id`\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n      2.2.1. When product is not found and source is from `moka`, `woocomerce` or `shopify`, `product` will be created based on parameters that are sent (example: API sent `product_custom_id`, `product_name` and `product_code`, when `productcustom__id` is not found new product will be created with `name = product_name`, `product_code = product_code`, `custom_id = product_custom_id`)\n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "PATCH",
@@ -4728,6 +7031,89 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "customer": {
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "middle_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "display_name": {
+              "type": "string"
+            },
+            "associate_company": {
+              "type": "string"
+            },
+            "billing_address": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "fax": {
+              "type": "string"
+            },
+            "mobile": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "disable_max_credit_limit": {
+              "type": "boolean"
+            },
+            "max_credit_limit": {
+              "type": "integer"
+            },
+            "start_balance": {
+              "type": "string"
+            },
+            "opening_balance": {
+              "type": "integer"
+            },
+            "default_ar_account_name": {
+              "description": "use default_ar_account_id instead of default_ar_account_name if you have the account id",
+              "type": "string"
+            },
+            "default_ap_account_name": {
+              "description": "use default_ap_account_id instead of default_ap_account_name if you have the account id",
+              "type": "string"
+            },
+            "source": {
+              "type": "string"
+            },
+            "tax_no": {
+              "type": "string"
+            },
+            "other_detail": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "display_name",
+            "default_ar_account_name",
+            "default_ap_account_name"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "PATCH",
     "moduleName": "customers",
@@ -4830,6 +7216,102 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "bank_deposit": {
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "transaction_status": {
+              "type": "string"
+            },
+            "person": {
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "deposit_to": {
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "transaction_account_lines": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "debit": {
+                    "type": "string"
+                  },
+                  "credit": {
+                    "type": "string"
+                  },
+                  "account": {
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "attachments": {
+              "items": {
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "tags": {
+              "items": {
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "locked": {
+              "type": "boolean"
+            },
+            "reconciled": {
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "GET",
     "moduleName": "bank_deposits",
@@ -4850,6 +7332,59 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "bank_deposit": {
+          "properties": {
+            "deposit_to_name": {
+              "type": "string"
+            },
+            "person_name": {
+              "type": "string"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "transaction_account_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "account_name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "credit": {
+                    "type": "integer"
+                  },
+                  "line_tax_id": {
+                    "description": "(Optional) - Can be replaced with key line_tax_name",
+                    "type": "integer"
+                  },
+                  "line_tax_name": {
+                    "description": "(Optional) - Can be replaced with key line_tax_id",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "PATCH",
     "moduleName": "bank_deposits",
@@ -4910,6 +7445,173 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_order": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "quantity": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "integer"
+                  },
+                  "discount": {
+                    "type": "integer"
+                  },
+                  "product_name": {
+                    "type": "string"
+                  },
+                  "line_tax_id": {
+                    "description": "(Optional) - Can be replaced with key line_tax_name",
+                    "type": "integer"
+                  },
+                  "line_tax_name": {
+                    "description": "(Optional) - Can be replaced with key line_tax_id",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "shipping_date": {
+              "type": "string"
+            },
+            "shipping_price": {
+              "type": "integer"
+            },
+            "shipping_address": {
+              "type": "string"
+            },
+            "is_shipped": {
+              "type": "boolean"
+            },
+            "ship_via": {
+              "type": "string"
+            },
+            "reference_no": {
+              "type": "string"
+            },
+            "tracking_no": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "term_name": {
+              "type": "string"
+            },
+            "due_date": {
+              "type": "string"
+            },
+            "deposit_to_name": {
+              "type": "string"
+            },
+            "deposit": {
+              "type": "integer"
+            },
+            "discount_unit": {
+              "type": "integer"
+            },
+            "discount_type_name": {
+              "type": "string"
+            },
+            "person_name": {
+              "description": "Must be customer (not vendor)",
+              "type": "string"
+            },
+            "warehouse_name": {
+              "description": "(Optional - Enterprise Only) - Can be replaced with key warehouse_code",
+              "type": "string"
+            },
+            "warehouse_code": {
+              "description": "(Optional - Enterprise Only) - Can be replaced with key warehouse_name",
+              "type": "string"
+            },
+            "tags": {
+              "description": "(Optional -> Pro & Enterprise Only) - Array of string",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "witholding_account_name": {
+              "type": "string"
+            },
+            "witholding_value": {
+              "type": "integer"
+            },
+            "witholding_type": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_id": {
+              "description": "Optional - Another option if you would like to search, patch, and also delete a transaction without use transaction id itself.",
+              "type": "string"
+            },
+            "use_tax_inclusive": {
+              "type": "boolean"
+            },
+            "custom_fields_attributes": {
+              "description": "(Optional) Custom field values. Uses replace-all strategy on update: omit to keep existing, send [] to clear all, send values to replace all. Requires custom_fields_ipm feature enabled.",
+              "items": {
+                "properties": {
+                  "field_id": {
+                    "description": "Field definition ID from Fields Service",
+                    "type": "integer"
+                  },
+                  "value": {
+                    "description": "Field value. String for text/number/date/dropdown, array of strings for multi_select.",
+                    "type": "unknown"
+                  },
+                  "field_key": {
+                    "description": "(Optional) Option ID(s) for dropdown/multi_select. Auto-resolved from value if omitted.",
+                    "type": "unknown"
+                  },
+                  "field_name": {
+                    "description": "(Optional) Field name for reference",
+                    "type": "string"
+                  },
+                  "field_type": {
+                    "description": "(Optional) Field type hint",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "validate_mandatory_customfields": {
+              "description": "(Optional) When true, validates that all required custom fields are present",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Discount Type and Witholding Type</h3>\n<hr>\n\n`discount_type_name` and `witholding_type` are divided into two types :\n1. Percent \n\n    `discount_type_name` and `discount_value` example :\n\n    * `discount_type_name`: `Percent`\n    \n    * `discount_value`: 10\n    \n    * The discount will be 10%\n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n\n   `discount_type_name` and `discount_value` example :\n\n   * `discount_type_name` : `Value`\n    \n   * `discount_type_value` : 10\n    \n   * The discount will be 10\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`discount_type_name` and `witholding_type` can only be filled with `Percent` or `Value`. If its not match it will return error message.\n\n<hr>\n\n`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When updating existing transaction, `id` is optional. If `id` is not sent, it will update the existing `transaction_line_attribute`, when `id` is sent, it has to match with the existing `transaction_line_attribute id`\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n      2.2.1. When product is not found and source is from `moka`, `woocomerce` or `shopify`, `product` will be created based on parameters that are sent (example: API sent `product_custom_id`, `product_name` and `product_code`, when `productcustom__id` is not found new product will be created with `name = product_name`, `product_code = product_code`, `custom_id = product_custom_id`)\n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "PATCH",
@@ -4951,6 +7653,42 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "tax": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "rate": {
+              "type": "number"
+            },
+            "is_compound": {
+              "type": "boolean"
+            },
+            "buy_tax_account_name": {
+              "description": "use buy_account_id instead of buy_account_name if you have the account id",
+              "type": "string"
+            },
+            "sell_tax_account_name": {
+              "description": "use sell_account_id instead of sell_account_name if you have the account id",
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "rate",
+            "buy_tax_account_name",
+            "sell_tax_account_name"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "PATCH",
     "moduleName": "taxes",
@@ -5011,6 +7749,42 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "unit_conversion": {
+          "properties": {
+            "product_id": {
+              "description": "must be the same as existing product id in current unit conversion if sent",
+              "type": "integer"
+            },
+            "product_name": {
+              "description": "must be the same as existing product name in current unit conversion if sent",
+              "type": "string"
+            },
+            "unit_id": {
+              "description": "",
+              "type": "integer"
+            },
+            "unit_name": {
+              "description": "",
+              "type": "string"
+            },
+            "rate": {
+              "description": "has to be more than zero",
+              "type": "integer"
+            },
+            "buy_price_per_unit": {
+              "type": "integer"
+            },
+            "sell_price_per_unit": {
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<hr>\n<h3>Validation</h3>\n<hr>\n\n<h4>General</h4>\n\n- All parameters are optional, if not sent the value used will be existing value in selected unit conversion\n\n<h4>Product</h4>\n\n- `product_id` and `product_name` cannot be changed\n- If `product_id` or `product_name` is sent, it must be the same as the product in selected unit conversion\n \n<h4>Unit</h4>\n\n- `unit_id` or `unit_name` sent must be existing product unit in current company\n- `unit` can be selected using `unit_id` or `unit_name`, if both are sent, it must match\n- Selected unit must be different from selected product base unit\n- Each unit used in each product must be different\n  - <b>Existing unit conversion : </b>\n    - `product_id` = 1\n    - `unit_id` = 1\n    - `rate` = 2\n  - <b>DO</b>\n    - `product_id` = 1\n    - `unit_id` = 2\n    - `rate` = 2\n  - <b>DONT</b>\n    - `product_id` = 1\n    - `unit_id` = 1\n    - `rate` = 2\n\n<h4>Rate</h4>\n\n- `rate` has to be a non zero positive number\n\n<h4>Buy Price Per Unit & Sell Price Per Unit</h4>\n\n- `buy_price_per_unit` and `sell_price_per_unit` must be decimal.\n\n<hr>\n<h3>Request Body Example</h3>\n<hr>\nExisting unit conversion:\n\n- <code>unit_conversion_id</code> : 1\n- <code>product_id</code> : 1\n- <code>product_name</code> : Apple\n- <code>unit_id</code> : 1\n- <code>unit_name</code> : Box\n- <code>rate</code> : 20\n- <code>buy_price_per_unit</code> : 10000\n- <code>sell_price_per_unit</code> : 20000\n\nSent request body:\n\n- <code>product_id</code> : 1\n- <code>product_name</code> : Apple\n- <code>unit_id</code> : 2\n- <code>unit_name</code> : Dozen\n- <code>rate</code> : 12\n- <code>buy_price_per_unit</code> : 10000\n- <code>sell_price_per_unit</code> : 20000\n\n\n1 Dozen Of Apple = 12 Pcs Apple (Pcs is taken from current product base unit)\n\nBuy price for 1 Dozen of Apple = 10000\n\nSell price for 1 Dozen of Apple = 20000\n\n<hr>\n<h3>Value Description</h3>\n<hr>\n\n- <code>unit_id</code>                          : converted unit id\n- <code>unit_name</code>               : converted unit name\n- <code>rate</code> : rate value of current unit conversion\n- <code>buy_price_per_unit</code>                          : buy price per unit for current unit conversion\n- <code>sell_price_per_unit</code>                          : sell price per unit for current unit conversion",
     "hasBody": true,
     "method": "PATCH",
@@ -5091,6 +7865,45 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "bank_transfer": {
+          "properties": {
+            "refund_from_name": {
+              "description": "use refund_from_id instead of refund_from_name if you have the account id",
+              "type": "string"
+            },
+            "deposit_to_name": {
+              "description": "use deposit_to_id instead of deposit_to_name if you have the account id",
+              "type": "string"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "transfer_amount": {
+              "type": "number"
+            },
+            "custom_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "refund_from_name",
+            "deposit_to_name",
+            "transaction_date",
+            "transaction_no"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "PATCH",
     "moduleName": "bank_transfers",
@@ -5149,6 +7962,156 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_invoice": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "quantity": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "integer"
+                  },
+                  "discount": {
+                    "type": "integer"
+                  },
+                  "product_name": {
+                    "type": "string"
+                  },
+                  "line_tax_id": {
+                    "description": "(Optional) - Can be replaced with key line_tax_name",
+                    "type": "integer"
+                  },
+                  "line_tax_name": {
+                    "description": "(Optional) - Can be replaced with key line_tax_id",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "shipping_date": {
+              "type": "string"
+            },
+            "shipping_price": {
+              "type": "integer"
+            },
+            "shipping_address": {
+              "type": "string"
+            },
+            "is_shipped": {
+              "type": "boolean"
+            },
+            "ship_via": {
+              "type": "string"
+            },
+            "reference_no": {
+              "type": "string"
+            },
+            "tracking_no": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "term_name": {
+              "type": "string"
+            },
+            "due_date": {
+              "type": "string"
+            },
+            "refund_from_name": {
+              "type": "string"
+            },
+            "deposit": {
+              "type": "integer"
+            },
+            "discount_unit": {
+              "type": "integer"
+            },
+            "witholding_account_name": {
+              "type": "string"
+            },
+            "witholding_value": {
+              "type": "integer"
+            },
+            "witholding_type": {
+              "type": "string"
+            },
+            "discount_type_name": {
+              "type": "string"
+            },
+            "person_name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "use_tax_inclusive": {
+              "type": "boolean"
+            },
+            "custom_fields_attributes": {
+              "description": "(Optional) Custom field values. Uses replace-all strategy on update: omit to keep existing, send [] to clear all, send values to replace all. Requires custom_fields_ipm feature enabled.",
+              "items": {
+                "properties": {
+                  "field_id": {
+                    "description": "Field definition ID from Fields Service",
+                    "type": "integer"
+                  },
+                  "value": {
+                    "description": "Field value. String for text/number/date/dropdown, array of strings for multi_select.",
+                    "type": "unknown"
+                  },
+                  "field_key": {
+                    "description": "(Optional) Option ID(s) for dropdown/multi_select. Auto-resolved from value if omitted.",
+                    "type": "unknown"
+                  },
+                  "field_name": {
+                    "description": "(Optional) Field name for reference",
+                    "type": "string"
+                  },
+                  "field_type": {
+                    "description": "(Optional) Field type hint",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "validate_mandatory_customfields": {
+              "description": "(Optional) When true, validates that all required custom fields are present",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Discount Type and Witholding Type</h3>\n<hr>\n\n`discount_type_name` and `witholding_type` are divided into two types :\n1. Percent \n\n    `discount_type_name` and `discount_value` example :\n\n    * `discount_type_name`: `Percent`\n    \n    * `discount_value`: 10\n    \n    * The discount will be 10%\n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n\n   `discount_type_name` and `discount_value` example :\n\n   * `discount_type_name` : `Value`\n    \n   * `discount_type_value` : 10\n    \n   * The discount will be 10\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`discount_type_name` and `witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\n\n`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When updating existing transaction, `id` is optional. If `id` is not sent, it will update the existing `transaction_line_attribute`, when `id` is sent, it has to match with the existing `transaction_line_attribute id`\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n      2.2.1. When product is not found and source is from `moka`, `woocomerce` or `shopify`, `product` will be created based on parameters that are sent (example: API sent `product_custom_id`, `product_name` and `product_code`, when `productcustom__id` is not found new product will be created with `name = product_name`, `product_code = product_code`, `custom_id = product_custom_id`)\n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "PATCH",
@@ -5188,6 +8151,114 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "company": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "language_name": {
+              "type": "string"
+            },
+            "industry": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "shipping_address": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "fax": {
+              "type": "string"
+            },
+            "company_tax_number": {
+              "type": "string"
+            },
+            "show_logo_report": {
+              "type": "boolean"
+            },
+            "company_website": {
+              "type": "string"
+            },
+            "enable_monthly_performance_email": {
+              "type": "boolean"
+            },
+            "company_currency_country": {
+              "type": "string"
+            },
+            "defult_invoice_message": {
+              "type": "string"
+            },
+            "defult_delivery_slip_message": {
+              "type": "string"
+            },
+            "defult_purchase_order_message": {
+              "type": "string"
+            },
+            "discount_lines_sale": {
+              "type": "boolean"
+            },
+            "discount_sale": {
+              "type": "boolean"
+            },
+            "deposit_sale": {
+              "type": "boolean"
+            },
+            "discount_lines_purchase": {
+              "type": "boolean"
+            },
+            "discount_purchase": {
+              "type": "boolean"
+            },
+            "deposit_purchase": {
+              "type": "boolean"
+            },
+            "sale_shipping_account_id": {
+              "type": "integer"
+            },
+            "purchase_shipping_account_id": {
+              "type": "integer"
+            },
+            "shipping_purchase": {
+              "type": "boolean"
+            },
+            "shipping_sale": {
+              "type": "boolean"
+            },
+            "company_bank_detail_attributes": {
+              "properties": {
+                "bank_name": {
+                  "type": "string"
+                },
+                "bank_branch": {
+                  "type": "string"
+                },
+                "bank_address": {
+                  "type": "string"
+                },
+                "account_number": {
+                  "type": "string"
+                },
+                "account_name": {
+                  "type": "string"
+                },
+                "swift_code": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "`sale_shipping_account_id` has to match with `sale_shipping_account_name` if both is sent\n\n`purchase_shipping_account_id` has to match with `purchase_shipping_account_name` if both is sent\n\n`discount_sale` cannot be updated if current company has `sales transaction with discount`\n\n`discount_lines_sale` cannot be updated if current company has `sales transaction with discount lines`\n\n`discount_purchase` cannot be updated if current company has `purchase transaction with discount`\n\n`discount_lines_purchase` cannot be updated if current company has `purchase transaction with discount lines`\n\n`deposit_sale` cannot be updated if current company has sales transaction with deposit\n\n`deposit_purchase` cannot be updated if current company has `purchase transaction with deposit`\n\n`shipping_purchase` cannot be updated if current company has `purchase transaction with shipping`\n\n`shipping_sale` cannot be updated if current company has `sales transaction with shipping`",
     "hasBody": true,
     "method": "PATCH",
@@ -5228,6 +8299,57 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "credit_memo": {
+          "properties": {
+            "person_id": {
+              "type": "string"
+            },
+            "person_name": {
+              "type": "string"
+            },
+            "person_type": {
+              "type": "string"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "transaction_account_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "account_name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "credit": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "Update credit memo in the current company",
     "hasBody": true,
     "method": "PATCH",
@@ -5308,6 +8430,85 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_return": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "invoice_no": {
+              "type": "string"
+            },
+            "transaction_return_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "product_name": {
+                    "type": "string"
+                  },
+                  "return_quantity": {
+                    "type": "integer"
+                  },
+                  "product_id": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "custom_fields_attributes": {
+              "description": "(Optional) Custom field values. Uses replace-all strategy on update: omit to keep existing, send [] to clear all, send values to replace all. Requires custom_fields_ipm feature enabled.",
+              "items": {
+                "properties": {
+                  "field_id": {
+                    "description": "Field definition ID from Fields Service",
+                    "type": "integer"
+                  },
+                  "value": {
+                    "description": "Field value. String for text/number/date/dropdown, array of strings for multi_select.",
+                    "type": "unknown"
+                  },
+                  "field_key": {
+                    "description": "(Optional) Option ID(s) for dropdown/multi_select. Auto-resolved from value if omitted.",
+                    "type": "unknown"
+                  },
+                  "field_name": {
+                    "description": "(Optional) Field name for reference",
+                    "type": "string"
+                  },
+                  "field_type": {
+                    "description": "(Optional) Field type hint",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "validate_mandatory_customfields": {
+              "description": "(Optional) When true, validates that all required custom fields are present",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "`transaction_return_lines_attributes` contains the products that are returned.\n`product_name` listed in `transaction_return_lines` must match with `product_name` that are included in the `invoice transaction line`\n\n`transaction_return_lines_attributes` also can be chosen using `transaction_line_id` of the `invoice transaction line`\n\nwhen both `product_name` and `transaction_line_id` is sent, it has to match.\n\nwhen `id` is sent in `transaction_return_line_attributes`, it will update existing `transaction_return_line_attributes` with specified `id`, and will return error when `id` is not available.\n\nwhen updating existing `transaction_return_line_attributes` only `return_quantity` are allowed to be changed.\n\nwhen `id` is not sent in `transaction_return_line_attributes`, it will add new returned product. New returned product are not allowed to have any duplicate (`transaction_line_id` in each `transaction_return_line` are only allowed to be selected once)\n\n`return_quantity` must be sent, and must be a non negative number.\n\n`invoice_id` and `invoice_no` is optional, but when it is sent, `invoice_id` and `invoice_no` cannot be changed.\n\n`warehouse` could be selected using `warehouse_id`, `warehouse_name` or `warehouse_code`, when `warehouse` is not sent, it will select the same warehouse as the selected `invoice`",
     "hasBody": true,
     "method": "PATCH",
@@ -5370,6 +8571,59 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "bank_withdrawal": {
+          "properties": {
+            "refund_from_name": {
+              "type": "string"
+            },
+            "person_name": {
+              "type": "string"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "transaction_account_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "account_name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "debit": {
+                    "type": "integer"
+                  },
+                  "line_tax_id": {
+                    "description": "(Optional) - Can be replaced with key line_tax_name",
+                    "type": "integer"
+                  },
+                  "line_tax_name": {
+                    "description": "(Optional) - Can be replaced with key line_tax_id",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "PATCH",
     "moduleName": "bank_withdrawals",
@@ -5430,6 +8684,66 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "journal_entry": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "transaction_account_lines_attributes": {
+              "items": {
+                "properties": {
+                  "account_name": {
+                    "description": "use account_id instead of account_name if you have the account id",
+                    "type": "string"
+                  },
+                  "debit": {
+                    "type": "number"
+                  },
+                  "credit": {
+                    "type": "number"
+                  },
+                  "id": {
+                    "description": "required if it's a new record",
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "account_name",
+                  "debit",
+                  "credit"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "tag_name": {
+              "description": "use tag_ids instead of tag_name if you have the set of id (ex: [1,2,3,4])",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "transaction_date",
+            "transaction_no"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "Each journal entry must be a balance transaction, debit value must be equal to credit value.\n\nJournal Entry transaction number cannot be updated.",
     "hasBody": true,
     "method": "PATCH",
@@ -5491,6 +8805,85 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_return": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "invoice_no": {
+              "type": "string"
+            },
+            "transaction_return_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "product_name": {
+                    "type": "string"
+                  },
+                  "return_quantity": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "warehouse_id": {
+              "type": "integer"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "custom_fields_attributes": {
+              "description": "(Optional) Custom field values. Uses replace-all strategy on update: omit to keep existing, send [] to clear all, send values to replace all. Requires custom_fields_ipm feature enabled.",
+              "items": {
+                "properties": {
+                  "field_id": {
+                    "description": "Field definition ID from Fields Service",
+                    "type": "integer"
+                  },
+                  "value": {
+                    "description": "Field value. String for text/number/date/dropdown, array of strings for multi_select.",
+                    "type": "unknown"
+                  },
+                  "field_key": {
+                    "description": "(Optional) Option ID(s) for dropdown/multi_select. Auto-resolved from value if omitted.",
+                    "type": "unknown"
+                  },
+                  "field_name": {
+                    "description": "(Optional) Field name for reference",
+                    "type": "string"
+                  },
+                  "field_type": {
+                    "description": "(Optional) Field type hint",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "validate_mandatory_customfields": {
+              "description": "(Optional) When true, validates that all required custom fields are present",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "`transaction_return_lines_attributes` contains the products that are returned.\n`product_name` or `product_id` listed in `transaction_return_lines` must match with `product_name` and `product_id` that are included in the `invoice transaction line`\n\n`transaction_return_lines_attributes` also can be chosen using `transaction_line_id` of the `invoice transaction line`\n\nwhen `product_id`, `product_name` and `transaction_line_id` is sent, it has to match.\n\nwhen `id` is sent in `transaction_return_line_attributes`, it will update existing `transaction_return_line_attributes` with specified `id`, and will return error when `id` is not available.\n\nwhen updating existing `transaction_return_line_attributes` only `return_quantity` are allowed to be changed.\n\nwhen `id` is not sent in `transaction_return_line_attributes`, it will add new returned product. New returned product are not allowed to have any duplicate (`transaction_line_id` in each `transaction_return_line` are only allowed to be selected once)\n\n`return_quantity` must be sent, and must be a non negative number.\n\n`invoice_id` and `invoice_no` is optional, but when it is sent, `invoice_id` and `invoice_no` cannot be changed.\n\n`warehouse` could be selected using `warehouse_id`, `warehouse_name` or `warehouse_code`, when `warehouse` is not sent, it will select the same warehouse as the selected `invoice`",
     "hasBody": true,
     "method": "PATCH",
@@ -5532,6 +8925,122 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "product": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "taxable_buy": {
+              "type": "boolean"
+            },
+            "sell_tax_id": {
+              "type": "integer"
+            },
+            "buy_tax_id": {
+              "type": "integer"
+            },
+            "sell_price_per_unit": {
+              "type": "string"
+            },
+            "track_inventory": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "buy_price_per_unit": {
+              "type": "string"
+            },
+            "is_bought": {
+              "type": "boolean"
+            },
+            "buy_account_number": {
+              "type": "string"
+            },
+            "buy_account_name": {
+              "type": "string"
+            },
+            "is_sold": {
+              "type": "boolean"
+            },
+            "sell_account_number": {
+              "type": "string"
+            },
+            "sell_account_name": {
+              "type": "string"
+            },
+            "taxable_sell": {
+              "type": "boolean"
+            },
+            "inventory_asset_account_id": {
+              "type": "integer"
+            },
+            "inventory_asset_account_name": {
+              "type": "string"
+            },
+            "product_bundles_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "quantity": {
+                    "type": "integer"
+                  },
+                  "product_id": {
+                    "type": "integer"
+                  },
+                  "product_code": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "bundle_costs_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "account_name": {
+                    "type": "string"
+                  },
+                  "account_id": {
+                    "type": "integer"
+                  },
+                  "amount": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "remove_bundle_cost_elements": {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            "remove_bundle_elements": {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3>Track Inventory</h3>\n<hr>\n\nTrack inventory is enabled or disabled using `track_inventory` attribute.\n1. `track_inventory` : `true`, to enable track inventory\n2. `track_inventory` : `false`, to disable track inventory\n\nWhen track inventory is sent, `inventory_asset_account` must be sent.\n\n<h4>Inventory Asset Account</h4>\n<hr>\n\nInventory asset account can be selected using `inventory_asset_account_id` or `inventory_asset_account_name` or `inventory_asset_account_number`. When more than one attribute is sent, is must match. \n\nAccount that can be used as inventory asset account is an `active non archived` account with account category `inventory`.\n\n<h3>Product Bundle</h3>\n<hr>\n\nProduct bundle is a product that consist of another product. To change a single product to a bundle product when updating a product, add `product_bundle_attributes` in the request body.\n\n<h4>Product Bundle Attributes</h4>\n<hr>\n\n* Product bundle attributes is an array consist of objects. Each object represents each product that will be included in the bundle product.\n\n* Each product bundle attributes consist of three elements:\n\n    <h5>1. Id</h5>\n    \n    * Id is the identifier of each product bundle attributes.\n    * When updating an existing product bundle <b>id must be sent</b>\n    * When id of a product bundle attribute is not sent, it will add a new product bundle attributes for the current product bundle.\n    \n    <h5>2. Product</h5>\n    \n     * Product can be selected using `product_id`, `product_name` or `product_code`.\n     * One of these attributes must be sent to specify which product will be included in each bundle attributes (when id of product bundle attribute is not sent). \n     * When more than one attributes is sent, it must match each other.\n     * Product is optional when <b> product bundle attribute's id is sent</b>.\n     * Product that can be selected as one of `product_bundle_attributes` must be a `tracked product`.\n\n   <h5>3. Quantity</h5>\n\n    * <b>Quantity must be sent</b> for each new product bundle attributes.\n    * Quantity can be optional only when <b>product bundle attribute's id</b> is sent. The quantity used will be the previous quantity used in current id.\n    * Each product bundle attributes's quantity minimum value is <b>1</b>.\n\n* Product bundle attribute can also be removed using `remove_bundle_elements`\n\n\n<h6>Removing Bundle Elements</h6>\n\n* To remove bundle cost elements simply include `remove_bundle_elements` in your request body and send the `product_bundle_attributes` id you want to remove.\n* `remove_bundle_elements` must be sent as an array.\n* Example: `remove_bundle_elements`: `[1,2,3]`\n\n<h3>Bundle Cost</h3>\n<hr>\n\nWhen a bundle product's track_inventory is `true` bundle cost can be added using `bundle_costs_attributes`.\n\n<h4>Bundle Costs Attributes</h4>\n<hr>\n\n  * Bundle costs attributes is an array consist of object. Each object represents each account that will be included in the product's bundle cost\n * Each bundle cost attributes consist of three elements:\n \n    <h5>1. Id</h5>\n\n    * Id is the identifier of each bundle cost attributes.\n    * When updating an existing bundle cost <b>id must be sent</b>\n    * When id of a bundle cost attribute is not sent, it will add a new bundle cost for the current product bundle.\n    \n   <h5>2. Account</h5>\n\n    * Account can be selected using `account_id`, `account_name` or `account_code`.\n    * One of these attributes must be sent to specify which account will be used in the current bundle cost (when id of bundle costs attribute is not sent).\n    * When more than one attributes is sent, it must match each other.\n    * Account is optional when <b> bundle cost attribute's id is sent</b>.\n    * Account that can be selected as bundle cost account is an `active non archived` account with account category `Cost of Goods Sold`, `Expenses` or `Other Expenses`\n    \n    \n   <h5>3. Amount</h5>\n   \n   * <b>Amount must be sent</b> for each new bundle cost.\n   *  Amount can be optional only when <b>bundle cost attribute's id</b> is sent. The amount used will be the previous amount used in current id.\n   * Each bundle cost attribute's amount minimum value is <b>1</b>\n  \n* Bundle cost attribute can also be removed using `remove_bundle_cost_elements`\n\n\n<h6>Removing Bundle Cost Elements</h6>\n\n* To remove bundle cost elements simply include `remove_bundle_cost_elements` in your request body and send the `bundle_cost_attribute` id you want to remove.\n* `remove_bundle_cost_elements` must be sent as an array.\n* Example: `remove_bundle_cost_elements`: `[1,2,3]`",
     "hasBody": true,
     "method": "PATCH",
@@ -5614,6 +9123,83 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "receive_payment": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "records_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "description": "required if it's not a new record",
+                    "type": "integer"
+                  },
+                  "transaction_no": {
+                    "description": "use transaction_id instead of transaction_no if you have the transaction_id",
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "id",
+                  "transaction_no",
+                  "amount"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "person_name": {
+              "description": "use person_id instead of person_name if youhave the person id",
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "payment_method_name": {
+              "description": "use payment_method_id instead of payment_method_name if you have the payment method id",
+              "type": "string"
+            },
+            "is_draft": {
+              "type": "boolean"
+            },
+            "deposit_to_name": {
+              "description": "use deposit_to_id instead of deposit_to_name if you have the account id",
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "witholding_account_name": {
+              "description": "use witholding_account_id instead of witholding_account_name if you have the id.\n\nrequired if you have the witholding_value\n\n",
+              "type": "string"
+            },
+            "witholding_value": {
+              "description": "if it's filled, witholding_account_name and witholding_type is required",
+              "type": "number"
+            },
+            "witholding_type": {
+              "description": "required if you set the witholding type",
+              "type": "string"
+            }
+          },
+          "required": [
+            "transaction_date",
+            "records_attributes",
+            "person_name",
+            "payment_method_name",
+            "deposit_to_name"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Witholding Type</h3>\n<hr>\n\n`witholding_type` are divided into two types :\n1. Percent \n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>",
     "hasBody": true,
     "method": "PATCH",
@@ -5682,6 +9268,173 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_invoice": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "quantity": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "integer"
+                  },
+                  "discount": {
+                    "type": "integer"
+                  },
+                  "product_name": {
+                    "type": "string"
+                  },
+                  "line_tax_id": {
+                    "description": "(Optional) - Can be replaced with key line_tax_name",
+                    "type": "integer"
+                  },
+                  "line_tax_name": {
+                    "description": "(Optional) - Can be replaced with key line_tax_id",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "shipping_date": {
+              "type": "string"
+            },
+            "shipping_price": {
+              "type": "integer"
+            },
+            "shipping_address": {
+              "type": "string"
+            },
+            "is_shipped": {
+              "type": "boolean"
+            },
+            "ship_via": {
+              "type": "string"
+            },
+            "reference_no": {
+              "type": "string"
+            },
+            "tracking_no": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "term_name": {
+              "type": "string"
+            },
+            "due_date": {
+              "type": "string"
+            },
+            "deposit_to_name": {
+              "type": "string"
+            },
+            "deposit": {
+              "type": "integer"
+            },
+            "discount_unit": {
+              "type": "integer"
+            },
+            "witholding_account_name": {
+              "type": "string"
+            },
+            "witholding_value": {
+              "type": "integer"
+            },
+            "witholding_type": {
+              "type": "string"
+            },
+            "discount_type_name": {
+              "type": "string"
+            },
+            "person_name": {
+              "description": "Must be customer (not vendor)",
+              "type": "string"
+            },
+            "warehouse_name": {
+              "description": "(Optional - Enterprise Only) - Can be replaced with key warehouse_code",
+              "type": "string"
+            },
+            "warehouse_code": {
+              "description": "(Optional - Enterprise Only) - Can be replaced with key warehouse_name",
+              "type": "string"
+            },
+            "tags": {
+              "description": "(Optional -> Pro & Enterprise Only) - Array of string",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "email": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_id": {
+              "description": "Optional - Another option if you would like to search, patch, and also delete a transaction without use transaction id itself.",
+              "type": "string"
+            },
+            "use_tax_inclusive": {
+              "type": "boolean"
+            },
+            "custom_fields_attributes": {
+              "description": "(Optional) Custom field values. Uses replace-all strategy: omit to keep existing, send [] to clear all, send values to replace all. Requires custom_fields_ipm feature enabled.",
+              "items": {
+                "properties": {
+                  "field_id": {
+                    "description": "Field definition ID from Fields Service",
+                    "type": "integer"
+                  },
+                  "value": {
+                    "description": "Field value. String for text/number/date/dropdown, array of strings for multi_select.",
+                    "type": "unknown"
+                  },
+                  "field_key": {
+                    "description": "(Optional) Option ID(s) for dropdown/multi_select. Auto-resolved from value if omitted.",
+                    "type": "unknown"
+                  },
+                  "field_name": {
+                    "description": "(Optional) Field name for reference",
+                    "type": "string"
+                  },
+                  "field_type": {
+                    "description": "(Optional) Field type hint",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "validate_mandatory_customfields": {
+              "description": "(Optional) When true, validates that all required custom fields are present",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Discount Type and Witholding Type</h3>\n<hr>\n\n`discount_type_name` and `witholding_type` are divided into two types :\n1. Percent \n\n    `discount_type_name` and `discount_value` example :\n\n    * `discount_type_name`: `Percent`\n    \n    * `discount_value`: 10\n    \n    * The discount will be 10%\n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n\n   `discount_type_name` and `discount_value` example :\n\n   * `discount_type_name` : `Value`\n    \n   * `discount_type_value` : 10\n    \n   * The discount will be 10\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`discount_type_name` and `witholding_type` can only be filled with `Percent` or `Value`. If its not match it will return error message.\n\n<hr>\n\n`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When updating existing transaction, `id` is optional. If `id` is not sent, it will update the existing `transaction_line_attribute`, when `id` is sent, it has to match with the existing `transaction_line_attribute id`\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "PATCH",
@@ -5723,6 +9476,43 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "account": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "number": {
+              "type": "string"
+            },
+            "start_balance": {
+              "type": "string"
+            },
+            "category_name": {
+              "type": "string"
+            },
+            "as_a_child": {
+              "type": "boolean"
+            },
+            "parent_category_name": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "company_tax_name": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "PATCH",
     "moduleName": "accounts",
@@ -5835,6 +9625,49 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "account": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "number": {
+              "type": "string"
+            },
+            "category_name": {
+              "type": "string"
+            },
+            "as_a_child": {
+              "type": "boolean"
+            },
+            "parent_category_name": {
+              "type": "string"
+            },
+            "as_a_parent": {
+              "type": "boolean"
+            },
+            "company_tax_name": {
+              "type": "string"
+            },
+            "children_names": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "custom_id": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "In order to successfully set an account as a child, you have to set <code>as_a_child </code> to true, and also provide the correct existing account name as<code>parent_category_name</code> .\n\nThe same also apply when setting an account as parent of other account, you have to set <code>as_a_parent</code> to true, and also provides array of correct existing account name(s) as <code>children_names</code>\n\nYou can set an account as a parent of other account while at the same time set it as children of yet another account",
     "hasBody": true,
     "method": "POST",
@@ -5869,6 +9702,103 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "customers": {
+          "items": {
+            "properties": {
+              "customer": {
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "first_name": {
+                    "type": "string"
+                  },
+                  "middle_name": {
+                    "type": "string"
+                  },
+                  "last_name": {
+                    "type": "string"
+                  },
+                  "display_name": {
+                    "type": "string"
+                  },
+                  "associate_company": {
+                    "type": "string"
+                  },
+                  "billing_address": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  },
+                  "fax": {
+                    "type": "string"
+                  },
+                  "mobile": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "disable_max_credit_limit": {
+                    "type": "boolean"
+                  },
+                  "max_credit_limit": {
+                    "type": "integer"
+                  },
+                  "start_balance": {
+                    "type": "string"
+                  },
+                  "opening_balance": {
+                    "type": "integer"
+                  },
+                  "default_ar_account_name": {
+                    "description": "use default_ap_account_id instead of default_ap_account_name if you have the account id",
+                    "type": "string"
+                  },
+                  "default_ap_account_name": {
+                    "description": "use default_ap_account_id instead of default-ap_account_id if you have the account id",
+                    "type": "string"
+                  },
+                  "source": {
+                    "type": "string"
+                  },
+                  "custom_id": {
+                    "type": "string"
+                  },
+                  "tax_no": {
+                    "type": "string"
+                  },
+                  "other_detail": {
+                    "type": "string"
+                  },
+                  "is_deleted": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "display_name",
+                  "default_ar_account_name",
+                  "default_ap_account_name"
+                ],
+                "type": "object"
+              }
+            },
+            "required": [
+              "customer"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "description": "1 batch of request can handle up to 100 customers",
     "hasBody": true,
     "method": "POST",
@@ -5882,6 +9812,86 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "products": {
+          "items": {
+            "properties": {
+              "product": {
+                "properties": {
+                  "taxable_buy": {
+                    "type": "boolean"
+                  },
+                  "unit_name": {
+                    "type": "string"
+                  },
+                  "sell_tax_id": {
+                    "type": "integer"
+                  },
+                  "buy_tax_id": {
+                    "type": "integer"
+                  },
+                  "sell_price_per_unit": {
+                    "type": "string"
+                  },
+                  "custom_id": {
+                    "type": "string"
+                  },
+                  "track_inventory": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "buy_price_per_unit": {
+                    "type": "string"
+                  },
+                  "product_code": {
+                    "type": "string"
+                  },
+                  "is_bought": {
+                    "type": "boolean"
+                  },
+                  "buy_account_number": {
+                    "type": "string"
+                  },
+                  "buy_account_name": {
+                    "type": "string"
+                  },
+                  "is_sold": {
+                    "type": "boolean"
+                  },
+                  "sell_account_number": {
+                    "type": "string"
+                  },
+                  "sell_account_name": {
+                    "type": "string"
+                  },
+                  "inventory_asset_account_name": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "taxable_sell": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "unit_name",
+                  "product_code",
+                  "name"
+                ],
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "description": "1 batch of request can handle up to 100 products.\n\n\n<h3>Track Inventory</h3>\n<hr>\n\nTrack inventory is enabled or disabled using `track_inventory` attribute.\n1. `track_inventory` : `true`, to enable track inventory\n2. `track_inventory` : `false`, to disable track inventory\n\nWhen track inventory is sent, `inventory_asset_account` must be sent.\n\n<h4>Inventory Asset Account</h4>\n<hr>\n\nInventory asset account can be selected using `inventory_asset_account_id` or `inventory_asset_account_name` or `inventory_asset_account_number`. When more than one attribute is sent, is must match. \n\nAccount that can be used as inventory asset account is an `active non archived` account with account category `inventory`.\n\n<h3>Product Bundle</h3>\n<hr>\n\nProduct bundle is a product that consist of another product. To change a single product to a bundle product when creating a new product, add `product_bundle_attributes` in the request body.\n\n<h4>Product Bundle Attributes</h4>\n<hr>\n\n* Product bundle attributes is an array consist of objects. Each object represents each product that will be included in the bundle product.\n\n* Each product bundle attributes consist of two elements:\n\n    <h5>1. Product</h5>\n\n     * Product can be selected using `product_id`, `product_name` or `product_code`.\n     * One of these attributes must be sent to specify which product will be included in each bundle attributes. \n     * When more than one attributes is sent, it must match each other.\n     * Product that can be selected as one of `product_bundle_attributes` must be a `tracked product`.\n\n   <h5>2. Quantity</h5>\n\n    * <b>Quantity must be sent</b> for each product.\n    * Each product bundle attributes's quantity minimum value is <b>1</b>.\n\n\n\n<h3>Bundle Cost</h3>\n<hr>\n\nWhen a bundle product's track_inventory is `true` bundle cost can be added using `bundle_costs_attributes`.\n\n<h4>Bundle Costs Attributes</h4>\n<hr>\n\n  * Bundle costs attributes is an array consist of object. Each object represents each account that will be included in the product's bundle cost\n * Each bundle cost attributes consist of two elements:\n \n   <h5>1. Account</h5>\n\n    * Account can be selected using `account_id`, `account_name` or `account_code`.\n    * One of these attributes must be sent to specify which account will be used in the current bundle cost.\n    * When more than one attributes is sent, it must match each other.\n    * Account that can be selected as bundle cost account is an `active non archived` account with account category `Cost of Goods Sold`, `Expenses` or `Other Expenses`\n    \n    \n   <h5>2. Amount</h5>\n   \n   * <b>Amount must be sent</b> for each bundle cost.\n   * Each bundle cost attribute's amount minimum value is <b>1</b>",
     "hasBody": true,
     "method": "POST",
@@ -5895,6 +9905,131 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_invoices": {
+          "items": {
+            "properties": {
+              "sales_invoice": {
+                "properties": {
+                  "transaction_date": {
+                    "type": "string"
+                  },
+                  "transaction_lines_attributes": {
+                    "items": {
+                      "properties": {
+                        "quantity": {
+                          "type": "integer"
+                        },
+                        "rate": {
+                          "type": "integer"
+                        },
+                        "discount": {
+                          "type": "integer"
+                        },
+                        "product_name": {
+                          "type": "string"
+                        },
+                        "line_tax_id": {
+                          "type": "integer"
+                        },
+                        "line_tax_name": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "shipping_date": {
+                    "type": "string"
+                  },
+                  "shipping_price": {
+                    "type": "integer"
+                  },
+                  "shipping_address": {
+                    "type": "string"
+                  },
+                  "is_shipped": {
+                    "type": "boolean"
+                  },
+                  "ship_via": {
+                    "type": "string"
+                  },
+                  "reference_no": {
+                    "type": "string"
+                  },
+                  "tracking_no": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "term_name": {
+                    "type": "string"
+                  },
+                  "due_date": {
+                    "type": "string"
+                  },
+                  "discount_unit": {
+                    "type": "integer"
+                  },
+                  "witholding_account_name": {
+                    "type": "string"
+                  },
+                  "witholding_value": {
+                    "type": "integer"
+                  },
+                  "witholding_type": {
+                    "type": "string"
+                  },
+                  "warehouse_name": {
+                    "type": "string"
+                  },
+                  "warehouse_code": {
+                    "type": "string"
+                  },
+                  "discount_type_name": {
+                    "type": "string"
+                  },
+                  "person_name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "transaction_no": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "memo": {
+                    "type": "string"
+                  },
+                  "custom_id": {
+                    "type": "string"
+                  },
+                  "deposit_to_name": {
+                    "type": "string"
+                  },
+                  "deposit": {
+                    "type": "integer"
+                  },
+                  "tax_after_discount": {
+                    "type": "boolean"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Discount Type and Witholding Type</h3>\n<hr>\n\n`discount_type_name` and `witholding_type` are divided into two types :\n1. Percent \n\n    `discount_type_name` and `discount_value` example :\n\n    * `discount_type_name`: `Percent`\n    \n    * `discount_value`: 10\n    \n    * The discount will be 10%\n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n\n   `discount_type_name` and `discount_value` example :\n\n   * `discount_type_name` : `Value`\n    \n   * `discount_type_value` : 10\n    \n   * The discount will be 10\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`discount_type_name` and `witholding_type` can only be filled with `Percent` or `Value`. If its not match it will return error message.\n\n<hr>\n\n1 batch of request can handle up to 100 sales invoices.\n\n`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When creating new transaction, `id` must not be sent\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "POST",
@@ -5908,6 +10043,65 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "convert_product": {
+          "properties": {
+            "quantity": {
+              "type": "integer"
+            },
+            "convert_date": {
+              "type": "string"
+            },
+            "product_id": {
+              "type": "integer"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "warehouse_id": {
+              "type": "integer"
+            },
+            "convert_product_lines_attributes": {
+              "items": {
+                "properties": {
+                  "quantity": {
+                    "type": "integer"
+                  },
+                  "product_id": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "convert_product_costs_attributes": {
+              "items": {
+                "properties": {
+                  "quantity": {
+                    "type": "integer"
+                  },
+                  "account_id": {
+                    "type": "integer"
+                  },
+                  "amount": {
+                    "type": "integer"
+                  },
+                  "bundle_cost_id": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "convert_products",
@@ -5920,6 +10114,82 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "vendor": {
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "middle_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "display_name": {
+              "type": "string"
+            },
+            "associate_company": {
+              "type": "string"
+            },
+            "billing_address": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "fax": {
+              "type": "string"
+            },
+            "mobile": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "disable_max_credit_limit": {
+              "type": "boolean"
+            },
+            "max_credit_limit": {
+              "type": "integer"
+            },
+            "start_balance": {
+              "type": "string"
+            },
+            "opening_balance": {
+              "type": "integer"
+            },
+            "default_ar_account_name": {
+              "type": "string"
+            },
+            "default_ap_account_name": {
+              "type": "string"
+            },
+            "source": {
+              "type": "string"
+            },
+            "tax_no": {
+              "type": "string"
+            },
+            "other_detail": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "vendors",
@@ -5975,6 +10245,85 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_payment": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "records_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "description": "required if its not a new record",
+                    "type": "integer"
+                  },
+                  "transaction_no": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "id",
+                  "transaction_no",
+                  "amount"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "is_draft": {
+              "type": "boolean"
+            },
+            "person_name": {
+              "description": "use person_id instead of person_name if you have the person id",
+              "type": "string"
+            },
+            "payment_method_name": {
+              "description": "use payment_method_id instead of payment_method_name if you have the payment method id",
+              "type": "string"
+            },
+            "refund_from_name": {
+              "description": "use refund_from_id instead of refund_from_name if you have the account id",
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "witholding_account_name": {
+              "description": "required if you set the witholding_value",
+              "type": "string"
+            },
+            "witholding_value": {
+              "description": "if you set this, then witholding_account_name and witholding_type is required",
+              "type": "number"
+            },
+            "witholding_type": {
+              "description": "required if you set the witholding_type",
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "transaction_date",
+            "transaction_no",
+            "person_name",
+            "payment_method_name",
+            "refund_from_name"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Witholding Type</h3>\n<hr>\n\n`witholding_type` are divided into two types :\n1. Percent \n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>",
     "hasBody": true,
     "method": "PATCH",
@@ -6016,6 +10365,89 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "vendor": {
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "middle_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "display_name": {
+              "type": "string"
+            },
+            "associate_company": {
+              "type": "string"
+            },
+            "billing_address": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "fax": {
+              "type": "string"
+            },
+            "mobile": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "disable_max_credit_limit": {
+              "type": "boolean"
+            },
+            "max_credit_limit": {
+              "type": "number"
+            },
+            "start_balance": {
+              "type": "string"
+            },
+            "opening_balance": {
+              "type": "number"
+            },
+            "default_ar_account_name": {
+              "description": "use default_ar_account_id if you have the account id",
+              "type": "string"
+            },
+            "default_ap_account_name": {
+              "description": "use default_ap_account_id if you have the account id",
+              "type": "string"
+            },
+            "source": {
+              "type": "string"
+            },
+            "tax_no": {
+              "type": "string"
+            },
+            "other_detail": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "display_name",
+            "default_ar_account_name",
+            "default_ap_account_name"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "PATCH",
     "moduleName": "vendors",
@@ -6116,6 +10548,91 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "asset": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "asset_number": {
+              "description": "required if it is a depreceable asset",
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "asset_account_name": {
+              "description": "use asset_account_id instead of asset_account_name if you have the asset account id.\n\nrequired if it is a depreceable asset",
+              "type": "string"
+            },
+            "acquisition_date": {
+              "type": "string"
+            },
+            "acquisition_cost": {
+              "type": "integer"
+            },
+            "credited_account_name": {
+              "description": "use credited_account_id instead of credited_account_name if you have the id.\n\nrequired if it is depreceable",
+              "type": "string"
+            },
+            "tags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "non_depreceable": {
+              "type": "boolean"
+            },
+            "depreciation_method": {
+              "description": "required if depreceable",
+              "type": "string"
+            },
+            "useful_life": {
+              "description": "required if depreceable",
+              "type": "integer"
+            },
+            "rate": {
+              "description": "required if depreceable",
+              "type": "integer"
+            },
+            "depreciation_account_name": {
+              "description": "use depreciation_account_id instead of depreciation_account_name.\n\nrequired if it is depreceable",
+              "type": "string"
+            },
+            "depreciation_and_amortization_account_name": {
+              "description": "use depreciation_amortization_account_id if you have the account id.\n\nrequired if depreceable",
+              "type": "string"
+            },
+            "initial_depreciation": {
+              "description": "required if depreceable",
+              "type": "integer"
+            },
+            "initial_depreciation_asset_date": {
+              "description": "required if depreceable",
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "asset_number",
+            "asset_account_name",
+            "acquisition_date",
+            "acquisition_cost",
+            "credited_account_name",
+            "depreciation_method",
+            "useful_life",
+            "rate",
+            "depreciation_account_name",
+            "initial_depreciation",
+            "initial_depreciation_asset_date"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "PATCH",
     "moduleName": "asset",
@@ -6154,6 +10671,91 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "asset": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "asset_number": {
+              "description": "required if it is a depreceable asset",
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "asset_account_name": {
+              "description": "use asset_account_id instead of asset_account_name if you have the asset account id.\n\nrequired if it is a depreceable asset",
+              "type": "string"
+            },
+            "acquisition_date": {
+              "type": "string"
+            },
+            "acquisition_cost": {
+              "type": "integer"
+            },
+            "credited_account_name": {
+              "description": "use credited_account_id instead of credited_account_name if you have the id.\n\nrequired if it is depreceable",
+              "type": "string"
+            },
+            "tags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "non_depreceable": {
+              "type": "boolean"
+            },
+            "depreciation_method": {
+              "description": "required if depreceable",
+              "type": "string"
+            },
+            "useful_life": {
+              "description": "required if depreceable",
+              "type": "integer"
+            },
+            "rate": {
+              "description": "required if depreceable",
+              "type": "integer"
+            },
+            "depreciation_account_name": {
+              "description": "use depreciation_account_id instead of depreciation_account_name.\n\nrequired if it is depreceable",
+              "type": "string"
+            },
+            "depreciation_and_amortization_account_name": {
+              "description": "use depreciation_amortization_account_id if you have the account id.\n\nrequired if depreceable",
+              "type": "string"
+            },
+            "initial_depreciation": {
+              "description": "required if depreceable",
+              "type": "integer"
+            },
+            "initial_depreciation_asset_date": {
+              "description": "required if depreceable",
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "asset_number",
+            "asset_account_name",
+            "acquisition_date",
+            "acquisition_cost",
+            "credited_account_name",
+            "depreciation_method",
+            "useful_life",
+            "rate",
+            "depreciation_account_name",
+            "initial_depreciation",
+            "initial_depreciation_asset_date"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "asset",
@@ -6191,6 +10793,37 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "asset": {
+          "properties": {
+            "disposal_date": {
+              "type": "string"
+            },
+            "sale_price": {
+              "type": "integer"
+            },
+            "disposal_memo": {
+              "type": "string"
+            },
+            "tags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "deposit_to_account_name": {
+              "type": "string"
+            },
+            "disposal_account_name": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "asset",
@@ -6292,6 +10925,19 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "company": {
+          "properties": {
+            "logo_url": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "companies",
@@ -6348,6 +10994,33 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "contact_group": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "company_id": {
+              "type": "null"
+            },
+            "contact_group_role": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "name",
+            "company_id",
+            "contact_group_role"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "contact_group"
+      ],
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "contacts",
@@ -6372,6 +11045,51 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "table_column_setting": {
+          "properties": {
+            "setting_type": {
+              "type": "string"
+            },
+            "column_settings": {
+              "properties": {
+                "display_name": {
+                  "type": "boolean"
+                },
+                "associate_company": {
+                  "type": "boolean"
+                },
+                "address": {
+                  "type": "boolean"
+                },
+                "email": {
+                  "type": "boolean"
+                },
+                "mobile": {
+                  "type": "boolean"
+                },
+                "phone": {
+                  "type": "boolean"
+                },
+                "tax_no": {
+                  "type": "boolean"
+                },
+                "other_detail": {
+                  "type": "boolean"
+                },
+                "balance": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "contacts",
@@ -6515,6 +11233,28 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "contact_group": {
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "company_id": {
+              "type": "null"
+            },
+            "contact_group_role": {
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "PATCH",
     "moduleName": "contacts",
@@ -6534,6 +11274,162 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "person": {
+          "properties": {
+            "id": {
+              "type": "null"
+            },
+            "display_name": {
+              "type": "string"
+            },
+            "title": {
+              "type": "null"
+            },
+            "first_name": {
+              "type": "null"
+            },
+            "middle_name": {
+              "type": "null"
+            },
+            "last_name": {
+              "type": "null"
+            },
+            "mobile": {
+              "type": "null"
+            },
+            "identity_type": {
+              "type": "null"
+            },
+            "identity_number": {
+              "type": "null"
+            },
+            "email": {
+              "type": "null"
+            },
+            "other_detail": {
+              "type": "null"
+            },
+            "associate_company": {
+              "type": "null"
+            },
+            "phone": {
+              "type": "null"
+            },
+            "fax": {
+              "type": "null"
+            },
+            "tax_no": {
+              "type": "null"
+            },
+            "archive": {
+              "type": "boolean"
+            },
+            "billing_address": {
+              "type": "null"
+            },
+            "billing_address_no": {
+              "type": "null"
+            },
+            "billing_address_rt": {
+              "type": "null"
+            },
+            "billing_address_rw": {
+              "type": "null"
+            },
+            "billing_address_post_code": {
+              "type": "null"
+            },
+            "billing_address_kelurahan": {
+              "type": "null"
+            },
+            "billing_address_kecamatan": {
+              "type": "null"
+            },
+            "billing_address_kabupaten": {
+              "type": "null"
+            },
+            "billing_address_provinsi": {
+              "type": "null"
+            },
+            "address": {
+              "type": "null"
+            },
+            "bank_account_details": {
+              "items": {
+                "properties": {
+                  "bank_name": {
+                    "type": "null"
+                  },
+                  "bank_branch": {
+                    "type": "string"
+                  },
+                  "bank_account_holder_name": {
+                    "type": "string"
+                  },
+                  "bank_account_number": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "default_ar_account_id": {
+              "type": "null"
+            },
+            "default_ap_account_id": {
+              "type": "null"
+            },
+            "disable_max_credit_limit": {
+              "type": "boolean"
+            },
+            "disable_max_debit_limit": {
+              "type": "boolean"
+            },
+            "max_credit_limit": {
+              "type": "null"
+            },
+            "max_debit_limit": {
+              "type": "null"
+            },
+            "term_id": {
+              "type": "null"
+            },
+            "is_customer": {
+              "type": "boolean"
+            },
+            "is_vendor": {
+              "type": "boolean"
+            },
+            "is_employee": {
+              "type": "boolean"
+            },
+            "is_others": {
+              "type": "boolean"
+            },
+            "contact_group_ids": {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            "people_type": {
+              "type": "string"
+            },
+            "contact_group_names": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "contacts",
@@ -6610,6 +11506,17 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "master_contact_id": {
+          "type": "integer"
+        },
+        "merged_contact_id": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "contacts",
@@ -6622,6 +11529,63 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "recurring_schedule": {
+          "properties": {
+            "name": {
+              "description": "ex: \"Sales Invoice #10001\"",
+              "type": "string"
+            },
+            "transaction_id": {
+              "type": "integer"
+            },
+            "start_date": {
+              "description": "dd/mm/yyyy",
+              "nullable": true,
+              "type": "string"
+            },
+            "end_date": {
+              "description": "dd/mm/yyyy",
+              "nullable": true,
+              "type": "string"
+            },
+            "repeat_every": {
+              "type": "string"
+            },
+            "period": {
+              "description": "'day', 'week', 'month', 'year'",
+              "type": "string"
+            },
+            "end_type": {
+              "description": "'never', 'occurance', 'date'",
+              "nullable": true,
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "null"
+            },
+            "end_of_month": {
+              "type": "boolean"
+            },
+            "auto_send_email": {
+              "type": "boolean"
+            },
+            "occurance": {
+              "description": "only use when end_type is 'occurance'",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "name",
+            "transaction_id",
+            "period"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "transactions",
@@ -6634,6 +11598,23 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "person_ids": {
+          "items": {
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "contact_group_ids": {
+          "items": {
+            "type": "integer"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "contacts",
@@ -6684,6 +11665,165 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "person": {
+          "properties": {
+            "id": {
+              "type": "null"
+            },
+            "display_name": {
+              "type": "string"
+            },
+            "title": {
+              "type": "null"
+            },
+            "first_name": {
+              "type": "null"
+            },
+            "middle_name": {
+              "type": "null"
+            },
+            "last_name": {
+              "type": "null"
+            },
+            "mobile": {
+              "type": "null"
+            },
+            "identity_type": {
+              "type": "null"
+            },
+            "identity_number": {
+              "type": "null"
+            },
+            "email": {
+              "type": "null"
+            },
+            "other_detail": {
+              "type": "null"
+            },
+            "associate_company": {
+              "type": "null"
+            },
+            "phone": {
+              "type": "null"
+            },
+            "fax": {
+              "type": "null"
+            },
+            "tax_no": {
+              "type": "null"
+            },
+            "archive": {
+              "type": "boolean"
+            },
+            "billing_address": {
+              "type": "null"
+            },
+            "billing_address_no": {
+              "type": "null"
+            },
+            "billing_address_rt": {
+              "type": "null"
+            },
+            "billing_address_rw": {
+              "type": "null"
+            },
+            "billing_address_post_code": {
+              "type": "null"
+            },
+            "billing_address_kelurahan": {
+              "type": "null"
+            },
+            "billing_address_kecamatan": {
+              "type": "null"
+            },
+            "billing_address_kabupaten": {
+              "type": "null"
+            },
+            "billing_address_provinsi": {
+              "type": "null"
+            },
+            "address": {
+              "type": "null"
+            },
+            "bank_account_details": {
+              "items": {
+                "properties": {
+                  "bank_name": {
+                    "type": "null"
+                  },
+                  "bank_branch": {
+                    "type": "string"
+                  },
+                  "bank_account_holder_name": {
+                    "type": "string"
+                  },
+                  "bank_account_number": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "default_ar_account_id": {
+              "type": "null"
+            },
+            "default_ap_account_id": {
+              "type": "null"
+            },
+            "disable_max_credit_limit": {
+              "type": "boolean"
+            },
+            "disable_max_debit_limit": {
+              "type": "boolean"
+            },
+            "max_credit_limit": {
+              "type": "null"
+            },
+            "max_debit_limit": {
+              "type": "null"
+            },
+            "term_id": {
+              "type": "null"
+            },
+            "is_customer": {
+              "type": "boolean"
+            },
+            "is_vendor": {
+              "type": "boolean"
+            },
+            "is_employee": {
+              "type": "boolean"
+            },
+            "is_others": {
+              "type": "boolean"
+            },
+            "contact_group_ids": {
+              "items": {
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "people_type": {
+              "type": "string"
+            },
+            "contact_group_names": {
+              "items": {
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "PATCH",
     "moduleName": "contacts",
@@ -6703,6 +11843,44 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "conversion_balance": {
+          "properties": {
+            "conversion_date": {
+              "type": "string"
+            },
+            "records_attributes": {
+              "items": {
+                "properties": {
+                  "account_id": {
+                    "type": "integer"
+                  },
+                  "total": {
+                    "type": "integer"
+                  },
+                  "is_credit": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "account_id",
+                  "total",
+                  "is_credit"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "conversion_date"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "conversion_balance",
@@ -6735,6 +11913,22 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "currency_list": {
+          "properties": {
+            "currency_provider_id": {
+              "type": "string"
+            },
+            "currency_to_code": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h5> Description </h5>\nThis API for update a currency list by id</br>\n</br>\nAvailable currency lists : </br>\n\"country: Indonesia, code: IDR, symbol: Rp.\", </br>\n \"country: Australia, code: AUD, symbol: (AU)$\",</br>\n \"country: United States, code: USD, symbol: (US)$\",</br>\n \"country: Canada, code: CAD, symbol: (CA)$\",</br>\n \"country: China, code: CNY, symbol: (CN)¥\",</br>\n \"country: Malaysia, code: MYR, symbol: RM.\",</br>\n \"country: Hongkong, code: HKD, symbol: (HK)$\",</br>\n \"country: India, code: INR, symbol: Rupee\",</br>\n \"country: Japan, code: JPY, symbol: (JP)¥\",</br>\n \"country: New Zealand, code: NZD, symbol: (NZ)$\",</br>\n \"country: Singapore, code: SGD, symbol: (SG)$\",</br>\n \"country: Taiwan, code: TWD, symbol: (NT)$\",</br>\n \"country: Euro, code: EUR, symbol: €\",</br>\n \"country: United Kingdom, code: GBP, symbol: £\",</br>\n \"country: Brunei, code: BND, symbol: (BN)$\",</br>\n \"country: Swiss, code: CHF, symbol: CHF\",</br>\n \"country: Denmark, code: DKK, symbol: kr\",</br>\n \"country: South Korea, code: KRW, symbol: Won\",</br>\n \"country: Kuwait, code: KWD, symbol: K.D\",</br>\n \"country: Norway, code: NOK, symbol: kr\",</br>\n \"country: Papua New Guinean, code: PGK, symbol: K\",</br>\n \"country: Phillipines, code: PHP, symbol: Peso\",</br>\n \"country: Saudi Arabia, code: SAR, symbol: Riyal\",</br>\n \"country: Sweden, code: SEK, symbol: kr\",</br>\n \"country: Thailand, code: THB, symbol: Baht\"</br>\n</br>\nAvailable currency code for selection : </br>\n\"IDR\", \"AUD\", \"USD\", \"CAD\", \"CNY\", \"MYR\", \"HKD\", \"INR\", \"JPY\", \"NZD\", \"SGD\", \"TWD\", \"EUR\", \"GBP\", \"BND\", \"CHF\", \"DKK\", \"KRW\", \"KWD\", \"NOK\", \"PGK\", \"PHP\", \"SAR\", \"SEK\", \"THB\" </br>\n</br>\nAny other currency code besides above will be rejected by system.</br>\n</br>\nAvailable currency providers:</br>\n\"id: 1, name: Company Created, source: own created\",</br>\n \"id: 2, name: Bank Indonesia, source: http://www.bi.go.id/en/moneter/informasi-kurs/transaksi-bi/Default.aspx\",</br>\n \"id: 3, name: Pajak, source: http://www.kemenkeu.go.id/Page/kurs-pajak\",</br>\n \"id: 4, name: Fixer.api, source: http://api.fixer.io/\",</br>\n \"id: 5, name: Yahoo Finance, source: https://currency-api.appspot.com/\",</br>\n \"id: 6, name: Fake Provider, source: fake provider to trigger fake feeds\"</br>\n </br>\n Available currency provider for selection :</br>\n \"2\", \"3\", \"4\", \"6\"</br>\n </br>\n Any other currency provider besides above will be rejected by system.</br>",
     "hasBody": true,
     "method": "PATCH",
@@ -6788,6 +11982,22 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "currency_list": {
+          "properties": {
+            "currency_provider_id": {
+              "type": "string"
+            },
+            "currency_to_code": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h5> Description </h5>\n\nAvailable currency lists : </br>\n\"country: Indonesia, code: IDR, symbol: Rp.\", </br>\n \"country: Australia, code: AUD, symbol: (AU)$\",</br>\n \"country: United States, code: USD, symbol: (US)$\",</br>\n \"country: Canada, code: CAD, symbol: (CA)$\",</br>\n \"country: China, code: CNY, symbol: (CN)¥\",</br>\n \"country: Malaysia, code: MYR, symbol: RM.\",</br>\n \"country: Hongkong, code: HKD, symbol: (HK)$\",</br>\n \"country: India, code: INR, symbol: Rupee\",</br>\n \"country: Japan, code: JPY, symbol: (JP)¥\",</br>\n \"country: New Zealand, code: NZD, symbol: (NZ)$\",</br>\n \"country: Singapore, code: SGD, symbol: (SG)$\",</br>\n \"country: Taiwan, code: TWD, symbol: (NT)$\",</br>\n \"country: Euro, code: EUR, symbol: €\",</br>\n \"country: United Kingdom, code: GBP, symbol: £\",</br>\n \"country: Brunei, code: BND, symbol: (BN)$\",</br>\n \"country: Swiss, code: CHF, symbol: CHF\",</br>\n \"country: Denmark, code: DKK, symbol: kr\",</br>\n \"country: South Korea, code: KRW, symbol: Won\",</br>\n \"country: Kuwait, code: KWD, symbol: K.D\",</br>\n \"country: Norway, code: NOK, symbol: kr\",</br>\n \"country: Papua New Guinean, code: PGK, symbol: K\",</br>\n \"country: Phillipines, code: PHP, symbol: Peso\",</br>\n \"country: Saudi Arabia, code: SAR, symbol: Riyal\",</br>\n \"country: Sweden, code: SEK, symbol: kr\",</br>\n \"country: Thailand, code: THB, symbol: Baht\"</br>\n</br>\nAvailable currency code for selection : </br>\n\"IDR\", \"AUD\", \"USD\", \"CAD\", \"CNY\", \"MYR\", \"HKD\", \"INR\", \"JPY\", \"NZD\", \"SGD\", \"TWD\", \"EUR\", \"GBP\", \"BND\", \"CHF\", \"DKK\", \"KRW\", \"KWD\", \"NOK\", \"PGK\", \"PHP\", \"SAR\", \"SEK\", \"THB\" </br>\n</br>\nAny other currency code besides above will be rejected by system.</br>\n</br>\nAvailable currency providers:</br>\n\"id: 1, name: Company Created, source: own created\",</br>\n \"id: 2, name: Bank Indonesia, source: http://www.bi.go.id/en/moneter/informasi-kurs/transaksi-bi/Default.aspx\",</br>\n \"id: 3, name: Pajak, source: http://www.kemenkeu.go.id/Page/kurs-pajak\",</br>\n \"id: 4, name: Fixer.api, source: http://api.fixer.io/\",</br>\n \"id: 5, name: Yahoo Finance, source: https://currency-api.appspot.com/\",</br>\n \"id: 6, name: Fake Provider, source: fake provider to trigger fake feeds\"</br>\n </br>\n Available currency provider for selection :</br>\n \"2\", \"3\", \"4\", \"6\"</br>\n </br>\n Any other currency provider besides above will be rejected by system.</br>",
     "hasBody": true,
     "method": "POST",
@@ -6924,6 +12134,25 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "payment_method": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "payment_method",
@@ -6956,6 +12185,25 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "payment_method": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "PATCH",
     "moduleName": "payment_method",
@@ -7066,6 +12314,25 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "tag": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "transaction_tag",
@@ -7097,6 +12364,25 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "tag": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "PATCH",
     "moduleName": "transaction_tag",
@@ -7135,6 +12421,22 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "product_category": {
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "product_categories",
@@ -7178,6 +12480,22 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "product_category": {
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "PATCH",
     "moduleName": "product_categories",
@@ -7228,6 +12546,9 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "type": "unknown"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "product_unit",
@@ -7290,6 +12611,26 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "term": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "longetivity": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "name",
+            "longetivity"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "term",
@@ -7371,6 +12712,32 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "invite": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "roles": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "name",
+            "email"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "PATCH",
     "moduleName": "user",
@@ -7471,6 +12838,90 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "vendors": {
+          "items": {
+            "properties": {
+              "vendor": {
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "first_name": {
+                    "type": "string"
+                  },
+                  "middle_name": {
+                    "type": "string"
+                  },
+                  "last_name": {
+                    "type": "string"
+                  },
+                  "display_name": {
+                    "type": "string"
+                  },
+                  "associate_company": {
+                    "type": "string"
+                  },
+                  "billing_address": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  },
+                  "fax": {
+                    "type": "string"
+                  },
+                  "mobile": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "disable_max_credit_limit": {
+                    "type": "boolean"
+                  },
+                  "max_credit_limit": {
+                    "type": "integer"
+                  },
+                  "start_balance": {
+                    "type": "string"
+                  },
+                  "opening_balance": {
+                    "type": "integer"
+                  },
+                  "default_ar_account_name": {
+                    "type": "string"
+                  },
+                  "default_ap_account_name": {
+                    "type": "string"
+                  },
+                  "source": {
+                    "type": "string"
+                  },
+                  "tax_no": {
+                    "type": "string"
+                  },
+                  "other_detail": {
+                    "type": "string"
+                  },
+                  "custom_id": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "vendors",
@@ -7496,6 +12947,34 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "warehouse": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "code": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "warehouse",
@@ -7528,6 +13007,34 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "warehouse": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "code": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "PATCH",
     "moduleName": "warehouse",
@@ -7568,6 +13075,59 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "bank_withdrawals": {
+          "items": {
+            "properties": {
+              "bank_withdrawal": {
+                "properties": {
+                  "refund_from_name": {
+                    "type": "string"
+                  },
+                  "person_name": {
+                    "type": "string"
+                  },
+                  "transaction_date": {
+                    "type": "string"
+                  },
+                  "transaction_no": {
+                    "type": "string"
+                  },
+                  "memo": {
+                    "type": "string"
+                  },
+                  "custom_id": {
+                    "type": "string"
+                  },
+                  "transaction_account_lines_attributes": {
+                    "items": {
+                      "properties": {
+                        "account_name": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "debit": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "description": "1 batch of request can handle up to 100 bank withdrawals.",
     "hasBody": true,
     "method": "POST",
@@ -7581,6 +13141,45 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "bank_transfers": {
+          "items": {
+            "properties": {
+              "bank_transfer": {
+                "properties": {
+                  "refund_from_name": {
+                    "type": "string"
+                  },
+                  "deposit_to_name": {
+                    "type": "string"
+                  },
+                  "transaction_date": {
+                    "type": "string"
+                  },
+                  "custom_id": {
+                    "type": "string"
+                  },
+                  "transaction_no": {
+                    "type": "string"
+                  },
+                  "memo": {
+                    "type": "string"
+                  },
+                  "transfer_amount": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "description": "1 batch of request can handle up to 100 bank transfers.",
     "hasBody": true,
     "method": "POST",
@@ -7594,6 +13193,59 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "bank_deposits": {
+          "items": {
+            "properties": {
+              "bank_deposit": {
+                "properties": {
+                  "deposit_to_name": {
+                    "type": "string"
+                  },
+                  "person_name": {
+                    "type": "string"
+                  },
+                  "transaction_date": {
+                    "type": "string"
+                  },
+                  "transaction_no": {
+                    "type": "string"
+                  },
+                  "memo": {
+                    "type": "string"
+                  },
+                  "custom_id": {
+                    "type": "string"
+                  },
+                  "transaction_account_lines_attributes": {
+                    "items": {
+                      "properties": {
+                        "account_name": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "credit": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "description": "1 batch of request can handle up to 100 bank deposits.",
     "hasBody": true,
     "method": "POST",
@@ -7626,6 +13278,74 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "expenses": {
+          "items": {
+            "properties": {
+              "expense": {
+                "properties": {
+                  "refund_from_name": {
+                    "type": "string"
+                  },
+                  "person_name": {
+                    "type": "string"
+                  },
+                  "transaction_date": {
+                    "type": "string"
+                  },
+                  "payment_method_name": {
+                    "type": "string"
+                  },
+                  "transaction_no": {
+                    "type": "string"
+                  },
+                  "custom_id": {
+                    "type": "string"
+                  },
+                  "expense_payable": {
+                    "type": "boolean"
+                  },
+                  "term_name": {
+                    "type": "string"
+                  },
+                  "transaction_account_lines_attributes": {
+                    "items": {
+                      "properties": {
+                        "account_name": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "debit": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "witholding_account_name": {
+                    "type": "string"
+                  },
+                  "witholding_value": {
+                    "type": "integer"
+                  },
+                  "witholding_type": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3>1 batch of request can handle up to 100 expenses</h3>\n<hr>\n\n<h3> Witholding Type</h3>\n<hr>\n\n`witholding_type` are divided into two types :\n1. Percent \n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\n<h3>payment_method_id and payment_method_name validation</h3>\n<hr>\n1. If `payment_method_id` and `payment_method_name` is sent, it has to match\n2. If `payment_method_id` is sent  `payment_method_name` is not sent, the `payment_method_id` must be available\n3. If `payment_method_name` is sent  `payment_method_id` is not sent, if the `payment_method_name` is not available it will be created\n4. If `payment_method_id` and `payment_method_name` is not sent return error\n\n<hr>\n\n<h3>expense_payable validation </h3>\n<hr>\n1. `expense_payable` = true means that the user wants to pay later. If `expense_payable` is true then `term_id` or `term_name` has to be sent.\n\n2. `expense_payable` = true means that the user wants to pay now. If `expense_payable` is false then `term_id` or `term_name` didn't need to be sent (if sent will be ignored)\n\n<hr>",
     "hasBody": true,
     "method": "POST",
@@ -7639,6 +13359,56 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "journal_entries": {
+          "items": {
+            "properties": {
+              "journal_entry": {
+                "properties": {
+                  "transaction_date": {
+                    "type": "string"
+                  },
+                  "transaction_no": {
+                    "type": "string"
+                  },
+                  "memo": {
+                    "type": "string"
+                  },
+                  "transaction_account_lines_attributes": {
+                    "items": {
+                      "properties": {
+                        "account_name": {
+                          "type": "string"
+                        },
+                        "debit": {
+                          "type": "integer"
+                        },
+                        "credit": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "tags": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "description": "1 batch of request can handle up to 100 journal entries.",
     "hasBody": true,
     "method": "POST",
@@ -7677,6 +13447,131 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_invoices": {
+          "items": {
+            "properties": {
+              "purchase_invoice": {
+                "properties": {
+                  "transaction_date": {
+                    "type": "string"
+                  },
+                  "transaction_lines_attributes": {
+                    "items": {
+                      "properties": {
+                        "quantity": {
+                          "type": "integer"
+                        },
+                        "rate": {
+                          "type": "integer"
+                        },
+                        "discount": {
+                          "type": "integer"
+                        },
+                        "product_name": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "shipping_date": {
+                    "type": "string"
+                  },
+                  "shipping_price": {
+                    "type": "integer"
+                  },
+                  "shipping_address": {
+                    "type": "string"
+                  },
+                  "is_shipped": {
+                    "type": "boolean"
+                  },
+                  "ship_via": {
+                    "type": "string"
+                  },
+                  "reference_no": {
+                    "type": "string"
+                  },
+                  "tracking_no": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "term_name": {
+                    "type": "string"
+                  },
+                  "due_date": {
+                    "type": "string"
+                  },
+                  "refund_from_name": {
+                    "type": "string"
+                  },
+                  "deposit": {
+                    "type": "integer"
+                  },
+                  "discount_unit": {
+                    "type": "integer"
+                  },
+                  "witholding_account_name": {
+                    "type": "string"
+                  },
+                  "witholding_value": {
+                    "type": "integer"
+                  },
+                  "witholding_type": {
+                    "type": "string"
+                  },
+                  "discount_type_name": {
+                    "type": "string"
+                  },
+                  "person_name": {
+                    "type": "string"
+                  },
+                  "warehouse_name": {
+                    "type": "string"
+                  },
+                  "warehouse_code": {
+                    "type": "string"
+                  },
+                  "tags": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "transaction_no": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "memo": {
+                    "type": "string"
+                  },
+                  "custom_id": {
+                    "type": "string"
+                  },
+                  "tax_after_discount": {
+                    "type": "boolean"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3>1 batch of request can handle up to 100 purchase invoices</h3>\n\n<h3> Discount Type and Witholding Type</h3>\n<hr>\n\n`discount_type_name` and `witholding_type` are divided into two types :\n1. Percent \n\n    `discount_type_name` and `discount_value` example :\n\n    * `discount_type_name`: `Percent`\n    \n    * `discount_value`: 10\n    \n    * The discount will be 10%\n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n\n   `discount_type_name` and `discount_value` example :\n\n   * `discount_type_name` : `Value`\n    \n   * `discount_type_value` : 10\n    \n   * The discount will be 10\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`discount_type_name` and `witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\n\n`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When creating new transaction, `id` must not be sent\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional",
     "hasBody": true,
     "method": "POST",
@@ -7760,6 +13655,131 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_orders": {
+          "items": {
+            "properties": {
+              "purchase_order": {
+                "properties": {
+                  "transaction_date": {
+                    "type": "string"
+                  },
+                  "transaction_lines_attributes": {
+                    "items": {
+                      "properties": {
+                        "quantity": {
+                          "type": "integer"
+                        },
+                        "rate": {
+                          "type": "integer"
+                        },
+                        "discount": {
+                          "type": "integer"
+                        },
+                        "product_name": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "shipping_date": {
+                    "type": "string"
+                  },
+                  "shipping_price": {
+                    "type": "integer"
+                  },
+                  "shipping_address": {
+                    "type": "string"
+                  },
+                  "is_shipped": {
+                    "type": "boolean"
+                  },
+                  "ship_via": {
+                    "type": "string"
+                  },
+                  "reference_no": {
+                    "type": "string"
+                  },
+                  "tracking_no": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "term_name": {
+                    "type": "string"
+                  },
+                  "due_date": {
+                    "type": "string"
+                  },
+                  "refund_from_name": {
+                    "type": "string"
+                  },
+                  "deposit": {
+                    "type": "integer"
+                  },
+                  "discount_unit": {
+                    "type": "integer"
+                  },
+                  "discount_type_name": {
+                    "type": "string"
+                  },
+                  "person_name": {
+                    "type": "string"
+                  },
+                  "warehouse_name": {
+                    "type": "string"
+                  },
+                  "warehouse_code": {
+                    "type": "string"
+                  },
+                  "tags": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "witholding_account_name": {
+                    "type": "string"
+                  },
+                  "witholding_value": {
+                    "type": "integer"
+                  },
+                  "witholding_type": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "transaction_no": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "memo": {
+                    "type": "string"
+                  },
+                  "custom_id": {
+                    "type": "string"
+                  },
+                  "tax_after_discount": {
+                    "type": "boolean"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3>1 batch of request can handle up to 100 purchase orders</h3>\n\n<hr>\n<h3> Discount Type and Witholding Type</h3>\n<hr>\n\n`discount_type_name` and `witholding_type` are divided into two types :\n1. Percent \n\n    `discount_type_name` and `discount_value` example :\n\n    * `discount_type_name`: `Percent`\n    \n    * `discount_value`: 10\n    \n    * The discount will be 10%\n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n\n   `discount_type_name` and `discount_value` example :\n\n   * `discount_type_name` : `Value`\n    \n   * `discount_type_value` : 10\n    \n   * The discount will be 10\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`discount_type_name` and `witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\n\n`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When creating new transaction, `id` must not be sent\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n      2.2.1. When product is not found and source is from `moka`, `woocomerce` or `shopify`, `product` will be created based on parameters that are sent (example: API sent `product_custom_id`, `product_name` and `product_code`, when `productcustom__id` is not found new product will be created with `name = product_name`, `product_code = product_code`, `custom_id = product_custom_id`)\n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "POST",
@@ -7773,6 +13793,36 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_order": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "quantity": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "id"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3>Convert Purchase Order to Purchase Invoice</h3>\n\nIf no request body is sent, all values in the selected `transaction` will be converted.\n\nIf there are request body, the `transaction` will be converted with custom values.\n\n\n<h3>Request Body parameters:</h3>\n\n1. `transaction_date`: Transaction date for the converted transaction\n\n2. `transaction_lines_attributes`\n\n   2.1 `id` : the id of `transaction_lines_attributes` from selected `transaction` to be converted\n\n    2.2 `quantity` : the quantity of `product`  from selected `transaction` to be converted",
     "hasBody": true,
     "method": "POST",
@@ -7793,6 +13843,33 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_order": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "quantity": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3>Convert Purchase Order to Purchase Delivery</h3>\n\nIf no request body is sent, all values in the selected `transaction` will be converted.\n\nIf there are request body, the `transaction` will be converted with custom values.\n\n\n<h3>Request Body parameters:</h3>\n\n1. `transaction_date`: Transaction date for the converted transaction\n\n2. `transaction_lines_attributes`\n\n   2.1 `id` : the id of `transaction_lines_attributes` from selected `transaction` to be converted\n\n    2.2 `quantity` : the quantity of `product`  from selected `transaction` to be converted",
     "hasBody": true,
     "method": "POST",
@@ -7825,6 +13902,121 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_delivery": {
+          "properties": {
+            "tax_after_discount": {
+              "type": "boolean"
+            },
+            "transaction_type_id": {
+              "type": "integer"
+            },
+            "person_id": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "is_shipped": {
+              "type": "boolean"
+            },
+            "shipping_address": {
+              "type": "string"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "ship_via": {
+              "type": "string"
+            },
+            "tracking_no": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "reference_no": {
+              "type": "string"
+            },
+            "tag_ids": {
+              "type": "string"
+            },
+            "selected_po_id": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "product_id": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "quantity": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "shipping_price": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_fields_attributes": {
+              "description": "(Optional) Custom field values. Uses replace-all strategy on update: omit to keep existing, send [] to clear all, send values to replace all. Requires custom_fields_ipm feature enabled.",
+              "items": {
+                "properties": {
+                  "field_id": {
+                    "description": "Field definition ID from Fields Service",
+                    "type": "integer"
+                  },
+                  "value": {
+                    "description": "Field value. String for text/number/date/dropdown, array of strings for multi_select.",
+                    "type": "unknown"
+                  },
+                  "field_key": {
+                    "description": "(Optional) Option ID(s) for dropdown/multi_select. Auto-resolved from value if omitted.",
+                    "type": "unknown"
+                  },
+                  "field_name": {
+                    "description": "(Optional) Field name for reference",
+                    "type": "string"
+                  },
+                  "field_type": {
+                    "description": "(Optional) Field type hint",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "validate_mandatory_customfields": {
+              "description": "(Optional) When true, validates that all required custom fields are present",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When creating new transaction, `id` must not be sent\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "POST",
@@ -7857,6 +14049,121 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_delivery": {
+          "properties": {
+            "tax_after_discount": {
+              "type": "boolean"
+            },
+            "transaction_type_id": {
+              "type": "integer"
+            },
+            "person_id": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "is_shipped": {
+              "type": "boolean"
+            },
+            "shipping_address": {
+              "type": "string"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "ship_via": {
+              "type": "string"
+            },
+            "tracking_no": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "reference_no": {
+              "type": "string"
+            },
+            "tag_ids": {
+              "type": "string"
+            },
+            "selected_po_id": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "product_id": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "quantity": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "shipping_price": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_fields_attributes": {
+              "description": "(Optional) Custom field values. Uses replace-all strategy on update: omit to keep existing, send [] to clear all, send values to replace all. Requires custom_fields_ipm feature enabled.",
+              "items": {
+                "properties": {
+                  "field_id": {
+                    "description": "Field definition ID from Fields Service",
+                    "type": "integer"
+                  },
+                  "value": {
+                    "description": "Field value. String for text/number/date/dropdown, array of strings for multi_select.",
+                    "type": "unknown"
+                  },
+                  "field_key": {
+                    "description": "(Optional) Option ID(s) for dropdown/multi_select. Auto-resolved from value if omitted.",
+                    "type": "unknown"
+                  },
+                  "field_name": {
+                    "description": "(Optional) Field name for reference",
+                    "type": "string"
+                  },
+                  "field_type": {
+                    "description": "(Optional) Field type hint",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "validate_mandatory_customfields": {
+              "description": "(Optional) When true, validates that all required custom fields are present",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When updating existing transaction, `id` is optional. If `id` is not sent, it will update the existing `transaction_line_attribute`, when `id` is sent, it has to match with the existing `transaction_line_attribute id`\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n      2.2.1. When product is not found and source is from `moka`, `woocomerce` or `shopify`, `product` will be created based on parameters that are sent (example: API sent `product_custom_id`, `product_name` and `product_code`, when `productcustom__id` is not found new product will be created with `name = product_name`, `product_code = product_code`, `custom_id = product_custom_id`)\n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "PATCH",
@@ -7896,6 +14203,33 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_delivery": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "quantity": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3>Convert Purchase Delivery to Purchase Invoice</h3>\n\nIf no request body is sent, all values in the selected `transaction` will be converted.\n\nIf there are request body, the `transaction` will be converted with custom values.\n\n\n<h3>Request Body parameters:</h3>\n\n1. `transaction_date`: Transaction date for the converted transaction\n\n2. `transaction_lines_attributes`\n\n   2.1 `id` : the id of `transaction_lines_attributes` from selected `transaction` to be converted\n\n    2.2 `quantity` : the quantity of `product`  from selected `transaction` to be converted",
     "hasBody": true,
     "method": "POST",
@@ -7916,6 +14250,73 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_payments": {
+          "items": {
+            "properties": {
+              "purchase_payment": {
+                "properties": {
+                  "transaction_date": {
+                    "type": "string"
+                  },
+                  "transaction_no": {
+                    "type": "string"
+                  },
+                  "records_attributes": {
+                    "items": {
+                      "properties": {
+                        "transaction_no": {
+                          "description": "Select which transaction (Purchase Invoice) to pay. Use transaction_no",
+                          "type": "string"
+                        },
+                        "amount": {
+                          "description": "Insert amount based on selected transaction. (Must <= original amount of the transaction)",
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "person_name": {
+                    "type": "string"
+                  },
+                  "payment_method_name": {
+                    "type": "string"
+                  },
+                  "refund_from_name": {
+                    "type": "string"
+                  },
+                  "memo": {
+                    "type": "string"
+                  },
+                  "witholding_account_name": {
+                    "type": "string"
+                  },
+                  "witholding_value": {
+                    "type": "integer"
+                  },
+                  "witholding_type": {
+                    "type": "string"
+                  },
+                  "custom_id": {
+                    "type": "string"
+                  },
+                  "is_draft": {
+                    "type": "boolean"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3>1 batch of request can handle up to 100 purchase payments</h3>\n\n<hr>\n\n<h3> Witholding Type</h3>\n<hr>\n\n`witholding_type` are divided into two types :\n1. Percent \n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>",
     "hasBody": true,
     "method": "POST",
@@ -7941,6 +14342,72 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_order_payment": {
+          "properties": {
+            "person_name": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "payment_method_name": {
+              "type": "string"
+            },
+            "payment_method_id": {
+              "type": "integer"
+            },
+            "refund_from_name": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "is_draft": {
+              "type": "boolean"
+            },
+            "witholding_account_name": {
+              "type": "string"
+            },
+            "witholding_type": {
+              "type": "string"
+            },
+            "witholding_value": {
+              "type": "integer"
+            },
+            "tags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "records_attributes": {
+              "items": {
+                "properties": {
+                  "transaction_no": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Witholding Type</h3>\n<hr>\n\n`witholding_type` are divided into two types :\n1. Percent \n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\n<h3>Payment Method Id and Payment Method Name   Validation </h3>\n<hr>\n\n1. If `payment_method_id` and `payment_method_name` is sent, it has to match\n\n\n2. If `payment_method_id` is sent  `payment_method_name` is not sent, the `payment_method_id` must be available\n\n3. If `payment_method_name` is sent  `payment_method_id` is not sent, if the `payment_method_name` is not available it will be created\n\n4. If `payment_method_id` and `payment_method_name` is not sent return error",
     "hasBody": true,
     "method": "POST",
@@ -7973,6 +14440,69 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_order_payment": {
+          "properties": {
+            "person_name": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "payment_method_name": {
+              "type": "string"
+            },
+            "refund_from_name": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "is_draft": {
+              "type": "boolean"
+            },
+            "witholding_account_name": {
+              "type": "string"
+            },
+            "witholding_type": {
+              "type": "string"
+            },
+            "witholding_value": {
+              "type": "integer"
+            },
+            "tags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "records_attributes": {
+              "items": {
+                "properties": {
+                  "transaction_no": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Witholding Type</h3>\n<hr>\n\n`witholding_type` are divided into two types :\n1. Percent \n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\n<h3>Payment Method Id and Payment Method Name   Validation </h3>\n<hr>\n\n1. If `payment_method_id` and `payment_method_name` is sent, it has to match\n\n\n2. If `payment_method_id` is sent  `payment_method_name` is not sent, the `payment_method_id` must be available\n\n3. If `payment_method_name` is sent  `payment_method_id` is not sent, if the `payment_method_name` is not available it will be created\n\n4. If `payment_method_id` and `payment_method_name` is not sent return error",
     "hasBody": true,
     "method": "PATCH",
@@ -8012,6 +14542,80 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_order_payments": {
+          "items": {
+            "properties": {
+              "purchase_order_payment": {
+                "properties": {
+                  "person_name": {
+                    "type": "string"
+                  },
+                  "custom_id": {
+                    "type": "string"
+                  },
+                  "transaction_date": {
+                    "type": "string"
+                  },
+                  "transaction_no": {
+                    "type": "string"
+                  },
+                  "payment_method_name": {
+                    "type": "string"
+                  },
+                  "payment_method_id": {
+                    "type": "integer"
+                  },
+                  "refund_from_name": {
+                    "type": "string"
+                  },
+                  "memo": {
+                    "type": "string"
+                  },
+                  "is_draft": {
+                    "type": "boolean"
+                  },
+                  "witholding_account_name": {
+                    "type": "string"
+                  },
+                  "witholding_type": {
+                    "type": "string"
+                  },
+                  "witholding_value": {
+                    "type": "integer"
+                  },
+                  "records_attributes": {
+                    "items": {
+                      "properties": {
+                        "transaction_no": {
+                          "type": "string"
+                        },
+                        "amount": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "tags": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3>1 batch of request can handle up to 100 purchase order payments</h3>\n\n<hr>\n\n<h3> Witholding Type</h3>\n<hr>\n\n`witholding_type` are divided into two types :\n1. Percent \n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\n<h3>Payment Method Id and Payment Method Name   Validation </h3>\n<hr>\n\n1. If `payment_method_id` and `payment_method_name` is sent, it has to match\n\n\n2. If `payment_method_id` is sent  `payment_method_name` is not sent, the `payment_method_id` must be available\n\n3. If `payment_method_name` is sent  `payment_method_id` is not sent, if the `payment_method_name` is not available it will be created\n\n4. If `payment_method_id` and `payment_method_name` is not sent return error",
     "hasBody": true,
     "method": "POST",
@@ -8038,6 +14642,117 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_quote": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "quantity": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "integer"
+                  },
+                  "discount": {
+                    "type": "integer"
+                  },
+                  "product_name": {
+                    "type": "string"
+                  },
+                  "line_tax_id": {
+                    "description": "(Optional) - Can be replaced with key line_tax_name",
+                    "type": "integer"
+                  },
+                  "line_tax_name": {
+                    "description": "(Optional) - Can be replaced with key line_tax_id",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "address": {
+              "type": "string"
+            },
+            "term_name": {
+              "type": "string"
+            },
+            "expiry_date": {
+              "type": "string"
+            },
+            "person_name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "use_tax_inclusive": {
+              "type": "boolean"
+            },
+            "tax_after_discount": {
+              "type": "boolean"
+            },
+            "custom_fields_attributes": {
+              "description": "(Optional) Custom field values. Uses replace-all strategy on update: omit to keep existing, send [] to clear all, send values to replace all. Requires custom_fields_ipm feature enabled.",
+              "items": {
+                "properties": {
+                  "field_id": {
+                    "description": "Field definition ID from Fields Service",
+                    "type": "integer"
+                  },
+                  "value": {
+                    "description": "Field value. String for text/number/date/dropdown, array of strings for multi_select.",
+                    "type": "unknown"
+                  },
+                  "field_key": {
+                    "description": "(Optional) Option ID(s) for dropdown/multi_select. Auto-resolved from value if omitted.",
+                    "type": "unknown"
+                  },
+                  "field_name": {
+                    "description": "(Optional) Field name for reference",
+                    "type": "string"
+                  },
+                  "field_type": {
+                    "description": "(Optional) Field type hint",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "validate_mandatory_customfields": {
+              "description": "(Optional) When true, validates that all required custom fields are present",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Discount Type</h3>\n<hr>\n\n`discount_type_name` are divided into two types :\n1. Percent \n\n    `discount_type_name` and `discount_value` example :\n\n    * `discount_type_name`: `Percent`\n    \n    * `discount_value`: 10\n    \n    * The discount will be 10%\n    \n2. Value\n\n   `discount_type_name` and `discount_value` example :\n\n   * `discount_type_name` : `Value`\n    \n   * `discount_type_value` : 10\n    \n   * The discount will be 10\n\n`discount_type_name` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\n\n`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When creating new transaction, `id` must not be sent\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "POST",
@@ -8051,6 +14766,114 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_quote": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "quantity": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "integer"
+                  },
+                  "discount": {
+                    "type": "integer"
+                  },
+                  "product_name": {
+                    "type": "string"
+                  },
+                  "line_tax_id": {
+                    "description": "(Optional) - Can be replaced with key line_tax_name",
+                    "type": "integer"
+                  },
+                  "line_tax_name": {
+                    "description": "(Optional) - Can be replaced with key line_tax_id",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "address": {
+              "type": "string"
+            },
+            "term_name": {
+              "type": "string"
+            },
+            "expiry_date": {
+              "type": "string"
+            },
+            "person_name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "use_tax_inclusive": {
+              "type": "boolean"
+            },
+            "custom_fields_attributes": {
+              "description": "(Optional) Custom field values. Uses replace-all strategy on update: omit to keep existing, send [] to clear all, send values to replace all. Requires custom_fields_ipm feature enabled.",
+              "items": {
+                "properties": {
+                  "field_id": {
+                    "description": "Field definition ID from Fields Service",
+                    "type": "integer"
+                  },
+                  "value": {
+                    "description": "Field value. String for text/number/date/dropdown, array of strings for multi_select.",
+                    "type": "unknown"
+                  },
+                  "field_key": {
+                    "description": "(Optional) Option ID(s) for dropdown/multi_select. Auto-resolved from value if omitted.",
+                    "type": "unknown"
+                  },
+                  "field_name": {
+                    "description": "(Optional) Field name for reference",
+                    "type": "string"
+                  },
+                  "field_type": {
+                    "description": "(Optional) Field type hint",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "validate_mandatory_customfields": {
+              "description": "(Optional) When true, validates that all required custom fields are present",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Discount Type</h3>\n<hr>\n\n`discount_type_name` are divided into two types :\n1. Percent \n\n    `discount_type_name` and `discount_value` example :\n\n    * `discount_type_name`: `Percent`\n    \n    * `discount_value`: 10\n    \n    * The discount will be 10%\n    \n2. Value\n\n   `discount_type_name` and `discount_value` example :\n\n   * `discount_type_name` : `Value`\n    \n   * `discount_type_value` : 10\n    \n   * The discount will be 10\n\n`discount_type_name` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\n`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When updating existing transaction, `id` is optional. If `id` is not sent, it will update the existing `transaction_line_attribute`, when `id` is sent, it has to match with the existing `transaction_line_attribute id`\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n      2.2.1. When product is not found and source is from `moka`, `woocomerce` or `shopify`, `product` will be created based on parameters that are sent (example: API sent `product_custom_id`, `product_name` and `product_code`, when `productcustom__id` is not found new product will be created with `name = product_name`, `product_code = product_code`, `custom_id = product_custom_id`)\n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "PATCH",
@@ -8109,6 +14932,77 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_quotes": {
+          "items": {
+            "properties": {
+              "purchase_quote": {
+                "properties": {
+                  "transaction_date": {
+                    "type": "string"
+                  },
+                  "transaction_lines_attributes": {
+                    "items": {
+                      "properties": {
+                        "quantity": {
+                          "type": "integer"
+                        },
+                        "rate": {
+                          "type": "integer"
+                        },
+                        "discount": {
+                          "type": "integer"
+                        },
+                        "product_name": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "term_name": {
+                    "type": "string"
+                  },
+                  "due_date": {
+                    "type": "string"
+                  },
+                  "person_name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "transaction_no": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "memo": {
+                    "type": "string"
+                  },
+                  "custom_id": {
+                    "type": "string"
+                  },
+                  "tax_after_discount": {
+                    "type": "boolean"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Discount Type</h3>\n<hr>\n\n`discount_type_name` are divided into two types :\n1. Percent \n\n    `discount_type_name` and `discount_value` example :\n\n    * `discount_type_name`: `Percent`\n    \n    * `discount_value`: 10\n    \n    * The discount will be 10%\n    \n2. Value\n\n   `discount_type_name` and `discount_value` example :\n\n   * `discount_type_name` : `Value`\n    \n   * `discount_type_value` : 10\n    \n   * The discount will be 10\n\n`discount_type_name` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\n\n1 batch of request can handle up to 100 purchase quotes.\n\n`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When creating new transaction, `id` must not be sent\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n      2.2.1. When product is not found and source is from `moka`, `woocomerce` or `shopify`, `product` will be created based on parameters that are sent (example: API sent `product_custom_id`, `product_name` and `product_code`, when `productcustom__id` is not found new product will be created with `name = product_name`, `product_code = product_code`, `custom_id = product_custom_id`)\n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "POST",
@@ -8122,6 +15016,33 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_quote": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "quantity": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3>Convert Purchase Quote to Purchase Order</h3>\n\nIf no request body is sent, all values in the selected `transaction` will be converted.\n\nIf there are request body, the `transaction` will be converted with custom values.\n\n\n<h3>Request Body parameters:</h3>\n\n1. `transaction_date`: Transaction date for the converted transaction\n\n2. `transaction_lines_attributes`\n\n   2.1 `id` : the id of `transaction_lines_attributes` from selected `transaction` to be converted\n\n    2.2 `quantity` : the quantity of `product`  from selected `transaction` to be converted",
     "hasBody": true,
     "method": "POST",
@@ -8142,6 +15063,33 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "purchase_quote": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "quantity": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3>Convert Purchase Quote to Purchase Invoice</h3>\n\nIf no request body is sent, all values in the selected `transaction` will be converted.\n\nIf there are request body, the `transaction` will be converted with custom values.\n\n\n<h3>Request Body parameters:</h3>\n\n1. `transaction_date`: Transaction date for the converted transaction\n\n2. `transaction_lines_attributes`\n\n   2.1 `id` : the id of `transaction_lines_attributes` from selected `transaction` to be converted\n\n    2.2 `quantity` : the quantity of `product`  from selected `transaction` to be converted",
     "hasBody": true,
     "method": "POST",
@@ -8162,6 +15110,68 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "receive_payments": {
+          "items": {
+            "properties": {
+              "receive_payment": {
+                "properties": {
+                  "transaction_date": {
+                    "type": "string"
+                  },
+                  "records_attributes": {
+                    "items": {
+                      "properties": {
+                        "transaction_no": {
+                          "type": "string"
+                        },
+                        "amount": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "payment_method_name": {
+                    "type": "string"
+                  },
+                  "is_draft": {
+                    "type": "boolean"
+                  },
+                  "deposit_to_name": {
+                    "type": "string"
+                  },
+                  "memo": {
+                    "type": "string"
+                  },
+                  "witholding_account_name": {
+                    "type": "string"
+                  },
+                  "witholding_value": {
+                    "type": "integer"
+                  },
+                  "witholding_type": {
+                    "type": "string"
+                  },
+                  "custom_id": {
+                    "type": "string"
+                  },
+                  "payment_method_id": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3>1 batch of request can handle up to 100 receive payments.</h3>\n\n<hr>\n\n<h3> Witholding Type</h3>\n<hr>\n\n`witholding_type` are divided into two types :\n1. Percent \n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\n\n<h3>Payment Method Id and Payment Method Name   Validation </h3>\n<hr>\n\n1. If `payment_method_id` and `payment_method_name` is sent, it has to match\n\n\n2. If `payment_method_id` is sent  `payment_method_name` is not sent, the `payment_method_id` must be available\n\n3. If `payment_method_name` is sent  `payment_method_id` is not sent, if the `payment_method_name` is not available it will be created\n\n4. If `payment_method_id` and `payment_method_name` is not sent return error",
     "hasBody": true,
     "method": "POST",
@@ -8188,6 +15198,132 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_quote": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "quantity": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "integer"
+                  },
+                  "discount": {
+                    "type": "integer"
+                  },
+                  "product_name": {
+                    "type": "string"
+                  },
+                  "line_tax_id": {
+                    "description": "(Optional) - Can be replaced with key line_tax_name",
+                    "type": "integer"
+                  },
+                  "line_tax_name": {
+                    "description": "(Optional) - Can be replaced with key line_tax_id",
+                    "type": "string"
+                  },
+                  "": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "address": {
+              "type": "string"
+            },
+            "term_name": {
+              "type": "string"
+            },
+            "expiry_date": {
+              "type": "string"
+            },
+            "discount_unit": {
+              "type": "integer"
+            },
+            "witholding_account_name": {
+              "type": "string"
+            },
+            "witholding_value": {
+              "type": "integer"
+            },
+            "witholding_type": {
+              "type": "string"
+            },
+            "person_name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "use_tax_inclusive": {
+              "type": "boolean"
+            },
+            "tax_after_discount": {
+              "type": "boolean"
+            },
+            "custom_fields_attributes": {
+              "description": "(Optional) Custom field values. Uses replace-all strategy on update: omit to keep existing, send [] to clear all, send values to replace all. Requires custom_fields_ipm feature enabled.",
+              "items": {
+                "properties": {
+                  "field_id": {
+                    "description": "Field definition ID from Fields Service",
+                    "type": "integer"
+                  },
+                  "value": {
+                    "description": "Field value. String for text/number/date/dropdown, array of strings for multi_select.",
+                    "type": "unknown"
+                  },
+                  "field_key": {
+                    "description": "(Optional) Option ID(s) for dropdown/multi_select. Auto-resolved from value if omitted.",
+                    "type": "unknown"
+                  },
+                  "field_name": {
+                    "description": "(Optional) Field name for reference",
+                    "type": "string"
+                  },
+                  "field_type": {
+                    "description": "(Optional) Field type hint",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "validate_mandatory_customfields": {
+              "description": "(Optional) When true, validates that all required custom fields are present",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Discount Type</h3>\n<hr>\n\n`discount_type_name` are divided into two types :\n1. Percent \n\n    `discount_type_name` and `discount_value` example :\n\n    * `discount_type_name`: `Percent`\n    \n    * `discount_value`: 10\n    \n    * The discount will be 10%\n    \n2. Value\n\n   `discount_type_name` and `discount_value` example :\n\n   * `discount_type_name` : `Value`\n    \n   * `discount_type_value` : 10\n    \n   * The discount will be 10\n\n`discount_type_name` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\n\n`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When creating new transaction, `id` must not be sent\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "POST",
@@ -8201,6 +15337,89 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_quotes": {
+          "items": {
+            "properties": {
+              "sales_quote": {
+                "properties": {
+                  "transaction_date": {
+                    "type": "string"
+                  },
+                  "transaction_lines_attributes": {
+                    "items": {
+                      "properties": {
+                        "quantity": {
+                          "type": "integer"
+                        },
+                        "rate": {
+                          "type": "integer"
+                        },
+                        "discount": {
+                          "type": "integer"
+                        },
+                        "product_name": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "term_name": {
+                    "type": "string"
+                  },
+                  "due_date": {
+                    "type": "string"
+                  },
+                  "discount_unit": {
+                    "type": "integer"
+                  },
+                  "witholding_account_name": {
+                    "type": "string"
+                  },
+                  "witholding_value": {
+                    "type": "integer"
+                  },
+                  "witholding_type": {
+                    "type": "string"
+                  },
+                  "person_name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "transaction_no": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "memo": {
+                    "type": "string"
+                  },
+                  "custom_id": {
+                    "type": "string"
+                  },
+                  "tax_after_discount": {
+                    "type": "boolean"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Discount Type</h3>\n<hr>\n\n`discount_type_name` are divided into two types :\n1. Percent \n\n    `discount_type_name` and `discount_value` example :\n\n    * `discount_type_name`: `Percent`\n    \n    * `discount_value`: 10\n    \n    * The discount will be 10%\n    \n2. Value\n\n   `discount_type_name` and `discount_value` example :\n\n   * `discount_type_name` : `Value`\n    \n   * `discount_type_value` : 10\n    \n   * The discount will be 10\n\n`discount_type_name` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When creating new transaction, `id` must not be sent\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "POST",
@@ -8214,6 +15433,33 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_quote": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "quantity": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3>Convert Sales Quote to Sales Invoice</h3>\n\nIf no request body is sent, all values in the selected `transaction` will be converted.\n\nIf there are request body, the `transaction` will be converted with custom values.\n\n\n<h3>Request Body parameters:</h3>\n\n1. `transaction_date`: Transaction date for the converted transaction\n\n2. `transaction_lines_attributes`\n\n   2.1 `id` : the id of `transaction_lines_attributes` from selected `transaction` to be converted\n\n    2.2 `quantity` : the quantity of `product`  from selected `transaction` to be converted",
     "hasBody": true,
     "method": "POST",
@@ -8234,6 +15480,33 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_quote": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "quantity": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3>Convert Sales Quote to Sales Order</h3>\n\nIf no request body is sent, all values in the selected `transaction` will be converted.\n\nIf there are request body, the `transaction` will be converted with custom values.\n\n\n<h3>Request Body parameters:</h3>\n\n1. `transaction_date`: Transaction date for the converted transaction\n\n2. `transaction_lines_attributes`\n\n   2.1 `id` : the id of `transaction_lines_attributes` from selected `transaction` to be converted\n\n    2.2 `quantity` : the quantity of `product`  from selected `transaction` to be converted",
     "hasBody": true,
     "method": "POST",
@@ -8274,6 +15547,126 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_quote": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "quantity": {
+                    "type": "integer"
+                  },
+                  "rate": {
+                    "type": "integer"
+                  },
+                  "discount": {
+                    "type": "integer"
+                  },
+                  "product_name": {
+                    "type": "string"
+                  },
+                  "line_tax_id": {
+                    "description": "(Optional) - Can be replaced with key line_tax_name",
+                    "type": "integer"
+                  },
+                  "line_tax_name": {
+                    "description": "(Optional) - Can be replaced with key line_tax_id",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "address": {
+              "type": "string"
+            },
+            "term_name": {
+              "type": "string"
+            },
+            "expiry_date": {
+              "type": "string"
+            },
+            "discount_unit": {
+              "type": "integer"
+            },
+            "witholding_account_name": {
+              "type": "string"
+            },
+            "witholding_value": {
+              "type": "integer"
+            },
+            "witholding_type": {
+              "type": "string"
+            },
+            "person_name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "use_tax_inclusive": {
+              "type": "boolean"
+            },
+            "custom_fields_attributes": {
+              "description": "(Optional) Custom field values. Uses replace-all strategy on update: omit to keep existing, send [] to clear all, send values to replace all. Requires custom_fields_ipm feature enabled.",
+              "items": {
+                "properties": {
+                  "field_id": {
+                    "description": "Field definition ID from Fields Service",
+                    "type": "integer"
+                  },
+                  "value": {
+                    "description": "Field value. String for text/number/date/dropdown, array of strings for multi_select.",
+                    "type": "unknown"
+                  },
+                  "field_key": {
+                    "description": "(Optional) Option ID(s) for dropdown/multi_select. Auto-resolved from value if omitted.",
+                    "type": "unknown"
+                  },
+                  "field_name": {
+                    "description": "(Optional) Field name for reference",
+                    "type": "string"
+                  },
+                  "field_type": {
+                    "description": "(Optional) Field type hint",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "validate_mandatory_customfields": {
+              "description": "(Optional) When true, validates that all required custom fields are present",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Discount Type</h3>\n<hr>\n\n`discount_type_name` are divided into two types :\n1. Percent \n\n    `discount_type_name` and `discount_value` example :\n\n    * `discount_type_name`: `Percent`\n    \n    * `discount_value`: 10\n    \n    * The discount will be 10%\n    \n2. Value\n\n   `discount_type_name` and `discount_value` example :\n\n   * `discount_type_name` : `Value`\n    \n   * `discount_type_value` : 10\n    \n   * The discount will be 10\n\n`discount_type_name` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\n`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When updating existing transaction, `id` is optional. If `id` is not sent, it will update the existing `transaction_line_attribute`, when `id` is sent, it has to match with the existing `transaction_line_attribute id`\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n      2.2.1. When product is not found and source is from `moka`, `woocomerce` or `shopify`, `product` will be created based on parameters that are sent (example: API sent `product_custom_id`, `product_name` and `product_code`, when `productcustom__id` is not found new product will be created with `name = product_name`, `product_code = product_code`, `custom_id = product_custom_id`)\n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "PATCH",
@@ -8446,6 +15839,131 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_orders": {
+          "items": {
+            "properties": {
+              "sales_order": {
+                "properties": {
+                  "transaction_date": {
+                    "type": "string"
+                  },
+                  "transaction_lines_attributes": {
+                    "items": {
+                      "properties": {
+                        "quantity": {
+                          "type": "integer"
+                        },
+                        "rate": {
+                          "type": "integer"
+                        },
+                        "discount": {
+                          "type": "integer"
+                        },
+                        "product_name": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "shipping_date": {
+                    "type": "string"
+                  },
+                  "shipping_price": {
+                    "type": "integer"
+                  },
+                  "shipping_address": {
+                    "type": "string"
+                  },
+                  "is_shipped": {
+                    "type": "boolean"
+                  },
+                  "ship_via": {
+                    "type": "string"
+                  },
+                  "reference_no": {
+                    "type": "string"
+                  },
+                  "tracking_no": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "term_name": {
+                    "type": "string"
+                  },
+                  "due_date": {
+                    "type": "string"
+                  },
+                  "deposit_to_name": {
+                    "type": "string"
+                  },
+                  "deposit": {
+                    "type": "integer"
+                  },
+                  "discount_unit": {
+                    "type": "integer"
+                  },
+                  "discount_type_name": {
+                    "type": "string"
+                  },
+                  "person_name": {
+                    "type": "string"
+                  },
+                  "warehouse_name": {
+                    "type": "string"
+                  },
+                  "warehouse_code": {
+                    "type": "string"
+                  },
+                  "tags": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "witholding_account_name": {
+                    "type": "string"
+                  },
+                  "witholding_value": {
+                    "type": "integer"
+                  },
+                  "witholding_type": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "transaction_no": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "memo": {
+                    "type": "string"
+                  },
+                  "custom_id": {
+                    "type": "string"
+                  },
+                  "tax_after_discount": {
+                    "type": "boolean"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Discount Type and Witholding Type</h3>\n<hr>\n\n`discount_type_name` and `witholding_type` are divided into two types :\n1. Percent \n\n    `discount_type_name` and `discount_value` example :\n\n    * `discount_type_name`: `Percent`\n    \n    * `discount_value`: 10\n    \n    * The discount will be 10%\n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n\n   `discount_type_name` and `discount_value` example :\n\n   * `discount_type_name` : `Value`\n    \n   * `discount_type_value` : 10\n    \n   * The discount will be 10\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`discount_type_name` and `witholding_type` can only be filled with `Percent` or `Value`. If its not match it will return error message.\n\n<hr>\n\n1 batch of request can handle up to 100 sales orders.\n\n`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When creating new transaction, `id` must not be sent\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n      2.2.1. When product is not found and source is from `moka`, `woocomerce` or `shopify`, `product` will be created based on parameters that are sent (example: API sent `product_custom_id`, `product_name` and `product_code`, when `productcustom__id` is not found new product will be created with `name = product_name`, `product_code = product_code`, `custom_id = product_custom_id`)\n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "POST",
@@ -8459,6 +15977,33 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_order": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "quantity": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3>Convert Sales Order to Sales Invoice</h3>\n\nIf no request body is sent, all values in the selected `transaction` will be converted.\n\nIf there are request body, the `transaction` will be converted with custom values.\n\n\n<h3>Request Body parameters:</h3>\n\n1. `transaction_date`: Transaction date for the converted transaction\n\n2. `transaction_lines_attributes`\n\n   2.1 `id` : the id of `transaction_lines_attributes` from selected `transaction` to be converted\n\n    2.2 `quantity` : the quantity of `product`  from selected `transaction` to be converted",
     "hasBody": true,
     "method": "POST",
@@ -8479,6 +16024,33 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_order": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "quantity": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3>Convert Sales Order to Sales Delivery</h3>\n\nIf no request body is sent, all values in the selected `transaction` will be converted.\n\nIf there are request body, the `transaction` will be converted with custom values.\n\n\n<h3>Request Body parameters:</h3>\n\n1. `transaction_date`: Transaction date for the converted transaction\n\n2. `transaction_lines_attributes`\n\n   2.1 `id` : the id of `transaction_lines_attributes` from selected `transaction` to be converted\n\n    2.2 `quantity` : the quantity of `product`  from selected `transaction` to be converted",
     "hasBody": true,
     "method": "POST",
@@ -8499,6 +16071,121 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_delivery": {
+          "properties": {
+            "tax_after_discount": {
+              "type": "boolean"
+            },
+            "transaction_type_id": {
+              "type": "integer"
+            },
+            "person_id": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "is_shipped": {
+              "type": "boolean"
+            },
+            "shipping_address": {
+              "type": "string"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "ship_via": {
+              "type": "string"
+            },
+            "tracking_no": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "reference_no": {
+              "type": "string"
+            },
+            "tag_ids": {
+              "type": "string"
+            },
+            "selected_po_id": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "product_id": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "quantity": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "shipping_price": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_fields_attributes": {
+              "description": "(Optional) Custom field values. Uses replace-all strategy on update: omit to keep existing, send [] to clear all, send values to replace all. Requires custom_fields_ipm feature enabled.",
+              "items": {
+                "properties": {
+                  "field_id": {
+                    "description": "Field definition ID from Fields Service",
+                    "type": "integer"
+                  },
+                  "value": {
+                    "description": "Field value. String for text/number/date/dropdown, array of strings for multi_select.",
+                    "type": "unknown"
+                  },
+                  "field_key": {
+                    "description": "(Optional) Option ID(s) for dropdown/multi_select. Auto-resolved from value if omitted.",
+                    "type": "unknown"
+                  },
+                  "field_name": {
+                    "description": "(Optional) Field name for reference",
+                    "type": "string"
+                  },
+                  "field_type": {
+                    "description": "(Optional) Field type hint",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "validate_mandatory_customfields": {
+              "description": "(Optional) When true, validates that all required custom fields are present",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When creating new transaction, `id` must not be sent\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "POST",
@@ -8543,6 +16230,121 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_delivery": {
+          "properties": {
+            "tax_after_discount": {
+              "type": "boolean"
+            },
+            "transaction_type_id": {
+              "type": "integer"
+            },
+            "person_id": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "is_shipped": {
+              "type": "boolean"
+            },
+            "shipping_address": {
+              "type": "string"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "ship_via": {
+              "type": "string"
+            },
+            "tracking_no": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "reference_no": {
+              "type": "string"
+            },
+            "tag_ids": {
+              "type": "string"
+            },
+            "selected_po_id": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "product_id": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "quantity": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "shipping_price": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "custom_fields_attributes": {
+              "description": "(Optional) Custom field values. Uses replace-all strategy on update: omit to keep existing, send [] to clear all, send values to replace all. Requires custom_fields_ipm feature enabled.",
+              "items": {
+                "properties": {
+                  "field_id": {
+                    "description": "Field definition ID from Fields Service",
+                    "type": "integer"
+                  },
+                  "value": {
+                    "description": "Field value. String for text/number/date/dropdown, array of strings for multi_select.",
+                    "type": "unknown"
+                  },
+                  "field_key": {
+                    "description": "(Optional) Option ID(s) for dropdown/multi_select. Auto-resolved from value if omitted.",
+                    "type": "unknown"
+                  },
+                  "field_name": {
+                    "description": "(Optional) Field name for reference",
+                    "type": "string"
+                  },
+                  "field_type": {
+                    "description": "(Optional) Field type hint",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "field_id",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "validate_mandatory_customfields": {
+              "description": "(Optional) When true, validates that all required custom fields are present",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "`transaction_lines_attributes` is used to add products on the current transaction, `transaction_lines_attributes` has to be sent. \n\n`transaction_lines_attributes` consist of `id`, `product_id`, `product_name`, `product_code`, `description`, `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name`, `custom_id`\n\n`transaction_lines_attributes` validation:\n\n1. When updating existing transaction, `id` is optional. If `id` is not sent, it will update the existing `transaction_line_attribute`, when `id` is sent, it has to match with the existing `transaction_line_attribute id`\n2. Product can be added to the `transaction_lines_attribute` using `product_id`, `product_custom_id`, `product_name` or `product_code`, at least one of them has to be sent.\n\n   2.1. If both `product_id` and `product_custom_id` is sent, it has to be match\n   \n   2.2. If `product_id` or `product_custom_id` is sent (only one of them), product will be searched based on `product_id` or `product_custom_id`. When `product` already found, `product_name` and `product_code` will be ignored.\n   \n      2.2.1. When product is not found and source is from `moka`, `woocomerce` or `shopify`, `product` will be created based on parameters that are sent (example: API sent `product_custom_id`, `product_name` and `product_code`, when `productcustom__id` is not found new product will be created with `name = product_name`, `product_code = product_code`, `custom_id = product_custom_id`)\n   \n   2.3. If only `product_code` or `product_name` is sent it has to match.\n3. `description` is optional, when it's not sent, `description` will be filled using selected product description.\n4. `quantity`, `rate`, `amount`, `discount`, `tax`, `line_tax_id`, `line_tax_name` is optional.",
     "hasBody": true,
     "method": "PATCH",
@@ -8582,6 +16384,33 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_delivery": {
+          "properties": {
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "quantity": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3>Convert Sales Delivery to Sales Invoice</h3>\n\nIf no request body is sent, all values in the selected `transaction` will be converted.\n\nIf there are request body, the `transaction` will be converted with custom values.\n\n\n<h3>Request Body parameters:</h3>\n\n1. `transaction_date`: Transaction date for the converted transaction\n\n2. `transaction_lines_attributes`\n\n   2.1 `id` : the id of `transaction_lines_attributes` from selected `transaction` to be converted\n\n    2.2 `quantity` : the quantity of `product`  from selected `transaction` to be converted",
     "hasBody": true,
     "method": "POST",
@@ -8614,6 +16443,72 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_order_payment": {
+          "properties": {
+            "person_name": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "payment_method_name": {
+              "type": "string"
+            },
+            "payment_method_id": {
+              "type": "integer"
+            },
+            "deposit_to_name": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "is_draft": {
+              "type": "boolean"
+            },
+            "witholding_account_name": {
+              "type": "string"
+            },
+            "witholding_type": {
+              "type": "string"
+            },
+            "witholding_value": {
+              "type": "integer"
+            },
+            "tags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "records_attributes": {
+              "items": {
+                "properties": {
+                  "transaction_no": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Witholding Type</h3>\n<hr>\n\n`witholding_type` are divided into two types :\n1. Percent \n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\npayment_method_id and payment_method_name validation :\n1. If payment_method_id and payment_method_name is sent, it has to match\n2. If payment_method_id is sent  payment_method_name is not sent, the payment_method_id must be available\n3. If payment_method_name is sent  payment_method_id is not sent, if the payment_method_name is not available it will be created\n4. If payment_method_id and payment_method_name is not sent return error",
     "hasBody": true,
     "method": "POST",
@@ -8646,6 +16541,69 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_order_payment": {
+          "properties": {
+            "person_name": {
+              "type": "string"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "payment_method_name": {
+              "type": "string"
+            },
+            "deposit_to_name": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "is_draft": {
+              "type": "boolean"
+            },
+            "witholding_account_name": {
+              "type": "string"
+            },
+            "witholding_type": {
+              "type": "string"
+            },
+            "witholding_value": {
+              "type": "integer"
+            },
+            "tags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "records_attributes": {
+              "items": {
+                "properties": {
+                  "transaction_no": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Witholding Type</h3>\n<hr>\n\n`witholding_type` are divided into two types :\n1. Percent \n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>",
     "hasBody": true,
     "method": "PATCH",
@@ -8685,6 +16643,71 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "sales_order_payment": {
+          "items": {
+            "properties": {
+              "sales_order_payment": {
+                "properties": {
+                  "transaction_date": {
+                    "type": "string"
+                  },
+                  "records_attributes": {
+                    "items": {
+                      "properties": {
+                        "transaction_no": {
+                          "type": "string"
+                        },
+                        "amount": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "person_name": {
+                    "type": "string"
+                  },
+                  "payment_method_name": {
+                    "type": "string"
+                  },
+                  "payment_method_id": {
+                    "type": "integer"
+                  },
+                  "is_draft": {
+                    "type": "boolean"
+                  },
+                  "deposit_to_name": {
+                    "type": "string"
+                  },
+                  "memo": {
+                    "type": "string"
+                  },
+                  "witholding_account_name": {
+                    "type": "string"
+                  },
+                  "witholding_value": {
+                    "type": "integer"
+                  },
+                  "witholding_type": {
+                    "type": "string"
+                  },
+                  "custom_id": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "description": "<h3> Witholding Type</h3>\n<hr>\n\n`witholding_type` are divided into two types :\n1. Percent \n    \n    `witholding_type` and `witholding_value` example :\n    \n    * `witholding_type` : `Percent`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10%\n    \n2. Value\n   \n   `witholding_type` and `witholding_value` example :\n   \n    * `witholding_type` : `Value`\n    \n    * `witholding_value` : 10\n    \n    * The witholding will be 10\n\n`witholding_type` can only be filled with `percent` or `value`. If its not match it will return error message.\n\n<hr>\n\n1 batch of request can handle up to 100 sales order payments.\n\npayment_method_id and payment_method_name validation :\n1. If payment_method_id and payment_method_name is sent, it has to match\n2. If payment_method_id is sent  payment_method_name is not sent, the payment_method_id must be available\n3. If payment_method_name is sent  payment_method_id is not sent, if the payment_method_name is not available it will be created\n4. If payment_method_id and payment_method_name is not sent return error",
     "hasBody": true,
     "method": "POST",
@@ -8711,6 +16734,73 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "stock_adjustment": {
+          "properties": {
+            "stock_adjustment_type": {
+              "type": "string"
+            },
+            "warehouse_id": {
+              "type": "integer"
+            },
+            "account_name": {
+              "type": "string"
+            },
+            "date": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "tags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "maintain_actual": {
+              "description": "if not set, will determined as false",
+              "type": "boolean"
+            },
+            "lines_attributes": {
+              "items": {
+                "properties": {
+                  "product_name": {
+                    "type": "string"
+                  },
+                  "actual_quantity": {
+                    "type": "integer"
+                  },
+                  "difference": {
+                    "type": "integer"
+                  },
+                  "use_custom_average_price": {
+                    "type": "boolean"
+                  },
+                  "average_price": {
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "custom_id": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "maintain_actual"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "`warehouse` can be inserted based on `warehouse_id`, `warehouse_name` or `warehouse_code`\n\n`maintain_actual` is `true` means Stock Count and is `false` means Stock In/Out\n\n### Important Note\n1. when request is not provided with `maintain_actual`, the server will processes it as `maintain_actual` is set to `false`, which cause value of `actual_quantity` will be ignored and only look for value in `difference`.\n2. otherwise, when `maintain_actual` are set to `true`, it will only look value from `actual_quantity` and will ignored the value of `difference`.\n3. for 2 condition above, the value of `system_quantity` will be determined depends on what method are chosen.",
     "hasBody": true,
     "method": "POST",
@@ -8810,6 +16900,19 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "comment": {
+          "properties": {
+            "notes": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "stock_adjustment",
@@ -8921,6 +17024,78 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "stock_adjustment": {
+          "properties": {
+            "stock_adjustment_type": {
+              "type": "string"
+            },
+            "account_name": {
+              "type": "string"
+            },
+            "date": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "tags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "lines_attributes": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "description": "required if not a new record",
+                    "type": "integer"
+                  },
+                  "product_name": {
+                    "type": "string"
+                  },
+                  "system_quantity": {
+                    "description": "required if it's not a new record",
+                    "type": "integer"
+                  },
+                  "actual_quantity": {
+                    "type": "integer"
+                  },
+                  "difference": {
+                    "type": "integer"
+                  },
+                  "use_custom_average_price": {
+                    "type": "boolean"
+                  },
+                  "average_price": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "id",
+                  "product_name",
+                  "system_quantity",
+                  "actual_quantity",
+                  "difference"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "stock_adjustment_type",
+            "account_name",
+            "date",
+            "memo"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "`warehouse` can be inserted based on `warehouse_id`, `warehouse_name` or `warehouse_code`",
     "hasBody": true,
     "method": "PATCH",
@@ -8960,6 +17135,43 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "email": {
+          "properties": {
+            "transaction_type_id": {
+              "type": "integer"
+            },
+            "email_to": {
+              "description": "can assign multiple email simply just split it with comman",
+              "type": "string"
+            },
+            "cc_to": {
+              "description": "can assign multiple email simply just split it with comman",
+              "type": "string"
+            },
+            "email_from": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "transaction_type_id",
+            "email_to",
+            "cc_to",
+            "email_from",
+            "transaction_no"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "transaction_pdf",
@@ -8972,6 +17184,30 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "export": {
+          "properties": {
+            "transaction_type_id": {
+              "type": "integer"
+            },
+            "transaction_no": {
+              "type": "string"
+            },
+            "transaction_id": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "transaction_type_id",
+            "transaction_no",
+            "transaction_id"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "Either transaction_id or transaction_no is required.",
     "hasBody": true,
     "method": "POST",
@@ -8985,6 +17221,59 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "warehouse_transfer": {
+          "properties": {
+            "from_warehouse_name": {
+              "type": "string"
+            },
+            "to_warehouse_name": {
+              "type": "string"
+            },
+            "memo": {
+              "type": "string"
+            },
+            "transaction_date": {
+              "type": "string"
+            },
+            "warehouse_transfer_lines_attributes": {
+              "items": {
+                "properties": {
+                  "product_name": {
+                    "type": "string"
+                  },
+                  "quantity": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "product_name",
+                  "quantity"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "custom_id": {
+              "nullable": true,
+              "type": "string"
+            },
+            "transaction_no": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "from_warehouse_name",
+            "to_warehouse_name",
+            "transaction_date",
+            "warehouse_transfer_lines_attributes"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "If you are going to transfer from/to the default warehouse named \"Unassigned\", you can do it by using \"from_warehouse_id: -1\" or \"to_warehouse_id: -1\". Because warehouse \"Unassigned\" id are always set to -1.",
     "hasBody": true,
     "method": "POST",
@@ -9096,6 +17385,19 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "comment": {
+          "properties": {
+            "notes": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "warehouse_transfer",
@@ -9196,6 +17498,19 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "comment": {
+          "properties": {
+            "notes": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "convert_products",
@@ -9557,6 +17872,93 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": true,
+    "bodySchema": {
+      "properties": {
+        "budgeting_report": {
+          "properties": {
+            "layout_name": {
+              "description": "Name of the budget layout",
+              "type": "string"
+            },
+            "start_period": {
+              "description": "Start period in MM/YYYY format",
+              "type": "string"
+            },
+            "no_of_period": {
+              "description": "Number of periods for the budget",
+              "type": "integer"
+            },
+            "no_prev_period": {
+              "description": "Number of previous periods",
+              "type": "integer"
+            },
+            "memo": {
+              "description": "Memo or description for the budget",
+              "type": "string"
+            },
+            "data": {
+              "items": {
+                "properties": {
+                  "line_type": {
+                    "description": "Type of budget line (1 = account line, 3 = calculation line)",
+                    "type": "integer"
+                  },
+                  "expense_as_positive": {
+                    "description": "Whether expenses should be treated as positive values",
+                    "nullable": true,
+                    "type": "boolean"
+                  },
+                  "has_sub_label": {
+                    "description": "Whether this line has sub-labels",
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "description": "Name of the budget line",
+                    "type": "string"
+                  },
+                  "children": {
+                    "description": "Child items for account lines (only for line_type 1)",
+                    "items": {
+                      "properties": {
+                        "label_name": {
+                          "description": "Label name for the group",
+                          "type": "string"
+                        },
+                        "account": {
+                          "items": {
+                            "properties": {
+                              "id": {
+                                "description": "Account ID",
+                                "type": "integer"
+                              },
+                              "total": {
+                                "description": "Array of budget amounts for each period",
+                                "items": {
+                                  "type": "number"
+                                },
+                                "type": "array"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "Create a new budget management template with budget data",
     "hasBody": true,
     "method": "POST",
@@ -9570,6 +17972,96 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": true,
+    "bodySchema": {
+      "properties": {
+        "budgeting_report": {
+          "properties": {
+            "layout_name": {
+              "description": "Name of the budget layout",
+              "type": "string"
+            },
+            "start_period": {
+              "description": "Start period in MM/YYYY format",
+              "type": "string"
+            },
+            "no_of_period": {
+              "description": "Number of periods for the budget",
+              "type": "integer"
+            },
+            "no_prev_period": {
+              "description": "Number of previous periods",
+              "type": "integer"
+            },
+            "memo": {
+              "description": "Memo or description for the budget",
+              "type": "string"
+            },
+            "template_id": {
+              "description": "Template ID for the budget",
+              "type": "string"
+            },
+            "data": {
+              "items": {
+                "properties": {
+                  "line_type": {
+                    "description": "Type of budget line (1 = account line, 3 = calculation line)",
+                    "type": "integer"
+                  },
+                  "expense_as_positive": {
+                    "description": "Whether expenses should be treated as positive values",
+                    "type": "boolean"
+                  },
+                  "has_sub_label": {
+                    "description": "Whether this line has sub-labels",
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "description": "Name of the budget line",
+                    "type": "string"
+                  },
+                  "children": {
+                    "description": "Child items for account lines (only for line_type 1)",
+                    "items": {
+                      "properties": {
+                        "label_name": {
+                          "description": "Label name for the group",
+                          "type": "string"
+                        },
+                        "account": {
+                          "items": {
+                            "properties": {
+                              "id": {
+                                "description": "Account ID",
+                                "type": "integer"
+                              },
+                              "total": {
+                                "description": "Array of budget amounts for each period",
+                                "items": {
+                                  "type": "number"
+                                },
+                                "type": "array"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "Update an existing budget management template with new data",
     "hasBody": true,
     "method": "PATCH",
@@ -9691,6 +18183,72 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "cashflow": {
+          "properties": {
+            "report_setting": {
+              "properties": {
+                "report_name": {
+                  "type": "string"
+                },
+                "layout_name": {
+                  "type": "string"
+                },
+                "report_type": {
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "data": {
+              "items": {
+                "properties": {
+                  "type": {
+                    "type": "integer"
+                  },
+                  "data": {
+                    "items": {
+                      "properties": {
+                        "group": {
+                          "type": "null"
+                        },
+                        "label": {
+                          "type": "string"
+                        },
+                        "account": {
+                          "items": {
+                            "properties": {
+                              "id": {
+                                "type": "integer"
+                              },
+                              "number": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "Create cashflow custom layout",
     "hasBody": true,
     "method": "POST",
@@ -9704,6 +18262,38 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "compare_type": {
+          "type": "string"
+        },
+        "end_date": {
+          "type": "string"
+        },
+        "period": {
+          "type": "string"
+        },
+        "show_account": {
+          "type": "string"
+        },
+        "start_date": {
+          "type": "string"
+        },
+        "tag_ids": {
+          "type": "string"
+        },
+        "tag_logic": {
+          "type": "string"
+        },
+        "templateId": {
+          "type": "string"
+        },
+        "z": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "description": "get cashflow report data based on query params given",
     "hasBody": true,
     "method": "GET",
@@ -9730,6 +18320,14 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "templateId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "description": "update chosen cashflow layout so when open the report can get the latest chosen layout\n\nneed parameter templateId \"direct\", \"indirect\" or id of custom layout",
     "hasBody": true,
     "method": "POST",
@@ -9743,6 +18341,14 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "report_type": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "description": "get default layout value of cashflow report, direct with report_type 235 or indirect with report_type 236",
     "hasBody": true,
     "method": "GET",
@@ -9776,6 +18382,78 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "cashflow": {
+          "properties": {
+            "report_setting": {
+              "properties": {
+                "report_name": {
+                  "type": "string"
+                },
+                "layout_name": {
+                  "type": "string"
+                },
+                "report_type": {
+                  "type": "integer"
+                },
+                "template_id": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "data": {
+              "items": {
+                "properties": {
+                  "type": {
+                    "type": "integer"
+                  },
+                  "data": {
+                    "items": {
+                      "properties": {
+                        "group": {
+                          "type": "null"
+                        },
+                        "label": {
+                          "type": "string"
+                        },
+                        "account": {
+                          "items": {
+                            "properties": {
+                              "id": {
+                                "type": "integer"
+                              },
+                              "number": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "hasBody": true,
     "method": "PATCH",
     "moduleName": "cash_flow_new_report",
@@ -9795,6 +18473,14 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "description": "delete chosen cashflow custom layout",
     "hasBody": true,
     "method": "DELETE",
@@ -10447,6 +19133,45 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "report_layout": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "setting": {
+              "type": "string"
+            },
+            "active": {
+              "type": "boolean"
+            },
+            "report_type_id": {
+              "type": "integer"
+            },
+            "is_default_jurnal": {
+              "type": "boolean"
+            },
+            "transaction_custom_type_id": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "name",
+            "setting",
+            "active",
+            "report_type_id",
+            "is_default_jurnal",
+            "transaction_custom_type_id"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "report_layout"
+      ],
+      "type": "object"
+    },
     "hasBody": true,
     "method": "POST",
     "moduleName": "report_layout",
@@ -10459,6 +19184,45 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "report_layout": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "setting": {
+              "type": "string"
+            },
+            "active": {
+              "type": "boolean"
+            },
+            "report_type_id": {
+              "type": "integer"
+            },
+            "is_default_jurnal": {
+              "type": "boolean"
+            },
+            "transaction_custom_type_id": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "name",
+            "setting",
+            "active",
+            "report_type_id",
+            "is_default_jurnal",
+            "transaction_custom_type_id"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "report_layout"
+      ],
+      "type": "object"
+    },
     "hasBody": true,
     "method": "PUT",
     "moduleName": "report_layout",
@@ -10478,6 +19242,37 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "report_layout": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "setting": {
+              "type": "string"
+            },
+            "active": {
+              "type": "boolean"
+            },
+            "report_type_id": {
+              "type": "integer"
+            },
+            "is_default_jurnal": {
+              "type": "boolean"
+            },
+            "transaction_custom_type_id": {
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "required": [
+        "report_layout"
+      ],
+      "type": "object"
+    },
     "hasBody": true,
     "method": "PATCH",
     "moduleName": "report_layout",
@@ -11246,6 +20041,9 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "type": "object"
+    },
     "description": "API to find Multi-Currency Rate",
     "hasBody": true,
     "method": "GET",
@@ -11314,6 +20112,43 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "start_date": {
+          "type": "string"
+        },
+        "end_date": {
+          "type": "string"
+        },
+        "company_id": {
+          "type": "integer"
+        },
+        "currency_provider": {
+          "type": "string"
+        },
+        "currency_from": {
+          "type": "string"
+        },
+        "currency_to": {
+          "type": "string"
+        },
+        "custom_rate": {
+          "type": "number"
+        },
+        "should_check_ctb": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date",
+        "company_id",
+        "currency_provider",
+        "currency_from",
+        "currency_to"
+      ],
+      "type": "object"
+    },
     "description": "API to create new Multi-Currency rate",
     "hasBody": true,
     "method": "POST",
@@ -11427,6 +20262,19 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "closing_the_book": {
+          "properties": {
+            "is_draft": {
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "Endpoint to update/publish CTB",
     "hasBody": true,
     "method": "PATCH",
@@ -11447,6 +20295,33 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": false,
+    "bodySchema": {
+      "properties": {
+        "quota": {
+          "properties": {
+            "message": {
+              "type": "string"
+            },
+            "transaction_type_id": {
+              "type": "number"
+            },
+            "type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "transaction_type_id",
+            "type",
+            "message"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "quota"
+      ],
+      "type": "object"
+    },
     "description": "Request quota to owner for buy or add new quota for Transaction or Warehouse",
     "hasBody": true,
     "method": "POST",
@@ -11604,6 +20479,25 @@ export const generatedOperations = [
   },
   {
     "bodyRequired": true,
+    "bodySchema": {
+      "properties": {
+        "product_unit": {
+          "properties": {
+            "custom_id": {
+              "description": "Custom identifier for the product unit (optional).",
+              "nullable": true,
+              "type": "string"
+            },
+            "name": {
+              "description": "Name of the product unit.",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "description": "Updates the details of a specific product unit identified by ID.",
     "hasBody": true,
     "method": "PUT",

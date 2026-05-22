@@ -2,6 +2,7 @@ import type {
   GeneratedModule,
   GeneratedOperation,
   GeneratedParameter,
+  GeneratedSchema,
   ParameterLocation,
   ParameterType,
 } from "../tools.js";
@@ -15,7 +16,17 @@ interface SwaggerParameter {
   in?: string;
   name?: string;
   required?: boolean;
-  schema?: { type?: string | string[] };
+  schema?: SwaggerSchema;
+  type?: string | string[];
+}
+
+interface SwaggerSchema {
+  description?: string;
+  format?: string;
+  items?: SwaggerSchema;
+  nullable?: boolean;
+  properties?: Record<string, SwaggerSchema>;
+  required?: string[] | boolean;
   type?: string | string[];
 }
 
@@ -116,6 +127,9 @@ export function buildOperationsFromSwagger(
 
       operations.push({
         bodyRequired: Boolean(bodyParameter?.required),
+        bodySchema: bodyParameter?.schema
+          ? normalizeSchema(bodyParameter.schema)
+          : undefined,
         description: operation.description,
         hasBody: Boolean(bodyParameter),
         method: method.toUpperCase() as HttpMethod,
@@ -322,6 +336,85 @@ function normalizeParameterType(type: string | string[] | undefined): ParameterT
   }
 
   return "string";
+}
+
+function normalizeSchema(schema: SwaggerSchema): GeneratedSchema {
+  const type = normalizeSchemaType(schema);
+  const description = schema.description;
+
+  if (type === "array") {
+    return removeUndefined({
+      description,
+      items: schema.items ? normalizeSchema(schema.items) : undefined,
+      nullable: isNullableSchema(schema) ? true : undefined,
+      type,
+    });
+  }
+
+  if (type === "object") {
+    const properties = Object.fromEntries(
+      Object.entries(schema.properties ?? {}).map(([name, propertySchema]) => [
+        name,
+        normalizeSchema(propertySchema),
+      ]),
+    );
+    const required = Array.isArray(schema.required) ? schema.required : [];
+
+    return removeUndefined({
+      description,
+      nullable: isNullableSchema(schema) ? true : undefined,
+      properties: Object.keys(properties).length ? properties : undefined,
+      required: required.length ? required : undefined,
+      type,
+    });
+  }
+
+  return removeUndefined({
+    description,
+    nullable: isNullableSchema(schema) ? true : undefined,
+    type,
+  });
+}
+
+function normalizeSchemaType(schema: SwaggerSchema): GeneratedSchema["type"] {
+  const rawType = Array.isArray(schema.type)
+    ? (schema.type.find((item) => item !== "null") ?? schema.type[0])
+    : schema.type;
+
+  if (
+    rawType === "array" ||
+    rawType === "boolean" ||
+    rawType === "integer" ||
+    rawType === "null" ||
+    rawType === "number" ||
+    rawType === "object" ||
+    rawType === "string"
+  ) {
+    return rawType;
+  }
+
+  if (schema.properties) {
+    return "object";
+  }
+
+  if (schema.items) {
+    return "array";
+  }
+
+  return "unknown";
+}
+
+function isNullableSchema(schema: SwaggerSchema): boolean {
+  return (
+    schema.nullable === true ||
+    (Array.isArray(schema.type) && schema.type.includes("null"))
+  );
+}
+
+function removeUndefined<T extends Record<string, unknown>>(value: T): T {
+  return Object.fromEntries(
+    Object.entries(value).filter(([, entry]) => entry !== undefined),
+  ) as T;
 }
 
 function normalizeIdentifier(value: string): string {
