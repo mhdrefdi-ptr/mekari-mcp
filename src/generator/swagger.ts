@@ -150,11 +150,14 @@ export function buildOperationsFromSwagger(
         moduleName,
         name,
         operationName,
-        parameters: collectParameters(
+        parameters: applyOperationParameterDefaults(
           splitPath.path,
-          splitPath.queryParameters,
-          pathParameters,
-          operation.parameters ?? [],
+          collectParameters(
+            splitPath.path,
+            splitPath.queryParameters,
+            pathParameters,
+            operation.parameters ?? [],
+          ),
         ),
         path: splitPath.path,
         safetyLevel: classifySafetyLevel(method, splitPath.path, operationName),
@@ -536,6 +539,30 @@ function collectParameters(
   }
 
   return Array.from(parameters.values());
+}
+
+function applyOperationParameterDefaults(
+  path: string,
+  parameters: readonly GeneratedParameter[],
+): GeneratedParameter[] {
+  if (path !== "/public/jurnal/api/v1/purchase_delivery_reports/export") {
+    return [...parameters];
+  }
+
+  return parameters.map((parameter) => {
+    if (
+      parameter.in === "query" &&
+      parameter.name === "detail" &&
+      parameter.defaultValue === undefined
+    ) {
+      return {
+        ...parameter,
+        defaultValue: true,
+      };
+    }
+
+    return parameter;
+  });
 }
 
 function normalizeParameter(

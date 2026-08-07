@@ -248,4 +248,28 @@ describe("generated MCP tools", () => {
       Array.from(registered.keys()).every((name) => name.startsWith("accounts_")),
     ).toBe(true);
   });
+
+  it("defaults purchase delivery export to detailed rows", async () => {
+    const { registered, registry } = createRegistry();
+    const client = {
+      request: vi.fn(async () => ({ ok: true as const, data: { url: "x" } })),
+    };
+
+    registerGeneratedTools(registry, client);
+
+    const tool = registered.get("purchase_delivery_export");
+
+    expect(tool?.config.inputSchema.parse({ transaction_type_id: 9 })).toEqual({
+      detail: true,
+      transaction_type_id: 9,
+    });
+
+    await tool?.handler({ transaction_type_id: 9 });
+
+    expect(client.request).toHaveBeenCalledWith({
+      method: "GET",
+      path: "/public/jurnal/api/v1/purchase_delivery_reports/export",
+      query: { detail: true, transaction_type_id: 9 },
+    });
+  });
 });

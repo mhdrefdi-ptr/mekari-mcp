@@ -19850,6 +19850,7 @@ export const generatedOperations = [
         "type": "number"
       },
       {
+        "defaultValue": true,
         "in": "query",
         "name": "detail",
         "required": false,

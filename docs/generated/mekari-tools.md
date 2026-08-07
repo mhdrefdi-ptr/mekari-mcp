@@ -61862,7 +61862,7 @@ Response `200` `application/json`:
 - Input overview:
   - Query `export_type`: string, optional
   - Query `transaction_type_id`: number, optional
-  - Query `detail`: boolean, optional
+  - Query `detail`: boolean, optional, default `true`
 
 #### Swagger Examples
 
