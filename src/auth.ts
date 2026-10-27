@@ -51,7 +51,7 @@ export function createMekariHeaders(
 ): Record<string, string> {
   const httpDate = (request.date ?? new Date()).toUTCString();
   const requestTarget = buildRequestTarget(request.path, request.query);
-  const requestLine = `${request.method.toLowerCase()} ${requestTarget} HTTP/1.1`;
+  const requestLine = `${request.method.toUpperCase()} ${requestTarget} HTTP/1.1`;
   const signingString = `date: ${httpDate}\n${requestLine}`;
   const signature = createHmac("sha256", credentials.clientSecret)
     .update(signingString)

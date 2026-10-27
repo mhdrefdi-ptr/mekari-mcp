@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import { basename } from "node:path";
 
@@ -49,6 +50,10 @@ export function createMekariClient(
         const url = new URL(requestTarget, normalizeBaseUrl(config.baseUrl));
         const headers = createMekariHeaders(config, request);
         const body = await buildRequestBody(request, headers);
+        if (request.data !== undefined && ["POST", "PUT", "PATCH", "DELETE"].includes(request.method)) {
+          const bodyBytes = typeof body === "string" ? Buffer.from(body) : Buffer.alloc(0);
+          headers.Digest = `SHA-256=${createHash("sha256").update(bodyBytes).digest("base64")}`;
+        }
 
         const response = await fetchImpl(url, {
           body,

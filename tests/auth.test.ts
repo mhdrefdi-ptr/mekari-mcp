@@ -18,7 +18,7 @@ describe("Mekari HMAC auth", () => {
 
     const httpDate = "Wed, 28 Oct 2020 06:23:23 GMT";
     const requestLine =
-      "get /public/jurnal/api/v1/accounts?include_archive=false HTTP/1.1";
+      "GET /public/jurnal/api/v1/accounts?include_archive=false HTTP/1.1";
     const signature = createHmac("sha256", "secret")
       .update(`date: ${httpDate}\n${requestLine}`)
       .digest("base64");
@@ -48,7 +48,7 @@ describe("Mekari HMAC auth", () => {
     );
 
     const httpDate = "Wed, 28 Oct 2020 06:23:23 GMT";
-    const requestLine = `get /public/jurnal/api/v1/accounts?${queryString} HTTP/1.1`;
+    const requestLine = `GET /public/jurnal/api/v1/accounts?${queryString} HTTP/1.1`;
     const signature = createHmac("sha256", "secret")
       .update(`date: ${httpDate}\n${requestLine}`)
       .digest("base64");
