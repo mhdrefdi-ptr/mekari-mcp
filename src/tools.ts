@@ -168,7 +168,8 @@ export function buildInputSchema(
   const shape: Record<string, z.ZodType> = {};
 
   for (const parameter of operation.parameters) {
-    shape[parameter.name] = parameterSchema(parameter);
+    const schema = parameterSchema(parameter);
+    shape[parameter.name] = parameter.description ? schema.describe(parameter.description) : schema;
   }
 
   if (operation.hasBody) {
@@ -226,6 +227,11 @@ function objectSchemaToZod(schema: GeneratedSchema): z.ZodType {
 function parameterSchema(parameter: GeneratedParameter): z.ZodType {
   let schema: z.ZodType;
 
+  if (["page", "page_size", "per_page"].includes(parameter.name)) {
+    const page = z.union([z.number().int().positive(), z.string().regex(/^[1-9]\d*$/)]);
+    return parameter.required ? page : page.optional();
+  }
+
   switch (parameter.type) {
     case "array":
       schema = z.array(z.unknown());
@@ -278,10 +284,16 @@ function toMekariRequest(
   input: Record<string, unknown>,
 ): MekariRequest {
   const query: MekariRequest["query"] = {};
+  const hasPageAlias = operation.parameters.some((parameter) =>
+    parameter.name === "per_page" && parameter.description?.startsWith("Alias for page_size"));
+
+  if (hasPageAlias && input.per_page !== undefined && input.page_size !== undefined) {
+    throw new Error("Use either per_page or page_size, not both");
+  }
 
   for (const parameter of operation.parameters) {
     if (parameter.in === "query" && input[parameter.name] !== undefined) {
-      query[parameter.name] = input[parameter.name] as never;
+      query[hasPageAlias && parameter.name === "per_page" ? "page_size" : parameter.name] = input[parameter.name] as never;
     }
   }
 

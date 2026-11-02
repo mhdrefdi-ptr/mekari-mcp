@@ -4189,7 +4189,43 @@ export const generatedOperations = [
     "moduleName": "purchase_returns",
     "name": "purchase_returns_list",
     "operationName": "list",
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "page_size",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "per_page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Alias for page_size; do not combine with page_size."
+      },
+      {
+        "name": "start_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      },
+      {
+        "name": "end_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      }
+    ],
     "path": "/public/jurnal/api/v1/purchase_returns",
     "safetyLevel": "read",
     "sourceTag": "PURCHASE RETURNS",
@@ -4279,7 +4315,43 @@ export const generatedOperations = [
     "moduleName": "sales_returns",
     "name": "sales_returns_list",
     "operationName": "list",
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "page_size",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "per_page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Alias for page_size; do not combine with page_size."
+      },
+      {
+        "name": "start_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      },
+      {
+        "name": "end_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      }
+    ],
     "path": "/public/jurnal/api/v1/sales_returns",
     "safetyLevel": "read",
     "sourceTag": "SALES RETURNS",
@@ -4562,6 +4634,27 @@ export const generatedOperations = [
         "name": "sort_order",
         "required": false,
         "type": "string"
+      },
+      {
+        "name": "per_page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Alias for page_size; do not combine with page_size."
+      },
+      {
+        "name": "start_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      },
+      {
+        "name": "end_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
       }
     ],
     "path": "/public/jurnal/api/v1/sales_invoices",
@@ -5018,7 +5111,43 @@ export const generatedOperations = [
     "moduleName": "credit_memo",
     "name": "credit_memo_list",
     "operationName": "list",
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "page_size",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "per_page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Alias for page_size; do not combine with page_size."
+      },
+      {
+        "name": "start_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      },
+      {
+        "name": "end_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      }
+    ],
     "path": "/public/jurnal/api/v1/credit_memos",
     "safetyLevel": "read",
     "sourceTag": "CREDIT MEMO",
@@ -5108,7 +5237,57 @@ export const generatedOperations = [
     "moduleName": "purchase_invoices",
     "name": "purchase_invoices_list",
     "operationName": "list",
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "sort_key",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "Use transaction_no or created_at to enable start_date/end_date filtering."
+      },
+      {
+        "name": "sort_order",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "asc or desc"
+      },
+      {
+        "name": "page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "page_size",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "per_page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Alias for page_size; do not combine with page_size."
+      },
+      {
+        "name": "start_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      },
+      {
+        "name": "end_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      }
+    ],
     "path": "/public/jurnal/api/v1/purchase_invoices",
     "safetyLevel": "read",
     "sourceTag": "PURCHASE INVOICES",
@@ -5319,7 +5498,43 @@ export const generatedOperations = [
     "moduleName": "bank_transfers",
     "name": "bank_transfers_list",
     "operationName": "list",
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "page_size",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "per_page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Alias for page_size; do not combine with page_size."
+      },
+      {
+        "name": "start_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      },
+      {
+        "name": "end_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      }
+    ],
     "path": "/public/jurnal/api/v1/bank_transfers",
     "safetyLevel": "read",
     "sourceTag": "BANK TRANSFERS",
@@ -5578,7 +5793,43 @@ export const generatedOperations = [
     "moduleName": "bank_withdrawals",
     "name": "bank_withdrawals_list",
     "operationName": "list",
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "page_size",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "per_page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Alias for page_size; do not combine with page_size."
+      },
+      {
+        "name": "start_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      },
+      {
+        "name": "end_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      }
+    ],
     "path": "/public/jurnal/api/v1/bank_withdrawals",
     "safetyLevel": "read",
     "sourceTag": "BANK WITHDRAWALS",
@@ -5987,7 +6238,43 @@ export const generatedOperations = [
     "moduleName": "expenses",
     "name": "expenses_list",
     "operationName": "list",
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "page_size",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "per_page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Alias for page_size; do not combine with page_size."
+      },
+      {
+        "name": "start_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      },
+      {
+        "name": "end_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      }
+    ],
     "path": "/public/jurnal/api/v1/expenses",
     "safetyLevel": "read",
     "sourceTag": "EXPENSES",
@@ -6308,7 +6595,43 @@ export const generatedOperations = [
     "moduleName": "receive_payments",
     "name": "receive_payments_list",
     "operationName": "list",
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "page_size",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "per_page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Alias for page_size; do not combine with page_size."
+      },
+      {
+        "name": "start_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      },
+      {
+        "name": "end_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      }
+    ],
     "path": "/public/jurnal/api/v1/receive_payments",
     "safetyLevel": "read",
     "sourceTag": "RECEIVE PAYMENTS",
@@ -6445,7 +6768,43 @@ export const generatedOperations = [
     "moduleName": "sales_orders",
     "name": "sales_orders_list",
     "operationName": "list",
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "page_size",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "per_page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Alias for page_size; do not combine with page_size."
+      },
+      {
+        "name": "start_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      },
+      {
+        "name": "end_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      }
+    ],
     "path": "/public/jurnal/api/v1/sales_orders",
     "safetyLevel": "read",
     "sourceTag": "SALES ORDERS",
@@ -6741,7 +7100,43 @@ export const generatedOperations = [
     "moduleName": "bank_deposits",
     "name": "bank_deposits_list",
     "operationName": "list",
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "page_size",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "per_page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Alias for page_size; do not combine with page_size."
+      },
+      {
+        "name": "start_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      },
+      {
+        "name": "end_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      }
+    ],
     "path": "/public/jurnal/api/v1/bank_deposits",
     "safetyLevel": "read",
     "sourceTag": "BANK DEPOSITS",
@@ -6820,7 +7215,43 @@ export const generatedOperations = [
     "moduleName": "purchase_payments",
     "name": "purchase_payments_list",
     "operationName": "list",
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "page_size",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "per_page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Alias for page_size; do not combine with page_size."
+      },
+      {
+        "name": "start_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      },
+      {
+        "name": "end_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      }
+    ],
     "path": "/public/jurnal/api/v1/purchase_payments",
     "safetyLevel": "read",
     "sourceTag": "PURCHASE PAYMENTS",
@@ -6907,7 +7338,43 @@ export const generatedOperations = [
     "moduleName": "journal_entries",
     "name": "journal_entries_list",
     "operationName": "list",
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "page_size",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "per_page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Alias for page_size; do not combine with page_size."
+      },
+      {
+        "name": "start_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      },
+      {
+        "name": "end_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      }
+    ],
     "path": "/public/jurnal/api/v1/journal_entries",
     "safetyLevel": "read",
     "sourceTag": "JOURNAL ENTRIES",
@@ -7080,7 +7547,43 @@ export const generatedOperations = [
     "moduleName": "purchase_orders",
     "name": "purchase_orders_list",
     "operationName": "list",
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "page_size",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Pagination parameter; endpoint support varies."
+      },
+      {
+        "name": "per_page",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Alias for page_size; do not combine with page_size."
+      },
+      {
+        "name": "start_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      },
+      {
+        "name": "end_date",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+      }
+    ],
     "path": "/public/jurnal/api/v1/purchase_orders",
     "safetyLevel": "read",
     "sourceTag": "PURCHASE ORDERS",
@@ -19514,16 +20017,16 @@ export const generatedOperations = [
         "type": "string"
       },
       {
-        "description": "use comma for separate each tag id. ex : 123,456,789",
+        "description": "use comma for separate each tag id. ex : 123,456,789 Unpublished: Mekari documents this filter as temporarily unavailable.",
         "in": "query",
-        "name": "tag_ids [unpublish]",
+        "name": "tag_ids",
         "required": false,
         "type": "string"
       },
       {
-        "description": "\"and\" / \"or\"",
+        "description": "\"and\" / \"or\" Unpublished: Mekari documents this filter as temporarily unavailable.",
         "in": "query",
-        "name": "tag_logic [unpublish]",
+        "name": "tag_logic",
         "required": false,
         "type": "string"
       }

@@ -630,7 +630,11 @@ Source Swagger tag: `PURCHASE RETURNS`
 - Summary: Get List of Purchase Returns
 - Safety: `read`
 - Input overview:
-  - None
+  - Query `page`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `page_size`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `per_page`: integer, optional, Alias for page_size; do not combine with page_size.
+  - Query `start_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
+  - Query `end_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
 
 #### Swagger Examples
 
@@ -1411,7 +1415,11 @@ Source Swagger tag: `SALES RETURNS`
 - Summary: Get List of Sales Returns
 - Safety: `read`
 - Input overview:
-  - None
+  - Query `page`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `page_size`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `per_page`: integer, optional, Alias for page_size; do not combine with page_size.
+  - Query `start_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
+  - Query `end_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
 
 #### Swagger Examples
 
@@ -2358,6 +2366,9 @@ Source Swagger tag: `SALES INVOICES`
   - Query `page_size`: string, optional
   - Query `sort_key`: string, optional
   - Query `sort_order`: string, optional
+  - Query `per_page`: integer, optional, Alias for page_size; do not combine with page_size.
+  - Query `start_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
+  - Query `end_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
 
 #### Swagger Examples
 
@@ -13931,7 +13942,11 @@ Source Swagger tag: `CREDIT MEMO`
 - Summary: Get Credit Memo
 - Safety: `read`
 - Input overview:
-  - None
+  - Query `page`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `page_size`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `per_page`: integer, optional, Alias for page_size; do not combine with page_size.
+  - Query `start_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
+  - Query `end_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
 
 #### Swagger Examples
 
@@ -17600,7 +17615,13 @@ Source Swagger tag: `PURCHASE INVOICES`
 - Summary: Get List of Purchase Invoices
 - Safety: `read`
 - Input overview:
-  - None
+  - Query `sort_key`: string, optional, Use transaction_no or created_at to enable start_date/end_date filtering.
+  - Query `sort_order`: string, optional, asc or desc
+  - Query `page`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `page_size`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `per_page`: integer, optional, Alias for page_size; do not combine with page_size.
+  - Query `start_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
+  - Query `end_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
 
 #### Swagger Examples
 
@@ -24699,7 +24720,11 @@ Source Swagger tag: `BANK TRANSFERS`
 - Summary: Get List of Bank Transfers
 - Safety: `read`
 - Input overview:
-  - None
+  - Query `page`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `page_size`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `per_page`: integer, optional, Alias for page_size; do not combine with page_size.
+  - Query `start_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
+  - Query `end_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
 
 #### Swagger Examples
 
@@ -26002,7 +26027,11 @@ Response `422` `application/json`:
 - Summary: Get List of Expenses
 - Safety: `read`
 - Input overview:
-  - None
+  - Query `page`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `page_size`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `per_page`: integer, optional, Alias for page_size; do not combine with page_size.
+  - Query `start_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
+  - Query `end_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
 
 #### Swagger Examples
 
@@ -37700,7 +37729,11 @@ Source Swagger tag: `BANK WITHDRAWALS`
 - Summary: Get List of Bank Withdrawals
 - Safety: `read`
 - Input overview:
-  - None
+  - Query `page`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `page_size`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `per_page`: integer, optional, Alias for page_size; do not combine with page_size.
+  - Query `start_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
+  - Query `end_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
 
 #### Swagger Examples
 
@@ -41732,6 +41765,11 @@ Source Swagger tag: `RECEIVE PAYMENTS`
 - Summary: Get List of Receive Payments
 - Safety: `read`
 - Input overview:
+  - Query `page`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `page_size`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `per_page`: integer, optional, Alias for page_size; do not combine with page_size.
+  - Query `start_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
+  - Query `end_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
   - Body `data`: object, optional
 
 #### Swagger Examples
@@ -42608,7 +42646,11 @@ Source Swagger tag: `SALES ORDERS`
 - Summary: Get List of Sales Orders
 - Safety: `read`
 - Input overview:
-  - None
+  - Query `page`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `page_size`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `per_page`: integer, optional, Alias for page_size; do not combine with page_size.
+  - Query `start_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
+  - Query `end_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
 
 #### Swagger Examples
 
@@ -44715,6 +44757,11 @@ Source Swagger tag: `BANK DEPOSITS`
 - Summary: Get List of Bank Deposits
 - Safety: `read`
 - Input overview:
+  - Query `page`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `page_size`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `per_page`: integer, optional, Alias for page_size; do not combine with page_size.
+  - Query `start_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
+  - Query `end_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
   - Body `data`: object, optional
 
 #### Swagger Examples
@@ -45435,7 +45482,11 @@ Source Swagger tag: `PURCHASE PAYMENTS`
 - Summary: Get List of Purchase Payment
 - Safety: `read`
 - Input overview:
-  - None
+  - Query `page`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `page_size`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `per_page`: integer, optional, Alias for page_size; do not combine with page_size.
+  - Query `start_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
+  - Query `end_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
 
 #### Swagger Examples
 
@@ -46218,7 +46269,11 @@ Source Swagger tag: `JOURNAL ENTRIES`
 - Summary: Get List of Journal Entries
 - Safety: `read`
 - Input overview:
-  - None
+  - Query `page`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `page_size`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `per_page`: integer, optional, Alias for page_size; do not combine with page_size.
+  - Query `start_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
+  - Query `end_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
 
 #### Swagger Examples
 
@@ -52257,7 +52312,11 @@ Source Swagger tag: `PURCHASE ORDERS`
 - Summary: Get List of Purchase Orders
 - Safety: `read`
 - Input overview:
-  - None
+  - Query `page`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `page_size`: integer, optional, Pagination parameter; endpoint support varies.
+  - Query `per_page`: integer, optional, Alias for page_size; do not combine with page_size.
+  - Query `start_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
+  - Query `end_date`: string, optional, dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter.
 
 #### Swagger Examples
 
@@ -77114,8 +77173,8 @@ Source Swagger tag: `GENERAL LEDGER`
   - Query `end_date`: string, optional, default ``, format dd/mm/yyyy
   - Query `compare_type`: string, optional, default ``, custom, day, week, month, year, yesterday, last_week, last_month, last_year
   - Query `account_id`: string, optional, id of account, use comma for separate each account id. ex : 123,456,789
-  - Query `tag_ids [unpublish]`: string, optional, use comma for separate each tag id. ex : 123,456,789
-  - Query `tag_logic [unpublish]`: string, optional, "and" / "or"
+  - Query `tag_ids`: string, optional, use comma for separate each tag id. ex : 123,456,789 Unpublished: Mekari documents this filter as temporarily unavailable.
+  - Query `tag_logic`: string, optional, "and" / "or" Unpublished: Mekari documents this filter as temporarily unavailable.
 
 #### Swagger Examples
 

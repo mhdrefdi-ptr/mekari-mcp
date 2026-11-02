@@ -1,5 +1,29 @@
 # Mekari Jurnal MCP
 
+## Report and transaction inputs
+
+- General ledger inputs use `tag_ids` and `tag_logic`, without Swagger's
+  `[unpublish]` suffix. Mekari currently documents both tag filters as unavailable;
+  renaming them does not enable upstream support. Account/date filtering uses
+  `account_id`, `start_date`, `end_date` (`dd/mm/yyyy`), and `compare_type: "custom"`.
+- Transaction list tools expose `page`, `page_size`, `per_page`, `start_date`, and
+  `end_date`. `per_page` is an alias sent as `page_size`; supplying both is an error.
+  Requests return one page, not an automatically merged collection. Date and page
+  size support varies by endpoint: bank withdrawals and journal entries do not
+  document these filters, so upstream may ignore them. Verify returned dates.
+  Purchase invoices require `sort_key: "transaction_no"` or `"created_at"` for
+  date filtering; both `sort_key` and `sort_order` are exposed.
+- Export endpoints returning `{ "url": "..." }` now download the file and add
+  `data.file`: `{ mimeType, encoding, size, content }`. CSV/text uses UTF-8;
+  PDF/Excel/binary uses base64. Direct binary responses use the same file shape.
+  This is an explicit exception to raw-response preservation; original URL
+  response fields remain available. Job/status responses without a URL are left
+  unchanged (no polling).
+- Downloads accept only HTTPS Jurnal quickbook S3 production/development bucket
+  hosts, never forward Mekari credentials, reject redirects, time out after
+  30 seconds, and reject files exceeding 10 MiB. Other storage hosts fail closed
+  until verified and explicitly allowed in `src/export.ts`.
+
 Connect Claude Desktop, Cursor, or another stdio-compatible MCP client to Mekari Jurnal. Read accounts, invoices, customers, products, and reports, with optional write and destructive operations.
 
 Tools are generated from the bundled Swagger specification. Each tool maps directly to a Mekari Jurnal API operation; the server does not add business workflows or support other Mekari products.

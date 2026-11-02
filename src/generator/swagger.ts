@@ -158,6 +158,7 @@ export function buildOperationsFromSwagger(
             pathParameters,
             operation.parameters ?? [],
           ),
+          method === "get" && operationName === "list",
         ),
         path: splitPath.path,
         safetyLevel: classifySafetyLevel(method, splitPath.path, operationName),
@@ -544,7 +545,34 @@ function collectParameters(
 function applyOperationParameterDefaults(
   path: string,
   parameters: readonly GeneratedParameter[],
+  isList = false,
 ): GeneratedParameter[] {
+  const transactionLists = /\/api\/v1\/(bank_withdrawals|bank_deposits|bank_transfers|journal_entries|sales_invoices|purchase_invoices|sales_orders|purchase_orders|sales_quotes|purchase_quotes|sales_returns|purchase_returns|credit_memos|expenses|receive_payments|purchase_payments)$/;
+  if (isList && transactionLists.test(path)) {
+    const result = [...parameters];
+    if (path.endsWith("/purchase_invoices")) {
+      for (const name of ["sort_key", "sort_order"]) {
+        if (!result.some((parameter) => parameter.name === name)) {
+          result.push({ name, in: "query", required: false, type: "string",
+            description: name === "sort_key"
+              ? "Use transaction_no or created_at to enable start_date/end_date filtering."
+              : "asc or desc",
+          });
+        }
+      }
+    }
+    for (const name of ["page", "page_size", "per_page", "start_date", "end_date"]) {
+      if (!result.some((parameter) => parameter.name === name)) {
+        result.push({ name, in: "query", required: false,
+          type: name.endsWith("date") ? "string" : "integer",
+          description: name === "per_page" ? "Alias for page_size; do not combine with page_size."
+            : name.endsWith("date") ? "dd/mm/yyyy. Endpoint support varies; upstream may ignore this filter."
+            : "Pagination parameter; endpoint support varies.",
+        });
+      }
+    }
+    return result;
+  }
   if (path !== "/public/jurnal/api/v1/purchase_delivery_reports/export") {
     return [...parameters];
   }
@@ -578,9 +606,11 @@ function normalizeParameter(
 
   return {
     defaultValue: parameter.default,
-    description: parameter.description,
+    description: parameter.name.endsWith("[unpublish]")
+      ? `${parameter.description ?? ""} Unpublished: Mekari documents this filter as temporarily unavailable.`
+      : parameter.description,
     in: parameter.in as ParameterLocation,
-    name: parameter.name,
+    name: parameter.name.replace(/\s+\[unpublish\]$/, ""),
     required: parameter.in === "path" || Boolean(parameter.required),
     type: normalizeParameterType(parameter.schema?.type ?? parameter.type),
   };

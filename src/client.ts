@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import { basename } from "node:path";
+import { downloadExport, readExportFile } from "./export.js";
 
 import { buildRequestTarget, createMekariHeaders, type QueryValue } from "./auth.js";
 
@@ -59,7 +60,17 @@ export function createMekariClient(
           body,
           headers,
           method: request.method,
+          redirect: "error",
+          signal: AbortSignal.timeout(30_000),
         });
+        const isExport = /\/export\/?$/.test(request.path);
+        const contentType = response.headers.get("content-type") ?? "";
+        if (response.ok && isExport &&
+            /(?:pdf|spreadsheet|excel|csv|octet-stream)/i.test(contentType)) {
+          const file = await readExportFile(response);
+          logRequest(config, request, response.status, startedAt);
+          return { ok: true, data: { file } };
+        }
         const payload = await readPayload(response);
         logRequest(config, request, response.status, startedAt);
 
@@ -67,6 +78,10 @@ export function createMekariClient(
           return { ok: false, status: response.status, error: payload };
         }
 
+        if (isExport && payload && typeof payload === "object" &&
+            "url" in payload && typeof payload.url === "string") {
+          return { ok: true, data: { ...payload, file: await downloadExport(payload.url, fetchImpl) } };
+        }
         return { ok: true, data: payload };
       } catch (error) {
         logRequest(config, request, 0, startedAt);
